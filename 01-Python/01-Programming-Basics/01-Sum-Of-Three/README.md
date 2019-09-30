@@ -1,10 +1,8 @@
-# Sum of Three
-
 Let's start with a very simple exercise to understand how these exercises are going to work.
 
 ## Check
 
-Some of the exercises will have a `check.sh` bash script. This script will check if your challenge is correct (using [Test-Driven Development (TDD)]https://en.wikipedia.org/wiki/Test-driven_development) where tests have been written beforehand by Le Wagon's teachers). To run this script in your terminal, `cd` to the proper folder (as explained above ☝️) and run:
+Some of the exercises will have a `check.sh` bash script. This script will check if your challenge is correct (using [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) where tests have been written beforehand by Le Wagon's teachers). To run this script in your terminal, `cd` to the proper folder (as explained above ☝️) and run:
 
 ```bash
 ./check.sh
