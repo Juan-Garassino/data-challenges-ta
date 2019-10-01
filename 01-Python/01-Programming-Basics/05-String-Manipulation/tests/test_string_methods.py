@@ -11,8 +11,7 @@ from string_methods import remove_surrounding_whitespaces
 from string_methods import full_description_concatenation
 from string_methods import full_description_formatting
 
-class TestHello(unittest.TestCase):
-
+class TestStrings(unittest.TestCase):
     # add_comma
 
     def test_strings_boris_romain_seb(self):
