@@ -6,7 +6,7 @@ In this exercise, we will focus on Interactive debugging & control flow analysis
 
 ## The Python Debugger
 
-One great thing about Python is that it comes with an included debugger, ready to use! The documentation has an [extensive article about the `pdb` module](https://docs.python.org/3/library/pdb.html) that you can should have a look to.
+One great thing about Python is that it comes with an included debugger, ready to use! The documentation has an [extensive article about the `pdb` module](https://docs.python.org/3/library/pdb.html) that you can should have a look to. We are going to use [`ipdb`](https://pypi.org/project/ipdb/), a variant of `pdb` which gives you a better developer experience with tab completion, syntax highlighting, etc.
 
 Let's get to the bottom of it right away. In this exercise folder, you will find an `app.py` which contains a program. This program has a bug, let's use the Python debugger to find it!
 
@@ -17,10 +17,25 @@ python hello.py john lennon
 What is the problem with the output of this program? Let's try to debug this problem! It seems there is a problem with the creation of the concatenated full name. Let's try to debug this. Insert the following line just after the `def full_name`:
 
 ```python
-def full_name(first_name, last_name):
-    import pdb; pdb.set_trace()
-    # [... rest of the function]
+import ipdb; ipdb.set_trace()
 ```
+
+<details><summary markdown="span">💡 `ipdb` not found?
+</summary>
+
+`ipdb` is not a module which is available by default in Python. You might need to run a:
+
+```bash
+conda install ipdb
+```
+
+Alternatively, you can use the default `pdb` module embedded in Python:
+
+```python
+import pdb; pdb.set_trace()
+```
+
+</details>
 
 Go back to the terminal and run the command again:
 
@@ -31,9 +46,12 @@ python hello.py john lennon
 The program will **halt** at the line you inserted the `pdb.set_trace()`:
 
 ```bash
-> [...]/reboot-python/01-OOP/04-Debugging/hello.py(6)full_name()
--> name = f"{first_name.capitalize()}{last_name.capitalize()}"
-(Pdb)
+> [...]data-challenges/01-Python/01-Programming-Basics/04-Debugging/hello.py(9)full_name()
+      8
+----> 9     name = f"{first_name.capitalize()}{last_name.capitalize()}"
+     10     return name
+
+ipdb>
 ```
 
 It's time to play with the debugger. From there, you can do two things:
@@ -44,7 +62,7 @@ It's time to play with the debugger. From there, you can do two things:
 Type this:
 
 ```bash
-(Pdb) sys.argv
+ipdb> sys.argv
 # => ['hello.py', 'john', 'lennon']
 ```
 
@@ -53,14 +71,14 @@ See how it works? You just asked the debugger to call the `sys.argv` and look wh
 Our problem is that there is a missing space between `John` and `Lennon`. So we would like to have a look at the local variable `name`. Let's type:
 
 ```bash
-(Pdb) name
+ipdb> name
 # => *** NameError: name 'name' is not defined
 ```
 
 Why do we get this `NameError`? Where are we halted? To check at which line the program is halted, you can type:
 
 ```bash
-(Pdb) ll
+ipdb> ll
 # 4     def full_name(first_name, last_name):
 # 5         import pdb; pdb.set_trace()
 # 6  ->     name = f"{first_name.capitalize()}{last_name.capitalize()}"
@@ -72,7 +90,7 @@ The program stopped **before** the line pointed by the little arrow `->`. This m
 We are inside a function. Something useful is to display the argument list of the current function:
 
 ```bash
-(Pdb) args
+ipdb> args
 # first_name = 'john'
 # last_name = 'lennon'
 ```
@@ -80,19 +98,19 @@ We are inside a function. Something useful is to display the argument list of th
 What we can do now? We can ask the debugger to execute the next line with:
 
 ```bash
-(Pdb) next
+ipdb> next
 ```
 
 Here you go, the debugger advanced by one line and executed it. You can see where the program is halted now with:
 
 ```bash
-(Pdb) ll
+ipdb> ll
 ```
 
 See how the little arrow `->` advanced? Now we can check what's inside the `name` variable:
 
 ```bash
-(Pdb) name
+ipdb> name
 # => 'JohnLennon'
 ```
 
@@ -101,7 +119,7 @@ That's it! We have identified the culprit line! The interpolation is missing a s
 You can let the program runs until the next breakpoint (or the end of it) with:
 
 ```bash
-(Pdb) continue
+ipdb> continue
 ```
 
 Fix the `full_name` method in `hello.py`, and run the program again. Don't forget to remove the debugger line! That's something that easily forget and add to a commit. Some teams might want to add a [pre-commit hook](http://blog.keul.it/2013/11/no-more-pdbsettrace-committed-git-pre.html) to prevent this from happening.
