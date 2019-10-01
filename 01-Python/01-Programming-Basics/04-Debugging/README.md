@@ -20,23 +20,6 @@ What is the problem with the output of this program? Let's try to debug this pro
 import ipdb; ipdb.set_trace()
 ```
 
-<details><summary markdown="span">💡 `ipdb` not found?
-</summary>
-
-`ipdb` is not a module which is available by default in Python. You might need to run a:
-
-```bash
-conda install ipdb
-```
-
-Alternatively, you can use the default `pdb` module embedded in Python:
-
-```python
-import pdb; pdb.set_trace()
-```
-
-</details>
-
 Go back to the terminal and run the command again:
 
 ```bash
@@ -52,6 +35,12 @@ The program will **halt** at the line you inserted the `pdb.set_trace()`:
      10     return name
 
 ipdb>
+```
+
+ℹ️ `ipdb` is not a module which is available by default in Python, so you need to `conda install ipdb` (something we did on Setup day). Alternatively, you can use the default `pdb` module embedded in Python:
+
+```python
+import pdb; pdb.set_trace()
 ```
 
 It's time to play with the debugger. From there, you can do two things:
@@ -144,4 +133,4 @@ Now that you have learnt how to debug a faulty code, you can run the tests for t
 
 You can see that the implementation we ask you is a tad more complicated. We want the `full_name` method to behavor correctly whitespace-wise when given an empty first name _or_ an empty last name.
 
-:bulb: **Tip**: have a look at the [`str.join(iterable)`](https://docs.python.org/3.7/library/stdtypes.html?highlight=join#str.join) method.
+ 💡 **Tip**: have a look at the [`str.join(iterable)`](https://docs.python.org/3.7/library/stdtypes.html?highlight=join#str.join) method.
