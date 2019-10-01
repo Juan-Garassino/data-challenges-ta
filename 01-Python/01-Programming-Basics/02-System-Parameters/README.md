@@ -1,5 +1,4 @@
 Python scripts can read arguments passed on the command line. This may come in handy when you want to add options to your script.
-```
 
 ## Some words about `sys.argv`
 
