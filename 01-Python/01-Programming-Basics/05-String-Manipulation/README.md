@@ -16,20 +16,18 @@ ipython
 
 **Experiment the following lines** on the IPython interpreter:
 
-```bash
+```python
 # Python 3.7.1 (default, Dec 14 2018, 13:28:58)
 # Type 'copyright', 'credits' or 'license' for more information
 # IPython 7.8.0 -- An enhanced Interactive Python. Type '?' for help.
 
 In [1]: 1 + 1
 
-In [2]: "A string object".lower()
+In [2]: help(str.lower) # Quit help hitting `Q` on the keyboard
 
-In [3]: "A string object".upper()
+In [3]: "A string object".lower()
 
-In [4]: type(4)
-
-In [5]: quit
+In [4]: quit
 ```
 
 In Python, everything (a string, an integer, a floating number, a list...) is an object. We can call methods on these objects. Such methods are called **instance methods** since they can only be called on instances of the class. The object on which we call the method is called the **receiver**.
