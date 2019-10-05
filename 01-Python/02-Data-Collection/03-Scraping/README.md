@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 soup = BeautifulSoup(open("pages/carrot.html"), "html.parser")
 
 for city in soup.find_all('div', {'class' : 'm_titre_resultat'}):
-    print(city.text)
+    print(city.text.strip())
 ```
 
 In your terminal, now run:
