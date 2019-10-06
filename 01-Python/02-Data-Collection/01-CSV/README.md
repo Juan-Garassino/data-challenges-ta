@@ -2,7 +2,7 @@ In this challenge, we will learn how to load data from a CSV file with pure Pyth
 
 ## 🔥 Warm-up
 
-⚠️ For this warm-up, there is no `./check.sh` to run, so please read & follow the instructions closely!
+⚠️ For this warm-up, there is no `make` to run, so please read & follow the instructions closely!
 
 Before we use a proper dataset, let's practise on something very simple.
 Open the `data/phone_book.csv` file and add some lines to it. Keep the header!
@@ -63,6 +63,12 @@ Go ahead and open those two files in Sublime Text to try & understand what they 
 
 ⚠️ For this challenge, you _can't_ use `pandas` yet 😉. Let's see how far you can go with just Python & the [`csv` module](https://docs.python.org/3/library/csv.html).
 
-After each question is solved, please run the checks + `add`/`commit`/`push` your code in this current challenge. Don't wait to solve the three questions.
+For this part of the challenge, you can use to check your implementation for the two questions.
+
+```bash
+make
+```
+
+After each question is solved, please run the checks + `add`/`commit`/`push` your code in this current challenge. Don't wait to solve the two questions.
 
 Have fun!

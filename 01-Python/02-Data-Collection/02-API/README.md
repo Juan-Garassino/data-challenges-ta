@@ -109,9 +109,9 @@ Open the `weather.py` file. You will be greated by three empty methods:
 - `weather_forecast(woeid)`
 - `main()`
 
-You need to implement them, in that order. The `./check.sh` will assist you for the first two methods, and for the last one you will need to run the Python program directly with `python weather.py`.
+You need to implement them, in that order. `make` will assist you for the first two methods, and for the last one you will need to run the Python program directly with `python weather.py`.
 
-💡 By the way, did you check the content of `./check.sh`? It just `pylint` for every Python file in your project, and `pytest` for the whole project. You can launch the tests for the weather CLI only with:
+💡 By the way, did you check the content of the `Makefile`? It runs `pylint` for every Python file in your project, and `pytest` for the whole project. You can launch the tests for the weather CLI only with:
 
 ```bash
 pytest -v tests/test_weather.py
