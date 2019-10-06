@@ -1,9 +1,9 @@
 # pylint: disable-all
 
 import unittest
-from sudoku import SudokuSolver
+from sudoku import sudoku_validator
 
-class SudokuSolvertest(unittest.TestCase):
+class sudoku_validatortest(unittest.TestCase):
     def test_valid_grid(self):
         grid = [
             [7,8,4,  1,5,9,  3,2,6],
@@ -19,8 +19,8 @@ class SudokuSolvertest(unittest.TestCase):
             [1,9,5,  2,8,7,  6,3,4]
         ]
 
-        solver = SudokuSolver(grid)
-        self.assertTrue(solver.is_valid())
+        solver = sudoku_validator(grid)
+        self.assertTrue(solver)
 
 
     def test_invalid_grid(self):
@@ -38,8 +38,8 @@ class SudokuSolvertest(unittest.TestCase):
             [1,9,5,  2,8,8,  6,2,4]
         ]
 
-        solver = SudokuSolver(grid)
-        self.assertEqual(solver.is_valid(), False)
+        solver = sudoku_validator(grid)
+        self.assertEqual(solver, False)
 
     def test_invalid_grid2(self):
         grid = [
@@ -56,8 +56,8 @@ class SudokuSolvertest(unittest.TestCase):
             [9,7,8, 3,1,2, 6,4,5]
         ]
 
-        solver = SudokuSolver(grid)
-        self.assertEqual(solver.is_valid(), False)
+        solver = sudoku_validator(grid)
+        self.assertEqual(solver, False)
 
     def test_invalid_grid_column(self):
         grid = [
@@ -74,5 +74,5 @@ class SudokuSolvertest(unittest.TestCase):
             [1,9,5,  2,8,7,  6,3,4]
         ]
 
-        solver = SudokuSolver(grid)
-        self.assertEqual(solver.is_valid(), False)
+        solver = sudoku_validator(grid)
+        self.assertEqual(solver, False)

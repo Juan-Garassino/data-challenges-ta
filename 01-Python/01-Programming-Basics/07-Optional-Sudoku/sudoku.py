@@ -7,3 +7,6 @@ class SudokuSolver:
     def is_valid(self):
         # TODO: implement this!
         pass
+
+def sudoku_validator(grid):
+  return False
