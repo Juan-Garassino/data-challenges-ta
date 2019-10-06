@@ -3,7 +3,7 @@
 import unittest
 from demo import circle_area
 
-class TestSumOfThree(unittest.TestCase):
+class TestDemo(unittest.TestCase):
     def test_returns_3_14_for_radius_1(self):
         expected = 3.14
         actual = circle_area(1)

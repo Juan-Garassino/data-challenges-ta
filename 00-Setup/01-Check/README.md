@@ -11,3 +11,17 @@ here is the formula:
 Open the `demo.py` file and implement it!
 
 There are **3 tests** checked by the `make` command. Make sure they are all green!
+
+## Pushing to Kitt
+
+When `make` is happy and all green, do not forget to push to GitHub!
+
+```bash
+git add demo.py
+git commit --message "Solved the first challenge of the bootcamp \o/"
+git push origin master
+```
+
+Shortly after your push is completed, [GitHub will tell Kitt](https://sebastien.saunier.me/blog/2014/04/21/practical-example-of-using-git-in-a-school.html) about this push thanks to a [webhook](https://developer.github.com/webhooks/).
+
+Kitt will then pull your code, run `make` and update your challenge status (completion + style). You should also see how your buddy of the day is doing!
