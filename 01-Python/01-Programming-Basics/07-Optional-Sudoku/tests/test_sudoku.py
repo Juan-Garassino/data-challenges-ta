@@ -3,7 +3,7 @@
 import unittest
 from sudoku import sudoku_validator
 
-class sudoku_validatortest(unittest.TestCase):
+class SudokuValidatorTest(unittest.TestCase):
     def test_valid_grid(self):
         grid = [
             [7,8,4,  1,5,9,  3,2,6],
