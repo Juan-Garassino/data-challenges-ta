@@ -1,4 +1,4 @@
 # pylint: disable=missing-docstring
 
-def sudoku_validator(grid):
+def sudoku_solver(grid):
   pass
