@@ -43,13 +43,5 @@ grid[i][j]
 Open the `sudoku.py` file and implement the `sudoku_validator()` method. To check if your code is working, you can run the tests with:
 
 ```bash
-./check.sh
+make
 ```
-
-## Done?
-
-We will have a livecode with the whole class very soon. You can practise your Python skill on Codewars (sign in with GitHub!) with the following Kata:
-
-- [Snake and Ladders](https://www.codewars.com/kata/snakes-and-ladders-1/train/python)
-- [Decode the morse code](https://www.codewars.com/kata/decode-the-morse-code/train/python)
-- [Escape the mines!](https://www.codewars.com/kata/escape-the-mines/train/python)

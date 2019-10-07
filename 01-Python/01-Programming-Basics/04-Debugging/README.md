@@ -128,7 +128,7 @@ There are [many more debugger commands](https://docs.python.org/3/library/pdb.ht
 Now that you have learnt how to debug a faulty code, you can run the tests for this challenge:
 
 ```bash
-./check.sh
+make
 ```
 
 You can see that the implementation we ask you is a tad more complicated. We want the `full_name` method to behavor correctly whitespace-wise when given an empty first name _or_ an empty last name.

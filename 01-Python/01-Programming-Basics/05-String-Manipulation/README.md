@@ -45,11 +45,11 @@ Code is all about being smart and knowing how and where to look for the info you
 
 When you think you've found the method you're looking for, and you think you know how to use it, use the Python interpreter to test this method on something! Experimenting on the Python interpreter is a crucial step for beginners.
 
-💡 Everytime you implement a function in the file and some more tests are passing running `./check.sh`, please commit & push your progress!
+💡 Everytime you implement a function in the file and some more tests are passing running `make`, please commit & push your progress!
 
 ```bash
 git add string_methods.py
-git commit -m "Progress on string_methods: passing XXX tests now"
+git commit -m "Progress on string_methods: XXX tests passing"
 git push origin master
 ```
 

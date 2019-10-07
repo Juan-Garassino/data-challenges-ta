@@ -37,6 +37,8 @@ python calc.py 3 - 9
 
 Open the `calc.py` file and implement this behavior! You will find that a `main` function that is automatically executed thanks to [this idiom](https://docs.python.org/3/library/__main__.html).
 
+💡 **Hint**: Don't hesitate to `print()` a lot, to better understand how the program behaves.
+
 ## Going Further
 
 If you have to build a serious CLI tool with Python, please consider the built-in [`argparse`](https://docs.python.org/3/library/argparse.html).
