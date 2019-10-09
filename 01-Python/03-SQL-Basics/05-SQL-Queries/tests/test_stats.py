@@ -6,10 +6,6 @@ import sqlite3
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
 
-# 1. return a dict : DONE
-# 2. compare the result for "Action,Adventure,Comedy" : DONE
-# 3. compare the result for "Drama,Mystery"
-# 4. compare the result for "Documentary"
 class TestStat(unittest.TestCase):
     def test_is_dict(self):
         results = stats_on(db, "Action,Adventure,Comedy")
