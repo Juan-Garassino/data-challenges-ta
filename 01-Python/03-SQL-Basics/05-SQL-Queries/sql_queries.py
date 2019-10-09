@@ -21,9 +21,10 @@ def stats_on(db, genre_name):
 
     request = '''SELECT movies.genres, COUNT(movies.title), ROUND(AVG(movies.minutes), 2)
     FROM movies
-    WHERE movies.genres = "%s"
-    ''' % genre_name
-    stat = db.execute(request)
+    WHERE movies.genres=?
+    '''
+    genre_name = (genre_name,)
+    stat = db.execute(request, genre_name)
     stat = stat.fetchone()
     return {
       "genre": stat[0],
@@ -37,12 +38,13 @@ def top_five_artists(db, genre_name):
     request = '''SELECT directors.name, COUNT(movies.title) AS movie_count
     FROM movies
     INNER JOIN directors ON movies.director_id = directors.director_id
-    WHERE movies.genres = '%s'
+    WHERE movies.genres=?
     GROUP BY directors.name
     ORDER BY movie_count DESC
     LIMIT 5
-    ''' % genre_name
-    results = db.execute(request)
+    '''
+    genre_name = (genre_name,)
+    results = db.execute(request, genre_name)
     results = results.fetchall()
     return results
 
@@ -50,8 +52,8 @@ def top_five_artists(db, genre_name):
 # results = detailed_movies(db)
 # print(len(results))
 # print(results[0])
-# results = stats_on(db, "Drama,Mystery")
-results = top_five_artists(db, "Drama,Mystery")
+results = stats_on(db, "Drama,Mystery")
+#results = top_five_artists(db, "Drama,Mystery")
 print(results)
 #for r in results:
 #    print(r)
