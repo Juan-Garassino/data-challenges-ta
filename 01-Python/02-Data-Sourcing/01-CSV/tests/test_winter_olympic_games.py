@@ -14,6 +14,6 @@ class TestWinterOlympicGames(unittest.TestCase):
         country = country_with_most_gold_medals(2002, 2014)
         self.assertEqual(country, 'Canada')
 
-    def test_country_with_most_gold_medals_between_1924_and_1972(self):
+    def test_country_with_most_gold_medals_between_1994_and_1998(self):
         country = country_with_most_gold_medals(1994, 1998)
         self.assertEqual(country, 'Germany')
