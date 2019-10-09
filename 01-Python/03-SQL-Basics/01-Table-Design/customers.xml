@@ -37,7 +37,7 @@
          <type label="Bit" length="0" sql="bit" quote="" />
       </group>
    </datatypes>
-   <table x="569" y="150" name="users">
+   <table x="569" y="150" name="clients">
       <row name="id" null="1" autoincrement="1">
          <datatype>INTEGER</datatype>
          <default>NULL</default>
