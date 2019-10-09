@@ -33,11 +33,11 @@ def long_movies(db, min_length):
     # TO-DO: return a list of movies' names
     # verifying: minutes > min_length, sorted by length (ascending)
 
-    request = '\
-      SELECT title FROM movies\
-      WHERE minutes > ?\
-      ORDER BY minutes ASC\
-    '
+    request = '''\
+SELECT title FROM movies
+WHERE minutes > ?
+ORDER BY minutes ASC
+    '''
     results = db.execute(request, (min_length,))
     results = [val for sublist in results.fetchall() for val in sublist]
     return results
