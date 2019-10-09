@@ -48,6 +48,6 @@ class Users(unittest.TestCase):
         t = []
         for row in table[0].find_all('row'):
             t.append(row.get('name'))
-            self.assertEqual(row.get('name') in ['name', 'birth_year', 'death_year', 'id'], True)
-        self.assertEqual(len(t), 4)
+            self.assertEqual(row.get('name') in ['name', 'birth_year', 'death_year', 'imdb_director_id', 'id'], True)
+        self.assertEqual(len(t), 5)
 
