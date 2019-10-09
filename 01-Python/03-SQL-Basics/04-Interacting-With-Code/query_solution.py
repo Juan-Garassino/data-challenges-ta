@@ -6,12 +6,6 @@ def directors_count(db):
     results = db.execute(request)
     return int(results.fetchone()[0])
 
-def directors_with_name(db, name):
-    # TO-DO: count number of rows in table table_name
-
-    results = db.execute('SELECT COUNT(*) FROM directors WHERE name=?', (name,))
-    return int(results.fetchone()[0])
-
 def sorted_directors(db):
     # TO-DO: return a list of directors' names sorted alphabetically
 
@@ -29,15 +23,21 @@ def love_movies(db):
     love_movies_list = [val for sublist in results.fetchall() for val in sublist]
     return love_movies_list
 
+def directors_with_name(db, name):
+    # TO-DO: count number of director with this name
+
+    results = db.execute('SELECT COUNT(*) FROM directors WHERE name LIKE ?', (f"%{name}%",))
+    return int(results.fetchone()[0])
+
 def long_movies(db, min_length):
     # TO-DO: return a list of movies' names
     # verifying: minutes > min_length, sorted by length (ascending)
 
-    request = f'\
-      SELECT title FROM movies\
-      WHERE minutes > {min_length}\
-      ORDER BY minutes ASC\
-    '
-    results = db.execute(request)
+    request = '''\
+SELECT title FROM movies
+WHERE minutes > ?
+ORDER BY minutes ASC
+    '''
+    results = db.execute(request, (min_length,))
     results = [val for sublist in results.fetchall() for val in sublist]
     return results

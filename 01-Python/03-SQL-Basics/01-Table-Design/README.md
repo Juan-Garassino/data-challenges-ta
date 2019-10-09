@@ -8,10 +8,10 @@ The goal of this first challenge is to create our first table using the [SQL Des
 
 Let's create a table to store customers. The table should have these columns:
 
-- my_name
-- Last name
-- Email
-- City
+- first_name
+- last_name
+- email
+- city
 
 NOTE: Remember, all of our tables will also have an `id` column!
 
