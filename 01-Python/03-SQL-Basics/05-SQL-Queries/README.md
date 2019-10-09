@@ -1,44 +1,41 @@
 ## Background & Objectives
 
-Now it's time for something more complex. We'll be using `JOIN` queries to read data from multiple tables. To acquire instant Jedi skills in `JOIN` queries, [read this](http://stackoverflow.com/questions/17946221/sql-join-and-different-types-of-joins) - the picture is really helpful. If you speak French, you can also [read this one](http://sql.sh/cours/jointures).
-
+Now it's time for something more complex. We'll be using `JOIN` queries to read data from multiple tables. To acquire instant Jedi skills in `JOIN` queries, [read this](http://stackoverflow.com/questions/17946221/sql-join-and-different-types-of-joins) - the picture is really helpful.
 ## Specs
 
-Complete the code in `join_queries.rb`. Each method takes a `db` argument, which is an instance
-of `SQLite3::Database` on which you can call the `execute` method. Exactly like in the previous exercise.
+Complete the code in `join_queries.rb`. Each method takes a `db` argument, which is an Cursor Object
+on which you can call the `execute` method. Exactly like in the previous exercise.
 
 ### Detailed Tracks
 
-- Implement `detailed_tracks` to get all the tracks with the corresponding artist name and album titles.
-- Your output should be an array of arrays. **Hint:** you will have to use two `JOIN` sql statements.
+- Implement `detailed_movies` to get all the movies title with the corresponding director name and genre name.
+- Your output should be an array of arrays. **Hint:** you will have to use one `JOIN` sql statements.
 
-This method should return an array of tracks. Each element of this array would be an array as well: first element being the track title, second element the track album name, third element the track's artist name.
+This method should return an list of movies. Each element of this array would be an tuple: first element being the movies title, second element the movie director name, third element the movie's genre name.
 
 ### Statistics
 
-For each genre of music, find the stats, i.e. the number of tracks and the average song length (in minutes).
+For each genre of movie, find the stats, i.e. the number of movies and the average movie length (in minutes).
 
 The method should return a Hash of statistics:
 
-```ruby
-stats_on(db, "Rock")
-# => {
-#      category: "Rock",
-#      number_of_songs: 1297,
-#      avg_length: 4.7
-#    }
+```python
+results = stats_on(db, "Action,Adventure,Comedy")
+print(results)
+=> {
+    'genre': 'Action,Adventure,Comedy',
+    'number_of_movies': 153,
+    'avg_length': 100.98
+  }
+
 ```
 
 ### Top 5
 
-Find the top 5 artists that made the most songs in a given genre. This method should return an
-array of arrays with the artist name and the number of songs of the given genre for each artist.
+Find the top 5 directos that made the most movies in a given genre. This method should return a listt of tuple with the director name and the number of movies of the given genre for each director.
 
-```ruby
-top_five_artists(db, 'Rock')
-# => [
-#      [ 'Led Zeppelin', 114 ],  # Led Zeppelin has 114 Rock songs.
-#      [ 'U2',           112 ]
-#      # etc.
-#    ]
+```python
+results = top_five_artists(db, "Action,Adventure,Comedy")
+print(type(results[0]))
+# => [('Robert Rodriguez', 5), ('Jonathan Frakes', 4), ('Anthony C. Ferrante', 3), ('Barry Sonnenfeld', 3), ('Jackie Chan', 3)]
 ```
