@@ -1,16 +1,13 @@
-# pylint: disable=c0103
-''' Complete each fonction with the right query '''
-
 def directors_count(db):
-    ''' TO-DO: use 'db' to execute an SQL query against the database.
-    Return directors count in database. '''
+    # TO-DO: use 'db' to execute an SQL query against the database.
+    # Return directors count in database.
 
     request = 'SELECT COUNT(*) FROM directors;'
     results = db.execute(request)
     return int(results.fetchone()[0])
 
 def sorted_directors(db):
-    ''' TO-DO: return a list of directors' names sorted alphabetically'''
+    # TO-DO: return a list of directors' names sorted alphabetically
 
     request = 'SELECT name FROM directors ORDER BY name'
     results = db.execute(request)
@@ -19,7 +16,7 @@ def sorted_directors(db):
     return directors_list
 
 def love_movies(db):
-    ''' TO-DO: return a list of love movies' names'''
+    # TO-DO: return a list of love movies' names
 
     request = 'SELECT title FROM movies WHERE title LIKE "%love%" ORDER BY title'
     results = db.execute(request)
@@ -27,14 +24,14 @@ def love_movies(db):
     return love_movies_list
 
 def directors_with_name(db, name):
-    '''TO-DO: count number of director with this name'''
+    # TO-DO: count number of director with this name
 
     results = db.execute('SELECT COUNT(*) FROM directors WHERE name LIKE ?', (f"%{name}%",))
     return int(results.fetchone()[0])
 
 def long_movies(db, min_length):
-    ''' TO-DO: return a list of movies' names
-    verifying: minutes > min_length, sorted by length (ascending)'''
+    # TO-DO: return a list of movies' names
+    # verifying: minutes > min_length, sorted by length (ascending)
 
     request = '''\
 SELECT title FROM movies
