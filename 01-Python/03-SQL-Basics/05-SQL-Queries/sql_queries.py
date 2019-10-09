@@ -1,7 +1,7 @@
 def detailed_movies(db):
     # TODO: return the list of movies with their genre and director.
     request = '''
-          YOUR CODE HERE
+          YOUR SQL REQUEST HERE
     '''
     # execute your SQL request
     results = db.execute(request)
