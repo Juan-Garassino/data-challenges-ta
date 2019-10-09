@@ -6,7 +6,8 @@ def detailed_movies(db):
     # execute your SQL request
     results = db.execute(request)
 
-    # cursor.fetchall() fetches all the rows of a query result. It returns all the rows as a list of tuples
+    # cursor.fetchall() fetches all the rows of a query result.
+    # It returns all the rows as a list of tuples
     results = results.fetchall()
     return results
 
