@@ -3,7 +3,8 @@
 import sys
 
 def full_name(first_name, last_name):
-    # TODO: put a debugger here
+    import ipdb; ipdb.set_trace()
+
 
     name = f"{first_name.capitalize()}{last_name.capitalize()}"
     return name
