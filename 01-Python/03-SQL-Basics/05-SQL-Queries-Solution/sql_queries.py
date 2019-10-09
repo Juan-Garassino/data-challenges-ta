@@ -10,7 +10,7 @@ def detailed_movies(db):
     request = '''
           SELECT movies.title, movies.genres, directors.name
           FROM movies
-          INNER JOIN directors ON movies.director_id = directors.director_id
+          INNER JOIN directors ON movies.director_id = directors.id
     '''
     results = db.execute(request)
     results = results.fetchall()
@@ -37,7 +37,7 @@ def top_five_artists(db, genre_name):
 
     request = '''SELECT directors.name, COUNT(movies.title) AS movie_count
     FROM movies
-    INNER JOIN directors ON movies.director_id = directors.director_id
+    INNER JOIN directors ON movies.director_id = directors.id
     WHERE movies.genres=?
     GROUP BY directors.name
     ORDER BY movie_count DESC
