@@ -1,47 +1,45 @@
-import unittest
 import sqlite3
 
-conn = sqlite3.connect('data/movies.sqlite') #??????
+conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
 
-def artist_count(db): #to_refacto
-  # TODO: use `db` to execute an SQL query against the database.
+def directors_count(db):
+  # TO-DO: use 'db' to execute an SQL query against the database.
+  # Return directors count in database.
 
-    request = '''SELECT COUNT(*) FROM artists'''
+    request = 'SELECT COUNT(*) FROM directors'
     results = db.execute(request)
     return results
 
 def number_of_rows(db, table_name):
-  # TODO: count number of rows in table table_name
+  # TO-DO: count number of rows in table table_name
 
-    request = '''SELECT COUNT(*) FROM #{table_name}
-    '''
+    request = f'SELECT COUNT(*) FROM {table_name}'
     results = db.execute(request)
     return results
 
-def sorted_artists(db):
-  # TODO: return array of artists' names sorted alphabetically
+def sorted_directors(db):
+  # TO-DO: return a list of directors' names sorted alphabetically
 
-    request = '''SELECT Name FROM artists ORDER BY Name
-    '''
+    request = 'SELECT name FROM directors ORDER BY name'
     results = db.execute(request)
     return results
 
-def love_tracks(db):
-  # TODO: return array of love songs' names
+def love_movies(db):
+  # TO-DO: return a list of love movies' names
 
-    request = '''SELECT Name FROM tracks WHERE Name LIKE '%love%' ORDER BY Name
-    '''
+    request = 'SELECT title FROM movies WHERE title LIKE "%love%" ORDER BY title'
     results = db.execute(request)
     return results
 
-def long_tracks(db, min_length):
-  # TODO: return an array of tracks' names verifying: duration > min_length (minutes) sorted by length (ascending)
+def long_movies(db, min_length):
+  # TO-DO: return a list of movies' names
+  # verifying: minutes > min_length, sorted by length (ascending)
 
-    request = '''
-    SELECT Name FROM tracks
-    WHERE milliseconds > #{min_length} * 60000
-    ORDER BY milliseconds ASC
-    '''
+    request = '\
+      SELECT title FROM movies\
+      WHERE minutes > {min_length}\
+      ORDER BY minutes ASC\
+    '
     results = db.execute(request)
     return results
