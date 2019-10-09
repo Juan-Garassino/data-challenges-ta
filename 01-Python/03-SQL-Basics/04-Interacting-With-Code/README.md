@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-Now it is time to use python to interact with the `movies` database. For that we will use a library that come with Anaconda, called **sqlite3**.
+Now it is time to use python to interact with the `movies` database. For that we will use a library that comes with Anaconda, called **sqlite3**.
 
 The goal of this challenge is to talk to the database **from our Python code**.
 
