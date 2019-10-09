@@ -3,7 +3,7 @@
 Now it's time for something more complex. We'll be using `JOIN` queries to read data from multiple tables. To acquire instant Jedi skills in `JOIN` queries, [read this](http://stackoverflow.com/questions/17946221/sql-join-and-different-types-of-joins) - the picture is really helpful.
 ## Specs
 
-Complete the code in `join_queries.rb`. Each method takes a `db` argument, which is an Cursor Object
+Complete the code in `sql_queries.rb`. Each method takes a `db` argument, which is an Cursor Object
 on which you can call the `execute` method. Exactly like in the previous exercise.
 
 ### Detailed Tracks
