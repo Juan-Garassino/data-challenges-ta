@@ -6,32 +6,13 @@ You can read more on [en.wikipedia.org/wiki/SQLite](http://en.wikipedia.org/wiki
 The goal of this first exercise is to use the command line to read and query
 a sample database called `movies.sqlite` that we give you
 
-### Setup
-
-First test just to see if you have sqlite3 installed on your computer:
-
-```bash
-sqlite3 --version
-```
-
-If you don't have it ask a TA!
-
-You can open the database we provided you to make some queries on it:
-
-```bash
-sqlite3 data/movies.sqlite
-```
-
-You are now in the interactive sqlite3 console and you can write your SQL queries to the database.
-You can exit the sqlite3 console with `.quit` or `CTRL+D`.
-
 ## Tools
 
-You can also use a **DBeaver** application to read the SQLite database, explore the schema and even **run SQL queries**.
+Use **DBeaver** application to read the SQLite database, explore the schema and even **run SQL queries**.
 
 - [DBeaver](https://dbeaver.io/)
 
-❓Should I use the command-line `sqlite3` or the visual tool above? Well, both are useful! It's good to learn a bit to manipulate the command line for two reasons. On the one hand, a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) allows you to focus on the SQL queries. On the other hand, a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) tool will prove helpful to explore a database schema structure (tables? columns? etc.). Try both!
+❓Should I use the command-line `sqlite3` or the visual tool above? Well, both are useful! It's good to learn a bit to manipulate the command line for two reasons. On the one hand, a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) allows you to focus on the SQL queries. On the other hand, a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) tool will prove helpful to explore a database schema structure (tables? columns? etc.).
 
 ## Specs
 

@@ -12,13 +12,12 @@ system with `customers`, `products` and `orders`.
 
 Here are the requirements of our system:
 
-- A customer has a `first_name`, `last_name`, an `e_mail` and a `city`;
-- A product has a `name` and a `unit_price`;
+- A customer has a `first_name`, `last_name`, an `e_mail` and a `city`,
+- A product has a `name` and a `unit_price`.
 - An order is defined by a `date_of_order`.
-
-- The e-commerce manages several `customers`;
-- A customer can make many `orders`, but an order is created by only one user;
-- A order can have several `products`;
+- The e-commerce manages several `customers`.
+- A customer can make many `orders`, but an order is created by only one user.
+- A order can have several `products`.
 - A product can be in diferent `orders`.
 
 
