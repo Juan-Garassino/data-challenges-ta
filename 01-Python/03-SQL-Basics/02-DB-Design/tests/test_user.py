@@ -65,7 +65,7 @@ class Users(unittest.TestCase):
         soup = BeautifulSoup(data, 'xml')
         table = soup.find_all('table', attrs={"name": "orders"})
         for row in table[0].find_all('row'):
-            self.assertEqual(row.get('name') in ['date', 'id_customers', 'id'], True)
+            self.assertEqual(row.get('name') in ['date_of_order', 'customer_id', 'id'], True)
 
 #5 should havee a product_orders table
     def test_products_orders_table_exists(self):
@@ -84,7 +84,7 @@ class Users(unittest.TestCase):
         soup = BeautifulSoup(data, 'xml')
         table = soup.find_all('table', attrs={"name": "product_orders"})
         for row in table[0].find_all('row'):
-            self.assertEqual(row.get('name') in ['id_products', 'id_orders', 'quantity', 'id'], True)
+            self.assertEqual(row.get('name') in ['product_id', 'order_id', 'quantity', 'id'], True)
 
 
 
