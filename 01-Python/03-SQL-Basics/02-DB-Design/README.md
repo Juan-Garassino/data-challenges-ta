@@ -8,7 +8,7 @@ The goal of this first challenge is to become familiar with database design,
 #### E-commerce database design
 
 There are many ways to build an e-commerce database, but let's start by building a basic
-system with users, questions, responses and votes.
+system with `customers`, `products` and `orders`.
 
 Here are the requirements of our system:
 
