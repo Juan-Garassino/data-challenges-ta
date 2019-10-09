@@ -14,7 +14,8 @@ class TestTop5(unittest.TestCase):
 
     def test_return_right_results1(self):
         results = top_five_artists(db, "Action,Adventure,Comedy")
-        expected = [('Robert Rodriguez', 5), ('Jonathan Frakes', 4), ('Anthony C. Ferrante', 3), ('Barry Sonnenfeld', 3), ('Jackie Chan', 3)]
+        results = [[results[0][0], results[0][1]], [results[1][0], results[1][1]], [results[2][0], results[2][1]], [results[3][0], results[3][1]],[results[4][0], results[4][1]]]
+        expected = [['Robert Rodriguez', 5], ['Jonathan Frakes', 4], ['Anthony C. Ferrante', 3], ['Barry Sonnenfeld', 3], ['Jackie Chan', 3]]
         self.assertEqual(results, expected)
 
     def test_return_5_results(self):
@@ -23,5 +24,6 @@ class TestTop5(unittest.TestCase):
 
     def test_return_right_results2(self):
         results = top_five_artists(db, "Drama,Mystery")
-        expected = [('Aaron Schneider', 1), ('Alain Resnais', 1), ('Asghar Farhadi', 1), ('Bill Condon', 1), ('Chang-dong Lee', 1)]
+        results = [[results[0][0], results[0][1]], [results[1][0], results[1][1]], [results[2][0], results[2][1]], [results[3][0], results[3][1]],[results[4][0], results[4][1]]]
+        expected = [['Aaron Schneider', 1], ['Alain Resnais', 1], ['Asghar Farhadi', 1], ['Bill Condon', 1], ['Chang-dong Lee', 1]]
         self.assertEqual(results, expected)
