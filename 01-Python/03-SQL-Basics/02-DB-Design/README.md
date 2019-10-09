@@ -7,21 +7,20 @@ The goal of this first challenge is to become familiar with database design,
 
 #### E-commerce database design
 
-There are many ways to build a e-commerce database, but let's start by building a basic
+There are many ways to build an e-commerce database, but let's start by building a basic
 system with users, questions, responses and votes.
 
 Here are the requirements of our system:
 
-- A customer has a first_name, last_name, and an e-mail. It is alsos charaterized by a city
-- A product has a name and a unique_price
-- An order is defined by a date
-- A customer has a name and is charaterized by a city
+- A customer has a `first_name`, `last_name`, an `e_mail` and a `city`;
+- A product has a `name` and a `unit_price`;
+- An order is defined by a `date_of_order`.
 
 
-- The e-commerce manages several `customers`
-- A customer can have many `orders`, but a order is created by only one user
-- A order has several `products`
-- A product can be in diferent `orders`
+- The e-commerce manages several `customers`;
+- A customer can make many `orders`, but an order is created by only one user;
+- A order can have several `products`;
+- A product can be in diferent `orders`.
 
 #### Design the schema
 
