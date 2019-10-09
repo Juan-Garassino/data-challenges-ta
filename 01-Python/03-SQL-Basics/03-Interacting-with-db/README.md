@@ -12,7 +12,7 @@ Use **DBeaver** application to read the SQLite database, explore the schema and 
 
 - [DBeaver](https://dbeaver.io/)
 
-❓Should I use the command-line `sqlite3` or the visual tool above? Well, both are useful! It's good to learn a bit to manipulate the command line for two reasons. On the one hand, a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) allows you to focus on the SQL queries. On the other hand, a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) tool will prove helpful to explore a database schema structure (tables? columns? etc.).
+❓Should I use the command-line `sqlite3` or the visual tool above? Well, both are useful! It's good to learn both for two reasons. On the one hand, a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) allows you to focus on the SQL queries. On the other hand, a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) tool will prove helpful to explore a database schema structure (tables? columns? etc.).
 
 ## Specs
 
