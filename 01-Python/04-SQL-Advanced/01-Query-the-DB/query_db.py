@@ -1,15 +1,16 @@
 # pylint:disable=missing-module-docstring
 
 def query_orders(db):
-    """TODO: return the list of all orders with their album and artist"""
+    """TODO: return a list of orders with each column"""
     request = '''SELECT * FROM orders'''
     results = db.execute(request)
     return results
 
 
 def get_orders_range(db, date_from, date_to):
-    """TO DO: orders with OrderDate between date_from to date_to"""
-    request = '''
+    """TO DO: return a list of orders with each column with OrderDate between date_from to date_to"""
+    request = '''SELECT * FROM orders
+    where
     '''
     results = db.execute(request)
     return results
