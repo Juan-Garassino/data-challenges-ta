@@ -6,6 +6,5 @@ def movie_duration_buckets(db):
 def longuest_movies_by_director(db, first_letter):
     pass
 
-
 def top_3_longuest(db, first_letter):
     pass
