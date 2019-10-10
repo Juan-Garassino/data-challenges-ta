@@ -4,7 +4,9 @@ In this section, we cover the SQL PARTITION BY clause and, in particular, the di
 We use SQL PARTITION BY to divide the result set into partitions and perform computation on each subset of partitioned data.
 
 ## Specs
+
 ### Group By Customers
+
 We use SQL GROUP BY clause to group results by specified column. For this exercise you have to implement the function group_by_customer() to get the following values:
 - Average order value per customer
 - Minimum order value per customer
@@ -12,6 +14,7 @@ We use SQL GROUP BY clause to group results by specified column. For this exerci
 - Sum of all orders per customer
 
 ### Partition By Customers
+
 We can use the SQL PARTITION BY clause with the:
 - OVER clause: to specify the column on which we need to perform aggregation
 - RANK clause: to have a row number of each row.
@@ -27,6 +30,7 @@ Let us rerun a similar scenario with the SQL PARTITION BY and RANK clauses to gr
 
 
 ### TO DO
+
 - Rank the OrderDetails in each Order by their total price (Quantity * UnitPrice) and return products with rank less than or equal to 2:
 
 SELECT * FROM (
