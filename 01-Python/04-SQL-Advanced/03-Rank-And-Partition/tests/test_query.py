@@ -14,15 +14,15 @@ class TestQuery(unittest.TestCase):
         self.assertIs(type(solution[0]), tuple)
         self.assertEqual(res, solution)
 
-    def test_longuest_movies_by_director(self):
-        res = longuest_movies_by_director(db, "X")
+    def test_longest_movies_by_director(self):
+        res = longest_movies_by_director(db, "X")
         solution = [('Of Gods and Men', 'Xavier Beauvois', 122, 1), ('Laurence Anyways', 'Xavier Dolan', 168, 1), ('Mommy', 'Xavier Dolan', 139, 2), ('Tom at the Farm', 'Xavier Dolan', 102, 3), ('Heartbeats', 'Xavier Dolan', 101, 4), ("It's Only the End of the World", 'Xavier Dolan', 97, 5), ('I Killed My Mother', 'Xavier Dolan', 96, 6), ('The Divide', 'Xavier Gens', 112, 1), ('Frontier(s)', 'Xavier Gens', 108, 2), ('Hitman', 'Xavier Gens', 100, 3)]
         self.assertIs(type(solution), list)
         self.assertIs(type(solution[0]), tuple)
         self.assertEqual(res, solution)
 
-    def test_top_3_longuest(self):
-        res = top_3_longuest(db, "X")
+    def test_top_3_longest(self):
+        res = top_3_longest(db, "X")
         solution = [('Of Gods and Men', 'Xavier Beauvois', 122, 1), ('Laurence Anyways', 'Xavier Dolan', 168, 1), ('Mommy', 'Xavier Dolan', 139, 2), ('Tom at the Farm', 'Xavier Dolan', 102, 3), ('The Divide', 'Xavier Gens', 112, 1), ('Frontier(s)', 'Xavier Gens', 108, 2), ('Hitman', 'Xavier Gens', 100, 3)]
         self.assertIs(type(solution), list)
         self.assertIs(type(solution[0]), tuple)
