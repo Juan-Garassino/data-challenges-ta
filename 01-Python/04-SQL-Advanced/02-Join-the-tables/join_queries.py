@@ -8,16 +8,18 @@ db = conn.cursor()
 
 
 def detailed_orders(db):
-    """TODO: return the list of all orders with their buyer (customer) and their seller (employee)"""
+    """TODO: return the list of all orders (order_id, customer.contact_name, employee.firstname) ordered by order_id"""
     request = '''SELECT orders.OrderID, customers.ContactName, employees.FirstName FROM orders
         JOIN customers ON orders.CustomerID = customers.CustomerID
         JOIN employees ON orders.EmployeeID = employees.EmployeeID
+        ORDER BY orders.OrderID
     '''
     results = db.execute(request)
+    results = results.fetchall()
     return results
 
 def spent_per_customer(db):
-    """TODO: return the total amount spent per customer ordered by ascending total amount
+    """TODO: return the total amount spent per customer ordered by ascending total amount (keep only 2 numbers after the ',')
     Exemple :
         Jean   |   100
         Marc   |   110
@@ -25,7 +27,7 @@ def spent_per_customer(db):
         ...
     """
     request = '''SELECT customers.ContactName,
-                    SUM(orderdetails.UnitPrice * orderdetails.Quantity) AS "Total Spent"
+                    ROUND(SUM(orderdetails.UnitPrice * orderdetails.Quantity), 2) AS "Total Spent"
         FROM customers
         JOIN orders ON orders.CustomerID = customers.CustomerID
         JOIN orderdetails ON orders.OrderID = orderdetails.OrderID
@@ -33,6 +35,7 @@ def spent_per_customer(db):
         ORDER BY "Total Spent"
     '''
     results = db.execute(request)
+    results = results.fetchall()
     return results
 
 def best_employee(db):
@@ -47,12 +50,25 @@ def best_employee(db):
         LIMIT 1
     '''
     results = db.execute(request)
+    results = results.fetchall()
+    return results
+
+def orders_per_customer(db):
+    '''TO DO: return a list of tuple where each tupe contains the contactName of the customer and the number of orders he made (contactName, number_of_orders). Order the list by ascending number of orders'''
+    request = '''
+          SELECT customers.ContactName, count(orders.OrderID)
+          FROM customers
+          LEFT JOIN orders ON orders.CustomerID = customers.CustomerID
+          GROUP BY orders.CustomerID
+          ORDER BY count(orders.OrderID)
+    '''
+    results = db.execute(request)
+    results = results.fetchall()
     return results
 
 #results = detailed_orders(db)
-#results = spent_per_customer(db)
-results = best_employee(db)
+results = orders_per_customer(db)
+#results = best_employee(db)
 print(type(results))
-results = results.fetchall()
-for r in results:
-    print(r)
+print(len(results))
+print(results)
