@@ -12,7 +12,7 @@ def sorted_directors(db):
     pass
 
 def love_movies(db):
-    ''' TO-DO: return a list of movies with love in the names '''
+    ''' TO-DO: return a list of movies with love in the names, sorted alphabetically '''
     pass
 
 def directors_with_name(db, name):
