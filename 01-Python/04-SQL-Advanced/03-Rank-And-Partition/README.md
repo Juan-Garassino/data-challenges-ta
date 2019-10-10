@@ -13,9 +13,9 @@ First. What is a bucket?
 
 
 Hint 💡 :
-```
+```python
 movie_duration_buckets(db)
-=> [(30, 292), (60, 764), (90, 1362), [...],(690, 2), (900, 1), (1020, 1)]
+# => [(30, 292), (60, 764), (90, 1362), [...],(690, 2), (900, 1), (1020, 1)]
 ```
 
 ### Partition By Directors
@@ -29,9 +29,9 @@ In the previous example, we used `GROUP BY` with the Minutes column to bucket ou
 👉 Implement the function `longest_movies_by_director()` to find the longest movie of each director.
 
 Hint 💡 :
-```
+```python
 longest_movies_by_director(db)
-=> [[('Of Gods and Men', 'Xavier Beauvois', 122, 1), ('Laurence Anyways', 'Xavier Dolan', 168, 1), [...], ('Hitman', 'Xavier Gens', 100, 3)]
+# => [[('Of Gods and Men', 'Xavier Beauvois', 122, 1), ('Laurence Anyways', 'Xavier Dolan', 168, 1), [...], ('Hitman', 'Xavier Gens', 100, 3)]
 ```
 
 ### Top-3 longest movies
