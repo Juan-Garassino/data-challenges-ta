@@ -3,7 +3,7 @@ import unittest
 from query import *
 import sqlite3
 
-conn = sqlite3.connect('db/movies.db')
+conn = sqlite3.connect('db/movies.sqlite')
 db = conn.cursor()
 
 class TestQuery(unittest.TestCase):
