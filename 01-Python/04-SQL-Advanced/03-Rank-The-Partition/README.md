@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-In this section, we will cover the SQL `PARTITION BY` clause and, in particular, the difference with `GROUP BY` in a `SELECT` statement. Through these exercises, you will also explore several use case of SQL PARTITION BY.
+In this section, we will cover the SQL `PARTITION BY` clause and, in particular, the difference with `GROUP BY` in a SELECT` statement. Through these exercises, you will also explore several use case of SQL PARTITION BY.
 
 We use SQL PARTITION BY to divide the result set into partitions and perform computation on each subset of partitioned data.
 

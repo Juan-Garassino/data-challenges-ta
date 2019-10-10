@@ -8,6 +8,7 @@ Open the file `queries_db.py` to answer the following questions. Don't forget yo
 
 There are three methods to implement:
 
+
 - Implement `query_orders` to get all the orders.
 - Implement `get_orders_range` to get all the orders orders made between two given dates.
 - Implement `get_waiting_time` to get all the orders with the delivery time in ascending order 👌
