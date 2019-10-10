@@ -4,7 +4,7 @@ Now we are going to dive into `JOIN` queries to read data from multiple tables. 
 
 ## Specs
 
-👉 Complete the code in `join_queries.py`. Each method takes a `db` argument, which is an Cursor Object on which you can call the `execute` method. Exactly like in the previous exercise.
+👉 Complete the code in `join_queries.py`. Each method takes a `db` argument, which is a Cursor Object on which you can call the `execute` method. Exactly like in the previous exercise.
 
 There are four methods to implement:
 
@@ -24,5 +24,3 @@ Implement `best_employee method` to determine who's the best employee! By "best 
 Implement `orders_per_customer` to get the amount of Orders made by each Customer. As you can guess with the title, you should also display customer(s) with no order?
 
 **Hint**: JOIN LEFT could be usefull. And in this case, the driving table is important...
-
-👉 Implement `best_employee method` to determine who's the best employee! By "best employee", we mean the one who sell the most. 👑
