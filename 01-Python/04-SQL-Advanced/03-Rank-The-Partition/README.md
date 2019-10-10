@@ -1,14 +1,16 @@
 ## Background & Objectives
 
-In this section, we will cover the SQL `PARTITION BY` clause and, in particular, the difference with `GROUP BY` in a SELECT` statement. Through these exercises, you will also explore several use case of SQL PARTITION BY.
+In this section, we will cover the SQL `PARTITION BY` clause and the difference with `GROUP BY` in a `SELECT` statement. You will also explore several use cases of SQL `PARTITION BY`.
 
-We use SQL PARTITION BY to divide the result set into partitions and perform computation on each subset of partitioned data.
+SQL `PARTITION BY` is used to divide the result set into partitions and perform computation on each subset of the partitioned data.
 
 ## Specs
 
 ### Group By Customers
 
-We use SQL GROUP BY clause to group results by specified column. For this exercise you have to implement the function group_by_customer() to get the following values:
+SQL `GROUP BY` clause is used to group results by a specified column.
+
+👉 Implement `group_by_customer()` to get the following values:
 - Average order value per customer
 - Minimum order value per customer
 - Maximum order value per customer
@@ -16,21 +18,21 @@ We use SQL GROUP BY clause to group results by specified column. For this exerci
 
 ### Partition By Customers
 
-We can use the SQL PARTITION BY clause with the:
-- OVER clause: to specify the column on which we need to perform aggregation
-- RANK clause: to have a row number of each row.
+The SQL `PARTITION BY` clause can be used with the:
+- OVER clause: to specify the column on which to perform aggregation
+- RANK clause: to have the rank of each row.
 
-In the previous example, we used Group By with CustomerID column and calculated average, minimum, maximum values and total.
+In the previous example, we have used `GROUP BY` for the CustomerID column and calculated average, minimum, maximum values and total.
 
-Let us rerun a similar scenario with the SQL PARTITION BY and RANK clauses to group results by customer. Implement the function partition_by_customer() to get the following values for each orderDetail:
+Let's switch to a similar scenario with the SQL `PARTITION BY` and `RANK` clauses to group results by customer.
+
+👉 Implement the function `partition_by_customer()` to get the following values for each orderDetail:
 - the CustomerID
 - the Quantity
 - the UnitPrice
 - the TotalPrice (Quantity * UnitPrice)
 - the Rank
 
-
-### TO DO
-- Rank the OrderDetails in each Order by their total price (Quantity * UnitPrice) and return products with rank less than or equal to 2:
+Then **rank** the OrderDetails of each order by their total price (Quantity * UnitPrice) and return the products which rank is less than or equal to 2:
 
 
