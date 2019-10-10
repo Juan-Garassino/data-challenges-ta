@@ -16,6 +16,6 @@ There are three methods to implement:
 
 👉 Implement `spent_per_customer` to get the total amount spent per customer - in ascending order. 👌
 
-### Who sell the most ?
+### Who sell the most?
 
 👉 Implement `best_employee method` to determine who's the best employee! By "best employee", we mean the one who sell the most. 👑

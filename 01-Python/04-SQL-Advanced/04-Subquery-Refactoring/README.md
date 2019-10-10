@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-In the section we will discover subquery-refactoring! Indeed we may need to nest previous SQL queries coded into a new one to reduce repetition and simplify complex SQL statements. This is performed by the `WITH` 👌
+In the section we will discover subquery-refactoring! Indeed we may need to nest previous SQL queries coded into a new one to reduce repetition and simplify complex SQL statements. This is performed by the `WITH`. 👌
 
 ## Specs
 
