@@ -1,4 +1,4 @@
-# pylint:disable=missing-module-docstring
+# pylint:disable=C0111,C0103
 
 def query_orders(db):
     """TODO: return a list of orders with displaying each column"""
