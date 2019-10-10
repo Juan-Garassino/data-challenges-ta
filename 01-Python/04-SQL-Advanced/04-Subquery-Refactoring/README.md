@@ -21,6 +21,7 @@ Can you see that the main part has already been done in the 2 previous questions
 👉 Implement the function `display_best_buyers` to get all the ID's and the average amount of these best buyers!
 
 You should get this:
+
 ```python
 display_best_buyers(db)
 => [(572.91, 2), (870.01, 4), (548.15, 5)]
