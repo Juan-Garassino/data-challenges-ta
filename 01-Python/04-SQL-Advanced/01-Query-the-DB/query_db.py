@@ -6,7 +6,7 @@ db = conn.cursor()
 
 def query_orders(db):
     """TODO: return a list of orders with displaying each column"""
-    request = '''SELECT * FROM orders'''
+    request = '''SELECT * FROM orders ORDER BY orders.OrderID'''
     results = db.execute(request)
     results = results.fetchall()
     return results
@@ -17,6 +17,7 @@ def get_orders_range(db, date_from, date_to):
     t = (date_from, date_to)
     request = '''SELECT * FROM orders
     WHERE orders.OrderDate>? and orders.OrderDate<?
+    ORDER BY orders.OrderDate
     '''
     results = db.execute(request, t)
     results = results.fetchall()
