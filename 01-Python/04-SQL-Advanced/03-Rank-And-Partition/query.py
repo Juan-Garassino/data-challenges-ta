@@ -7,7 +7,7 @@ def movie_duration_buckets(db):
     result = db.execute(request)
     return result.fetchall()
 
-def longuest_movies_by_director(db, first_letter):
+def longest_movies_by_director(db, first_letter):
     request = """
         SELECT title, d.name, minutes, ROW_NUMBER() OVER (PARTITION BY d.id ORDER BY minutes DESC) AS rank
         FROM directors d JOIN movies m ON m.director_id = d.id WHERE d.name LIKE ? ORDER BY d.name, rank ASC
@@ -16,7 +16,7 @@ def longuest_movies_by_director(db, first_letter):
     return result.fetchall()
 
 
-def top_3_longuest(db, first_letter):
+def top_3_longest(db, first_letter):
     request = """
         SELECT * FROM (
         SELECT title, d.name, minutes, ROW_NUMBER() OVER (PARTITION BY d.id ORDER BY minutes DESC) AS rank
