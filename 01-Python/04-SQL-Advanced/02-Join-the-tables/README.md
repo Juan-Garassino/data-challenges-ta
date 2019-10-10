@@ -9,10 +9,13 @@ Complete the code in `join_queries.py`. Each method takes a `db` argument, which
 There are three methods to implement:
 
 ### Detailed Orders
-- Implement `detailed_orders` to get the shiper name and customer first name of all the orders made.
+
+Implement `detailed_orders` to get the shipper name and the customer first name of all the orders made.
 
 ### Spent per Customer
-- Implement `spent_per_customer` to get the total amount spent per customer - in ascending order.
+
+Implement `spent_per_customer` to get the total amount spent per customer - in ascending order. 👌
 
 ### Who sell the most ?
-- Implement `best_employee method` to determine who's the best employee! By "best employee", we mean the one who sell the most. 👑
+
+Implement `best_employee method` to determine who's the best employee! By "best employee", we mean the one who sell the most. 👑
