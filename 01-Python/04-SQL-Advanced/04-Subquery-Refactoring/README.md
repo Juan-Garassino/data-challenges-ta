@@ -17,7 +17,7 @@ Can you see that the main part has already been done in the 2 previous questions
 
 - Using the WITH clause, can you implement the function display_new_columns(db) and return a list containing all the ID's and the average amount spent per customer?
 `
-display_new_columns(db)
+display_best_buyers(db)
 => [(572.91, 2), (870.01, 4), (548.15, 5)]
 `
 
