@@ -1,10 +1,4 @@
-# pylint:disable=missing-module-docstring
-
-import unittest
-import sqlite3
-
-conn = sqlite3.connect('db/ecommerce.db')
-db = conn.cursor()
+# pylint:disable=C0111,C0103
 
 def group_by_customer(db):
     """TO DO: ..."""
@@ -37,9 +31,9 @@ def partition_by_customer(db):
 
 
 # results = group_by_employee(db)
-results = rank_products(db)
+#results = rank_products(db)
 # results = rank_orders(db)
 # results = partition_by_employee(db)
 # results = results.fetchall()
-for r in results:
-    print(r)
+#for r in results:
+#    print(r)
