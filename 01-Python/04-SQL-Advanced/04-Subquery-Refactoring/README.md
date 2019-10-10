@@ -23,7 +23,7 @@ Can you see that the main part has already been done in the 2 previous questions
 You should get this:
 ```python
 display_best_buyers(db)
-# => [(572.91, 2), (870.01, 4), (548.15, 5)]
+=> [(572.91, 2), (870.01, 4), (548.15, 5)]
 ```
 
 Meaning that the customer with ID 2 spent on average €572,91 per Order
