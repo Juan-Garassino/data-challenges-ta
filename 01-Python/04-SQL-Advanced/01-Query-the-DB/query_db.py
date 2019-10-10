@@ -21,7 +21,7 @@ def get_orders_range(db, date_from, date_to):
     return results
 
 
-def get_waiting_time(db):
+def get_orders_range(db):
     """TO DO: get a list with all the orders with each column + and extra TimeDelta column displaying the number of days between OrderDate and ShippedDate orders by ascending timedelta"""
     request = '''SELECT
     *,

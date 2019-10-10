@@ -22,14 +22,20 @@ def group_by_customer(db):
 
 def partition_by_customer(db):
     """TO DO: ..."""
-    request = '''SELECT orders.CustomerID,
-        orderdetails.UnitPrice * orderdetails.Quantity AS OrderAmount,
-        RANK() OVER(PARTITION BY orders.CustomerID
-        ORDER BY (orderdetails.UnitPrice * orderdetails.Quantity) DESC) AS "Row Number",
-        orderdetails.UnitPrice,
-        orderdetails.Quantity
-        FROM orders
-        JOIN orderdetails ON orders.OrderID = orderdetails.OrderID
+    request = '''
+        SELECT *
+        FROM (
+          SELECT
+            orders.CustomerID,
+            ROUND(orderdetails.UnitPrice * orderdetails.Quantity, 2) AS OrderAmount,
+            RANK() OVER (
+              PARTITION BY orders.CustomerID
+              ORDER BY (orderdetails.UnitPrice * orderdetails.Quantity) DESC) AS RN
+          FROM orders
+            JOIN orderdetails
+              ON orders.OrderID = orderdetails.OrderID
+        )
+        WHERE RN <= 2
     '''
     results = db.execute(request)
     return results
@@ -37,9 +43,9 @@ def partition_by_customer(db):
 
 
 # results = group_by_employee(db)
-results = rank_products(db)
+#results = rank_products(db)
 # results = rank_orders(db)
-# results = partition_by_employee(db)
+results = partition_by_customer(db)
 # results = results.fetchall()
 for r in results:
     print(r)

@@ -29,17 +29,4 @@ Let us rerun a similar scenario with the SQL PARTITION BY and RANK clauses to gr
 ### TO DO
 - Rank the OrderDetails in each Order by their total price (Quantity * UnitPrice) and return products with rank less than or equal to 2:
 
-SELECT * FROM (
- SELECT
- product_id,
- product_name,
- brand_id,
- list_price,
- RANK () OVER (
- PARTITION BY brand_id
- ORDER BY list_price DESC
- ) price_rank
- FROM
- production.products
-) t
-WHERE price_rank <= 3;
+

@@ -52,6 +52,7 @@ def best_employee(db):
 #results = detailed_orders(db)
 #results = spent_per_customer(db)
 results = best_employee(db)
+print(type(results))
 results = results.fetchall()
 for r in results:
     print(r)
