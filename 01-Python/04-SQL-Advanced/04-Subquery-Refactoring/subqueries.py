@@ -1,4 +1,4 @@
-# pylint:disable=missing-module-docstring
+# pylint:disable=C0111,C0103
 
 def get_average_purchase(db):
     '''TO DO: return the average purchase per customer ordered by customer ID'''

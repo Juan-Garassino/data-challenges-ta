@@ -1,4 +1,4 @@
-# pylint:disable=missing-module-docstring
+# pylint:disable=C0111,C0103
 
 def detailed_orders(db):
     '''TODO: return the list of all orders (order_id, customer.contact_name, employee.firstname) ordered by order_id'''
