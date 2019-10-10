@@ -38,7 +38,7 @@ There are five methods to implement:
 
 - How many rows does the `directors` table contain?
 - Return the list of all the directors and sort them by name (alphabetically). **Hint:** use the `ORDER BY` SQL filter.
-- Find all the movie title that contain "love" **anywhere** in their name. **Hint:** use the `WHERE` and `LIKE` SQL keywords. (bonus question: How could you make sure it's a romance movie ?)
+- Find all the movie title that contain "love" **anywhere** in their name, sorted alphabetically. **Hint:** use the `WHERE` and `LIKE` SQL keywords. (bonus question: How could you make sure it's a romance movie ?)
 - Count how many directors have a given word in their name. **Hint:** make sure you protect your SQL query from **SQL injection** with [parameter substitution](https://docs.python.org/3.7/library/sqlite3.html)
 - Return all the movies that are longer than a given duration and sort them. **Hint:** you can use the comparison operator `>` in SQL.
 
