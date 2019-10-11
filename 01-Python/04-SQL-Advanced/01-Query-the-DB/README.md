@@ -10,7 +10,7 @@ There are three methods to implement:
 
 
 - Implement `query_orders` to get all the orders by ascending OrderID.
-- Implement `get_orders_range` to get all the orders made between two given dates by ascending OrderDate.
+- Implement `get_orders_range` to get all the orders made between two given dates by ascending OrderDate (excluding date_from and date_to).
 - Implement `get_waiting_time` to get all the orders with the delivery time in ascending order (from the smallest timedelta to the largest). 👌
 
 👉 **As a reminder**: Each method takes a `db` argument, which is a connection to the database, on which you can call the `execute` method. This `db` is **built by the test and passed along to the function**. No need to create one yourself to satisfy `make`. As a reminder your method will look like this:
