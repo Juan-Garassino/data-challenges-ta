@@ -30,7 +30,9 @@ The SQL `PARTITION BY` clause can be used with the:
 
 In the previous example, we used `GROUP BY` with the Minutes column to bucket our data. Let's switch to a similar scenario with the SQL `PARTITION BY`.
 
-👉 Implement the function `longest_movies_by_director()` to find the longest movie of each director.
+👉 Implement the function `longest_movies_by_director()` to find the longest movie of each director.<br>
+Each rows returned by the query should look like `('Movie Title', 'Director Name', movie_duration (ex: 120), rank (ex:2))`<br>
+The **longuest movie** by a director should have the **rank 1** and the **shortest** should have the **last rank**.<br>
 
 We expect a result like:
 
