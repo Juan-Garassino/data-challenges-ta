@@ -34,6 +34,9 @@ In the previous example, we used `GROUP BY` with the Minutes column to bucket ou
 Each rows returned by the query should look like:<br>
 `('Movie Title', 'Director Name', movie_duration (ex: 120), rank (ex:2))`<br>
 The **longest movie** by a director should have the **rank 1** and the **shortest** should have the **last rank**.<br>
+<br>
+Note that the function take a **second argument**, **first_letter** which should be used in you query to select only the directors names starting with the letter provided.<br>
+
 
 We expect a result like:
 
