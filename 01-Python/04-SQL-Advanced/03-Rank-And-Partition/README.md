@@ -11,7 +11,9 @@ To **'bin'** (or **'bucket'**) the range of values—that is, divide the entire 
 
 👉 Implement `movie_duration_buckets()` to get the bucket of the movie duration of our database!<br>
 A bucket contain a **count** of all the movies with a duration in the **range** of the bucket.<br>
-For example, the bucket **30** will contain the count of all the movies with a duration between **0 min** and **30 min**.
+For example, the bucket **30** will contain the count of all the movies with a duration between **0 min** and **30 min**.<br>
+Or an other way to see it is:
+- The value for bucket **30** should be equal to `SELECT COUNT(*) FROM movies WHERE minutes < 30;`
 
 Hint 💡 :
 
