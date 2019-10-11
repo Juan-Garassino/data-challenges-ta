@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-In this section, we will cover the SQL `PARTITION BY` clause and its difference with `GROUP BY`in a `SELECT` statement. You will also explore the usecase of  the SQL `PARTITION BY` clause.
+In this section, we will cover the SQL `PARTITION BY` clause and its difference with `GROUP BY` in a `SELECT` statement. You will also explore the usecase of  the SQL `PARTITION BY` clause.
 
 ## Specs
 
