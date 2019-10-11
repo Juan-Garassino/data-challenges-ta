@@ -33,7 +33,7 @@ In the previous example, we used `GROUP BY` with the Minutes column to bucket ou
 👉 Implement the function `longest_movies_by_director()` to find the longest movie of each director.<br>
 Each rows returned by the query should look like:<br>
 `('Movie Title', 'Director Name', movie_duration (ex: 120), rank (ex:2))`<br>
-The **longuest movie** by a director should have the **rank 1** and the **shortest** should have the **last rank**.<br>
+The **longest movie** by a director should have the **rank 1** and the **shortest** should have the **last rank**.<br>
 
 We expect a result like:
 
@@ -51,4 +51,19 @@ longest_movies_by_director(db, "X")
 
 ### Top-3 longest movies
 
-👉 Implement the function `top_3_longest()` to find the top-3 of longest movies. 👌 Let's **rank** them!
+👉 Implement the function `top_3_longest()` to find the top-3 of longest movies by director. 👌
+Here you will **build on** the request you created in the last exercise in order to **select** only the **first 3 longest movies by director**.
+
+We expect a result like:
+
+```python
+longest_movies_by_director(db, "X")
+=> [
+      ('Laurence Anyways', 'Xavier Dolan', 168, 1),
+      ('Mommy', 'Xavier Dolan', 139, 2),
+      ('Tom at the Farm', 'Xavier Dolan', 102, 3),
+      ( 'Hitman', 'Xavier Gens', 100, 1)
+        [...]
+    ]
+```
+
