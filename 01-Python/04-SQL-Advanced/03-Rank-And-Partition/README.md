@@ -9,7 +9,7 @@ In this section, we will cover the SQL `PARTITION BY` clause and its difference 
 First. What is a bucket?
 To **'bin'** (or **'bucket'**) the range of values—that is, divide the entire range of values into a series of intervals—and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent, and are often (but not required to be) of equal size" - https://en.wikipedia.org/wiki/Histogram
 
-👉 Implement `movie_duration_buckets()` to get the bucket of the movie duration of our database!<br>
+👉 Implement `movie_duration_buckets()` to get the buckets of the movie duration of our database!<br>
 A bucket contain a **count** of all the movies with a duration in the **range** of the bucket.<br>
 For example, the bucket **30** will contain the count of all the movies with a duration between **0 min** and **30 min**.<br>
 Or an other way to see it is:
