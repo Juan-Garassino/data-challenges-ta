@@ -32,11 +32,18 @@ In the previous example, we used `GROUP BY` with the Minutes column to bucket ou
 
 👉 Implement the function `longest_movies_by_director()` to find the longest movie of each director.
 
-Hint 💡 :
+We expect a result like:
 
 ```python
 longest_movies_by_director(db)
-=> [[('Of Gods and Men', 'Xavier Beauvois', 122, 1), ('Laurence Anyways', 'Xavier Dolan', 168, 1), [...], ('Hitman', 'Xavier Gens', 100, 3)]
+=> [
+      ('Laurence Anyways', 'Xavier Dolan', 168, 1),
+      ('Mommy', 'Xavier Dolan', 139, 2),
+      ('Tom at the Farm', 'Xavier Dolan', 102, 3),
+      ('Heartbeats', 'Xavier Dolan', 101, 4),
+        [...]
+      ( 'Hitman', 'Xavier Gens', 100, 3)
+    ]
 ```
 
 ### Top-3 longest movies
