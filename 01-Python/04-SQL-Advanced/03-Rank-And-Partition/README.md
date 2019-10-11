@@ -35,7 +35,7 @@ In the previous example, we used `GROUP BY` with the Minutes column to bucket ou
 We expect a result like:
 
 ```python
-longest_movies_by_director(db)
+longest_movies_by_director(db, "X")
 => [
       ('Laurence Anyways', 'Xavier Dolan', 168, 1),
       ('Mommy', 'Xavier Dolan', 139, 2),
