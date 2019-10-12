@@ -1,5 +1,3 @@
-# US Oil and Gas Production
-
 In this exercise, we will analyze the US Oil & Gas production from June 2008 to June 2018. The dataset is [available on Kaggle](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018), and we already downloaded the CSVs in the exercise folder. They are located under the `data` subfolder, no need for you to download it again.
 
 ```bash
