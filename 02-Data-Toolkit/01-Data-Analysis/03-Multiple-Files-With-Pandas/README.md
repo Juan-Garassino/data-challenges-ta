@@ -1,5 +1,3 @@
-# Multiple files with `pandas`
-
 It's very common that the data is scattered around many files, especially CSV. Or it could be that it's in one file but in multiple worksheets. So far we have been using the [`pandas.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) function which is straightforward: give it a CSV, and it will create a dataframe with all columns and rows found in the CSV.
 
 When you have multiple files, it's a bit different. Sure you can load 10 files into 10 different dataframes, but what if you want to **reconciliate** the data. Welcome to the wonderful world of **Pandas Merging**.

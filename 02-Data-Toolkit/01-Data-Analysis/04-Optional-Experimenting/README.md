@@ -1,5 +1,3 @@
-# Experimenting
-
 The previous exercise was purposefully **very guided**. It's a good way to learn how to use Pandas by following simple steps and getting used to the functions available in this very vast library.
 
 For this second exercise, we'd like you to pick up a dataset of your choice on [Kaggle](https://www.kaggle.com/datasets) and download them to your hard drive. You can also pick up personal or professional datasets you want to explore.
