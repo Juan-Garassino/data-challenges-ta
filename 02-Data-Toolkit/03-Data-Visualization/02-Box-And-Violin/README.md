@@ -59,7 +59,4 @@ Make sure you have the right **legend**, male and female .
 
 **Example:**
 
-<figure>
-    <img src="https://seaborn.pydata.org/_images/seaborn-violinplot-4.png" width="360">
-  <figcaption style="width: 100%;text-align: center">Splited violin example</figcaption>
-</figure>
+<img src="https://seaborn.pydata.org/_images/seaborn-violinplot-4.png" width="360">
