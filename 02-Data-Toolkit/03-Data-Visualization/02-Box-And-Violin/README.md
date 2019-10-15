@@ -12,7 +12,7 @@ To learn more **best practices** around Box or Violin plot read these **2 short 
 
 You will work with the **tips** dataset.
 
-[Download Link - https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/10_OneNumSevCatSubgroupsSevObs.csv](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/10_OneNumSevCatSubgroupsSevObs.csv)
+[Download here](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/10_OneNumSevCatSubgroupsSevObs.csv)
 
 ### First steps
 
