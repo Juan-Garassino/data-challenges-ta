@@ -12,7 +12,7 @@ create_bucket:
 	-@gsutil mb -p ${PROJECT_ID} gs://${BUCKET_NAME}/
 
 upload_data:
-	-@gsutil cp data/05_Production_TaxiFare_100000.csv gs://${BUCKET_NAME}/05_Production_TaxiFare_100000.csv
+	-@gsutil cp ../data/05_Production_TaxiFare_100000.csv gs://${BUCKET_NAME}/05_Production_TaxiFare_100000.csv
 
 ls:
 	-@gsutil ls
