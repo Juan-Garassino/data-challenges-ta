@@ -21,3 +21,12 @@ Open Makefile
 ```bash
 make create_bucket unzip upload_data
 ```
+
+## Troubleshooting
+
+
+### AccessDeniedException: 403 The project to be billed is associated with an absent billing account.
+
+Make sure that billing is enabled for your Google Cloud Platform project.
+https://cloud.google.com/billing/docs/how-to/modify-project
+

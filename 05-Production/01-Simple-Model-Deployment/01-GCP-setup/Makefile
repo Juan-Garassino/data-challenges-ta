@@ -1,6 +1,6 @@
-PROJECT_NAME=wagon_bootcamp_data
-PROJECT_ID=iotcore-example
-BUCKET_NAME=wagon-ml-production
+PROJECT_NAME=wagon-bootcamp
+PROJECT_ID=wagon-bootcamp
+BUCKET_NAME=wagon-ml-data
 
 set_project:
 	-@gcloud config set project ${PROJECT_ID}
