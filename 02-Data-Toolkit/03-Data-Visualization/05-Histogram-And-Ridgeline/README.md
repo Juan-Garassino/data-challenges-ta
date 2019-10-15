@@ -15,13 +15,13 @@ To learn more **best practices** around bubble plot read these **short articles*
 
 ### Dataset
 
-You will work with the **tips** dataset.
+You will work with the **CIA probability dataset**.
 
 [Download Link - https://raw.githubusercontent.com/zonination/perceptions/master/probly.csv](https://raw.githubusercontent.com/zonination/perceptions/master/probly.csv)
 
 ### First steps
 
-Create a notebook named `exercise04.ipynb` in the **same folder** as this **README**.
+Create a notebook named `exercise05.ipynb` in the **same folder** as this **README**.
 Now you can **import** the necessesary **libraries**.
 
 ```python
