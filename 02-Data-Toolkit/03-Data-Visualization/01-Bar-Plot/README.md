@@ -16,7 +16,7 @@ And to learn more **best practices** around bar plot read these **3 short articl
 
 You will use a dataset about the **evolution** of **first name** popularity in the US.
 
-[Download Link - https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv)
+[Download here](raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv)
 
 ### First steps
 
