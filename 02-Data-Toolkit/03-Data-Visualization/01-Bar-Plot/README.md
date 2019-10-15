@@ -3,7 +3,7 @@
 ### Introduction
 
 In this exercise we are going to **recreate** bar plots from this [article](https://www.data-to-viz.com/graph/barplot.html).
-You can read the **article** to **learn more** about bar plot.
+Read the **article** to **learn more** about bar plot.
 
 And to learn more **best practices** around bar plot read these **3 short articles**.
 
