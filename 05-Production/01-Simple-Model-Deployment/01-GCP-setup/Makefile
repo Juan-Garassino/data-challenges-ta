@@ -1,5 +1,5 @@
 PROJECT_NAME=wagon-bootcamp
-PROJECT_ID=wagon-bootcamp
+PROJECT_ID=wagon-bootcamp-256007
 BUCKET_NAME=wagon-ml-data
 
 set_project:
