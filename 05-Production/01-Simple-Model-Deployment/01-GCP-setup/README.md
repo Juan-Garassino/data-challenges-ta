@@ -21,9 +21,10 @@ Open Makefile
 ```bash
 make create_bucket unzip upload_data
 ```
+Go to https://console.cloud.google.com/storage and make sure the data has correcly been uploaded in your bucket.
+
 
 ## Troubleshooting
-
 
 ### AccessDeniedException: 403 The project to be billed is associated with an absent billing account.
 
