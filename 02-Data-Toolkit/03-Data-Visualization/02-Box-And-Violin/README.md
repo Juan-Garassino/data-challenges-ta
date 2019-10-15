@@ -1,7 +1,7 @@
 # Box and Violin
 ### Introduction
 
-Same principle in this exercise, we are going to **recreate** bar plots from this [article](https://www.data-to-viz.com/story/OneNumSevCatSubgroupSevObsPerGroup.html).
+Same principle in this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/story/OneNumSevCatSubgroupSevObsPerGroup.html).
 
 To learn more **best practices** around Box or Violin plot read these **2 short articles**.
 
