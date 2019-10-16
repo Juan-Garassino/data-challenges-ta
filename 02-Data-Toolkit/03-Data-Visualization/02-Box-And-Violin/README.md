@@ -33,7 +33,9 @@ Then **import** the **dataset** from the CSV you just downloaded.
 
 Start by recreating this plot from the article.
 Make sure your plot use the **tip percentage %** on the **Y axis**.
-Your plot should present individual data points using **swarmplot**
+Your plot should present individual data points using **swarmplot**.
+
+It's ok if your plot has different **aesthetics**, this will also be true for the **next exercises of the day**.
 <img src="https://www.data-to-viz.com/story/OneNumSevCatSubgroupSevObsPerGroup_files/figure-html/unnamed-chunk-3-1.png" width="760">
 
 ### Grouped box plot with labels

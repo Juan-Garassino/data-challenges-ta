@@ -37,6 +37,7 @@ Then **import** the **dataset** from the CSV you just downloaded.
 ### Density
 
 Recreate this plot with **Ploty** in order to be able to **select** and deselect each **categories**.
+Here the label are optional.
 
 <img src="https://www.data-to-viz.com/story/OneNumOneCatSeveralObs_files/figure-html/unnamed-chunk-4-1.png" width="760">
 
