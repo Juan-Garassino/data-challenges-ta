@@ -1,5 +1,5 @@
 # Foreword
-In this challenge, we will learn how to manipulate matrices and how to implement basic operations such as addition, matrix product, dot product,...
+In this challenge, we will learn how to manipulate matrices and how to implement basic operations such as addition, matrix product, dot product, transpose,...
 
 ## 🔥 Warm-up
 
