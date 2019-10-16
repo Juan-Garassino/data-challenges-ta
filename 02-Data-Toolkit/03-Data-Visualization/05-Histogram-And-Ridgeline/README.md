@@ -17,7 +17,7 @@ To learn more **best practices** around bubble plot read these **short articles*
 
 You will work with the **CIA probability dataset**.
 
-[Download Link - https://raw.githubusercontent.com/zonination/perceptions/master/probly.csv](https://raw.githubusercontent.com/zonination/perceptions/master/probly.csv)
+[Download here](https://raw.githubusercontent.com/zonination/perceptions/master/probly.csv)
 
 ### First steps
 
