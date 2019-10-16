@@ -6,7 +6,7 @@ The Pythagorean theorem says that the area of a square on the hypotenuse is equa
 
 If the lengths of the legs are a and b, and the length of the hypotenuse is c, then, a^2+b^2=c^2
 
-![Pythagore representation](https://simple.wikipedia.org/wiki/Pythagorean_theorem#/media/File:Pythagorean.svg)
+![Pythagore representation](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Pythagorean_right_angle.svg/220px-Pythagorean_right_angle.svg.png)
 
 In this exercise, you will have to implement the function `hypotenuse(a, b)` in pythagore.py. This function should return the length of the hypotenuse or 0 if any problems.
 
