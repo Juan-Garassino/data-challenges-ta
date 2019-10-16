@@ -44,7 +44,7 @@ When you are done play with different value for `slope` and `intercept` in order
 
 Not so easy (and not very "scientific"), right?
 
-## 2. Compute the Mean Squared Error (MSE)
+## 3. Compute the Mean Squared Error (MSE)
 To answer this question, we will compute the Mean Squared Error. So, for each data in our dataset, we should evaluate the squared error:
 `
 predicted_tip = slope * total_bill + intercept
