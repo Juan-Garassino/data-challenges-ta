@@ -8,7 +8,7 @@ But still, what you did is very useful to understand how it works, remember the 
 In this challenge, we try to give you a better intuition of how to use these tools through a "real" situation. The goal of this exercise is to make use of the functions we implemented in the previous sections and predict the tips waiters receive depending on different parameters.
 
 ## 1. Check the data
-Before trying to create a model or start to solve any problem it's always a good idea to analyse the data (check the columns, the type of values, plot some beautiful graphs). Open jupyter notebook : 
+Before trying to create a model or start to solve any problem it's always a good idea to analyse the data (check the columns, the type of values, plot some beautiful graphs). Open jupyter notebook :
 
 `jupyter notebook`
 
@@ -74,12 +74,14 @@ During the next weeks, you will learn some algorithm to do that (Gradient Descen
 <details><summary markdown='span'>Discover Scikit-learn
 </summary>
 Insert these lines into your Notebook.
+
 ```python
 from sklearn.linear_model import LinearRegression
 reg = LinearRegression().fit(tips[["total_bill"]], tips["tip"])
 print(reg.coef_)
 print(reg.intercept_)
 ```
+
 `reg.coef_` is the slope of your model and `reg.intercept_` is the intercept. Try to insert these value in your `plot_line()`, `squared_errors()` and `mean_squared_error()` functions. What do you get?
 </details>
 
