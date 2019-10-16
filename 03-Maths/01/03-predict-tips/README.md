@@ -38,7 +38,7 @@ For your information, in this exercise we are using a Linear Regression model wi
 
 `tip = slope * total_bill + intercept`
 
-- **In your Notebook**, implement the function `plot_line(slope, intercept, ax)` that plot a line with the `slope` and `intercept` arguments on the `ax` figure.
+- **In your Notebook**, implement the function `plot_line(slope, intercept, ax)` that plot a line with the `slope` and `intercept` arguments on the `ax` figure. We add the argument ax, so you can plot the line(s) on your scatterplot.
 
 When you are done play with different value for `slope` and `intercept` in order to get a "good linear approximation" of the data. Can you find the best fit?
 
