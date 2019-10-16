@@ -14,7 +14,7 @@ Before trying to create a model or start to solve any problem it's always a good
 
 And go to the `predict-tips.ipynb` Notebook we prepared for you. You should see a first cell :
 
-`
+```
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
