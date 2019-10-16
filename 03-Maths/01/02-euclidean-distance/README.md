@@ -5,7 +5,8 @@ A very important notion for data scientists is the concept of distance. During t
 The Pythagorean theorem says that the area of a square on the hypotenuse is equal to the sum of the areas of the squares on the legs. In this picture, the area of the blue square added to the area of the red square makes the area of the purple square. It was named after the Greek mathematician Pythagoras:
 
 If the lengths of the legs are a and b, and the length of the hypotenuse is c, then, a^2+b^2=c^2
-![alt text](https://simple.wikipedia.org/wiki/Pythagorean_theorem#/media/File:Pythagorean.svg)
+
+![Pythagore representation](https://simple.wikipedia.org/wiki/Pythagorean_theorem#/media/File:Pythagorean.svg)
 
 In this exercise, you will have to implement the function `hypotenuse(a, b)` in pythagore.py. This function should return the length of the hypotenuse or 0 if any problems.
 
