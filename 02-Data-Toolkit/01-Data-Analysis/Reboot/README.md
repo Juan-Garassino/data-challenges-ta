@@ -1,3 +1,8 @@
+```bash
+jupyter notebook reboot.ipynb
+```
+
+
 Let's explore the **Titanic disaster** data set.
 
 Here are some interesting points to explore:
@@ -15,12 +20,6 @@ Here are some interesting points to explore:
    Here you create a new column in your dataframe for the familly size of the passenger
 5. Passenger with distingused title may be preferred during the evacuation ?
    With some string manipulation create a new column for each user with their title
-
------
-
-```bash
-jupyter notebook
-```
 
 Dataset is available in the same folder at `titanic.csv`
 
