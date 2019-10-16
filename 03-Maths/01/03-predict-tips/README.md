@@ -12,11 +12,13 @@ In this challenge, we try to give you a better intuition of how to use these too
 ## 1. Check the data
 Before trying to create a model or start to solve any problem it's always a good idea to analyse the data (check the columns, the type of values, plot some beautiful graphs). Open jupyter notebook :
 
-`jupyter notebook`
+```python
+jupyter notebook
+```
 
 And go to the `predict-tips.ipynb` Notebook we prepared for you. You should see a first cell :
 
-```
+```python
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -26,7 +28,7 @@ tips = sns.load_dataset("tips")
 tips.head()
 ```
 
-Basically, we are loading the libraries and the dataset from Seaborn we'll use in this exercise. Our objective for this challenge is to predict the `tip` based on the `total_bill`.
+Basically, we are loading the libraries and the dataset from Seaborn we'll use in this exercise. Our objective for this challenge is to predict the **tip** based on the **total_bill**.
 
 Start by exploring and vizualizing the data :
 - plot any graphs and retrieve any data from the dataset that could give you a better understanding of the dataset;
@@ -38,30 +40,37 @@ During the next weeks, we will learn different models (Linear Regression, KNN, L
 
 For your information, in this exercise we are using a Linear Regression model with one feature (total_bill). Basically, that means that we want to choose the best parameters (slope and intercept) to predict the tip the waiter will receive:
 
-`tip = slope * total_bill + intercept`
+```python
+tip = slope * total_bill + intercept
+```
 
-- **In your Notebook**, implement the function `plot_line(slope, intercept, ax)` that plot a line with the `slope` and `intercept` arguments on the `ax` figure. We add the argument ax, so you can plot the line(s) on your scatterplot.
+- **In your Notebook**, implement the function `plot_line(slope, intercept, ax)` that plot a line with the **slope** and **intercept** arguments on the **ax** figure. We add the argument ax, so you can plot the line(s) on your scatterplot.
 
-When you are done play with different value for `slope` and `intercept` in order to get a "good linear approximation" of the data. Can you find the best fit?
+When you are done play with different value for **slope** and **intercept** in order to get a "good linear approximation" of the data. Can you find the best fit?
 
 Not so easy (and not very "scientific"), right?
 
 ## 3. Compute the Mean Squared Error (MSE)
 To answer this question, we will compute the Mean Squared Error. So, for each data in our dataset, we should evaluate the squared error:
-`
+
+```python
 predicted_tip = slope * total_bill + intercept
 error = (predicted_tip - tip)**2
-`
+```
+
 To answer this question, implement the functions in the `compute_error.py` file :
 - `squared_errors(slope, intercept, total_bills, tips)` : return an array containing the squared errors between all predicted_tips and the actual_tips (from the dataset);
 - `mean_squared_error(squared_errors)` : return the mean of the array contained in squared_errors.
 
 When the `make` command passes the tests related to these 2 functions, go back to your Notebook. Now you can import these 2 functions and use them.
 
-Again, play with different values for `slope` and `intercept` and try to get the best fit (in other words, try to find the slope and intercept that returns the smallest mean_error)
+Again, play with different values for **slope** and **intercept** and try to get the best fit (in other words, try to find the slope and intercept that returns the smallest mean_error)
 
 For your information, the best fit should return :
-`mean_squared_error = 1.036`
+
+```python
+mean_squared_error = 1.036
+```
 
 Try to get close to this value.
 
