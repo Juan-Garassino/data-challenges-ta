@@ -6,7 +6,7 @@ In this challenge, we will learn how to manipulate matrices and how to implement
 
 A matrix can be seen as an array of arrays. For example, we could represent a matrix A (3x3):
 
-```
+```python
 A = [[1,2,4],[1,1,1],[1,2,8]]
 ```
 
