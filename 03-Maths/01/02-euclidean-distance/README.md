@@ -1,4 +1,6 @@
-# Foreword
+#‼️ Do not use numpy for this challenge
+
+## Foreword
 
 A very important notion for data scientists is the concept of **distance**. During the next weeks, we will use it almost every day.
 

@@ -1,4 +1,6 @@
-# Background
+#‼️ Do not use numpy for this challenge
+
+## Background
 Well done, you have coded by yourself some of the tools we'll use very often during the next weeks.
 
 As you will discover, Pandas helps you a lot with all this stuff and you will be able to transpose, multiple, invert,... a matrix in just one line of code.
