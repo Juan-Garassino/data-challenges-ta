@@ -22,7 +22,7 @@ gcp_train_local:
         --package-path ${PACKAGE_NAME} \
         --module-name ${PACKAGE_NAME}.${FILENAME}
 
-gcp_submit_training:
+gcp_submit_training: create_package
 	-@gcloud ai-platform jobs submit training ${JOB_NAME} \
         --job-dir gs://${BUCKET_ID}/scikit_learn_job_dir \
         --package-path ${PACKAGE_NAME}\
@@ -30,11 +30,19 @@ gcp_submit_training:
         --region ${REGION} \
         --python-version=${PYTHON_VERSION} \
         --runtime-version=${RUNTIME_VERSION}
+#        --staging-bucket gs://${BUCKET_ID} \
 
 eval_gcp_local:
-#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_133849
+#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_163821
 	-@gcloud ai-platform local predict --model-dir model/ \
         --json-instances ../data/test.json \
+        --framework scikit-learn
+
+eval_gcp_online:
+#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_133849
+	-@gcloud ai-platform local predict --model ${MODEL_NAME} \
+        --json-instances ../data/test.json \
+        --version baseline \
         --framework scikit-learn
 
 create_gcp_model:
@@ -42,11 +50,10 @@ create_gcp_model:
 		--regions ${REGION}
 	-@gcloud ai-platform versions create baseline \
         --model ${MODEL_NAME} \
-        --origin gs://${BUCKET_ID}/TaxiFare_20191016_133849 \
+        --origin gs://${BUCKET_ID}/TaxiFare_20191016_163821 \
         --framework ${FRAMEWORK} \
         --python-version=${PYTHON_VERSION} \
         --runtime-version=${RUNTIME_VERSION}
-
 #----------------------------------
 # LOCAL COMMANDS
 #----------------------------------

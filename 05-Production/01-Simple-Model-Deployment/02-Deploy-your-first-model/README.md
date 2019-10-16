@@ -19,6 +19,12 @@ REGION=europe-west1
 gsutil mb -l $REGION gs://$BUCKET_NAME
 ```
 
+## Install correct requirements for this challenge
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Complete fisrt_model.py
 
 Open it and complete to train first model on GCloud as seen this morning  
@@ -31,7 +37,7 @@ python first_model.py
 ```
 
 Check that :
-- 2 new files appeared, the file downlaoded from Storage and the model  
+- 2 new files appeared, the file downloaded from Storage and the model  
 - You can now check on Google Cloud Storage that you model has been uploaded  
 
 ```bash
