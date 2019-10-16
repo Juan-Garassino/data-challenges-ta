@@ -8,11 +8,11 @@ But still, what you did is very useful to understand how it works, remember the 
 In this challenge, we try to give you a better intuition of how to use these tools through a "real" situation. The goal of this exercise is to make use of the functions we implemented in the previous sections and predict the tips waiters receive depending on different parameters.
 
 ## 1. Check the data
-Before trying to create a model or start to solve any problem it's always a good idea to analyse the data (check the columns, the type of values, plot some beautiful graphs). Open your Notebook : 
+Before trying to create a model or start to solve any problem it's always a good idea to analyse the data (check the columns, the type of values, plot some beautiful graphs). Open jupyter notebook : 
 
 `jupyter notebook`
 
-Open the `predict-tips.ipynb` Notebook. You should see a first cell :
+And go to the `predict-tips.ipynb` Notebook we prepared for you. You should see a first cell :
 
 `
 import numpy as np
