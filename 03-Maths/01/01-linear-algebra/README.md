@@ -46,7 +46,7 @@ What does that mean? The i-th row, j-th column element of A_t (transpose of A) i
 
 ```python
 A_t_ij = A_ji
-`
+```
 
 In this challenge, you have to implement the function transpose() to return the transpose of a Matrix.
 
