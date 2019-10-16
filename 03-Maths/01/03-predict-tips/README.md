@@ -1,4 +1,4 @@
-#‼️ Do not use numpy for this challenge
+‼️ Do not use numpy for this challenge
 
 ## Background
 Well done, you have coded by yourself some of the tools we'll use very often during the next weeks.

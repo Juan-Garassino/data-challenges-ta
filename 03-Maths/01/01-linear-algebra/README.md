@@ -1,4 +1,4 @@
-#‼️ Do not use numpy for this challenge
+‼️ Do not use numpy for this challenge
 
 ## Foreword
 
