@@ -13,3 +13,8 @@ TODO :
 Ecrire premier test
 => renvoyer un csv avec des predictions de test  
 => output : i.e rmse
+
+
+TODO 2:
+in gcp commandline, add config.yaml for instance usage.
+
