@@ -63,7 +63,7 @@ For your information, the best fit should return :
 
 Try to get close to this value.
 
-## 3. Choose the best parameters
+## 4. Choose the best parameters
 Ok, now we have a number (the Mean Squared Error) to quantify the precision of our model. But how can we get the **best parameters**? As you can guess, in the Data Scientist World, we need a better and faster way to get them.
 
 During the next weeks, you will learn some algorithm to do that (Gradient Descent, Normal Equation,...). And you will discover the power of Scikit-learn that allows you to :
