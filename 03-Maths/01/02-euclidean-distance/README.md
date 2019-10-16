@@ -11,11 +11,11 @@ If the lengths of the legs are a and b, and the length of the hypotenuse is c, t
 In this exercise, you will have to implement the function `hypotenuse(a, b)` in pythagore.py. This function should return the length of the hypotenuse or 0 if any problems.
 
 ## 2. Euclidean distance in 2D
-Well done ! Now you will compute the euclidean distance between points in 2 dimensions. To complete this challenge, you have to implement the functions inside the `euclidean_distance_2d.py`:
-- `euclidean_distance_p2p(p_1, p_2)`: return the distance between p_1 and p_2
-- `calcul_hypotenuse_with_points(p_1, p_2, p_3)`: return the hypotenuse of the triangle using the Pythagorean theorem (first, you should calculate the length of the 2 segments and then apply Pythagor)
-- `euclidean_distance_p2dr(p_1, pente, origin)`: return the shortest distance between a point and a line segment (more information [here](https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line))
-- `error_predictions(actual_results, predictions)`: return an array containing the distance (=the "error") between all result in actual_result and all predictions
+Well done ! Now you will compute the euclidean distance between points in 2 dimensions. To complete this challenge, you have to implement the functions inside the `euclidean_distance_2d.py` file:
+- `euclidean_distance_p2p(p_1, p_2)`: return the distance between p_1 and p_2;
+- `calcul_hypotenuse_with_points(p_1, p_2, p_3)`: return the hypotenuse of the triangle using the Pythagorean theorem (first, you should calculate the length of the 2 segments and then apply Pythagor);
+- `euclidean_distance_p2dr(p_1, pente, origin)`: return the shortest distance between a point and a line segment (more information [here](https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line));
+- `error_predictions(actual_results, predictions)`: return an array containing the distance (=the "error") between all results in actual_result and all predictions;
 - `points_in_circle(points, center, rad)`: return an array of points containing all the points that fit into a circle (center=(x,y)) with radius rad. We add a visual check for this one!
 
 As a quick reminder, if you have 2 points `p1(x1, y1)` and `p2(x2, y2)`, then the distance between p1 and p2 will be `d = sqrt((x1^2 - x2^2) + (y1^2 - y2^2)^2)`.
