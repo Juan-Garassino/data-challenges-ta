@@ -16,7 +16,9 @@ To access an element, we first indicate the row and then the column (remember, i
 
 So if you want the retrieve "8" from this matrix, you should compute:
 
-`A[2][2]`
+```python
+A[2][2]
+```
 
 For this exercise, you have to implement some basic functions (in `basic_functions.py` file). If you want to use some of them in the next exercise(s), feel free to do so. When coding, it's always a good idea to re-use work you've already done.
 
@@ -26,9 +28,9 @@ For this exercise, you have to implement some basic functions (in `basic_functio
 
 In this exercise, you have to implement the function `addition_2_matrices(matrix_1, matrix_2)` which should return the sum of matrix_1 and matrix_2.
 
-`
-matrix_r(i,j) = matrix_1(i,j) + matrix_2(i,j)
-`
+```python
+matrix_r_ij = matrix_1_ij + matrix_2_ij
+```
 
 If the dimensions of the 2 matrices are not consistent, you should return a IndexError and print a message on the console.
 
@@ -42,7 +44,9 @@ The transpose of a matrix is an operator which flips a matrix over its diagonal 
 
 What does that mean? The i-th row, j-th column element of A_t (transpose of A) is the j-th row, i-th column element of A:
 
-`A_t_ij = A_ji`
+```python
+A_t_ij = A_ji
+`
 
 In this challenge, you have to implement the function transpose() to return the transpose of a Matrix.
 
