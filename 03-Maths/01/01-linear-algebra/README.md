@@ -48,9 +48,8 @@ In this challenge, you have to implement the function transpose() to return the 
 
 ## 3. Matrix Multiplication
 
-Now, let's get serious. We will implement manually the "Matrix Multiplication" inside `product.py`. As a reminder, if the size of A is (m, n) and B is (n, p), then C will be (m, p) and `C(i,j) = A(i,0)*B(0,j) + A(i,1)*B(1,j) +...+ A(i,n)*B(n,j)`
+Now, let's get serious. We will implement manually the "Matrix Multiplication" inside `product.py`. As a reminder, if the size of A is (m, n) and B is (n, p), then C will be (m, p) and `C(i,j) = A(i,0)*B(0,j) + A(i,1)*B(1,j) +...+ A(i,n)*B(n,j)` Here is an example:
 
-Here is an example:
 <img src="https://res.cloudinary.com/wagon/image/upload/v1571240577/matrice-multiplication_arv48i.gif" >
 
 Again, if you want more explanation about how to compute Matrix Multiplication, you could [have a look here](https://en.wikipedia.org/wiki/Matrix_multiplication)
