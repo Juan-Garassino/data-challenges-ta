@@ -13,7 +13,7 @@ To learn more **best practices** around bubble plot read these **3 short article
 
 You will work with the **GDP per capita** dataset.
 
-[Download Link - https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv)
+[Download here](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv)
 
 ### First steps
 
