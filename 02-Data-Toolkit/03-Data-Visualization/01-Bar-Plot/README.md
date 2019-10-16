@@ -46,7 +46,7 @@ Make sure you are using a similar **color pallette**, the same **years** and **n
 
 ### Stacked bar plot
 
-Same thing here, recreate the following **stacked bar** plot using seaborn.
+Same thing here, recreate the following **stacked bar** plot using **matplotlib**.
 
 
 <img src="https://www.data-to-viz.com/graph/barplot_files/figure-html/unnamed-chunk-3-1.png" width="760">
