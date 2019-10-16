@@ -1,4 +1,4 @@
-# Optional Exercises
+## Optional Exercises
 Congratulations ! You have learned the basic mathematic tools we will use during the next weeks.
 
 If you are done with all the previous exercises, you can try these challenges on Codewar :
