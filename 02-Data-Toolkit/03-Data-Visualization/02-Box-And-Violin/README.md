@@ -38,17 +38,6 @@ Your plot should present individual data points using **swarmplot**.
 It's ok if your plot has different **aesthetics**, this will also be true for the **next exercises of the day**.
 <img src="https://www.data-to-viz.com/story/OneNumSevCatSubgroupSevObsPerGroup_files/figure-html/unnamed-chunk-3-1.png" width="760">
 
-### Grouped box plot with labels
-
-Now let's make the following plot.
-
-This time we will add **labels** to our plot.
-Each box will be labeled with `n: sample size` the same way the reference plot uses it.
-
-**No need** to change the **width** of the box in relation to the **sample size** for our plot.
-
-<img src="https://www.data-to-viz.com/story/OneNumSevCatSubgroupSevObsPerGroup_files/figure-html/unnamed-chunk-2-1.png" width="760">
-
 ### Violin plot
 
 We will recreate the following plot.
