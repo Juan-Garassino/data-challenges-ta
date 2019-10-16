@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 # Load the example tips dataset
 tips = sns.load_dataset("tips")
 tips.head()
-`
+```
 
 Basically, we are loading the libraries and the dataset from Seaborn we'll use in this exercise. Our objective for this challenge is to predict the `tip` based on the `total_bill`.
 
