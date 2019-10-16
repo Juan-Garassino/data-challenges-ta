@@ -2,6 +2,8 @@
 
 In this section, we will discover how to plot maps!
 
-We will use: `plotly Python` library (plotly.py) which is an interactive, open-source plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases. 💪
+We will use **Ploty** again to create meaningful and interactive maps. 💪
 
 Open the file `bubble-map-visualization.ipynb` in Jupyter Notebook and follow the instructions. 🙂
+
+![](https://i.ibb.co/7QhQCg9/Screen-Shot-2019-10-16-at-09-06-01.png)
