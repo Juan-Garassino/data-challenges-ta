@@ -28,7 +28,7 @@ Basically, we are loading the libraries and the dataset from Seaborn we'll use i
 
 Start by exploring and vizualizing the data :
 - plot any graphs and retrieve any data from the dataset that could give you a better understanding of the dataset;
-- plot the points with total_bill on the X-Axis and the corresponding tip on the Y-Axis;
+- plot the points with **total_bill on the X-Axis** and the corresponding **tip on the Y-Axis**;
 
 ## 2. Choose the best parameters
 
