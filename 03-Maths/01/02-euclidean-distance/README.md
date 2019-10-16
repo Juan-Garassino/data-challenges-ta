@@ -10,11 +10,11 @@ For example, when you train a model in order to make predictions, you need to ev
 
 The Pythagorean theorem says that the area of a square on the hypotenuse is equal to the sum of the areas of the squares on the legs. In this picture, the area of the blue square added to the area of the red square makes the area of the purple square. It was named after the Greek mathematician Pythagoras:
 
-If the lengths of the legs are a and b, and the length of the hypotenuse is c, then, ` a^2+b^2=c^2 `
+If the lengths of the legs are a and b, and the length of the hypotenuse is c, then, **a^2 + b^2 = c^2**
 
 ![Pythagore representation](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Pythagorean_right_angle.svg/220px-Pythagorean_right_angle.svg.png)
 
-In this exercise, you will have to implement the function ` hypotenuse(a, b) ` in pythagore.py. This function should return the length of the hypotenuse or 0 if any problems.
+In this exercise, you will have to implement the function `hypotenuse(a, b)` in pythagore.py. This function should return the length of the hypotenuse or 0 if any problems.
 
 ## Euclidean distance in 2D
 
@@ -25,13 +25,11 @@ Well done ! Now you will compute the euclidean distance between points in 2 dime
 - ` error_predictions(actual_results, predictions) `: return an array containing the distance (=the "error") between all results in actual_result and all predictions;
 - ` points_in_circle(points, center, rad) `: return an array of points containing all the points that fit into a circle (center=(x,y)) with radius rad. We add a visual check for this one!
 
-As a quick reminder, if you have 2 points ` p1(x1, y1) ` and ` p2(x2, y2) `, then the distance between p1 and p2 will be:
+As a quick reminder, if you have 2 points `p1(x1, y1)` and `p2(x2, y2)`, then the distance between p1 and p2 will be:
 
 ```python
 d = sqrt((x1^2 - x2^2) + (y1^2 - y2^2)^2)
 ```
-
-<img src="https://res.cloudinary.com/wagon/image/upload/v1571239306/Screenshot_2019-10-16_at_17.21.14_wt3jpz.png" height="50%" width="50%">
 
 Note that sometimes this distance is called "the norm of the vector". In 2 dimensions, that means the length of the vector.
 
@@ -61,7 +59,7 @@ Then we could compute the distance between these to apartments as :
 d = ((x_11 - x_12)**2 + (x_21 - x_22)**2 + (x_31 - x_32)**2 + ... +(x_n1 - x_n2)**2)**0.5
 ```
 
-where ` x_ij ` : the feature i of the flat j
+where **x_ij** : the feature i of the flat j
 
-For this exercise, you have to implement the function ` euclidean_distance_p2p(p_1, p_2) ` inside the `euclidean_distance_nd.py` file. This method returns the distance between 2 points p_1 and p_2 and should work with any dimensions (>0).
+For this exercise, you have to implement the function `euclidean_distance_p2p(p_1, p_2)` inside the `euclidean_distance_nd.py` file. This method returns the distance between 2 points p_1 and p_2 and should work with any dimensions (>0).
 
