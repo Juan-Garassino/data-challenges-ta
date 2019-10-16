@@ -18,7 +18,9 @@ Quick reminder : `from basic_functions import *` will import all functions from 
 
 ## 1. Addition of 2 matrices
 In this exercise, you will implement the function `addition_2_matrices(matrix_1, matrix_2)` which should return the sum of matrix_1 and matrix_2.
-`matrix_r(i,j) = matrix_1(i,j) + matrix_2(i,j)`
+`
+matrix_r(i,j) = matrix_1(i,j) + matrix_2(i,j)
+`
 
 If the dimensions of the 2 matrices are not consistent, you should return a IndexError and print a message on the console.
 
