@@ -28,7 +28,7 @@ Well done ! Now you will compute the euclidean distance between points in 2 dime
 As a quick reminder, if you have 2 points `p1(x1, y1)` and `p2(x2, y2)`, then the distance between p1 and p2 will be:
 
 ```python
-d = sqrt((x1^2 - x2^2) + (y1^2 - y2^2)^2)
+d = sqrt((x1 - x2)^2 + (y1 - y2)^2)
 ```
 
 Note that sometimes this distance is called "the norm of the vector". In 2 dimensions, that means the length of the vector.
