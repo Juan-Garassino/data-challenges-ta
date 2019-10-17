@@ -31,8 +31,8 @@ class TestEuclideanDistance2D(unittest.TestCase):
         self.assertEqual(hypotenuse_with_points([0, 1], [0, 2], [0, 2]), expected)
 
     def test_hypotenuse_result(self):
-        expected = 12.25
-        self.assertAlmostEqual(hypotenuse_with_points([0, 0], [0, 5], [10, 0]), expected, places=2)
+        expected = 11.18
+        self.assertAlmostEqual(hypotenuse_with_points([0, 5],[0, 0], [10, 0]), expected, places=2)
 
     # Test for euclidean_distance_p2dr
     def test_p2d_test1(self):
