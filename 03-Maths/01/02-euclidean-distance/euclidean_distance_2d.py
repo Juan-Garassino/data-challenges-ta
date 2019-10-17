@@ -2,7 +2,6 @@
 
 def euclidean_distance_p2p(p_1, p_2):
     '''TO DO: return the distance between p_1 and p_2'''
-    return ((p_1[0] - p_2[0])**2 + (p_1[1] - p_2[1])**2)**0.5
     pass
 
 def hypotenuse_with_points(p_1, p_2, p_3):
