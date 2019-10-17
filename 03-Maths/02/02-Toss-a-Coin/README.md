@@ -18,6 +18,7 @@ To answer these "easy" questions, you could count the number of ways to get a re
 - 0 1 1 0
 - 0 1 0 1
 - 0 0 1 1
+
 And there are 16 possible outcomes. That means that the probability is P(4) = 6/16 = 0.375. But if the number of flips is larger, it becomes more difficult to count manually the different possibilities.
 
 Mathematically, the number of ways to get x heads (or tails) in n flips could be calculated as :
@@ -41,26 +42,38 @@ If your implementation is correct, the more flips you do (n_toss increases), the
 
 ## And in reality?
 
-You've already made big strides. But at this point, we could ask ourselves: does the real world behave this way? Again, let's use the power of Python to answer this question.
+You've already made big strides. But at this point, we could ask ourselves: *does the real world behave this way?*
+Again, let's use the power of Python to answer this question.
 
 For this exercise, implement the functions inside `simulate_reality.py`:
-- `play_one_game(n_toss)`: one game consists in flipping a coin n_toss times. This function should return the number of heads you get. One way to do that is by randomly choosing an integer between 0 (head) and 1 (tail). If you get 0, you increment your heads_counter otherwise it stays the same. Your function should return the heads_counter (Hint: have a look at the [random library](https://docs.python.org/3/library/random.html))
 
-- `play_n_game(n_games, n_toss)`: Imagine you repeat the previous game `n_games` times.
+**play_one_game(n_toss):**
+One game consists in flipping a coin n_toss times. This function should return the number of heads you get.
+One way to do that is by randomly choosing an integer between 0 (head) and 1 (tail).
+If you get 0, you increment your heads_counter otherwise it stays the same.
+Your function should return the heads_counter (Hint: have a look at the [random library](https://docs.python.org/3/library/random.html))
+
+**play_n_game(n_games, n_toss):**
+Imagine you repeat the previous game `n_games` times.
+
 The goal here is to play a bunch of flip coin games and see the distribution of the values we get from flipping a coin `n_toss` times.
 This new function will call your previously defined `play_one_game` function `n_games` times. Then, we want to keep track of the end result of each game played this way.
 `play_n_game` should return a dictionary. The keys will be the possible results of each game, so they can't be over `n_toss` or under 0. The values for each of those keys will correspond to the probability of a game ending with that result.
+
 EX : Imagine you play 10 times (=n_games) to flip the coin 6 times (=n_toss) and you get
-    - 0 times 0 heads
-    - 1 times 1 heads
-    - 3 times 2 heads
-    - 3 times 3 heads
-    - 2 times 4 heads
-    - 1 times 5 heads
-    - 0 times 6 heads
-    ```python
-    => result = {0:0/n_games, 1:1/n_games, 2:3/n_games, 3:3/n_games, 4:2/n_games, 5:1/n_games, 6:0/n_games }
-    ```
+
+- 0 times 0 heads
+- 1 times 1 heads
+- 3 times 2 heads
+- 3 times 3 heads
+- 2 times 4 heads
+- 1 times 5 heads
+- 0 times 6 heads
+
+
+```python
+=> result = {0:0/n_games, 1:1/n_games, 2:3/n_games, 3:3/n_games, 4:2/n_games, 5:1/n_games, 6:0/n_games }
+```
 
 ## Compare results with Mean Squared Error (MSE)
 
