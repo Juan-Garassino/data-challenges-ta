@@ -38,17 +38,17 @@ class TestDistance3D(unittest.TestCase):
         results = points_in_sphere(X, C, R)
         expected = [[-1.96, -0.04, -0.4], [0.33, 3.51, -0.95], [-2.23, -0.5, -0.03], [-2.14, -2.15, -2.25]]
 
-        fig = plt.figure()
-        ax = Axes3D(fig)
-        ax.set_aspect("equal")
-        print(results)
-        for r in results:
-            ax.scatter([r[0]], [r[1]], [r[2]], color="g", s=10)
-        # draw sphere
-        u, v = np.mgrid[0:2*np.pi:20j, 0:np.pi:10j]
-        x = R * (np.cos(u)*np.sin(v)) + C[0]
-        y = R * (np.sin(u)*np.sin(v)) + C[1]
-        z = R * (np.cos(v)) + C[2]
-        ax.plot_wireframe(x, y, z, color="r")
-        plt.show()
+        # fig = plt.figure()
+        # ax = Axes3D(fig)
+        # ax.set_aspect("equal")
+        # print(results)
+        # for r in results:
+        #     ax.scatter([r[0]], [r[1]], [r[2]], color="g", s=10)
+        # # draw sphere
+        # u, v = np.mgrid[0:2*np.pi:20j, 0:np.pi:10j]
+        # x = R * (np.cos(u)*np.sin(v)) + C[0]
+        # y = R * (np.sin(u)*np.sin(v)) + C[1]
+        # z = R * (np.cos(v)) + C[2]
+        # ax.plot_wireframe(x, y, z, color="r")
+        # plt.show()
         self.assertAlmostEqual(results[0:4], expected, places=2)

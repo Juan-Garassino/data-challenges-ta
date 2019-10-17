@@ -15,7 +15,7 @@ def hypotenuse_with_points(p_1, p_2, p_3):
     pass
 
 
-def euclidean_distance_p2dr(p_1, pente, origin):
+def euclidean_distance_p2dr(p_1, slope, intercept):
     '''TO DO: return the shortest distance between a point and a line segment'''
     pass
 
@@ -31,3 +31,6 @@ def points_in_circle(points, center, radius):
     # radius = radius of the circle
     # results = [p2, p4, p7,...] all the points inside the circle
     pass
+
+
+
