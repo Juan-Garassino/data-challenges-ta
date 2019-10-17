@@ -3,7 +3,7 @@ from math import sqrt
 import pandas as pd
 from sklearn.externals import joblib
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-
+from trainer.model import FEATURES
 
 def perf_eval_regression(y_pred, y):
     MAE = round(mean_absolute_error(y, y_pred), 2)

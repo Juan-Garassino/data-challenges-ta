@@ -36,24 +36,47 @@ gcp_submit_training: create_package
 create_gcp_model:
 	-@gcloud ai-platform models create ${MODEL_NAME} \
 		--regions ${REGION}
-	-@gcloud ai-platform versions create baseline \
-        --model ${MODEL_NAME} \
-        --origin gs://${BUCKET_ID}/TaxiFare_20191016_163821 \
-        --framework ${FRAMEWORK} \
-        --python-version=${PYTHON_VERSION} \
-        --runtime-version=${RUNTIME_VERSION}
 
-eval_gcp_local:
-#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_163821
-	-@gcloud ai-platform local predict --model-dir model/ \
-        --json-instances ../data/test.json \
-        --framework scikit-learn
+	# -@gcloud ai-platform versions create baseline \
+  #       --model ${MODEL_NAME} \
+  #       --origin gs://${BUCKET_ID}/TaxiFare_20191016_163821 \
+  #       --framework ${FRAMEWORK} \
+  #       --python-version=${PYTHON_VERSION} \
+  #       --runtime-version=${RUNTIME_VERSION}
 
-eval_gcp_online:
-#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_133849
-	-@gcloud ai-platform predict --model ${MODEL_NAME} \
-        --text-instances ../data/test_100.txt \
-        --version baseline
+# eval_gcp_local:
+# #	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_163821
+# 	-@gcloud ai-platform local predict --model-dir model/ \
+#         --json-instances ../data/test.json \
+#         --framework scikit-learn
+
+# eval_gcp_online:
+# #	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_133849
+# 	-@gcloud ai-platform predict --model ${MODEL_NAME} \
+#         --text-instances ../data/test_100.txt \
+#         --version baseline
+
+gcp_submit_training_2:
+	# https://cloud.google.com/sdk/gcloud/reference/ai-platform/jobs/submit/training
+	-@gcloud ai-platform jobs submit training ${JOB_NAME} \
+    --job-dir gs://wagon-ml-data/scikit_learn_job_dir  \
+    --package-path './trainer' \
+    --module-name 'trainer.task' \
+		--python-version=${PYTHON_VERSION} \
+		--runtime-version=${RUNTIME_VERSION} \
+    --region ${REGION}
+
+gcp_train_local_2:
+	-@gcloud ai-platform local train ${JOB_NAME} \
+    --job-dir gs://wagon-ml-data/scikit_learn_job_dir  \
+    --package-path './trainer' \
+    --module-name 'trainer.task' \
+		--python-version=${PYTHON_VERSION} \
+		--runtime-version=${RUNTIME_VERSION} \
+    --region ${REGION}
+
+
+
 #----------------------------------
 # LOCAL COMMANDS
 #----------------------------------
