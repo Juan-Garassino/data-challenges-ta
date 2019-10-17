@@ -46,9 +46,9 @@ You've already made big strides. But at this point, we could ask ourselves: *doe
 Again, let's use the power of Python to answer this question.
 
 For this exercise, implement the functions inside `simulate_reality.py`:
-- **play_one_game(n_toss)**: one game consists in flipping a coin n_toss times. This function should return the number of heads you get. One way to do that is by randomly choosing an integer between 0 (head) and 1 (tail). If you get 0, you increment your heads_counter otherwise it stays the same. Your function should return the heads_counter (Hint: have a look at the [random library](https://docs.python.org/3/library/random.html))
 
-- **play_n_game(n_games, n_toss)**: Imagine you repeat the previous game `n_games` times.
+- play_one_game(n_toss): one game consists in flipping a coin n_toss times. This function should return the number of heads you get. One way to do that is by randomly choosing an integer between 0 (head) and 1 (tail). If you get 0, you increment your heads_counter otherwise it stays the same. Your function should return the heads_counter (Hint: have a look at the [random library](https://docs.python.org/3/library/random.html))
+- play_n_game(n_games, n_toss): Imagine you repeat the previous game `n_games` times.
 
 The goal here is to play a bunch of flip coin games and see the distribution of the values we get from flipping a coin `n_toss` times.
 This new function will call your previously defined `play_one_game` function `n_games` times. Then, we want to keep track of the end result of each game played this way.
