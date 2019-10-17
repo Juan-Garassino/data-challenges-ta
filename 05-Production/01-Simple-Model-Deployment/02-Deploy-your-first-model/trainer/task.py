@@ -7,7 +7,7 @@ from sklearn.externals import joblib
 from trainer.model import FEATURES
 
 # Fill in your Cloud Storage bucket name
-BUCKET_NAME = "wagon-ml-data"
+BUCKET_NAME = "wagon-m"
 bucket = storage.Client().bucket(BUCKET_NAME)
 
 # Import Data From Google Cloud Storage

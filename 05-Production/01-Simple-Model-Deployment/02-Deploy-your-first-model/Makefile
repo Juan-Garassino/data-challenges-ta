@@ -1,37 +1,36 @@
-PACKAGE_NAME=taxi_fare
-FILENAME=first_model
-BUCKET_ID=iotcore-example-mlengine
+PACKAGE_NAME=trainer
+FILENAME=task
+BUCKET_NAME=wagon-ml
 JOB_NAME=taxi_fare_training_$(shell date +'%Y%m%d_%H%M%S')
 REGION=europe-west1
 PYTHON_VERSION=3.5
-RUNTIME_VERSION=1.14
+RUNTIME_VERSION=1.13
 FRAMEWORK=scikit-learn
-MODEL_NAME=FarePrediction
+MODEL_NAME=taxi_fare_prediction_model
 
 #----------------------------------
 # GCP Commands
 #----------------------------------
 
-create_bucket:
-	-@ROJECT_ID=$(gcloud config list project --format "value(core.project)")
-	-@BUCKET_NAME=${PROJECT_ID}-mlengine
-	-@echo $BUCKET_NAME
+# create_bucket:
+# 	-@ROJECT_ID=$(gcloud config list project --format "value(core.project)")
+# 	-@BUCKET_NAME=${PROJECT_ID}-mlengine
+# 	-@echo $BUCKET_NAME
 
 gcp_train_local:
 	-@gcloud ai-platform local train \
         --package-path ${PACKAGE_NAME} \
         --module-name ${PACKAGE_NAME}.${FILENAME}
 
-gcp_submit_training: create_package
-	-@gcloud ai-platform jobs submit training ${JOB_NAME} \
-        --job-dir gs://${BUCKET_ID}/scikit_learn_job_dir \
-        --package-path ${PACKAGE_NAME}\
-        --module-name ${PACKAGE_NAME}.${FILENAME} \
-        --region ${REGION} \
-        --python-version=${PYTHON_VERSION} \
-        --runtime-version=${RUNTIME_VERSION}
-#        --staging-bucket gs://${BUCKET_ID} \
-
+# gcp_submit_training: create_package
+# 	-@gcloud ai-platform jobs submit training ${JOB_NAME} \
+#         --job-dir gs://${BUCKET_NAME}/scikit_learn_job_dir \
+#         --package-path ${PACKAGE_NAME}\
+#         --module-name ${PACKAGE_NAME}.${FILENAME} \
+#         --region ${REGION} \
+#         --python-version=${PYTHON_VERSION} \
+#         --runtime-version=${RUNTIME_VERSION}
+# #        --staging-bucket gs://${BUCKET_ID} \
 
 create_gcp_model:
 	-@gcloud ai-platform models create ${MODEL_NAME} \
@@ -56,26 +55,15 @@ create_gcp_model:
 #         --text-instances ../data/test_100.txt \
 #         --version baseline
 
-gcp_submit_training_2:
+gcp_submit_training:
 	# https://cloud.google.com/sdk/gcloud/reference/ai-platform/jobs/submit/training
 	-@gcloud ai-platform jobs submit training ${JOB_NAME} \
-    --job-dir gs://wagon-ml-data/scikit_learn_job_dir  \
-    --package-path './trainer' \
-    --module-name 'trainer.task' \
+    --job-dir gs://${BUCKET_NAME}/trainings  \
+    --package-path ${PACKAGE_NAME} \
+    --module-name ${PACKAGE_NAME}.${FILENAME} \
 		--python-version=${PYTHON_VERSION} \
 		--runtime-version=${RUNTIME_VERSION} \
     --region ${REGION}
-
-gcp_train_local_2:
-	-@gcloud ai-platform local train ${JOB_NAME} \
-    --job-dir gs://wagon-ml-data/scikit_learn_job_dir  \
-    --package-path './trainer' \
-    --module-name 'trainer.task' \
-		--python-version=${PYTHON_VERSION} \
-		--runtime-version=${RUNTIME_VERSION} \
-    --region ${REGION}
-
-
 
 #----------------------------------
 # LOCAL COMMANDS
