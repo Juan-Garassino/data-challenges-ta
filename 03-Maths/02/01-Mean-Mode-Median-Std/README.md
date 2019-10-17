@@ -20,14 +20,12 @@ Thanks to these definitions, implement the functions `mean(samples)` and `standa
 ## The Median
 One problem when using the mean, is that it often does not depict the typical outcome. If one element from the sample is very far from the rest of the sample ("outlier"), then the mean will be affected because of this outlier. That's why, in some cases, we use **the Median**.
 
-The median is the middle score :
-- If we have an odd number of data, the median is the ..
-- If we have an even number of data, the median is the ..
+Read this [wikipedia article](https://en.wikipedia.org/wiki/Median) to see how the median is computed.
 
---> pour ce dataset tu devrais trouver : 6.40
-##
+## The Quartiles
 
-TO DO:
-- maximum
-- minimum
--
+Read this [wikipedia article](https://en.wikipedia.org/wiki/Quartile) to see how the quartiles are computed.
+
+## The Mode
+
+Read this [wikipedia article](https://en.wikipedia.org/wiki/Mode_(statistics)) to see how the mode is computed.

@@ -7,8 +7,10 @@ def standard_deviation(samples):
 def median(samples):
     pass
 
-def mode(samples):
+def quartiles(sample):
+    # Expected to return a list of float or int => [Q1, Q2, Q3]
+    #   ex: quartiles([10,11,23,18,20]) => [10.5, 18, 21.5]
     pass
 
-def quartiles(sample):
+def mode(samples):
     pass
