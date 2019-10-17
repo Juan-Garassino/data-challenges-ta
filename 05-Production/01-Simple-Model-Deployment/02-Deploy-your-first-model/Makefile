@@ -32,18 +32,6 @@ gcp_submit_training: create_package
         --runtime-version=${RUNTIME_VERSION}
 #        --staging-bucket gs://${BUCKET_ID} \
 
-eval_gcp_local:
-#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_163821
-	-@gcloud ai-platform local predict --model-dir model/ \
-        --json-instances ../data/test.json \
-        --framework scikit-learn
-
-eval_gcp_online:
-#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_133849
-	-@gcloud ai-platform local predict --model ${MODEL_NAME} \
-        --json-instances ../data/test.json \
-        --version baseline \
-        --framework scikit-learn
 
 create_gcp_model:
 	-@gcloud ai-platform models create ${MODEL_NAME} \
@@ -54,6 +42,18 @@ create_gcp_model:
         --framework ${FRAMEWORK} \
         --python-version=${PYTHON_VERSION} \
         --runtime-version=${RUNTIME_VERSION}
+
+eval_gcp_local:
+#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_163821
+	-@gcloud ai-platform local predict --model-dir model/ \
+        --json-instances ../data/test.json \
+        --framework scikit-learn
+
+eval_gcp_online:
+#	-@gcloud ai-platform local predict --model-dir gs://${BUCKET_ID}/TaxiFare_20191016_133849
+	-@gcloud ai-platform predict --model ${MODEL_NAME} \
+        --text-instances ../data/test_100.txt \
+        --version baseline
 #----------------------------------
 # LOCAL COMMANDS
 #----------------------------------
