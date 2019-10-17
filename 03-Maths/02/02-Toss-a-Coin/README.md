@@ -18,6 +18,7 @@ To answer these "easy" questions, you could count the number of ways to get a re
 - 0 1 1 0
 - 0 1 0 1
 - 0 0 1 1
+
 And there are 16 possible outcomes. That means that the probability is P(4) = 6/16 = 0.375. But if the number of flips is larger, it becomes more difficult to count manually the different possibilities.
 
 Mathematically, the number of ways to get x heads (or tails) in n flips could be calculated as :
@@ -58,6 +59,8 @@ EX : Imagine you play 10 times (=n_games) to flip the coin 6 times (=n_toss) and
     - 2 times 4 heads
     - 1 times 5 heads
     - 0 times 6 heads
+
+
     ```python
     => result = {0:0/n_games, 1:1/n_games, 2:3/n_games, 3:3/n_games, 4:2/n_games, 5:1/n_games, 6:0/n_games }
     ```
