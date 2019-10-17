@@ -24,18 +24,17 @@ Where the index i in `weather` correspond to the index i in `play`. For example,
 
 To start this exercise, construct the frequency table. To help you, you could do it manually on a sheet of paper. It should look like this :
 ```python
-|----------------------------
+ ___________________________
 | Weather  |   No   |  Yes  |
-|---------------------------|
+|__________|________|_______|
 | Overcast |        |       |
-|---------------------------|
+|__________|________|_______|
 | Sunny    |        |       |
-|---------------------------|
+|__________|________|_______|
 | Rain     |        |       |
-|---------------------------|
-|---------------------------|
+|__________|________|_______|
 | Total    |        |       |
-|---------------------------|
+|__________|________|_______|
 ```
 Now to help you to do that (if you had more data, you could not do it mannualy), implement the function, `prior_probability(event, list_events)`. This should return the probability that the `event` happens.
 for example :
