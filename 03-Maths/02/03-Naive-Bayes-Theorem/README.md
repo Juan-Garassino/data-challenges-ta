@@ -5,10 +5,10 @@ In thise exercise, we have a dataset of weather and corresponding target variabl
 ![Formule de Bayes](https://www.bayestheorem.net/images/Bayes-Theorem-Formula-Defined.jpeg)
 
 Where :
-- P(A|B) is the probability of A if B (posterior probability)
-- P(A) is the probability of A (priori probability)
-- P(B|A) is the probability of B if A
-- P(B) is the probability of B
+**P(A|B)** is the probability of A if B (posterior probability).
+**P(A)** is the probability of A (priori probability).
+**P(B|A)** is the probability of B if A.
+**P(B)** is the probability of B.
 
 
 ## Calculate the prior probability
