@@ -210,4 +210,9 @@ Let's find out what kind of data we can get from this API 🕵️‍♂️
 
 # (Optional) Plotting _multiple_ line charts
 
-We'd like to **compare** the evolution of the GAFA stocks (Google, Apple, Facebook, Amazon) by plotting them on the _same_ chart. Reuse the code from above to build a dataframe with one column per stock and keeping the dates as the index. Maybe you can use some normalization technique at `t = 0` to compare better the relative performance of each stock!
+We'd like to **compare** the evolution of the GAFA stocks (Google, Apple, Facebook, Amazon) by plotting them on the _same_ chart.
+Reuse the code from above to build a dataframe with one column per stock and keeping the dates as the index.
+Maybe you can use some normalization technique at `t = 0` to compare better the relative performance of each stock!
+
+:warning: **DON'T LOOP OVER THE API CALL, GET THE DATA ONCE AND THEN STOP** :warning:
+Or you will block the API for your buddies, thank you 🙏
