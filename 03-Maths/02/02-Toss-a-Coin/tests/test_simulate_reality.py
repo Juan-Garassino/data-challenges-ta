@@ -27,7 +27,7 @@ class TestReality(unittest.TestCase):
 
     # Test for play_n_game
     def test_play_n_game_1(self):
-        expected = {1: 1.0}
+        expected = {0: 0.0, 1: 1.0}
         random.seed(1)
         self.assertEqual(play_n_game(1,1), expected)
 
