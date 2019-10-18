@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Exam_pass_logistic_curve.jpeg" alt="Graph of a logistic regression curve showing probability of passing an exam versus hours studying - wikipedia" style="width:200px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Exam_pass_logistic_curve.jpeg" alt="Graph of a logistic regression curve showing probability of passing an exam versus hours studying - wikipedia" style="width:400px">
 Graph of a logistic regression curve showing probability of passing an exam versus hours studying
 
 ### Introduction
