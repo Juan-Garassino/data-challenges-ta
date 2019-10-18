@@ -3,7 +3,7 @@
 import unittest
 import statistics
 import numpy as np 
-from basic_functions_solution import *
+from basic_functions import *
 
 class TestBasicFunctions(unittest.TestCase):
     def test_mean(self):
