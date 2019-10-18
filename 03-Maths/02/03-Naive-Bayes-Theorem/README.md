@@ -1,6 +1,4 @@
-## Naive Bayes Theorem
-
-It is a classification technique based on Bayes’ Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature.
+It is a **classification technique** based on Bayes’ Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature.
 
 In thise exercise, we have a dataset of weather and corresponding target variable ‘Play’ (suggesting possibilities of playing sports). Now, we need to classify whether players will play or not based on weather condition. Let’s follow the below steps to perform it.
 
