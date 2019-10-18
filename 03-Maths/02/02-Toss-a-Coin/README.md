@@ -60,20 +60,20 @@ The goal here is to play a bunch of flip coin games and see the distribution of 
 This new function will call your previously defined `play_one_game` function `n_games` times. Then, we want to keep track of the end result of each game played this way.
 `play_n_game` should return a dictionary. The keys will be the possible results of each game, so they can't be over `n_toss` or under 0. The values for each of those keys will correspond to the probability of a game ending with that result.
 
-EX : Imagine you play 10 times (=n_games) to flip the coin 6 times (=n_toss) and you get
+EX : Imagine you play 3 times (=n_games) to flip the coin 3 times (=n_toss) and you get
+- 1st game : 0 head + 3 tails
+- 2nd game : 2 heads + 1 tail
+- 3rd game : 3 heads + 0 tail
 
-- 0 times 0 heads
-- 1 times 1 heads
-- 3 times 2 heads
-- 3 times 3 heads
-- 2 times 4 heads
-- 1 times 5 heads
-- 0 times 6 heads
+that means that, you got : 
+- 1 time 0 head
+- 0 time 1 head
+- 1 time 2 heads
+- 1 time 3 heads
 
+So your result should look like :
+result = {0:1/n_games, 1:0/n_games, 2:1/n_games, 3:1/n_games}
 
-```python
-=> result = {0:0/n_games, 1:1/n_games, 2:3/n_games, 3:3/n_games, 4:2/n_games, 5:1/n_games, 6:0/n_games }
-```
 
 ## Compare results with Mean Squared Error (MSE)
 
