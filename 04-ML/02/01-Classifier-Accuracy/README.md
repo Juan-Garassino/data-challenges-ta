@@ -18,4 +18,4 @@ To start the exercise open `01-Classifier-Accuracy.ipynb` in `jupyter notebook`.
 ### Exercise questions:
 
 1. With **k=1**, is Paul classified as a **Pro-Player**?
-2. What is the **error rate** with **k=1**?
+2. What is the **mean accuracy** of our kNN with n=1?
