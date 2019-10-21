@@ -1,0 +1,26 @@
+## Classifier Accuracy
+
+<img src="https://i.ibb.co/PjwJZD9/Screen-Shot-2019-09-28-at-15-19-47.png" alt="Accuracy vs precision" border="0" width="50%">
+<a href="https://en.wikipedia.org/wiki/Accuracy_and_precision">Accuracy and precision - Wikipedia</a>
+
+### Introduction
+
+In this exercice we are going to find how **accurate** is our **kNN classifier**.<br>
+We will also try to differenciate **pro** from **amateur** basket-ball players.
+
+**Dataset:** "../data/Basket_Ball_Players.csv"<br>
+
+**Columns:** <br>
+**"Height"**, range [150, 220], height in centimeter <br>
+**"3-Pointers"**, range [0, 30], 3-Pointers done in one minutes <br>
+**"Pro-Player"**, range [0,1] <br>
+
+To start the exercise open `01-Classifier-Accuracy.ipynb` in `jupyter notebook`.
+
+### Exercise questions:
+
+1. With **k=1**, is Paul classified as a **Pro-Player**?
+2. What is the **error rate** with **k=1**?
+2. Which **k** give us the best **accuracy**?
+2. What is the **accuracy** of the **best k**?
+3. With the best **k**, is Paul classified as a **Pro-Player**?
