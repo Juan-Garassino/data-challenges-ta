@@ -69,16 +69,16 @@ gcp_submit_training:
 # LOCAL COMMANDS
 #----------------------------------
 
-create_package:
-	-@mkdir ${PACKAGE_NAME}
-	-@touch ${PACKAGE_NAME}/__init__.py
-	-@cp ${FILENAME}.py ${PACKAGE_NAME}
+#create_package:
+#	-@mkdir ${PACKAGE_NAME}
+#	-@touch ${PACKAGE_NAME}/__init__.py
+#	-@cp ${FILENAME}.py ${PACKAGE_NAME}
 
 train_simple_model:
-	-@python first_model.py
+	-@python -m ${PACKAGE_NAME}.${FILENAME}
 
 clean:
-	-@rm *.csv *.joblib
+	-@rm ${PACKAGE_NAME}/*.csv ${PACKAGE_NAME}/*.joblib
 	-@echo ${JOB_NAME}
 
 test_local:

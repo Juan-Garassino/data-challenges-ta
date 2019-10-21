@@ -6,23 +6,19 @@ from sklearn import linear_model
 from sklearn.externals import joblib
 from trainer.model import FEATURES
 
-# Fill in your Cloud Storage bucket name
-BUCKET_NAME = "wagon-m"
+# Download training dataset previously uploaded From Google Cloud Storage
+BUCKET_NAME = "wagon-data"
 bucket = storage.Client().bucket(BUCKET_NAME)
-
-# Import Data From Google Cloud Storage
-PATH = "../data/"
 filename = "05_Production_TaxiFare_100000.csv"
-
-# Download training dataset previously uploaded
-# Path to the data inside the public bucket
-#data_dir = BUCKET_ID
-#blob = bucket.blob(''.join([data_dir, filename]))
 blob = bucket.blob(filename)
 blob.download_to_filename(filename)
 
 with open(filename, 'r') as train_data:
     df = pd.read_csv(train_data)
+
+# ----------------------------------
+# Preprocessing
+# ----------------------------------
 
 y_train = df["fare_amount"]
 X_train = df[FEATURES]
