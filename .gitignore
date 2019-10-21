@@ -3,4 +3,6 @@
 .DS_Store
 
 # Jupiter Notebook #
-.ipynb_checkpoints
+.pytest_cache
+__pycache__
+*checkpoint.ipynb
