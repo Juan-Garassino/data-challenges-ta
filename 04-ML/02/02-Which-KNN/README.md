@@ -6,12 +6,12 @@ Binary classification with kNN - <a href="https://blog.eduonix.com/artificial-in
 In this exercice we are going to find the **most accurate** **k** for a **kNN classifier**.
 We are still trying to differenciate **pro** from **amateur** basket-ball players.
 
-**Dataset:** "../data/Basket_Ball_Players.csv"
+**Dataset:** `../data/Basket_Ball_Players.csv`
 
 **Columns:**
-**"Height"**, range [150, 220], height in centimeter
-**"3-Pointers"**, range [0, 30], 3-Pointers done in one minutes
-**"Pro-Player"**, range [0,1]
+**Height**, range [150, 220], height in centimeter
+**3-Pointers**, range [0, 30], 3-Pointers done in one minutes
+**Pro-Player**, range [0,1]
 
 To start the exercise open `01-Which-KNN.ipynb` in `jupyter notebook`.
 
