@@ -19,6 +19,3 @@ To start the exercise open `01-Classifier-Accuracy.ipynb` in `jupyter notebook`.
 
 1. With **k=1**, is Paul classified as a **Pro-Player**?
 2. What is the **error rate** with **k=1**?
-2. Which **k** give us the best **accuracy**?
-2. What is the **accuracy** of the **best k**?
-3. With the best **k**, is Paul classified as a **Pro-Player**?
