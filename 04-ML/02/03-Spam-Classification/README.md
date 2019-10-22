@@ -6,3 +6,5 @@ We will use **TF-IDF encoding** here (term frequency inverse document frequency)
 And finally, we're gonna use **Multinomial Naive Bayes** to represent our data.
 
 Click this [link](https://wagon-public-datasets.s3.amazonaws.com/Data-Challenges_ML-Day02-Ex03_emails-dataset.pickle) to download the **spam email dataset**. Then put the file in this **exercise folder**.
+
+To start the exercise open `Exercice-Spam.ipynb` in `jupyter notebook`.
