@@ -67,9 +67,9 @@ git push origin master
 At this point of the challenge, you should have 3 style errors:
 
 ```text
-today.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-today.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
-today.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
+C0114: Missing module docstring (missing-module-docstring)
+C0116: Missing function or method docstring (missing-function-docstring)
+C0116: Missing function or method docstring (missing-function-docstring)
 ```
 
 You are missing [docstrings](https://www.python.org/dev/peps/pep-0257/). One for the module, and one for each function. A docstring gives context / documentation to a module or function.
