@@ -1,5 +1,5 @@
 PACKAGE_NAME=trainer
-FILENAME=task
+FILENAME=train
 
 #----------------------------------
 # LOCAL COMMANDS
@@ -11,8 +11,8 @@ create_package:
 	-@touch ${PACKAGE_NAME}/pipeline.py
 	-@touch ${PACKAGE_NAME}/tools.py
 
-train_simple_model:
-	-@python first_model.py
+launch_pipeline:
+	-@python -m ${PACKAGE_NAME}.${FILENAME}
 
 clean:
 	-@rm *.csv *.joblib

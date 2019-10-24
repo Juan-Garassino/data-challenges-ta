@@ -4,7 +4,7 @@ from sklearn.linear_model import Lasso
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.pipeline import Pipeline
 from termcolor import colored
-from trainer.tools import FillNa, My_preprocessing, perf_eval_regression
+from trainer.pipeline_blocs import FillNa, My_preprocessing, perf_eval_regression
 from xgboost import XGBRegressor
 pd.options.mode.chained_assignment = None  # default='warn'
 
