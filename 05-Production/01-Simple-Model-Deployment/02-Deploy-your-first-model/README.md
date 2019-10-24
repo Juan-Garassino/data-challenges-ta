@@ -60,6 +60,8 @@ make clean
 
 ## Train Model on GCP
 
+Visite [Documentation](https://cloud.google.com/sdk/gcloud/reference/ai-platform/jobs/submit/training)
+
 Inspect Makefile, complete environement variables and run
 ```bash
 make gcp_submit_training
