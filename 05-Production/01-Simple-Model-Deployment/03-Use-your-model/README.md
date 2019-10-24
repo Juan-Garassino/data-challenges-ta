@@ -1,16 +1,24 @@
-## Create a model
+## Objective
 
-[TODO]
+Use and evaluate your model 
 
-## Create a version
+## First locally
 
-[TODO]
+First complete `predict.py` file to evaluate the model locally
 
-## Call predictions
+## Then using AI Platform 
 
-`predict.py` 
+The command we'll use here is `gcloud ai-platform predict`  
 
-transform test.csv to test.json
-use gcloud predict
-save predictions to csv
-evaluate your model
+Check documentation for online prediction
+
+    gcloud ai-platform predict --help
+    
+Create an input.json file with each input instance on a separate line, i.e :
+
+    [6.8,  2.8,  4.8,  1.4]
+    [6.0,  3.4,  4.5,  1.6]
+    
+Use command to obtain predictions  
+save predictions to csv  
+evaluate your model  
