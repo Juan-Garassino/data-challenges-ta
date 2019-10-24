@@ -1,1 +1,1 @@
-To start the exercise open the **notebook** in this exercise folder with `jupyter notebook`.
+To start the exercise open the **IPython Notebook file** in this exercise folder with `jupyter notebook`.
