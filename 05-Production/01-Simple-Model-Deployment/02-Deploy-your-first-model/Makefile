@@ -39,7 +39,6 @@ create_gcp_model:
 		 --framework ${FRAMEWORK} \
 		 --python-version=${PYTHON_VERSION} \
 		 --runtime-version=${RUNTIME_VERSION}
-
 #----------------------------------
 # LOCAL COMMANDS
 #----------------------------------
@@ -49,7 +48,7 @@ create_gcp_model:
 #	-@touch ${PACKAGE_NAME}/__init__.py
 #	-@cp ${FILENAME}.py ${PACKAGE_NAME}
 
-train_simple_model: set_auth
+train_simple_model:
 	-@python -m ${PACKAGE_NAME}.${FILENAME}
 
 clean:
