@@ -11,6 +11,8 @@ test = test.drop(['pickup_datetime', 'key', 'fare_amount'], axis=1)
 def to_txt(test):
     test.to_csv('test.txt', header=None, index=None, sep=',', mode='a')
 
+def to_csv(test):
+    test.to_csv('test.csv', header=None, index=None, sep=',', mode='a')
 
 def to_list(test):
     test_lists = test.values.tolist()
