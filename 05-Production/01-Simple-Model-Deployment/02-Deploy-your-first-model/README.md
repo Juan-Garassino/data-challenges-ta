@@ -15,7 +15,7 @@ echo $BUCKET_NAME
 Then create bucket
 BEWARE HERE chose adapted region 
 ```bash
-REGION=europe-west1
+export REGION=europe-west1
 gsutil mb -l $REGION gs://$BUCKET_NAME
 ```
 

@@ -36,6 +36,19 @@ gcp_submit_training:
 clean:
 	-@rm *.csv *.joblib
 
-test_local:
-	-@python test.py
+build_dep:
+	-@python setup.py sdist --formats=gztar
+
+upload_dep:
+	-@gsutil cp ./dist/${PACKAGE_NAME}-1.0.tar.gz gs://${BUCKET_NAME}/trainings/code/${PACKAGE_NAME}-1.0.tar.gz
+
+create_version_pipeline:
+	-@gcloud components install beta
+	-@gcloud beta ai-platform versions create pipeline_v0 \
+		--model ${MODEL_NAME} \
+		--origin gs://wagon-data/TaxiFare_pipeline_20191024_115902 \
+		--framework ${FRAMEWORK} \
+		--python-version=${PYTHON_VERSION} \
+		--runtime-version=${RUNTIME_VERSION} \
+        --package-uris gs://${BUCKET_NAME}/trainings/code/${PACKAGE_NAME}-1.0.tar.gz
 
