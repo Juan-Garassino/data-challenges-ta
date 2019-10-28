@@ -30,8 +30,8 @@ In pseudo-code :
 w[i] = 1/N for i=1..N
 for m=1..M:
   fit f_m(x) with sample weights w[i]
-  epsilon_m = sum(w[i]*I)/sum(w[i]) --> error rate
-  alpha_m = 1/2 * log ((1-epsilon_m)/epsilon_m) --> log "correct" rate
+  epsilon_m = sum(w[i]*I)/sum(w[i]) # --> error rate
+  alpha_m = 1/2 * log ((1-epsilon_m)/epsilon_m) # --> log "correct" rate
   w[i] = w[i] * exp(alpha_m * y[i] * f_m) for i=1..N
   w[i] = w[i]/sum(w[i])
   save alpha_m, f_m
