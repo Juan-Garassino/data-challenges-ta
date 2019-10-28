@@ -6,4 +6,4 @@ Random forests are **an ensemble learning method** for classification, regressio
 
 Open jupyter notebook, and follow the instructions 🤓.
 
-[Random Forest Classifier](https://miro.medium.com/max/592/1*i0o8mjFfCn-uD79-F1Cqkw.png)
+![Random Forest Classifier](https://miro.medium.com/max/592/1*i0o8mjFfCn-uD79-F1Cqkw.png)
