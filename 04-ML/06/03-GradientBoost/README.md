@@ -26,7 +26,7 @@ The main steps of the algorith are :
 - If we get (x_i, y_i) wront then increase w_i, else, decrease w_i
 
 In pseudo-code :
-```
+```python
 w[i] = 1/N for i=1..N
 for m=1..M:
   fit f_m(x) with sample weights w[i]
@@ -40,7 +40,7 @@ for m=1..M:
 ## Exponential Loss Function
 
 With Adaboost, we will use the exponential loss function :
-```
+```python
 L(y, f(x)) = exp(-y*f(x))
 ```
 --> if y and f(x) same signs --> 0
