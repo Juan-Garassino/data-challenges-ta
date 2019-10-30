@@ -1,39 +1,32 @@
-## Objective
+# Objective
 
-Train first model on GCP  
-The aim here is to focus on the whole pipeline, implement few preprocessing
+Now, your will train your first model on GCP.
+The goal is to build a very simple model for the taxi fare prediction problem. The focus is to build a deployment pipeline that will be easy to iterate on and improve. We will not try to make the model accurate yet. We will make improvements later.
 
 ## Create Bucket
 
-Start by defining a project name
+First, let's create a bucket that will be used to store all the models you will build.
+
 ```bash
 PROJECT_ID=$(gcloud config list project --format "value(core.project)")
-BUCKET_NAME=${PROJECT_ID}-mlengine
-echo $BUCKET_NAME
-```
-
-Then create bucket
-BEWARE HERE chose adapted region 
-```bash
-export REGION=europe-west1
+BUCKET_NAME=${PROJECT_ID}-models
+REGION=europe-west1
 gsutil mb -l $REGION gs://$BUCKET_NAME
 ```
 
-## Install correct requirements for this challenge
+## Create a Model
+
+- go to https://console.cloud.google.com/ai-platform/models
+- create a model `taxi_fare_prediction_model`
+
+## Complete task.py
+
+Open it and complete to train your first model on GCloud as seen in the course.
+
+## Train model locally
 
 ```bash
-pip install -r requirements.txt
-```
-
-## Complete fisrt_model.py
-
-Open it and complete to train first model on GCloud as seen this morning  
-No preporcessing here
-
-## Train locally
-
-```bash
-python first_model.py
+python -m trainer.task.py
 ```
 
 Check that :
@@ -41,35 +34,21 @@ Check that :
 - You can now check on Google Cloud Storage that you model has been uploaded  
 
 ```bash
-gsutils ls gs://[BUCKET_NAME]/
+gsutils ls gs://$BUCKET_NAME
 ```
 
-## Test Locally 
+## Train model on GCP
 
-Inspect Makefile and run  
-```bash
-make test_local
-```
-
-A score should appear on the model you trained  
-
-Now clean your package
-```bash
-make clean
-```
-
-## Train Model on GCP
-
-Visite [Documentation](https://cloud.google.com/sdk/gcloud/reference/ai-platform/jobs/submit/training)
+Visit [https://cloud.google.com/sdk/gcloud/reference/ai-platform/jobs/submit/training](https://cloud.google.com/sdk/gcloud/reference/ai-platform/jobs/submit/training)
 
 Inspect Makefile, complete environement variables and run
 ```bash
 make gcp_submit_training
 ```
 
-## Deploy model on GCP
+## Link the training with a new version of the model
 
-```bash
-gcloud ai-platform models create "[YOUR-MODEL-NAME]"
-```
-
+- go to https://console.cloud.google.com/ai-platform/models
+- go to taxi_fare_prediction_model
+- create a new version and attach the training file (model.joblib) that you just trained.  
+***`Beware here to specify skickit-learn version as 0.20.2`***

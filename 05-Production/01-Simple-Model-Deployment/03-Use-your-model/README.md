@@ -1,24 +1,17 @@
-## Objective
+# Objective
 
-Use and evaluate your model 
+Use and evaluate your model
 
 ## First locally
 
-First complete `predict.py` file to evaluate the model locally
+First complete `predict_local.py` file to evaluate the model locally
 
-## Then using AI Platform 
+## Then using AI platform python api
 
-The command we'll use here is `gcloud ai-platform predict`  
+Now complete `predict.py` file to obtain online predictions from google
 
-Check documentation for online prediction
+## To go further
 
-    gcloud ai-platform predict --help
-    
-Create an input.json file with each input instance on a separate line, i.e :
-
-    [6.8,  2.8,  4.8,  1.4]
-    [6.0,  3.4,  4.5,  1.6]
-    
-Use command to obtain predictions  
-save predictions to csv  
-evaluate your model  
+Create a jupyter notebook to visualise your predictions :  
+ - Are local predictions same as online predictions ?
+ - Visualise predictions as using `seaborn.pairplot`, how good is your model ?

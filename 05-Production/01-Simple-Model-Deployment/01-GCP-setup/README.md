@@ -1,4 +1,4 @@
-## Objective
+# Objective
 
 Set up yout GCP account and install first sdk
 
@@ -14,16 +14,20 @@ https://console.cloud.google.com/cloud-resource-manager
 Simply follow
 https://cloud.google.com/sdk/
 
-## Test installation
+## Upload data into your own bucket
 
- - Upload csv file into Google Cloud Storage
- - Open Makefile
- - Create bucket into Google Cloud Storage and load data:
-```bash
-make create_bucket unzip upload_data
+The data is already stored on a google cloud bucket
+- training sample data [gs://wagon-ml-05-data/taxi_trips_train_sample_set.csv](gs://wagon-ml-05-data/taxi_trips_train_sample_set.csv)
+- test data [gs://wagon-ml-05-data/taxi_trips_test_set.csv](gs://wagon-ml-05-data/taxi_trips_test_set.csv)
+
+To upload this data into your own bucket, run the Makefile by setting the right variables at the top of the file.
+
+Then run it within a console:
 ```
-Go to https://console.cloud.google.com/storage and make sure the data has correcly been uploaded in your bucket.
+make all
+```
 
+Then go to https://console.cloud.google.com/storage and make sure the data has correcly been uploaded in your bucket.
 
 ## Troubleshooting
 

@@ -1,55 +1,60 @@
 import datetime
-import os
 
-import pandas as pd
 from google.cloud import storage
-from sklearn import linear_model
 from sklearn.externals import joblib
-from trainer.model import FEATURES
 
-BUCKET_NAME = "wagon-data"
-filename = "05_Production_TaxiFare_100000.csv"
+BUCKET_NAME = "XXX"
+FILEMAME = "XXX"
 
-bucket = storage.Client().bucket(BUCKET_NAME)
-blob = bucket.blob(filename)
-blob.download_to_filename(filename)
-with open(filename, 'r') as train_data:
-    df = pd.read_csv(train_data)
-os.remove(filename)
+FEATURES = ['pickup_latitude', 'pickup_longitude',
+            'dropoff_latitude', 'dropoff_longitude',
+            'passenger_count']
+            
+BUCKET = storage.Client().bucket(BUCKET_NAME)
+
+def get_data():
+    """
+    Get the data from Google File Storage, download it, save it to local, then read it into pandas DataFrame
+    Help here https://googleapis.dev/python/storage/latest/index.html
+    """
+    # Complete HERE
+    return df
 
 
-# ----------------------------------
-# Preprocessing
-# ----------------------------------
 def preprocess(df):
     """
-    Write preprocessing function here
-    :param df: raw DataFrame read from GCP Storage
-    :return: X_train, y_train
+    Preprocess the data to make it compatible with sklearn estimator
     """
-    cols2drop = ['pickup_datetime', 'key']
-    df = df.drop(columns=cols2drop, axis=1)
-
-    y_train = df.pop('fare_amount')
-    # X_train = df[FEATURES]
-    X_train = df
+    df = df[FEATURES + ["fare_amount"]].dropna()
+    y_train = df["fare_amount"]
+    X_train = df[FEATURES]
     return X_train, y_train
 
 
-# ----------------------------------
-# Use functions HERE
-# ----------------------------------
+def train_model(X_train, y_train):
+    """
+    Chose your model and fit it
+    Fit the model
+    return model fitted
+    """
+    # Complete HERE
+    return regressor
+
+
+def save_model(regressor):
+    """
+    Save the model into a .joblib and upload it on Google Storage.
+    """
+    model_name = 'model.joblib'
+    joblib.dump(clf, model_name)
+
+    blob = BUCKET.blob('{}/{}'.format(
+        datetime.datetime.now().strftime('taxi_fare_model_%Y%m%d_%H%M%S'),
+        model_name))
+    blob.upload_from_filename(model_name)
+
+
+df = get_data()
 X_train, y_train = preprocess(df)
-# Chose model
-reg = linear_model.Lasso(alpha=0.1)
-reg.fit(X=X_train, y=y_train)
-
-# Export the model to a file
-model_name = 'model.joblib'
-joblib.dump(reg, model_name)
-
-# Upload the model_name to GCS
-blob = bucket.blob('{}/{}'.format(
-    datetime.datetime.now().strftime('TaxiFare_%Y%m%d_%H%M%S'),
-    model_name))
-blob.upload_from_filename(model_name)
+clf = train_model(X_train, y_train)
+save_model(clf)

@@ -1,41 +1,79 @@
 from math import sqrt
-
+import os
 import pandas as pd
-from sklearn.externals import joblib
+from google.cloud import storage
+import googleapiclient.discovery
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
+BUCKET_NAME = "wagon-ml-05-data"
+FILEMAME = "taxi_trips_test_set.csv"
+BUCKET = storage.Client().bucket(BUCKET_NAME)
 
-def perf_eval_regression(y_pred, y):
+FEATURES = ['pickup_latitude', 'pickup_longitude',
+            'dropoff_latitude', 'dropoff_longitude',
+            'passenger_count']
+
+
+def predict_json(project, model, instances, version=None):
+    """Send json data to a deployed model for prediction. """
+
+    service = googleapiclient.discovery.build('ml', 'v1')
+    name = 'projects/{}/models/{}'.format(project, model)
+
+    if version is not None:
+        name += '/versions/{}'.format(version)
+
+    response = service.projects().predict(
+        name=name,
+        body={'instances': instances}
+    ).execute()
+
+    if 'error' in response:
+        raise RuntimeError(response['error'])
+
+    return response['predictions']
+
+
+def get_test_data():
+    """ load test data """
+    blob = BUCKET.blob(FILEMAME)
+    blob.download_to_filename(FILEMAME)
+    with open(FILEMAME, 'r') as train_data:
+        df = pd.read_csv(train_data)
+    os.remove(FILEMAME)
+    return df
+
+
+def preprocess(df):
+    """
+    preprocess method. This should be identical to the preprocess method
+    that was used from training.
+    """
+    df = df[FEATURES + ["fare_amount"]].dropna()
+    y_test = df["fare_amount"]
+    X_test = df[FEATURES]
+    return X_test, y_test
+
+
+def convert_to_json_instances(X_test):
+    return X_test.values.tolist()
+
+
+def evaluate_model(y, y_pred):
     MAE = round(mean_absolute_error(y, y_pred), 2)
     RMSE = round(sqrt(mean_squared_error(y, y_pred)), 2)
     res = {'MAE': MAE, 'RMSE': RMSE}
     return res
 
 
-PATH = '../data/05_Production_TaxiFare_TEST_1000_with_answers.csv'
-model = '../02-Deploy-your-first-model/model.joblib'
-
-df = pd.read_csv(PATH)
-
-
-def preprocess(df):
-    """
-    Write preprocessing function here
-    :param df: raw DataFrame read from GCP Storage
-    :return: X_train, y_train
-    """
-    cols2drop = ['pickup_datetime', 'key']
-    df = df.drop(columns=cols2drop, axis=1)
-
-    y_train = df.pop('fare_amount')
-    # X_train = df[FEATURES]
-    X_train = df
-    return X_train, y_train
-
-
+# only predict for the first 10 rows
+df = get_test_data().head(10)
 X_test, y_test = preprocess(df)
+instances = convert_to_json_instances(X_test)
+results = predict_json(project='wagon-bootcamp-256007',
+                       model='taxi_fare_prediction_model',
+                       instances=instances, version='v3')
 
-loaded_model = joblib.load(model)
-y_pred = loaded_model.predict(X_test)
-result = perf_eval_regression(y_pred, y_test)
-print(result)
+df["fare_predicted"] = results
+print(evaluate_model(y_test, df.fare_predicted))
+df.to_csv("predictions.csv")
