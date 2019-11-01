@@ -5,8 +5,9 @@ from google.cloud import storage
 import googleapiclient.discovery
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-BUCKET_NAME = "wagon-ml-05-data"
-FILEMAME = "taxi_trips_test_set.csv"
+PROJECT_ID="xxx"
+BUCKET_NAME = "wagon-ml"
+FILEMAME = "/data/taxi_trips_test_set.csv"
 BUCKET = storage.Client().bucket(BUCKET_NAME)
 
 FEATURES = ['pickup_latitude', 'pickup_longitude',
@@ -51,8 +52,8 @@ def evaluate_model(y, y_pred):
 # only predict for the first 10 rows
 df = get_test_data().head(10)
 X_test, y_test = preprocess(df)
-results = predict_local(project='wagon-bootcamp-256007',
-                       model='taxi_fare_prediction_model')
+results = predict_local(project=PROJECT_ID,
+                        model='taxi_fare_prediction_model')
 
 df["fare_predicted"] = results
 print(evaluate_model(y_test, df.fare_predicted))
