@@ -39,7 +39,7 @@ make upload_data
 ```
 
 The training dataset should now be visible into your `wagon-ml/data` folder.
-Go to https://console.cloud.google.com/storage and make sure the training dataset is now be visible in your bucket inside folder `/data`
+Go to https://console.cloud.google.com/storage and make sure that both datasets are now be visible in your bucket inside folder `/data`
 
 ## Troubleshooting
 
