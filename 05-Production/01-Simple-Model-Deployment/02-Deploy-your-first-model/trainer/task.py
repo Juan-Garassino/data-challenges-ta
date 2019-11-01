@@ -41,15 +41,18 @@ def train_model(X_train, y_train):
     return regressor
 
 
-def save_model(regressor):
+def save_model(clf):
     """
     Save the model into a .joblib and upload it on Google Storage.
     """
-    model_name = '/models/model.joblib'
+    model_name = 'model.joblib'
     joblib.dump(clf, model_name)
 
-    blob = BUCKET.blob('{}/{}'.format(
-        datetime.datetime.now().strftime('taxi_fare_model_%Y%m%d_%H%M%S'),
+    client = storage.Client().bucket(BUCKET_NAME)
+    blob = client.blob('{}/{}/{}/{}'.format(
+        'models',
+        'taxi_fare_model',
+        datetime.datetime.now().strftime('%Y%m%d_%H%M%S'),
         model_name))
     blob.upload_from_filename(model_name)
 
