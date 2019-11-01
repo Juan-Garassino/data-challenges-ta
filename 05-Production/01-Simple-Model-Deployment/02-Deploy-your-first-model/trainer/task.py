@@ -3,7 +3,7 @@ import datetime
 from google.cloud import storage
 from sklearn.externals import joblib
 
-BUCKET_NAME = "XXX"
+BUCKET_NAME = "wagon-ml"
 FILEMAME = "XXX"
 
 FEATURES = ['pickup_latitude', 'pickup_longitude',
@@ -45,7 +45,7 @@ def save_model(regressor):
     """
     Save the model into a .joblib and upload it on Google Storage.
     """
-    model_name = 'model.joblib'
+    model_name = '/models/model.joblib'
     joblib.dump(clf, model_name)
 
     blob = BUCKET.blob('{}/{}'.format(
