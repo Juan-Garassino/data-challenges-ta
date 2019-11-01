@@ -17,8 +17,8 @@ https://cloud.google.com/sdk/
 ## Upload data into your own bucket
 
 The data is already stored on a google cloud bucket
-- training sample data [gs://wagon-ml-05-data/taxi_trips_train_sample_set.csv](gs://wagon-ml-05-data/taxi_trips_train_sample_set.csv)
-- test data [gs://wagon-ml-05-data/taxi_trips_test_set.csv](gs://wagon-ml-05-data/taxi_trips_test_set.csv)
+- training sample data [gs://wagon-ml-05-public/data/taxi_trips_train_sample_set.csv](gs://wagon-ml-05-public/data/taxi_trips_train_sample_set.csv)
+- test data [gs://wagon-ml-05-public/data/taxi_trips_test_set.csv](gs://wagon-ml-05-public/data/taxi_trips_test_set.csv)
 
 To upload this data into your own bucket, run the Makefile by setting the right variables at the top of the file.
 
