@@ -1,5 +1,5 @@
 PROJECT_ID=[YOUR_PROJECT_ID]
-BUCKET_NAME=wagon-ml-data
+BUCKET_NAME=wagon-ml
 REGION=europe-west1
 
 set_project:
@@ -12,6 +12,6 @@ delete_bucket:
 	-@gsutil rm -r gs://${BUCKET_NAME}
 
 upload_data:
-	-@gsutil cp gs://wagon-ml-05-data/taxi_trips_train_sample_set.csv gs://${BUCKET_NAME}/${FILENAME}
+	-@gsutil cp gs://wagon-ml-05-public/data/taxi_trips_train_sample_set.csv gs://${BUCKET_NAME}/data/${FILENAME}
 
 all: set_project create_bucket upload_data
