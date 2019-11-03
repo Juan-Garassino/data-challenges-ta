@@ -17,8 +17,9 @@ Create a new Service Account key :
 Download json, and store it under `~/gcp_credentials.json`
 
 Then append `export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"` to `.zshrc` file by running : 
-
-    echo "export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"" >> ~/.zshrc
+```bash
+echo "export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"" >> ~/.zshrc
+```
 ### Troubleshooting
 
 `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
@@ -41,9 +42,9 @@ For most of this week challenges, you will need a Google Cloud Storage bucket.
 - Chose a **_unique_** bucket name, i.e `wagon-ml-[YOURNAME]`
 - Open Makefile, replace `BUCKET_NAME` env variable with your name
 - run following command in your terminal: 
-
-
-    make create_bucket
+```bash
+make create_bucket
+```
 
 Make sure you set the right `PROJECT_ID` and `BUCKET_NAME` variable at the top of the Makefile.  
 `PROJECT_ID` is the **_ID_** and not the **_name_**
@@ -56,7 +57,7 @@ The data is already stored on a google cloud public bucket
 
 To upload this data into your bucket, run the Makefile command:
 
-```
+```bash
 make upload_data
 ```
 
@@ -67,27 +68,34 @@ Go to [Storage tab](https://console.cloud.google.com/storage) and make sure that
 
 Install virtualenv:
 
-    conda install virtualenv
-
+```bash
+conda install virtualenv
+```
 Create your virtualenv
     
-    cd ~/
-    virtualenv -p python3 venv3
+```bash
+cd ~/
+virtualenv -p python3 venv3
+```
 
 Activate your virtualenv
-
+bash
     source ~/venv3/bin/activate
 
 You should now be in your venv3 and see something like that in your shell:
 
-    (venv3) jeanbizot@MacBook-Pro-5:~$ cd ~/
-    
+```bash
+(venv3) jeanbizot@MacBook-Pro-5:~$ cd ~/
+```
 Install ipython and jupyter notebook:
-
-    pip install ipython jupyter 
-    
+ 
+```bash
+pip install ipython jupyter 
+```
 Make virtualenv activation persistent by adding it to your `.zshrc`
 
-    export "source ~/venv3/bin/activate" >> ~/.zshrc
+```bash
+export "source ~/venv3/bin/activate" >> ~/.zshrc
+```
     
 Now every time you'll open a terminal window you'll be inside your python3 virtual environnement
