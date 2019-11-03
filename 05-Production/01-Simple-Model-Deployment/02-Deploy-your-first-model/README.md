@@ -3,6 +3,10 @@
 Now, your will train your first model on GCP.
 The goal is to build a very simple model for the taxi fare prediction problem. The focus is to build a deployment pipeline that will be easy to iterate on and improve. We will not try to make the model accurate yet. We will make improvements later.
 
+## Install dependencies
+
+    pip install -r requirements.txt
+
 ## Create a Model
 
 - go to https://console.cloud.google.com/ai-platform/models
@@ -19,7 +23,7 @@ python -m trainer.task.py
 ```
 
 Check that :
-- 2 new files appeared, the file downloaded from Cloud Storage and the model  
+- model.joblib file was stored locally
 - You can now check on Google Cloud Storage that you model has been uploaded  
 
 ```bash

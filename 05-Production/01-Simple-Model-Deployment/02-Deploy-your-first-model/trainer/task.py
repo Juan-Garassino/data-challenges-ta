@@ -9,13 +9,15 @@ FILEMAME = "XXX"
 FEATURES = ['pickup_latitude', 'pickup_longitude',
             'dropoff_latitude', 'dropoff_longitude',
             'passenger_count']
-            
+
 BUCKET = storage.Client().bucket(BUCKET_NAME)
+
 
 def get_data():
     """
     Get the data from Google File Storage, download it, save it to local, then read it into pandas DataFrame
     Help here https://googleapis.dev/python/storage/latest/index.html
+    Or even simplier by using only pandas
     """
     # Complete HERE
     return df
@@ -41,12 +43,12 @@ def train_model(X_train, y_train):
     return regressor
 
 
-def save_model(clf):
+def save_model(regressor):
     """
     Save the model into a .joblib and upload it on Google Storage.
     """
     model_name = 'model.joblib'
-    joblib.dump(clf, model_name)
+    joblib.dump(regressor, model_name)
 
     client = storage.Client().bucket(BUCKET_NAME)
     blob = client.blob('{}/{}/{}/{}'.format(
