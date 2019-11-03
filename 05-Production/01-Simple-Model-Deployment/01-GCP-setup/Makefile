@@ -1,5 +1,5 @@
 PROJECT_ID=[YOUR_PROJECT_ID]
-BUCKET_NAME=wagon-ml
+BUCKET_NAME=[YOUR_BUCKET_NAME]
 REGION=europe-west1
 TRAIN_FILENAME=taxi_trips_train_sample_set.csv
 TEST_FILENAME=taxi_trips_test_set.csv

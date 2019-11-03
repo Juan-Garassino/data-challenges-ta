@@ -22,8 +22,10 @@ Then append `export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"` to 
 
 ## Install GCP sdk
 
-Simply follow
-https://cloud.google.com/sdk/docs/quickstarts
+Simply follow https://cloud.google.com/sdk/docs/quickstarts
+Help on MacOS:  
+- Don't forget to run `./google-cloud-sdk/install.sh` command if needed, read instructions carefully when asked [Y/n] answers
+ 
 
 ## Create a Google Cloud Storage Bucket
 
