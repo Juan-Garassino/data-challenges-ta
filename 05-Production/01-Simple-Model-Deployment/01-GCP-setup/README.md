@@ -18,7 +18,7 @@ Download json, and store it under `~/gcp_credentials.json`
 
 Then append `export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"` to `.zshrc` file by running : 
 
-    echo "export GOOGLE_APPLICATION_CREDENTIALS="PATH_TO_KEY"" >> ~/.zshrc
+    echo "export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"" >> ~/.zshrc
 ### Troubleshooting
 
 `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
@@ -45,7 +45,7 @@ For most of this week challenges, you will need a Google Cloud Storage bucket.
 
     make create_bucket
 
-Make sure you set the right `${PROJECT_ID}` variable at the top of the Makefile.  
+Make sure you set the right `PROJECT_ID` and `BUCKET_NAME` variable at the top of the Makefile.  
 `PROJECT_ID` is the **_ID_** and not the **_name_**
 
 ## Upload the challenge dataset into your bucket
@@ -74,15 +74,20 @@ Create your virtualenv
     cd ~/
     virtualenv -p python3 venv3
 
-Active your virtualenv
+Activate your virtualenv
 
     source ~/venv3/bin/activate
+
+You should now be in your venv3 and see something like that in your shell:
+
+    (venv3) jeanbizot@MacBook-Pro-5:~$ cd ~/
     
-Make venv activation persistent by adding it to your `.zshrc`
+Install ipython and jupyter notebook:
+
+    pip install ipython jupyter 
+    
+Make virtualenv activation persistent by adding it to your `.zshrc`
 
     export "source ~/venv3/bin/activate" >> ~/.zshrc
-   
-NB : to deactivate your virtual environnement: 
-
-    deactivate 
     
+Now every time you'll open a terminal window you'll be inside your python3 virtual environnement
