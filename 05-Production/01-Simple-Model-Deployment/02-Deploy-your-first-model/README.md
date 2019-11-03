@@ -27,7 +27,7 @@ Check that :
 - You can now check on Google Cloud Storage that you model has been uploaded  
 
 ```bash
-gsutils ls gs://$BUCKET_NAME
+gsutil ls gs://[YOUR_BUCKET_NAME]
 ```
 
 ## Train model on GCP

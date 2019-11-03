@@ -19,6 +19,13 @@ Download json, and store it under `~/gcp_credentials.json`
 Then append `export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"` to `.zshrc` file by running : 
 
     echo "export GOOGLE_APPLICATION_CREDENTIALS="PATH_TO_KEY"" >> ~/.zshrc
+### Troubleshooting
+
+`AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
+
+- Make sure that billing is enabled for your Google Cloud Platform project.
+https://cloud.google.com/billing/docs/how-to/modify-project
+- Make sure you set the right project_id in the Makefile
 
 ## Install GCP sdk
 
@@ -56,11 +63,26 @@ make upload_data
 The training dataset should now be visible into your `wagon-ml/data` folder.
 Go to [Storage tab](https://console.cloud.google.com/storage) and make sure that both datasets are now be visible in your bucket inside folder `/data`
 
-## Troubleshooting
+## Python Setup 
 
-### AccessDeniedException: 403 The project to be billed is associated with an absent billing account.
+Install virtualenv:
 
-- Make sure that billing is enabled for your Google Cloud Platform project.
-https://cloud.google.com/billing/docs/how-to/modify-project
-- Make sure you set the right project_id in the Makefile
+    conda install virtualenv
 
+Create your virtualenv
+    
+    cd ~/
+    virtualenv -p python3 venv3
+
+Active your virtualenv
+
+    source ~/venv3/bin/activate
+    
+Make venv activation persistent by adding it to your `.zshrc`
+
+    export "source ~/venv3/bin/activate" >> ~/.zshrc
+   
+NB : to deactivate your virtual environnement: 
+
+    deactivate 
+    
