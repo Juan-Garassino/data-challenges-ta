@@ -10,11 +10,13 @@ https://console.cloud.google.com/cloud-resource-manager
 
 
 ## Create Service Account key
-Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey?hl=fr&_ga=2.45500263.-2144345341.1571415069)  
-Create a new Service Account key and set Role as `project owner`  
-Download json, and store it somewhere you'll remeber on your laptop  
-Then append `export GOOGLE_APPLICATION_CREDENTIALS="PATH_TO_KEY"` to `.zshrc` file by running : 
+Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey) 
+Create a new Service Account key :
+- set Role as `project > owner`
+- Set the service account name `data-challenges`   
+Download json, and store it under `~/gcp_credentials.json`
 
+Then append `export GOOGLE_APPLICATION_CREDENTIALS="~/gcp_credentials.json"` to `.zshrc` file by running : 
 
     echo "export GOOGLE_APPLICATION_CREDENTIALS="PATH_TO_KEY"" >> ~/.zshrc
 
