@@ -95,8 +95,14 @@ pip install ipython jupyter
 ```
 Make virtualenv activation persistent by adding it to your `.zshrc`
 
+For MACOS:
 ```bash
 echo "source ~/venv3/bin/activate" >> ~/.zshrc
 ```
     
+For Windows:
+```bash
+echo "source ~/venv3/Scripts/activate" >> ~/.zshrc
+```
+
 Now every time you'll open a terminal window you'll be inside your python3 virtual environnement
