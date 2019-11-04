@@ -79,8 +79,9 @@ virtualenv -p python3 venv3
 ```
 
 Activate your virtualenv
-bash
+```bash
     source ~/venv3/bin/activate
+```
 
 You should now be in your venv3 and see something like that in your shell:
 
