@@ -19,7 +19,7 @@ Open it and complete to train your first model on GCloud as seen in the course.
 ## Train model locally
 
 ```bash
-python -m trainer.task.py
+python -m trainer.task
 ```
 
 Check that :
