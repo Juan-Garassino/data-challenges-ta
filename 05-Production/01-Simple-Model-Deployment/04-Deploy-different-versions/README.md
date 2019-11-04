@@ -16,5 +16,3 @@ For example:
 You can try different features, for instance :
 - compute distance from pickup to dropoff
 - delete null distance rows
-
-
