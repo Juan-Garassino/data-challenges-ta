@@ -1,8 +1,6 @@
 # Objective
 
-Yesterday we deployed a model to the GCP, storing it in a joblib object. Given raw data, we could run a preprocessing step on our laptops, build inputs, and make predictions calling the model.  
-
-Now, we want our saved model `model.joblib` to contain not only the model but also the _**preprocessing**_. To do so, you will create your first scikit-learn pipeline.  
+Yesterday we deployed a model to the GCP, storing it in a joblib object. Given raw data, we could run a preprocessing step on our laptops, build inputs, and make predictions calling the model. Now, we want our saved model `model.joblib` to contain not only the model but also the _**preprocessing**_. To do so, you will create your first scikit-learn pipeline.  
 
 No GCP here, everything on your laptop.
 
@@ -14,7 +12,7 @@ No GCP here, everything on your laptop.
 - Create you First pipeline using `Preprocessing() ` `Imputer()` and the training of your model
 - Read function `perf_eval_regression() `from `trainer/tools.py` and test your first pipeline:
 
-```bash
+```
 python -m trainer.task
 ```
 
