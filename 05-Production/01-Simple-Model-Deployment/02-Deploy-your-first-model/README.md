@@ -5,7 +5,9 @@ The goal is to build a very simple model for the taxi fare prediction problem. T
 
 ## Install dependencies
 
+```bash
     pip install -r requirements.txt
+```
 
 ## Create a Model
 
