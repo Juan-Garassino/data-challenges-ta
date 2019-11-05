@@ -27,7 +27,7 @@ TimeFeatures(time_column="pickup_datetime").fit_transform(df1)
 
 Run your pipeline:
 ```bash
-python -m trainer.task.py
+python -m trainer.task
 ```
 
 Better right ?
