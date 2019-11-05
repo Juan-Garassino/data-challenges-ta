@@ -29,15 +29,15 @@ class Preprocessing(BaseEstimator, TransformerMixin):
     def __init__(self):
         pass
 
-    def transform(self, df, *optional_list, **optional_dict):
+    def transform(self, X, y=None, *optional_list, **optional_dict):
         """
         Use preprocessing from yesterday
         Simple Feature selection for the moment
         """
         # df = your_preprocessing(df)
-        return df
+        return X
 
-    def fit(self, X, *optional_list, **optional_dict):
+    def fit(self, X, y=None, *optional_list, **optional_dict):
         return self
 
 
@@ -73,6 +73,8 @@ def evaluate_pipeline(pipeline):
 if __name__ == '__main__':
     df = get_data(filename="taxi_trips_train_sample_set.csv")
     pipeline = build_pipeline()
+    y_train = df.pop('fare_amount')
+    X_train = df
     pipeline.fit(X=df, y=df.fare_amount)
     save_pipeline(pipeline)
     results = evaluate_pipeline(pipeline)
