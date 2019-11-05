@@ -75,7 +75,7 @@ if __name__ == '__main__':
     pipeline = build_pipeline()
     y_train = df.pop('fare_amount')
     X_train = df
-    pipeline.fit(X=df, y=df.fare_amount)
+    pipeline.fit(X=X_train, y=y_train)
     save_pipeline(pipeline)
     results = evaluate_pipeline(pipeline)
     for measure, value in results.items():
