@@ -8,7 +8,9 @@ Many websites offer to provide you with external data than can enhance your mode
 
 Go on the website [homepage](https://www.ncei.noaa.gov/). Now it is your turn to find how to retrieve a custom csv with the needed data : we are looking for daily weather summaries for the station called 'NY CITY CENTRAL PARK, NY US'. You will be asked to provide a first and last date for the report. By running a query in the BigQuery UI, can you determine how to answer this question ?
 
-Our final dataset should have the attributes you can see in the dictionary below.
+You will provide your email to submit a dataset request. The request is then submitted and takes 1-2 minutes to be completed. You can then download the dataset through an email link.  
+
+Our final dataset should have the attributes you can see in the dictionary below (don't worry if some of them are missing), we can provide you with a clean version later on).
 
 ![See NY Dictionary png data](NY_data_dictionary.png)
 
