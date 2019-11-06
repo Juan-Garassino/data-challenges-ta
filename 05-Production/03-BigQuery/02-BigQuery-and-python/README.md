@@ -10,3 +10,12 @@ For that, install `google-cloud-bigquery` with:
 ```bash
 pip install --upgrade google-cloud-bigquery
 ``` 
+## Query Data programmatically
+
+```python
+from google.cloud import bigquery
+client = bigquery.Client()
+```
+check [Big Query Documentation](https://googleapis.dev/python/bigquery/latest/index.html),
+implement get_data_from_bg function:
+
