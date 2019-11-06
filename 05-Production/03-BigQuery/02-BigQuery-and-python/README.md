@@ -1,6 +1,6 @@
 # Objective
 
-Use python API to interact with BigQuery
+Use python API to interact with **BigQuery**
 
 ## Install python package to query BigQuery
 
