@@ -25,7 +25,7 @@ LEFT JOIN `artful-willow-239109.GMBInput.NY_Weather_Data` AS NY
 ON CAST(TT.pickup_datetime AS Date) = CAST(NY.DATE AS Date)
 ``` 
 
-Save results from that command into you new Table.
+Save results from that command into your new Table.
 
 This table will be your new training set.
 
