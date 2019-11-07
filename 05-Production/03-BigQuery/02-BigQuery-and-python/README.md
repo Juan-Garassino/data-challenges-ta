@@ -27,7 +27,8 @@ def get_data(N=100, test=False):
     # return, DataFrame
     pass
 ```
-Now implement a function to insert data into BigQuery Table:
+Now implement a function to insert data into BigQuery Table.
+You can use [`gcloud.client.load_table_from_dataframe()`](https://cloud.google.com/bigquery/docs/pandas-gbq-migration#loading_a_pandas_dataframe_to_a_table) to help you do it.
 ```python
 def load_bq_table_from_df(df, dataset, table):
     # Load dataframe into Big Query Table, append to Table if already exists and Create Table it not
