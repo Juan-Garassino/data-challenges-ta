@@ -6,7 +6,7 @@ Here we will train our model on enriched Data with weather.
 
 We'll start from yesterday's last exercice. You can see below the target architecture for our project. For now, we will focus on building the historical training table, and schedule the training session in our DAG. We will work in the incremental update and custom class later.
 
-![Updated diagram](https://i.imgur.com/zMuCeqc.png =250x)
+[Updated diagram](https://i.imgur.com/zMuCeqc.png) { width: 200px; }
 
 ## Create new table containing weather and raw data
 
