@@ -13,7 +13,7 @@ No card needed for account creation
 Get your ApiKey
 
 Implement `weather_api()` class inside api_insert aiming at connecting to the API.
-Get **current day's** weather data, for the **city of NewYork**, only **one** data point.
+Get the **current day** weather data, for the **city of NewYork**, with only **one** data point.
 
 Now implement `load_bq_table_from_df()` to load api result into a new BQ table named `weather_crawling`
 
