@@ -6,7 +6,7 @@ Learn how to use BiGQuery
 
 - Data is available at `wagon-bootcamp-256316.taxifareEU.taxi_trips`
 - Create a new dataset within BigQuery.
-- Run your a SQL command that will create load the data from `wagon-bootcamp-256316.taxifareEU.taxi_trips` into a table within your newly created dataset.
+- Run your a SQL command that will load the data from `wagon-bootcamp-256316.taxifareEU.taxi_trips` 
 
 ```sql
 SELECT
@@ -14,6 +14,8 @@ SELECT
 FROM
   `wagon-bootcamp-256316.taxifareEU.taxi_trips`
 ```
+
+Then save this data into a table `taxi_trips` within your newly created dataset.
 
 ## Query the data
 
