@@ -27,7 +27,7 @@ Save results from that command into you new Table.
 
 This table will be your new training set.
 
-![Updated diagram](https://imgur.com/a/mICkvQA)
+![Updated diagram](https://imgur.com/zMuCeqc)
 
 ## Prerequisites
 
