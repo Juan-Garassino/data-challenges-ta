@@ -15,7 +15,8 @@ Get your ApiKey
 Implement `weather_api()` class inside api_insert aiming at connecting to the API.
 Get the **current day** weather data, for the **city of NewYork**, with only **one** data point.
 
-Now implement `load_bq_table_from_df()` to load api result into a new BQ table named `weather_crawling`
+Now implement `load_bq_table_from_df()` to load api result into a new BQ table named `weather_crawling`.
+Remember that you can use [`gcloud.client.load_table_from_dataframe()`](https://cloud.google.com/bigquery/docs/pandas-gbq-migration#loading_a_pandas_dataframe_to_a_table) to do so.
 
 Test your 2 functions by requesting data from 2018 and inserting it into our table.  
 
