@@ -4,7 +4,9 @@ Create Workflow launching Training Tasks everyday
 
 Here we will train our model on enriched Data with weather.
 
-We'll start from yesterday's last exercice. 
+We'll start from yesterday's last exercice. You can see below the target architecture for our project. For now, we will focus on building the historical training table, and schedule the training session in our DAG. We will work in the incremental update and custom class later.
+
+![Updated diagram](https://i.imgur.com/zMuCeqc.png =250x)
 
 ## Create new table containing weather and raw data
 
@@ -26,8 +28,6 @@ ON CAST(TT.pickup_datetime AS Date) = CAST(NY.DATE AS Date)
 Save results from that command into you new Table.
 
 This table will be your new training set.
-
-![Updated diagram](https://i.imgur.com/zMuCeqc.png)
 
 ## Prerequisites
 
