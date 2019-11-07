@@ -66,7 +66,7 @@ make build_dep upload_dep
 Then upload your DAG:
 
 ```bash
-make upload_dag 
+make upload_dags
 ``` 
 
 
