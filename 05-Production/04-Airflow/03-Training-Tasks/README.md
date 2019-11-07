@@ -25,7 +25,9 @@ ON CAST(TT.pickup_datetime AS Date) = CAST(NY.DATE AS Date)
 
 Save results from that command into you new Table.
 
-This table will be your new training set.  
+This table will be your new training set.
+
+![Updated diagram](Recap.png)
 
 ## Prerequisites
 
