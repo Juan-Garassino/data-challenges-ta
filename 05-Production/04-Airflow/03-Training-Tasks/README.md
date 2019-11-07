@@ -12,7 +12,7 @@ We'll start from yesterday's last exercice. You can see below the target archite
 
 Create `train_weather_ny_history` Table, in EU region, by uploading `NY_weather_data.csv` file.
 
-Then create a Table merging original data with weather data.  
+Then create a Table merging original data with weather data, you can call it `historical_training_input`.  
 To do that run from BQ Query editor the command:
 ```bash
 select
