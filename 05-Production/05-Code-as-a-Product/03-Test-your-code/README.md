@@ -4,8 +4,9 @@ Understand how test works and implement your first test
 
 ## Run tests
 
-Inspect `mlproject/lib.py`  and `tests/lib_test.py` 
+Inspect `mlproject/lib.py`  and `tests/lib_test.py`  
 Inspect Makefile and run:
+
 ```bash
 make test
 ```

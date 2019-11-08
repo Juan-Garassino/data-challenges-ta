@@ -15,7 +15,7 @@ cd wagon_tools
 make clean install
 ```
 
-Quite a lot of things happened. Amongst others, you have install a `wagon-make-package` script.  
+Quite a lot of things happened. Amongst others, you have installed a `wagon-make-package` script.  
 
 This script will be your package builder.
 
@@ -23,7 +23,7 @@ Now let's suppose you start a new ML project, you want to package your code some
 
 You now have access to a cool script that you can run from anywhere on your laptop
 
-Go somewhere you want to project to live, and build your first package:
+Go somewhere you want your project to live, and build your first package:
 
 ```bash
 wagon-make-package mlproject
