@@ -4,7 +4,7 @@
 1. Work on a real open ended problem
 1. Provide guided steps ahead of next week project
 
-We will analyze datasets provided by e-commerce marketplace [Olist](www.olist.com).
+We will analyze a dataset provided by e-commerce marketplace [Olist](www.olist.com).
 
 ### About Olist 🇧🇷
 
@@ -12,7 +12,7 @@ We will analyze datasets provided by e-commerce marketplace [Olist](www.olist.co
 
 Olist is a leading e-commerce service that connects merchants to main marketplaces in Brazil. They provide a wide range of offers from inventory management, dealing with reviews and customer contacts to logistic services.
 
-Olist charge sellers a monthly fee. This fee is progressive with the volume of orders.
+Olist charges sellers a monthly fee. This fee is progressive with the volume of orders.
 
 Remember the seller and customer workflows:
 
@@ -25,11 +25,11 @@ Remember the seller and customer workflows:
 👉 Note that multiple sellers can be involved in one customer order!
 
 **Customer:**
-- Browse products on marketplaces
-- Purchase products from Olist.store
-- Get an expected date for delivery
-- Customer Receive order
-- Customer leave a review for the order
+- Browses products on marketplaces
+- Purchases products from Olist.store
+- Gets an expected date for delivery
+- Customer receives the order
+- Customer leaves a review about the order
 
 👉 A review can be left as soon as the order is sent, meaning that a customer can leave a review for a product he did not receive yet!
 
