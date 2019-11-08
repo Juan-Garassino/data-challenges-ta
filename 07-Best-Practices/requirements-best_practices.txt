@@ -1,0 +1,3 @@
+pandas-profiling==2.3.0
+statsmodels==0.10.1
+auto-sklearn==0.5.2
