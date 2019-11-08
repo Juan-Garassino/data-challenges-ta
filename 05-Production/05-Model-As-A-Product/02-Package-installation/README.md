@@ -17,7 +17,7 @@ You'll want to install these dependencies and the script.
 First in install python requirements specific to this project, then install package.
 
 ```bash
-make install_requirement
+make install_requirements
 ```
 
 ```bash
