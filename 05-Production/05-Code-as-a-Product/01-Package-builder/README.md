@@ -2,8 +2,9 @@
 
 Get package builder from github:
 
+```bash
 git clone git@github.com:lologibus2/wagon_tools.git
-
+```
 
 ## Install package
 
