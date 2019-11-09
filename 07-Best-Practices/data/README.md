@@ -12,6 +12,7 @@ The Olist dataset consists of information (customers, reviews, products etc..) o
 - <a href="#olist_order_reviews_dataset">**olist_order_reviews_dataset**</a>
 - <a href="#olist_orders_dataset">**olist_orders_dataset**</a>
 - <a href="#olist_products_dataset">**olist_products_dataset**</a>
+- <a href="#olist_sellers_dataset">**olist_sellers_dataset**</a>
 - <a href="#product_category_name_translation">**product_category_name_translation**</a>
 
 ### Data Model
