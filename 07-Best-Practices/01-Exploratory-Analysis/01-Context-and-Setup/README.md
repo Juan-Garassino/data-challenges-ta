@@ -44,8 +44,29 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 ### Setup
 
-To get started, make sure you install the needed python packages by running:
+**1 - Edit your PYTHONPATH**
+
+- Add `07-Best-Practices` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class. 
+
+On Mac:
 
 ```bash
-pip install -r ../../requirements-best_practices.txt
+open ~/.zshrc
+export PYTHONPATH="/Users/username/repos/data-challenges/07-Best-Practices:$PYTHONPATH"
+```
+
+⚠️ Make sure to replace `username` with your local username.
+
+For Windows: 
+
+- `System Properties > Advanced> Environment Variables.`
+- Locate the Variable name `PYTHONPATH`
+- Add your path `C:\path\to\07-Best-Practices` 
+
+**2 - Install required packages**
+
+- Install needed python packages with the command: 
+
+```python
+pip install -r requirements-best_practices.txt
 ```

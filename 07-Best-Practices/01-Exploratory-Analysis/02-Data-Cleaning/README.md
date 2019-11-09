@@ -9,7 +9,7 @@ In this exercise, you will perform an **exploratory analysis** and load data in 
 - Make sure to follow the setup steps and that you are able to run:
 
 ```python
-from ...olist.data import Olist
+from olist.data import Olist
 Olist().ping()
 ```
 
@@ -53,7 +53,7 @@ Olist().ping()
 - Make sure you can import and inspect data from a notebook, by running:
 
 ```python
-from ...olist.data import Olist
+from olist.data import Olist
 olist = Olist()
 data = olist.get_data()
 matching_table = olist.get_matching_table()

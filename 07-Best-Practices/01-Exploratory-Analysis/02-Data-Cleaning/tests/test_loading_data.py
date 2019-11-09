@@ -1,5 +1,5 @@
 import unittest
-from ...olist.data import Olist
+from olist.data import Olist
 
 
 class TestLoadData(unittest.TestCase):
