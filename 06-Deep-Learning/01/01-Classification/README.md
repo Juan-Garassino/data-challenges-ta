@@ -2,7 +2,7 @@ In this notebook, you will create 2D data that corresponds to two _moons_: each 
 
 Here is an example of such moons:
 
-![moons](./moons_example.png)
+![moons](https://i.ibb.co/JQLysTn/moons-example.png)
 
 To separate the moons, you will build your first Neural Network that takes as input the 2D values of each point and outputs a label, `0` or `1`. In this notebook, we will go progressively through different aspects of the neural network architecture and training procedure.
 
