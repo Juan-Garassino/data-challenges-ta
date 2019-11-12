@@ -59,7 +59,5 @@ def save_model(regressor):
     blob.upload_from_filename(model_name)
 
 
-df = get_data()
-X_train, y_train = preprocess(df)
-clf = train_model(X_train, y_train)
-save_model(clf)
+if __name__ == '__main__':
+    print("Complete me HERE")

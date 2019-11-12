@@ -7,7 +7,7 @@ No GCP here, everything on your laptop.
 ## First simple pipeline
 
 - Open `trainer/task.py `file.
-- Complete class `Preprocessing()` with preprocessing function from yesterday's challenge.
+- Complete class `Preprocessing()` with same preprocessing as yesterday's challenge.
 - Inspect `sklearn.pipeline.Imputer()` class, what does it do ? Feel free to check sklearn doc here
 - Create you First pipeline using `Preprocessing() ` `Imputer()` and the training of your model
 - Read function `perf_eval_regression() `from `trainer/tools.py` and test your first pipeline:
