@@ -15,9 +15,10 @@ FEATURES = ['pickup_latitude', 'pickup_longitude',
             'passenger_count']
 
 
-def predict_local(project, model):
+def predict_local(X_test):
     """Send json data to a deployed model for prediction. """
-    # Get model from Google cloud Storage and return predictions
+    # Get model.joblib file you saved lacally from last exercice and load it
+    # Compute predictiions
     return predictions
 
 
@@ -43,18 +44,14 @@ def preprocess(df):
 
 
 def evaluate_model(y, y_pred):
-    MAE = round(mean_absolute_error(y, y_pred), 2)
-    RMSE = round(sqrt(mean_squared_error(y, y_pred)), 2)
-    res = {'MAE': MAE, 'RMSE': RMSE}
+    # Fill that one here, how do you evaluate a regressor ?
     return res
 
 
-# only predict for the first 10 rows
-df = get_test_data().head(10)
-X_test, y_test = preprocess(df)
-results = predict_local(project=PROJECT_ID,
-                        model='taxi_fare_prediction_model')
-
-df["fare_predicted"] = results
-print(evaluate_model(y_test, df.fare_predicted))
-df.to_csv("predictions.csv")
+if __name__ =='__main__':
+    df = get_test_data().head(1000)
+    X_test, y_test = preprocess(df)
+    results = predict_local(X_test)
+    df["fare_predicted"] = results
+    print(evaluate_model(y_test, df.fare_predicted))
+    df.to_csv("predictions.csv")

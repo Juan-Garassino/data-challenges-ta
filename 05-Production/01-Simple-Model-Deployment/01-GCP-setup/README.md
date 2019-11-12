@@ -4,7 +4,7 @@ Set up yout GCP account and install first sdk
 
 ## Create GCP project
 
- - Connect to your IKEA-GCP account and create a project
+ - Connect to your GCP account and create a project
  - Use **_wagon-bootcamp_** as project name
 https://console.cloud.google.com/cloud-resource-manager
 
@@ -80,10 +80,10 @@ virtualenv -p python3 venv3
 
 Activate your virtualenv
 ```bash
-    source ~/venv3/bin/activate
+source ~/venv3/bin/activate
 ```
 
-You should now be in your venv3 and see something like that in your shell:
+You should now be in your venv3 and see `(venv3)` your shell:
 
 ```bash
 (venv3) jeanbizot@MacBook-Pro-5:~$ cd ~/
@@ -93,7 +93,9 @@ Install ipython and jupyter notebook:
 ```bash
 pip install ipython jupyter 
 ```
-Make virtualenv activation persistent by adding it to your `.zshrc`
+Make virtualenv activation persistent by adding it to your `.zshrc`  
+
+**_NB : every time you open a new terminal, `source .zshrc `is being computed_**
 
 For MACOS:
 ```bash
