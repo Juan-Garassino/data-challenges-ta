@@ -35,7 +35,7 @@ Remember the seller and customer workflows:
 
 ### Dataset
 
-The dataset consists of 8 csv files that can be downloaded on [Kaggle](https://www.kaggle.com/olistbr/brazilian-ecommerce).
+The dataset consists of 9 csv files that can be downloaded on [Kaggle](https://www.kaggle.com/olistbr/brazilian-ecommerce).
 
 You have access to information (customer, seller, product, reviews..) of 100k orders from 2016 and 2018 that were made on Olist store.
 
