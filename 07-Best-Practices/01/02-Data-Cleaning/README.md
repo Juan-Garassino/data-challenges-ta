@@ -15,7 +15,7 @@ Olist().ping()
 
 ### Load data
 
-- Download 9 csv files from the Kaggle Olist page [here](https://www.kaggle.com/olistbr/brazilian-ecommerce). Place them under the `data-challenges/07-Best-Practices/data/` folder
+- Download 9 csv files from the Kaggle Olist page [here](https://www.kaggle.com/olistbr/brazilian-ecommerce). Place them under the `data-challenges/07-Best-Practices/data/csv` folder
 - Run `jupyter notebook` and open the `data_cleaning.ipynb` file.
 - Write a script to load all datasets in a dictionary named `data`, where each key is the name of the csv file.
 
