@@ -45,13 +45,12 @@ def return_significative_coef(model):
     p_values.columns = ['variable', 'p_value']
 
     # Extract coef_int
-    coef_int = model.conf_int().reset_index()
-    coef_int.columns = ['variable', 'lower', 'upper']
-    return p_values.merge(coef_int,
+    coef = model.params.reset_index()
+    coef.columns = ['variable', 'coef']
+    return p_values.merge(coef,
                           on='variable')\
-                   .query("p_value<0.05").sort_values(by='lower',
+                   .query("p_value<0.05").sort_values(by='coef',
                                                       ascending=False)
-
 
 def plot_kde_plot(df, variable, dimension):
     """

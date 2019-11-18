@@ -45,9 +45,7 @@ Let's start by looking at the performance of product categories:
 
 #### Wait Time
 
-In this part, we will use a fixed-effect regression to isolate which product categories correlate with wait time. 
-
-- Prepare a training set made of product categories as dummy variables and a constant. Prepare your target variable and center it to the mean. 
+In this part, we will use a multivariate regression to isolate which product categories correlate with wait time. 
 
 - Run an OLS model and print out variables with significant coefficients. Which product categories correlate with higher wait_time? 
 
@@ -61,7 +59,7 @@ What about their correlation with review score?
 
 - Create your target variable as the `average_review_score` and create a training set with the following variables: 
 
-  - `product_categories` (encoded as dummy variables) 
+  - `product_categories`
   - `constant`
 
 - Create OLS model `model_review` and print out variables with significant coefficients. 
@@ -74,14 +72,10 @@ But can we isolate the true contribution of product category on customer satisfa
 
 In this section, we will use `wait_time` as a dependent variable and measure how each product category correlate with `review_score`, holding wait_time constant.
 
-- Create your target variable as the `average_review_score` and create a training set with the following variables: 
+- Create your target variable and a training set with the following variables: 
 
   - `product_categories` (encoded as dummy variables) 
   - `wait_time` (centered to the mean) 
   - `constant`
 
 - Run an OLS model `model_review_fixing_wait_time` and print out variables with significant coefficients. Which product categories correlate with higher `review_score` holding `wait_time` constant?
-
-#### (Optional) Plotting coefficients 
-
-We now have run two regressions on `review_score`. We can now merge coefficients from both models and plot those on a scatterplot. 
