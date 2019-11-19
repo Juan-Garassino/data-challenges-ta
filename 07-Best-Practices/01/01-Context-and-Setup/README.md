@@ -50,11 +50,11 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 On Mac and Linux:
 
+
+⚠️ Make sure to replace `CHANGE_BY_YOUR_USERNAME` with your local username.
 ```bash
 echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/data-challenges/07-Best-Practices:$PYTHONPATH"' >> ~/.zshrc
 ```
-
-⚠️ Make sure to replace `username` with your local username.
 
 For Windows: 
 
