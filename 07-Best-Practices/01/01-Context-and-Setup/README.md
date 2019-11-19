@@ -48,11 +48,10 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 - Add `07-Best-Practices` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class. 
 
-On Mac:
+On Mac and Linux:
 
 ```bash
-open ~/.zshrc
-export PYTHONPATH="/Users/username/repos/data-challenges/07-Best-Practices:$PYTHONPATH"
+echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/data-challenges/07-Best-Practices:$PYTHONPATH"' >> ~/.zshrc
 ```
 
 ⚠️ Make sure to replace `username` with your local username.
