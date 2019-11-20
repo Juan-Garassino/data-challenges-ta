@@ -63,12 +63,10 @@ What about their correlation with review score?
 
 But can we isolate the true contribution of product category on customer satisfaction? 
 
-In this section, we will use `wait_time` as a dependent variable and measure how each product category correlate with `review_score`, holding wait_time constant.
+In this section, we will use `wait_time` as a dependent variable and measure how each product category correlate with `review_score`, holding `wait_time` constant.
 
-- Create your target variable and a training set with the following variables: 
+- Run an OLS model `model_review_fixing_wait_time` where `product_categories` and `wait_time` are the regressors, and `review_score` is the target variable. Which product categories correlate with higher `review_score` holding `wait_time` constant?
 
-  - `product_categories` (encoded as dummy variables) 
-  - `wait_time` (centered to the mean) 
-  - `constant`
+#### (Optional) Reviews for low review score Products 
 
-- Run an OLS model `model_review_fixing_wait_time` and print out variables with significant coefficients. Which product categories correlate with higher `review_score` holding `wait_time` constant?
+- Using our translation script, translate a sample of reviews for some of the low review categories. Do you see topics that stand out?  
