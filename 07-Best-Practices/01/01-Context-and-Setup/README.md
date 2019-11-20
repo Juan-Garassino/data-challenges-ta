@@ -51,9 +51,9 @@ More information can be found on [Olist dataset documentation](https://github.co
 On Mac and Linux:
 
 
-⚠️ Make sure to replace `CHANGE_BY_YOUR_USERNAME` with your local username.
+⚠️ Make sure to replace `CHANGE_BY_YOUR_USERNAME` and `CHANGE_BY_YOUR_GITHUB_NAME`.
 ```bash
-echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/data-challenges/07-Best-Practices:$PYTHONPATH"' >> ~/.zshrc
+echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/CHANGE_BY_YOUR_GITHUB_NAME/data-challenges/07-Best-Practices:$PYTHONPATH"' >> ~/.zshrc
 ```
 
 For Windows: 
