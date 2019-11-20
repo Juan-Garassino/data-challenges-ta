@@ -57,14 +57,7 @@ We have seen before that some products correlate with higher wait time. One hypo
 
 What about their correlation with review score? 
 
-- Create your target variable as the `average_review_score` and create a training set with the following variables: 
-
-  - `product_categories`
-  - `constant`
-
-- Create OLS model `model_review` and print out variables with significant coefficients. 
-
-- Which product categories correlate with higher `review_score`? Which tend to have lower `review_score`? 
+- Create your target variable as the `average_review_score` and run an OLS model on `product_categories`. Which product categories correlate with higher `review_score`? Which tend to have lower `review_score`? 
 
 #### Review score, controlling for Wait Time 
 
