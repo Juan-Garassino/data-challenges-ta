@@ -53,4 +53,4 @@ For **one** of the project below, your task is to produce:
 
 [Peer view](https://en.wikipedia.org/wiki/Peer_review) is an important part of the scientific process. 
 
-In order to make sure your analysis is rock solid, you will push your work on a Github repo and request a review to your buddy of the day via a Pull Request. 
+In order to make sure your analysis is rock solid push your work on a Github repo and request a review to your buddy of the day via a Pull Request. 
