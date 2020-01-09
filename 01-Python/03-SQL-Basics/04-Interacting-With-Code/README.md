@@ -17,7 +17,6 @@ def the_method(db):
 
   # Then you'll need to return something.
   return ?
-end
 ```
 
 👉 To try your code in **IPyton** or in the `queries.py` file, you will need to build `db` yourself.
