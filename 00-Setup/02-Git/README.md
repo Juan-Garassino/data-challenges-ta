@@ -27,7 +27,9 @@ Let's create a Python file:
 touch today.py
 ```
 
-Open this file in your text editor and declare + implement a function `my_name_is` which takes no parameter and returns a `str`: your GitHub nickname. Run `make` until one test passes (no need for the second one to be successful).
+Open this file in your text editor and declare + implement a function `my_name_is` which takes zero parameter and returns a constant `str`: your GitHub nickname.
+
+Run `make` until one test passes (no need for the second one to be successful).
 
 ```text
 tests/test_git.py::TestGit::test_hi_my_name_is PASSED
@@ -46,7 +48,7 @@ Kitt should pick up the change and show you a 50% progress. Good job!
 
 ## Second commit
 
-Let's start solving the second test. To do so, you need to declare + implement a function `my_buddy_is` which takes no parameter and returns a `str`: Your buddy's GitHub nickname.
+Let's start solving the second test. To do so, you need to declare + implement a function `my_buddy_is` which takes zero parameter and returns a constant `str`: your buddy's GitHub nickname (or yours if you don't have any buddy today).
 
 You can use this useful command to check what has changed in the file:
 
@@ -101,7 +103,3 @@ git push origin master
 
 You now know how to navigate Kitt, position yourself on a challenge, open it in a text editor and work on it, switching to the terminal to run `make` and some git commands. Congratulations!
 
-The day is now over, check with a TA but you should be able to leave early today. If you want to stay a bit, you can:
-
-- Finish the [Python CodeCademy track](https://www.codecademy.com/learn/learn-python-3) if not already done
-- Start reading [Learn Enough Command Line to Be Dangerous](https://www.learnenough.com/command-line-tutorial/basics), as a developer can't know too much of command-line magic 😉
