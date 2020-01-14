@@ -1,6 +1,6 @@
 ## Foreword
 
-One usualy source of data is API. Those can be [public API](https://github.com/public-apis/public-apis) with auth or not, free or paying, those can be internal APIs at your company, etc.
+A common way of collecting data is through APIs. Those can be [public API](https://github.com/public-apis/public-apis) with auth or not, free or paying, those can be internal APIs at your company, etc.
 
 When it comes to API, there are some keywords to know about:
 
