@@ -4,7 +4,7 @@ In the Python world, scraping means importing [`BeautifulSoup`](https://www.crum
 
 ## Example
 
-We are going to srape the Recipe directory [letscookfrench.com](http://www.letscookfrench.com/recipes/)
+We are going to scrape the Recipe directory [letscookfrench.com](http://www.letscookfrench.com/recipes/)
 
 Open the `test_scraping.py` file in a text editor and paste the following code:
 
