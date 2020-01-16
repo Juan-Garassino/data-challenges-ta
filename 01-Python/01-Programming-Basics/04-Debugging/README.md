@@ -37,7 +37,7 @@ The program will **halt** at the line you inserted the `pdb.set_trace()`:
 ipdb>
 ```
 
-ℹ️ `ipdb` is not a module which is available by default in Python, so you need to `conda install ipdb` (something we did on Setup day). Alternatively, you can use the default `pdb` module embedded in Python:
+ℹ️ `ipdb` is not a module which is available by default in Python, so you need to `pip install ipdb` (something we did on Setup day). Alternatively, you can use the default `pdb` module embedded in Python:
 
 ```python
 import pdb; pdb.set_trace()
