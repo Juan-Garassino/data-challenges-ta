@@ -3,7 +3,7 @@ The `String` class is one of the most used class of Python and programming langu
 - Learn to look for the right method in the Python doc
 - Get familiar with using the Python interpreter to experiment with new methods and make them yours
 
-The [IPython](https://ipython.org/) [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), as the kernel for Jupyter, is part of the Anaconda distribution and can be run with:
+The [IPython](https://ipython.org/) [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), as the kernel for Jupyter, can be run with:
 
 ```bash
 ipython
