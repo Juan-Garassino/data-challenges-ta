@@ -381,6 +381,10 @@ all_books_df.to_csv("books.csv")
 
 If you'd rather have a regular Excel file, it's possible!
 
+```bash
+pip install xlsxwriter
+```
+
 ```python
 all_books_df.to_excel('books.xlsx', sheet_name='Books')
 ```
