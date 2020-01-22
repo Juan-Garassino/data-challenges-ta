@@ -182,7 +182,7 @@ Go to this page and find the right pattern: [regex101.com](https://regex101.com/
 </summary>
 
 ```python
-r"Total Amount +\d+.\d{2} €"
+r"Total Amount +\d+\.\d{2} €"
 ```
 
 </details>
@@ -232,7 +232,7 @@ Find the right grouping to get only the **"Total Amount"** value: [regex101.com]
 </summary>
 
 ```python
-r"Total Amount +(\d+.\d{2}) €"
+r"Total Amount +(\d+\.\d{2}) €"
 ```
 
 </details>
@@ -352,7 +352,7 @@ for receipt in receipts_list:
 for receipt in receipts_list:
     date_pattern = r"\d{2}-\d{2}-\d{4}"
     date = re.findall(date_pattern, receipt)[0]
-    total_amount_pattern = r"Total Amount +(\d+.\d{2}) €"
+    total_amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
     total_amount = re.findall(total_amount, receipt)[0]
 ```
 
@@ -365,9 +365,9 @@ for receipt in receipts_list:
 for receipt in receipts_list:
     date_pattern = r"\d{2}-\d{2}-\d{4}"
     date = re.findall(date_pattern, receipt)[0]
-    total_amount_pattern = r"Total Amount +(\d+.\d{2}) €"
+    total_amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
     total_amount = re.findall(total_amount_pattern, receipt)[0]
-    quantity_pattern = r"Total Amount +(\d+.\d{2}) €"
+    quantity_pattern = r"Total Amount +(\d+\.\d{2}) €"
     quantity = re.findall(quantity_pattern, receipt)[0]
 ```
 
@@ -401,9 +401,9 @@ We can now `append()` each value in the right list of the dictionary.
 for receipt in receipts_list:
     date_pattern = r"\d{2}-\d{2}-\d{4}"
     date = re.findall(date_pattern, receipt)[0]
-    total_amount_pattern = r"Total Amount +(\d+.\d{2}) €"
+    total_amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
     total_amount = re.findall(total_amount_pattern, receipt)[0]
-    quantity_pattern = r"Total Amount +(\d+.\d{2}) €"
+    quantity_pattern = r"Total Amount +(\d+\.\d{2}) €"
     quantity = re.findall(quantity_pattern, receipt)[0]
     receipts_dict["date"].append(date)
     receipts_dict["total_amount"].append(total_amount)
