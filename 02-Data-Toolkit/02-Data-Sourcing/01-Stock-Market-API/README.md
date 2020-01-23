@@ -123,7 +123,7 @@ You can now **create a dataframe** from this data.
 <br>
 <details><summary markdown='span'>Solution
 </summary>
-<code>apple_stock_df = pd.DataFrame.from_dict(api_data)</code>
+<code>apple_stock_df = pd.DataFrame(api_data)</code>
 </details>
 
 With this dataframe we can **plot** the evolution of the stock price.
