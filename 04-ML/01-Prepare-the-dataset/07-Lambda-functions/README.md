@@ -1,0 +1,1 @@
+Lambda functions are a usefool tool to map relationships between dataset variables and perform feature engineering. You might want to read up on them before starting the exercice if you are not familiar with their structure.
