@@ -1,4 +1,4 @@
-# ML Fundamentals, dataset preparation
+## ML Fundamentals, dataset preparation
 
 First, you’ll learn what we mean by machine learning and what are the fundamental steps in the implementation and deployment cycle of machine learning algorithms.
 
@@ -8,7 +8,7 @@ You’ll also discover your first versatile model family - the k-nearest neighbo
 
 In the end you’ll have a global overview as to what the data scientist job entails in the modeling part, and how to do your feature engineering.
 
-# ML fundamentals,
+## ML fundamentals,
 
 In this module, you’ll discover the two sets of tasks that you’ll have to tackle as a data scientist - regression and classification tasks.
 
@@ -18,7 +18,7 @@ We’ll discover the split between training and testing phase of the lifecycle o
 
 We’ll also work with the two new fundamental model families - the linear regression and logistic regression.
 
-# Generalisation & Overfitting
+## Generalisation & Overfitting
 
 This module is dedicated to very important concepts that are the bread and butter of a datascientist modeling daily work.
 
@@ -28,7 +28,7 @@ With those new techniques, we will be able to understand more deeply how to robu
 
 We’ll discover again another model to add in our toolbelt, the Naive Bayes algorithm, which is very useful under a set of hypothesis.
 
-# Under the hood
+## Under the hood
 
 Now that we have discovered how machine learning works, how to generalise and not overfit, as well as a few model families that we can use with ease, we need to get a bit more technical.
 
@@ -38,7 +38,7 @@ Understanding how we manage to minimize that loss, how to choose the right loss 
 
 One last trick to add up our sleeve will be to use regularisation methods, which we will cover in detail for our specific use cases.
 
-# Performance metrics
+## Performance metrics
 
 The final module of this week concludes the discovery of fundamental concepts of machine learning. We will see here how to evaluate the performance of our models precisely, and how to manage to choose the right error metric.
 
@@ -48,7 +48,7 @@ Next, we will go one step further in the training process by discovering validat
 
 Finally we will see another powerful supervised learning method called SVM (Support Vector Machines) which is one of the go-to baseline for a large class of tasks.
 
-# Unsupervised learning
+## Unsupervised learning
 
 This first day of the week covers a family of methods that we haven’t used yet, unsupervised learning methods. We will cover algorithms that are used all the time for exploratory analysis, dimensionality reduction and other compression-type tasks.
 
@@ -56,27 +56,27 @@ Mostly, we’ll see the Principal Component Analysis type of methods that will h
 
 This will also be an opportunity to discover big machine learning applications through building a recommender system and an image compression program.
 
-# Ensemble methods
+## Ensemble methods
 
 Here we get the final family of methods to complete your toolbelt of models. Ensemble methods are the super power of a data scientist : it allows to combine weak models into a powerful one, without requiring much more computational power!
 
 Those methods that we will discover such as random forest or gradient boosting, are the ones that usually get the best performance from the get go, and are at the top of Kaggle-type competitions. So if you need very good accuracy and performance fast, this will be the day
 
 
-# Workflow
+## Workflow
 
 This module is dedicated to your workflow. Now that we have all the fundamental models, we can safely go back to what it means to build a model from start to finish, with all the common difficulties and challenges that a data scientist will encounter - building baselines, robust feature engineering and all around efficient workflow.
 
 Also we will work now with pipelines, which are powerful tools when you work in real use case that allow you to train and deploy easily end-to-end procedures from start to finish without losing the performance in sight.
 
-# Vision
+## Vision
 
 For this module, we will only focus on one type of data that data scientist encounter quite often : image data. Image observations are a specific type of input that we have to learn how to tackle efficiently. One set of techniques being preprocessing techniques such as normalization, standardization and whitening. More broadly speaking, it entails being comfortable managing high-dimensional variables, and transforming them into manageable input.
 
 We will also tackle secondary question linked to training machine learning models for vision tasks such as convolutions and kernels, rehasping and data augmentation.
 
 
-# NLP
+## NLP
 
 This full day is dedicated to the main type of data a datascientist usually encounters in practice : unstructured text data. The dedicated field is called NLP (Natural Langage Processing) and this is where we will learn to preprocess our text and learn the right type of encodings for the tasks we want to be able to train for. It mostly has to deal with frequencies or tf-idf of n-grams, bag-of-word type representations, normalization, lemmatization, stemmatization of the words and other type of manipulations that will help us further down the line.
 
