@@ -28,7 +28,7 @@ With those new techniques, we will be able to understand more deeply how to robu
 
 We’ll discover again another model to add in our toolbelt, the Naive Bayes algorithm, which is very useful under a set of hypothesis.
 
-Under the hood
+# Under the hood
 
 Now that we have discovered how machine learning works, how to generalise and not overfit, as well as a few model families that we can use with ease, we need to get a bit more technical.
 
