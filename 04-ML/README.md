@@ -8,7 +8,7 @@ You’ll also discover your first versatile model family - the k-nearest neighbo
 
 In the end you’ll have a global overview as to what the data scientist job entails in the modeling part, and how to do your feature engineering.
 
-## ML fundamentals,
+## ML fundamentals
 
 In this module, you’ll discover the two sets of tasks that you’ll have to tackle as a data scientist - regression and classification tasks.
 
