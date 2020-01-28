@@ -6,7 +6,7 @@ Graph of a logistic regression curve showing probability of passing an exam vers
 In this exercice we are going to take a look at **Graduate Admissions** in relation to **CGPA** and **University Rating**.
 We will use the **logistic regression** model to answer some questions.
 
-**Dataset:** "Admission_Predict.csv"
+**Dataset:** "Graduate_Admission.csv"
 
 **Columns:**
 **"CGPA"**, range [6.0, 10.0], Cumulative Grade Point Average
