@@ -20,7 +20,7 @@ In this exercise, you will see how to implement the custom prediction class to l
 
 - Edit the Makefile and run `make gcp_submit_training` to train your model on GCP.
 
-**NB: Check that all the dependencies are inside de setup.py file**
+**NB: Check that all the dependencies are inside the setup.py file**
 
 ## Create the model version with the required dependencies
 

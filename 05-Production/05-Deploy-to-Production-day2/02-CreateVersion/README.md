@@ -2,12 +2,14 @@
 
 Let's create a model version on GCP that we'll be able to call later on from the command line to do some prediction.
 
-## First install correct dependencies so that we are aligned with AI platform 1.115 runtine
+## First install correct dependencies 
+
+In order to be aligned with AI platform 1.15 runtine (just run following command for now you'll understand why later in the exercise)
 
 ```bash
 pip install -r requirements.txt
 ```
-Check that dependencies inside reauirements.txt are the same as in setup.py file
+Check that dependencies inside requirements.txt are the same as in setup.py file
 
 ## Create a model
 
@@ -23,7 +25,7 @@ Here's a quick guide for the form:
 
 - Python version `3.7` (same as training job)
 - Framework : `scikit-learn`
-- Framework version: `0.20.4`
+- Framework version: `0.20.4` (should ring a bell => `requirements.txt` and `steup.py`)
 - ML runtime version: `1.15` 
 - Cloud Storage path where you uploaded the model file. :warning: Select the **Folder**, not the `model.joblib` file...
 
