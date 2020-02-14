@@ -42,7 +42,19 @@ Open Makefile, inspect it, and run `make create_pipeline_version` to create a ne
 
 ## Make predictions
 
-Now, get `predict.py` from last exercice to use your new prediction service and make predictions on the test set. Output the performance (MAE, RMSE) of your predictions.
+Now, get `predict.py` from last exercice and change
+```python
+def convert_to_json_instances(X_test):
+    return X_test.values.tolist()
+```
+to 
+```python
+def convert_to_json_instances(X_test):
+    return X_test.to_dict(orient="records")
+```
+And remove the preprocessing step
+
+Now you can use your `predict.py` to get your predictions
 
 ## Useful documentation for this exercise
 https://cloud.google.com/ml-engine/docs/scikit/custom-prediction-routine-scikit-learn
