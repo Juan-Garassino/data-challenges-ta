@@ -2,6 +2,13 @@
 
 Let's create a model version on GCP that we'll be able to call later on from the command line to do some prediction.
 
+## First install correct dependencies so that we are aligned with AI platform 1.115 runtine
+
+```bash
+pip install -r requirements.txt
+```
+Check that dependencies inside reauirements.txt are the same as in setup.py file
+
 ## Create a model
 
 Go to [AI Platformn](https://console.cloud.google.com/ai-platform/models) and create a model
@@ -36,7 +43,7 @@ Add to `Makefile` a `create_version` command:
 # Makefile
 # [...]
 
-create_pipeline_version:
+create_version:
 	gcloud beta ai-platform versions create ${VERSION_NAME} \
 		--model ${MODEL_NAME} \
 		--origin gs://${BUCKET_NAME}/models/taxi_fare_model/versionLivecode \
@@ -54,11 +61,24 @@ Now to test the whole deployment process you will:
 
 To do that:
 
-1. Set `MODEL_VERSION` inside trainer.py with a new name
-1. Set `PATH_TO_MODEL` inside Makefile (corresponding to `MODEL_VERSION` above inside Makefile)
-1. Run the following commands:
+1. Change `VERSION_NAME` to a new name, `v1` for instance
+2. Set `MODEL_VERSION` inside `trainer.py` with a new name
+3. Set `PATH_TO_MODEL` inside Makefile (corresponding to `MODEL_VERSION` above inside Makefile)
+4. Run the following commands:
 
 ```bash
 make gcp_submit_training
-make create_pipeline_version
+make create_version
+``` 
+**NB: When you create a version, GCP will try to load the model with the version of scikit-learn of the [1.15 runtime version](https://cloud.google.com/ai-platform/training/docs/runtime-version-list)**
+So make sure that you have submited your training with the dependencies from runtime 1.15:
+```bash
+pandas==0.24.2
+scipy==1.2.2
+scikit-learn==0.20.4
+```
+If not install the dependencies above and run again (delete your version first:
+```bash
+make gcp_submit_training
+make create_version
 ``` 

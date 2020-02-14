@@ -2,16 +2,13 @@
 
 Use and evaluate your model
 
-## First locally
-
-First complete `predict_local.py` file to evaluate the model locally  
-Here you can use the model.joblib that you stored from exercice 1
-
-## Then using AI platform python api
+## Get Predictions from gcp python api 
 
 Now complete `predict.py` file to obtain online predictions from google:
-
-Here some help on the predict_json function
+- implement get_test_data() and preprocess() functions   
+        => Beware to use the same preprocess function as the on you used for training
+- implement `convert_to_json_instances()` function to pass json arguments to json api
+- Here some help on the predict_json function:
 
 ```python
 import googleapiclient.discovery

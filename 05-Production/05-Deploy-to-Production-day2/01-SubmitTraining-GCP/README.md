@@ -1,3 +1,3 @@
-Start following instructions of [lewagon/taxi-fare](https://github.com/lewagon/taxi-fare)'s repo.
+Here you will wil start from a freshly made repo in order to all be able to submit our first training and from the same baseline
 
-It's a tested boilerplate that should be up & running very quickly, with a `Makefile` command to train a model directly on GCP.
+Follow instruction on this [README.md](https://github.com/lewagon/taxi-fare)
