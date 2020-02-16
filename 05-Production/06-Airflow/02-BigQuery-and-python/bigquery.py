@@ -1,15 +1,4 @@
-import googleapiclient
-import pandas as pd
-from google.cloud import bigquery, storage
-from sklearn.externals import joblib
-
-BUCKET_NAME = "wagon-data"
-
-TABLE = "evaluation"
-DATASET = "taxiFare"
-BUCKET_NAME = "wagon-data"
-
-model_folder = "pipeline_v3_bq"
+from google.cloud import bigquery
 
 
 def get_data_from_bq(N=10000, test=False, all=True):
@@ -20,6 +9,7 @@ def get_data_from_bq(N=10000, test=False, all=True):
     :return: DataFrame
     """
     pass
+
 
 def load_bq_table_from_df(df, dataset, table):
     """
@@ -34,4 +24,3 @@ def load_bq_table_from_df(df, dataset, table):
     table_ref = dataset_ref.table(table)
     r = client.load_table_from_dataframe(df, table_ref).result()
     return r
-

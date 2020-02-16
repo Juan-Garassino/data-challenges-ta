@@ -1,7 +1,6 @@
-import requests
 import pandas as pd
+import requests
 from google.cloud import bigquery
-from datetime import date
 
 ApiKey = "YOUR_KEY"
 
