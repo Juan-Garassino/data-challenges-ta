@@ -4,7 +4,6 @@ The objective here is to run a worklow gathering data from external source.
 
 We will use a weather API to gather only one weather data information every day
 
-
 ## Weather API 
 
 Create a free account on this [Weather API](https://www.worldweatheronline.com/developer/api/docs/historical-weather-api.aspx#qparameter)  
@@ -16,7 +15,7 @@ Implement `weather_api()` class inside api_insert aiming at connecting to the AP
 
 Now implement `load_bq_table_from_df()` to load api result into a new BQ table named `weather_crawling`
 
-Test your 2 functions by requesting data from 2018 and inserting it into our table.  
+Test your 2 functions by requesting data from the whole 2018 year and inserting it into our table.  
 
 ## Dag implementation
 

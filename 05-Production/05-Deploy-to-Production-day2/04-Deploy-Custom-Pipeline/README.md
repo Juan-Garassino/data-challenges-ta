@@ -42,7 +42,10 @@ Open Makefile, inspect it, and run `make create_pipeline_version` to create a ne
 
 ## Make predictions
 
-Now, get `predict.py` from last exercice and change
+Now, get `predict.py` from last exercice.
+
+You will need to change a few things, take time check the 3 steps below and understand why you do so:
+- Update the format you send to google api client:
 ```python
 def convert_to_json_instances(X_test):
     return X_test.values.tolist()
@@ -52,7 +55,8 @@ to
 def convert_to_json_instances(X_test):
     return X_test.to_dict(orient="records")
 ```
-And remove the preprocessing step
+- Remove the preprocessing step
+- Dont forget to call `clean_df()` if you called it before your training task 
 
 Now you can use your `predict.py` to get your predictions
 

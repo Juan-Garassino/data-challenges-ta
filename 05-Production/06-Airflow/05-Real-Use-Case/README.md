@@ -23,6 +23,6 @@ We might want to:
 - merge it with weather from `weather_crawling` table
 - insert these into `train_weather_ny_history` table
 
-2°) Sit and relax, no need implement anything
+2°) Sit and relax, no need to implement anything
 3°) Create a version linked to the model (use tools from lats days):
 - use predictor.py from yesterday query data from `weather_crawling` in order add weather data to the instances you want predictions from 

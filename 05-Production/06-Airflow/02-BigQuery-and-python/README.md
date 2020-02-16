@@ -1,17 +1,25 @@
-# Objective #1
+ Objective #1
 
 Learn how to use BiGQuery
 
 ## Create a new dataset and import the data
 
-- Data is available at `wagon-bootcamp-256316.taxifareEU.taxi_trips`
-- Create a new dataset within BigQuery.
-- Run your a SQL command that will create load the data from `wagon-bootcamp-256316.taxifareEU.taxi_trips` into a table within your newly created dataset.
+- Data is available in an public table into Big Query `wagon-bootcamp-256316.taxifareEU.taxi_trips`
+- Create a new dataset within your own BigQuery.
+- Run your a SQL query that will create a table from the result of a query on `wagon-bootcamp-256316.taxifareEU.taxi_trips` into a table within your newly created dataset.
+```sql
+create table XXXXX 
+select * from wagon-bootcamp-256316.taxifareEU.taxi_trips 
+```
+**NB**: If the table is not available anymore you can still create your table by uploading your training dataset from Storage 
 
 ## Query the data
 
-- check the size of the data is correct
-
+- check the size of the data is correct:
+```sql
+select count(*) from your-projectid.dataset.tablename 
+```
+**NB** Note that the data is slightly different from kaggle data, a column `test` has been added in order to easily filter out data from traing or test set in the future
 
 # Objective #2
 
@@ -24,7 +32,9 @@ For that, install `google-cloud-bigquery` with:
 
 ```bash
 pip install --upgrade google-cloud-bigquery
+pip show google-cloud-bigquery 
 ``` 
+Inspect the version of google-cloud-bigquery, keep it in mind as you'll probably need to add it to a setup.py fil for the nest exercices ;) 
 ## Query Data programmatically
 
 ```python
@@ -32,7 +42,7 @@ from google.cloud import bigquery
 client = bigquery.Client()
 ```
 check [Big Query Documentation](https://googleapis.dev/python/bigquery/latest/index.html),
-implement get_data_from_bg function:
+implement `get_data_from_bg()` function to query data from BQ from python:
 
 ```python
 def get_data(N=100, test=False):
@@ -51,3 +61,4 @@ def load_bq_table_from_df(df, dataset, table):
     # param table, table name
     # return
 ```
+Test your 2 functions and verify the actually do what you implemnented them for
