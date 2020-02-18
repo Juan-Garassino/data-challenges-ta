@@ -4,7 +4,7 @@
 1. Work on a real open ended problem
 1. Provide guided steps ahead of next week project
 
-We will analyze a dataset provided by e-commerce marketplace [Olist](www.olist.com).
+We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com).
 
 ### About Olist 🇧🇷
 
@@ -46,7 +46,7 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 **1 - Edit your PYTHONPATH**
 
-- Add `07-Best-Practices` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class. 
+- Add `07-Best-Practices` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
 
 On Mac and Linux:
 
@@ -56,15 +56,15 @@ On Mac and Linux:
 echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/CHANGE_BY_YOUR_GITHUB_NAME/data-challenges/07-Best-Practices:$PYTHONPATH"' >> ~/.zshrc
 ```
 
-For Windows: 
+For Windows:
 
 - `System Properties > Advanced> Environment Variables.`
 - Locate the Variable name `PYTHONPATH`
-- Add your path `C:\path\to\07-Best-Practices` 
+- Add your path `C:\path\to\07-Best-Practices`
 
 **2 - Install required packages**
 
-- Install needed python packages with the command: 
+- Install needed python packages with the command:
 
 ```python
 pip install -r requirements-best_practices.txt
