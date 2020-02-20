@@ -44,7 +44,12 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 ### Setup
 
-**1 - Edit your PYTHONPATH**
+**1 - Collaborate by team on a single repo**
+- One team member should fork the exercice repo
+- Other team member should clone the forked repo with `git clone`
+- TODO
+
+**2 - Edit your PYTHONPATH**
 
 - Add `07-Best-Practices` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
 
