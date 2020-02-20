@@ -44,28 +44,49 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 ### Setup
 
-**1 - Collaborate by team on a single repo**
-- One team member should fork the exercice repo
-- Other team member should clone the forked repo with `git clone`
-- TODO
+**1 - Collaborate by team on a single repo** ⚠️⚠️
+
+- Project team lead (<user.team_lead_github_nickname>) should fork [lewagon/olist](https://github.com/lewagon/olist) repo to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite teams or people). Collaborators should recieve an email for confirmation.
+
+- Each team member should then clone the forked repo in its local machine, and copy all challanges needed of the day (in the form of notebooks) in their local machine.
+
+```bash
+cd ~/code/<user.github_nickname>
+git clone git@github.com:<user.github_nickname>/olist.git
+mkidr ~/code/<user.github_nickname>/olist/notebooks/01/
+mkidr ~/code/<user.github_nickname>/olist/notebooks/01/01-Context-and-Setup
+mkidr ~/code/<user.github_nickname>/olist/notebooks/01/02-Data-Cleaning
+mkidr ~/code/<user.github_nickname>/olist/notebooks/01/03-Metric-Design
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02/data_cleaning.ipynb ~/code/<user.github_nickname>/olist/notebooks/01/02-Data-Cleaning.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design.ipynb ~/code/<user.github_nickname>/olist/notebooks/01/03-Metric-Design.ipynb
+```
+
+- Each team member should now create a branch to start working locally on its olist folder without conflicting with other team members.
+
+```bash
+git checkout -b <user.github_nickname>-01
+```
+
+- Today, each team member will work on all exercices independently. You should only synchronize at the end of the day so that only one of you should submit a pull request to upload one working version of its code in your shared repo online. That way, each morning this week, you will all pull the remote master branch to start with the exact same code base.
+
+- Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
 
 **2 - Edit your PYTHONPATH**
 
-- Add `07-Best-Practices` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
+- Add `olist` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
 
 On Mac and Linux:
 
-
 ⚠️ Make sure to replace `CHANGE_BY_YOUR_USERNAME` and `CHANGE_BY_YOUR_GITHUB_NAME`.
 ```bash
-echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/CHANGE_BY_YOUR_GITHUB_NAME/data-challenges/07-Best-Practices:$PYTHONPATH"' >> ~/.zshrc
+echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/CHANGE_BY_YOUR_GITHUB_NAME/olist:$PYTHONPATH"' >> ~/.zshrc
 ```
 
 For Windows:
 
 - `System Properties > Advanced> Environment Variables.`
 - Locate the Variable name `PYTHONPATH`
-- Add your path `C:\path\to\07-Best-Practices`
+- Add your path `C:\path\to\olist`
 
 **2 - Install required packages**
 
