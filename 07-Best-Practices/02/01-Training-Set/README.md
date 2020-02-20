@@ -1,23 +1,31 @@
-### Training Set 🏋️‍
+### Setup
 
-In this challenge, we will implement a method to return a training set at the order level. We will implement this training set in the `olist/order.py` file. This will come handy for our next modeling phase. 
+let's start by copying the exercies of the day to your local olist folder
 
-#### Introduction 
+```bash
+cd ~/code/<user.github_nickname>
+mkidr ~/code/<user.github_nickname>/olist/notebooks/02/01-Training-Set
+mkidr ~/code/<user.github_nickname>/olist/notebooks/02/02-Multivariate-Regression
+mkidr ~/code/<user.github_nickname>/olist/notebooks/02/03-Reviews-Translator
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/01/training_set.ipynb ~/code/<user.github_nickname>/olist/notebooks/02/01/training_set.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/02/multivariate_regression.ipynb ~/code/<user.github_nickname>/olist/notebooks/02/02/multivariate_regression.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/03/review_translator.ipynb ~/code/<user.github_nickname>/olist/notebooks/02/03/review_translator.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/order.py ~/code/<user.github_nickname>/olist/olist/order.py
+```
 
-Our goal is to create the following DataFrame: 
+- Pull the master branch of your team repo to make sure everyone on your team starts with the same comitted code base, and create your own branch for the day
 
-  - `order_id` (_str_) _the id of the order_
-  - `wait_time` (_float_) _the number of days between order_date and delivered_date_
-  - `wait_vs_expected` (_float_) _if the actual delivery date is later than the estimated delivery date, returns the absolute number of days between the two dates, otherwise return 0_
-  - `dim_is_five_star` (_int_) _1 if the order received a five_star, 0 otherwise_
-  - `dim_is_one_star` (_int_) _1 if the order received a one_star, 0 otherwise_
-  - `number_of_product` (_int_) _number of products that the order contains_
-  - `number_of_sellers` (_int_) _number of sellers involved in the order_
-  - `freight_value` (_float_) _value of the freight paid by customer_
-  - (Optional) `distance_customer_seller` (_float_) _the distance in km between customer and seller_
+```bash
+cd ~/code/<user.github_nickname>/olist
+git checkout master
+git pull origin master --rebase
+git checkout -b <user.github_nickname>-02
+```
 
-#### Exercices
 
-- Implement each feature as a separate method within the `Order` class available at `olist/order.py` 
+- At the end of the day, don't forget to push one working version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
 
-- Create a method `get_training_data()` that returns the complete DataFrame.
+#### Exercice: Training Set 🏋️‍
+In this challenge, we will implement a method to return a training set at the order level. We will implement this training set in the `olist/order.py` file. This will come handy for our next modeling phase.
+
+- Open `notebook/02/01/training_set.ipynb` and follows instructions
