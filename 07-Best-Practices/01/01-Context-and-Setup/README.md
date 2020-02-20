@@ -48,7 +48,7 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 - Project team lead (<user.team_lead_github_nickname>) should fork [lewagon/olist](https://github.com/lewagon/olist) repo to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite teams or people). Collaborators should recieve an email for confirmation.
 
-- Each team member should then clone the forked repo in its local machine, and copy all challanges needed of the day (in the form of notebooks) in their local machine.
+- Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
 
 ```bash
 cd ~/code/<user.github_nickname>
@@ -59,6 +59,9 @@ mkidr ~/code/<user.github_nickname>/olist/notebooks/01/02-Data-Cleaning
 mkidr ~/code/<user.github_nickname>/olist/notebooks/01/03-Metric-Design
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02/data_cleaning.ipynb ~/code/<user.github_nickname>/olist/notebooks/01/02-Data-Cleaning.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design.ipynb ~/code/<user.github_nickname>/olist/notebooks/01/03-Metric-Design.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/data.py ~/code/<user.github_nickname>/olist/olist/data.py
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/README.md ~/code/<user.github_nickname>/olist/olist/README.md
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.md ~/code/<user.github_nickname>/olist/data/README.md
 ```
 
 - Each team member should now create a branch to start working locally on its olist folder without conflicting with other team members.
