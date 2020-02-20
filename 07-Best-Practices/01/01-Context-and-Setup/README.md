@@ -70,7 +70,9 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.m
 git checkout -b <user.github_nickname>-01
 ```
 
-- Today, each team member will work on all exercices independently. You should only synchronize at the end of the day so that only one of you should submit a pull request to upload one working version of its code in your shared repo online. That way, each morning this week, you will all pull the remote master branch to start with the exact same code base.
+- Today, each team member will work on all exercices independently. At the end of the day, one of your team member should submit a pull request to upload one working version of the code in your shared repo online (`git add olist/data.py`, `git commit 'a message'` and `git push -u origin <user.github_nickname>-01`).
+That way, each morning this week, you will all pull the remote master branch to start with the exact same code base.
+
 
 - Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
 
