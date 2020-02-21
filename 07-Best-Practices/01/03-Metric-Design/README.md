@@ -1,6 +1,6 @@
 ## Metric Design ⚙️
 
-- Run `jupyter notebook` and open `metric_design.ipynb`
+- Run `jupyter notebook` and open `01_03_metric_design.ipynb`
 
 ### Frequency
 

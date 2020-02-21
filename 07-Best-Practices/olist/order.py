@@ -45,6 +45,8 @@ class Order:
         02-01 > Returns a DataFrame with order_id
         and distance between seller and customer
         """
+        # Optional
+        # Hint: you can use the haversine_distance logic coded in olist/utils.py
 
     def get_training_data(self):
         """

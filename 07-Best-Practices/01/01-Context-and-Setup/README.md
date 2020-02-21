@@ -51,17 +51,14 @@ More information can be found on [Olist dataset documentation](https://github.co
 - Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
 
 ```bash
-cd ~/code/<user.github_nickname>
-git clone git@github.com:<user.github_nickname>/olist.git
-mkidr ~/code/<user.github_nickname>/olist/notebooks/01/
-mkidr ~/code/<user.github_nickname>/olist/notebooks/01/01-Context-and-Setup
-mkidr ~/code/<user.github_nickname>/olist/notebooks/01/02-Data-Cleaning
-mkidr ~/code/<user.github_nickname>/olist/notebooks/01/03-Metric-Design
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02/data_cleaning.ipynb ~/code/<user.github_nickname>/olist/notebooks/01/02-Data-Cleaning.ipynb
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design.ipynb ~/code/<user.github_nickname>/olist/notebooks/01/03-Metric-Design.ipynb
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/data.py ~/code/<user.github_nickname>/olist/olist/data.py
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/README.md ~/code/<user.github_nickname>/olist/olist/README.md
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.md ~/code/<user.github_nickname>/olist/data/README.md
+mkdir -p ~/code/<user.team_lead_github_nickname> && cd $_
+git clone git@github.com:<team_lead_github_nickname>/olist.git
+cd olist
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02-Data-Cleaning/data_cleaning.ipynb notebooks/01_02_data_cleaning.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design/metric_design.ipynb notebooks/01_03_metric_design.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/data.py olist/data.py
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/README.md olist/README.md
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.md data/README.md
 ```
 
 - Each team member should now create a branch to start working locally on its olist folder without conflicting with other team members.
@@ -70,8 +67,15 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.m
 git checkout -b <user.github_nickname>-01
 ```
 
-- Today, each team member will work on all exercices independently. At the end of the day, one of your team member should submit a pull request to upload one working version of the code in your shared repo online (`git add olist/data.py`, `git commit 'a message'` and `git push -u origin <user.github_nickname>-01`).
-That way, each morning this week, you will all pull the remote master branch to start with the exact same code base.
+- Today, each team member will work on all exercices independently. At the end of the day, **one** of your team member should submit a pull request to upload one working version of the code in your shared repo online
+
+```bash
+git add olist/data.py
+git commit 'a message'
+git push -u origin <user.github_nickname>-01
+```
+
+- That way, each morning this week, you will be able to resynchronize your code base by pulling the remote master branch
 
 
 - Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
@@ -82,10 +86,14 @@ That way, each morning this week, you will all pull the remote master branch to 
 
 On Mac and Linux:
 
-⚠️ Make sure to replace `CHANGE_BY_YOUR_USERNAME` and `CHANGE_BY_YOUR_GITHUB_NAME`.
+_Open a terminal and run this._
 ```bash
-echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/CHANGE_BY_YOUR_GITHUB_NAME/olist:$PYTHONPATH"' >> ~/.zshrc
+cd ~/code/<user.team_lead_github_nickname/olist && echo "export PYTHONPATH=\"$(pwd)\""
 ```
+_Then copy the output line into your ~/.zshrc file by using st ~/.zshrc to open this config file as usual)_
+
+_Restart your terminal for the new .zshrc file to be loaded_
+
 
 For Windows:
 
