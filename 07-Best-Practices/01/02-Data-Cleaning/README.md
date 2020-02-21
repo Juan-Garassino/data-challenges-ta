@@ -31,4 +31,3 @@ Challenge: within the `olist/data.py` file, implement two methods:
 - `get_data()`
 - `get_matching_table()`
 - Make sure you can import and inspect data from a notebook
-- **Single source of truth**: Publish one working version of your data.py code to your team repo with git. This code will be shared and by everyone throughout the week
