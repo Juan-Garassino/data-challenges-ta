@@ -46,6 +46,25 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 **1 - Collaborate by team on a single repo** ⚠️⚠️
 
+Reminder: you will collaborate by project team on a repo organized as follows
+
+```
+.
+├── data                                 # contains all csv data (not comitted)
+|   ├── csv
+|       ├── olist_customers_dataset.csv
+|       ├── olist_orders_dataset.csv
+├── olist                                # contains all scripts contained in Python classes (comitted)
+|   ├── order.py
+|   ├── product.py
+|   ├── seller.py
+|   └── utils.py
+├── notebooks                            # contains your personal notebooks (not comitted)
+|   ├── 01_02_training_set.ipynb
+|   └── 01_03_metric_design.ipynb
+    └── 02_01_metric_design.ipynb
+```
+
 - Project team lead (<user.team_lead_github_nickname>) should fork [lewagon/olist](https://github.com/lewagon/olist) repo to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite teams or people). Collaborators should recieve an email for confirmation.
 
 - Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
