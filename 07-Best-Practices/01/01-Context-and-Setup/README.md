@@ -48,7 +48,7 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 Reminder: you will collaborate by project team on a repo organized as follows
 
-```
+```bash
 .
 ├── data                                 # contains all csv data (not comitted)
 |   ├── csv
