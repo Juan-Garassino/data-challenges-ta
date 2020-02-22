@@ -13,7 +13,7 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/order.p
 
 ```bash
 git checkout master
-git pull origin master --rebase
+git pull origin master
 git checkout -b <user.github_nickname>-02
 ```
 

@@ -8,7 +8,7 @@ We will analyze a dataset provided by e-commerce marketplace [Olist](https://www
 
 ### About Olist 🇧🇷
 
-![olist](https://raw.githubusercontent.com/lewagon/data-images/master/best-practices/olist.png)
+<img src="https://raw.githubusercontent.com/lewagon/data-images/master/best-practices/olist.png" width="500"/>
 
 Olist is a leading e-commerce service that connects merchants to main marketplaces in Brazil. They provide a wide range of offers from inventory management, dealing with reviews and customer contacts to logistic services.
 
@@ -65,7 +65,7 @@ Reminder: you will collaborate by project team on a repo organized as follows
     └── 02_01_metric_design.ipynb
 ```
 
-- Project team lead (<user.team_lead_github_nickname>) should fork [lewagon/olist](https://github.com/lewagon/olist) repo to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite teams or people). Collaborators should recieve an email for confirmation.
+- Project team lead (<user.team_lead_github_nickname>) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
 
 - Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
 
@@ -93,9 +93,7 @@ git add olist/data.py
 git commit 'a message'
 git push -u origin <user.github_nickname>-01
 ```
-
 - That way, each morning this week, you will be able to resynchronize your code base by pulling the remote master branch
-
 
 - Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
 

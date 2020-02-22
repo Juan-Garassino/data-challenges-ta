@@ -4,4 +4,4 @@
 
 - When you are done for the day, don't forget to synchronize with your team and push only one working version of your code to your team repo with git
 
-💪 (Optional): Start the next day with the first exerice. This week 7 can be done at your own speed
+💪 (Optional): Start the next day with the first exerice. This week, most exercices follows each other and can be done at your own speed. Simply make sure to move together as a projet team!

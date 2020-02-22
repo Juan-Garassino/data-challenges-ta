@@ -1,18 +1,18 @@
 ## It's time to divide and conquer!
 
-So far, we have seen the impact of some variables to the overall customer experience. Negative correlation with `wait_time` and `delay_vs_expected` was the most concluant finding, but we need to dig deeper.
+So far, have measured the impact of some variables to the overall customer experience. Negative correlation with `wait_time` was the most significant finding, but reading comments from bad reviews also shown that some were linked the the seller or the product itelf...
 
-The next two exercices will analyze which *product categories* and *seller* drive best customer satisfaction. Our goal is to identify patterns we will be able to use to increase quality supply.
+The next two exercices will analyze which *product categories* and *seller* drive best customer satisfaction. Our goal is to identify patterns we will be able to use to increase quality supply on olist platform.
 
 We will answer questions like:
 
-- What's the impact of product category or seller on customer rating?
-- Other things being equal, what's the impact of the location to wait_time?
+- What's the impact of product category or seller on customer rating, holding wait_time constant?
 - Can we identify which sellers contribute the most to the longer wait time by delivering too late to the carrier?
+- What's the impact of the location to wait_time?
 
-### ⚡️⚡️Split your team in two for the day ⚡️⚡️
-- One works on this exerice 2 (Products) while the other works on exercice 3 (Sellers)
-- Then, share your results within your team, peer review your code and commit everything to your team repo.
+### ⚡️⚡️Split your team in two for the day⚡️⚡️
+- One half takes on this exerice 2 (Products) while the other looks at exercice 3 (Sellers)
+- When you are done, share your results within your team, peer review your code and commit everything to your team repo.
 
 ## Exercice 2: Product Categories
 
@@ -44,7 +44,7 @@ We look at the impact of product categories on customer satisfaction and wait ti
 Open `notebooks/03_02_product_impact.ipynb`and follows instructions (copied below)
 
 
-#### Visualization
+**Visualization**
 
 Let's start by looking at the performance of product categories:
 
@@ -66,7 +66,7 @@ Let's start by looking at the performance of product categories:
 
 - Plot few distribution plots on product characteristics (weight, height etc.) for high and low average wait time categories.
 
-#### Wait Time
+**Wait Time**
 
 In this part, we will use a multivariate regression to isolate which product categories correlate with wait time.
 
@@ -74,7 +74,7 @@ In this part, we will use a multivariate regression to isolate which product cat
 
 👉 Hint: you can use the function `return_significative_coef` defined in `olist/utils.py`
 
-#### Review score
+**Review score**
 
 We have seen before that some products correlate with higher wait time. One hypothesis being that some products being bigger or heavier, customer delivery take more time.
 
@@ -82,7 +82,7 @@ What about their correlation with review score?
 
 - Create your target variable as the `average_review_score` and run an OLS model on `product_categories`. Which product categories correlate with higher `review_score`? Which tend to have lower `review_score`?
 
-#### Review score, controlling for Wait Time
+**Review score, controlling for Wait Time**
 
 But can we isolate the true contribution of product category on customer satisfaction?
 
@@ -90,6 +90,6 @@ In this section, we will use `wait_time` as a dependent variable and measure how
 
 - Run an OLS model `model_review_fixing_wait_time` where `product_categories` and `wait_time` are the regressors, and `review_score` is the target variable. Which product categories correlate with higher `review_score` holding `wait_time` constant?
 
-#### (Optional) Reviews for low review score Products
+**(Optional) Reviews for low review score Products**
 
 - Using our translation script, translate a sample of reviews for some of the low review categories. Do you see topics that stand out?
