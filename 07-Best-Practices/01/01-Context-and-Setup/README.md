@@ -80,8 +80,6 @@ git clone git@github.com:<user.team_lead_github_nickname>/olist.git && cd olist
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02-Data-Cleaning/data_cleaning.ipynb notebooks/01_02_data_cleaning.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design/metric_design.ipynb notebooks/01_03_metric_design.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/data.py olist/data.py
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/README.md olist/README.md
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.md data/README.md
 ```
 
 Each team member can now create a branch to start working locally on his/her olist folder without conflicting with other team members:
