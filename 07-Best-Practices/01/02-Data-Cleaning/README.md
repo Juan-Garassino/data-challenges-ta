@@ -6,12 +6,13 @@ In this exercise, you will perform an **Exploratory Data Analysis** (EDA) and lo
 
 Reminder: Full dataset documentation is available [here](https://github.com/lewagon/data-challenges/tree/master/07-Best-Practices/data)
 
-## 🔥 Warm-up
+### 🔥 Warm-up
 
 Go to the `olist` folder and run an `ipython` session:
 
 ```bash
-cd ~/code/<user.team_lead_github_nickname>/olist
+cd ~/code/<user.team_lead_github_nickname>/olist/notebooks
+ipython
 ```
 
 Then type the following to check that the setup phase from the previous exercise worked:
@@ -22,7 +23,7 @@ Olist().ping()
 # => pong
 ```
 
-If you get something else than `pong`, raise a ticket to get some help from a TA.
+If you get something else than `pong`, raise a ticket to get some help from a TA. You might have a problem with the `$PYTHONPATH`.
 
 ### Load data
 
