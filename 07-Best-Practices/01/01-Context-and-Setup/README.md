@@ -69,9 +69,8 @@ Reminder: you will collaborate by project team on a repo organized as follows
 
 Pay attention to who does what:
 
-Project team lead (<user.team_lead_github_nickname>) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
-
-Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
+- Project team lead (`<user.team_lead_github_nickname>`) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
+- Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
 
 ```bash
 mkdir -p ~/code/<user.team_lead_github_nickname> && cd $_
