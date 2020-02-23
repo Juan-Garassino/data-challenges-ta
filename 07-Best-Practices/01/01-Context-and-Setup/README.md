@@ -17,6 +17,7 @@ Olist charges sellers a monthly fee. This fee is progressive with the volume of 
 Remember the seller and customer workflows:
 
 **Seller:**
+
 - Seller join Olist
 - Seller upload product catalogue
 - Seller get notified when a product is sold.
@@ -25,6 +26,7 @@ Remember the seller and customer workflows:
 👉 Note that multiple sellers can be involved in one customer order!
 
 **Customer:**
+
 - Browses products on marketplaces
 - Purchases products from Olist.store
 - Gets an expected date for delivery
@@ -67,12 +69,13 @@ Reminder: you will collaborate by project team on a repo organized as follows
 
 Pay attention to who does what:
 
-- Project team lead (<user.team_lead_github_nickname>) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
-- Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
+Project team lead (<user.team_lead_github_nickname>) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
+
+Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
 
 ```bash
 mkdir -p ~/code/<user.team_lead_github_nickname> && cd $_
-git clone git@github.com:<team_lead_github_nickname>/olist.git
+git clone git@github.com:<user.team_lead_github_nickname>/olist.git
 cd olist
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02-Data-Cleaning/data_cleaning.ipynb notebooks/01_02_data_cleaning.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design/metric_design.ipynb notebooks/01_03_metric_design.ipynb
@@ -91,7 +94,7 @@ Today, each team member will work on all exercices independently. At the end of 
 
 ```bash
 git add olist/data.py
-git commit 'a message'
+git commit 'Completed Day 1'
 git push -u origin <user.github_nickname>-01
 ```
 
