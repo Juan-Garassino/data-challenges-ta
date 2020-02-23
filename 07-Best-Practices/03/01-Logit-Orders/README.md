@@ -1,20 +1,38 @@
-## Orders with Logit
+## Setup
 
-In this section we want to understand, using a logistic regression, which variables correlate to either 1 star reviews or 5 stars reviews. 
+- let's start by copying the exercies of the day to your local olist folder
 
-- Import the `order` training set with the following command: 
+```bash
+cd ~/code/<user.team_lead_github_nickname>/olist
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/01-Logit-Orders/logit_orders.ipynb notebooks/03_01_logit_orders.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/02-Product-Categories/product_impact.ipynb notebooks/03_02_product_impact.ipynb.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/03-Seller-Performance/seller_performance.ipynb notebooks/03_03_seller_performance.ipynb
+```
 
-```python
-from olist.order import Order 
-Order().get_training_data()
-``` 
+- Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 3
 
-### One Star
+```bash
+git checkout master
+git pull origin master --rebase
+git checkout -b <user.github_nickname>-03
+```
 
-- Run a logistic regression to predict `dim_is_one_star` on variables `wait_time`, `expected_wait_time`, `number_of_products`, `number_of_sellers`, `price` and `distance_seller_customer`. 
-- How do you interpret results? Which variables have higher impact on `dim_is_one_star` reviews? 
+- At the end of the day, don't forget to push a version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
 
-### Five Star
 
-- Run a logistic regression to predict `dim_is_five_star` on variables `wait_time`, `expected_wait_time`, `number_of_products`, `number_of_sellers`, `price` and `distance_seller_customer`. 
-- How do you interpret results? Which variables have higher impact on `dim_is_five_star` reviews? 
+## Exercice 01: Model orders reviews with logistic regression
+
+In this section we want to understand, using a logistic regression this time, which variables correlate to either 1 star reviews or 5 stars reviews.
+
+Open the `03_01_logit_orders.ipynb` and follow instructions (copied below)
+
+**One Star**
+- Run a logistic regression to predict `dim_is_one_star` on the explaning variables of your choice.
+- Which variables have higher impact on dim_is_one_star reviews?
+- How do you interpret results?
+
+**Five Star**
+- Run a logistic regression to predict `dim_is_five_star` on the explaning variables of your choice.
+- Which variables have higher impact on dim_is_one_star reviews?
+- Do you notive differences with One Star?
+- How do you interpret results?

@@ -8,7 +8,7 @@ We will analyze a dataset provided by e-commerce marketplace [Olist](https://www
 
 ### About Olist 🇧🇷
 
-![olist](https://raw.githubusercontent.com/lewagon/data-images/master/best-practices/olist.png)
+<img src="https://raw.githubusercontent.com/lewagon/data-images/master/best-practices/olist.png" width="500"/>
 
 Olist is a leading e-commerce service that connects merchants to main marketplaces in Brazil. They provide a wide range of offers from inventory management, dealing with reviews and customer contacts to logistic services.
 
@@ -17,6 +17,7 @@ Olist charges sellers a monthly fee. This fee is progressive with the volume of 
 Remember the seller and customer workflows:
 
 **Seller:**
+
 - Seller join Olist
 - Seller upload product catalogue
 - Seller get notified when a product is sold.
@@ -25,6 +26,7 @@ Remember the seller and customer workflows:
 👉 Note that multiple sellers can be involved in one customer order!
 
 **Customer:**
+
 - Browses products on marketplaces
 - Purchases products from Olist.store
 - Gets an expected date for delivery
@@ -44,33 +46,80 @@ More information can be found on [Olist dataset documentation](https://github.co
 
 ### Setup
 
-**1 - Collaborate by team on a single repo**
-- One team member should fork the exercice repo
-- Other team member should clone the forked repo with `git clone`
-- TODO
+**1 - Collaborate by team on a single repo** ⚠️⚠️
+
+Reminder: you will collaborate by project team on a repo organized as follows
+
+```bash
+.
+├── data                                 # contains all csv data (not comitted)
+|   ├── csv
+|       ├── olist_customers_dataset.csv
+|       ├── olist_orders_dataset.csv
+├── olist                                # contains all scripts contained in Python classes (comitted)
+|   ├── order.py
+|   ├── product.py
+|   ├── seller.py
+|   └── utils.py
+├── notebooks                            # contains your personal notebooks (not comitted)
+|   ├── 01_02_training_set.ipynb
+|   └── 01_03_metric_design.ipynb
+    └── 02_01_metric_design.ipynb
+```
+
+Pay attention to who does what:
+
+- Project team lead (`<user.team_lead_github_nickname>`) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
+- Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
+
+```bash
+mkdir -p ~/code/<user.team_lead_github_nickname> && cd $_
+git clone git@github.com:<user.team_lead_github_nickname>/olist.git
+cd olist
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02-Data-Cleaning/data_cleaning.ipynb notebooks/01_02_data_cleaning.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design/metric_design.ipynb notebooks/01_03_metric_design.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/data.py olist/data.py
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/README.md olist/README.md
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.md data/README.md
+```
+
+Each team member should now create a branch to start working locally on its olist folder without conflicting with other team members.
+
+```bash
+git checkout -b <user.github_nickname>-01
+```
+
+Today, each team member will work on all exercices independently. At the end of the day, **one** of your team member should submit a pull request to upload one working version of the code in your shared repo online
+
+```bash
+git add olist/data.py
+git commit 'Completed Day 1'
+git push -u origin <user.github_nickname>-01
+```
+
+That way, each morning this week, you will be able to resynchronize your code base by pulling the remote master branch
+
+Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
 
 **2 - Edit your PYTHONPATH**
 
-- Add `07-Best-Practices` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
+Add `olist` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
 
-On Mac and Linux:
+For macOS and Linux:
 
+_Open a terminal and run this._
 
-⚠️ Make sure to replace `CHANGE_BY_YOUR_USERNAME` and `CHANGE_BY_YOUR_GITHUB_NAME`.
 ```bash
-echo 'export PYTHONPATH="/Users/CHANGE_BY_YOUR_USERNAME/code/CHANGE_BY_YOUR_GITHUB_NAME/data-challenges/07-Best-Practices:$PYTHONPATH"' >> ~/.zshrc
+cd ~/code/<user.team_lead_github_nickname>/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
+
+_Then copy the output line into your ~/.zshrc file, using `st ~/.zshrc` to open this config file as usual)_
+
+_**Restart** your terminal for the new `~/.zshrc` file to be loaded_
+
 
 For Windows:
 
 - `System Properties > Advanced> Environment Variables.`
 - Locate the Variable name `PYTHONPATH`
-- Add your path `C:\path\to\07-Best-Practices`
-
-**2 - Install required packages**
-
-- Install needed python packages with the command:
-
-```python
-pip install -r requirements-best_practices.txt
-```
+- Add your path `C:\path\to\olist`

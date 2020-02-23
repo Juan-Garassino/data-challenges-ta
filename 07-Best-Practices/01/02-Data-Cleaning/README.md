@@ -17,13 +17,12 @@ Olist().ping()
 
 ### Load data
 
-- Download 9 csv files from the Kaggle Olist page [here](https://www.kaggle.com/olistbr/brazilian-ecommerce). Place them under the `data-challenges/07-Best-Practices/data/csv` folder
-- Run `jupyter notebook` and open the `data_cleaning.ipynb` file and follow the instructions
+- Download 9 csv files from the Kaggle Olist page [here](https://www.kaggle.com/olistbr/brazilian-ecommerce). Place them under a `olist/data/csv` folder
+- Run `jupyter notebook` and open the `01_02_data_cleaning.ipynb` file and follow the instructions
 
 ### Pandas Profiling
 
-- Run an exploratory analysis for the list of datasets below using [pandas-profiling](https://github.com/pandas-profiling/pandas-profiling)
-
+- Run an exploratory analysis for the list of datasets below using [pandas-profiling](https://github.com/pandas-profiling/pandas-profiling) (make sur to pip install pandas-profiling)
 
 ### Olist Class
 
@@ -31,4 +30,3 @@ Challenge: within the `olist/data.py` file, implement two methods:
 - `get_data()`
 - `get_matching_table()`
 - Make sure you can import and inspect data from a notebook
-- **Single source of truth**: Publish one working version of your data.py code to your team repo with git. This code will be shared and by everyone throughout the week
