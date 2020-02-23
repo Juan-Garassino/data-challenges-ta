@@ -22,8 +22,7 @@ Olist().ping()
 
 ### Pandas Profiling
 
-- Run an exploratory analysis for the list of datasets below using [pandas-profiling](https://github.com/pandas-profiling/pandas-profiling)
-
+- Run an exploratory analysis for the list of datasets below using [pandas-profiling](https://github.com/pandas-profiling/pandas-profiling) (make sur to pip install pandas-profiling)
 
 ### Olist Class
 

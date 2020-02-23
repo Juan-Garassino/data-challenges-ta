@@ -18,30 +18,30 @@ In this section we look at seller performance on customer satisfaction.
 
 ### Exploration
 
+Open `notebooks/03_03_seller_performance.ipynb`and follows instructions (copied below)
+
 Let's start by some initial exploratory analysis on sellers distribution:
 
 - What's the median number of orders per seller? How is the distribution on that variable looking?
 - What's the share of orders per seller state? Is it concentrated or distributed across Brazil?
 - Run a correlation between variables, which insights do you draw from it?
 
-### Delay to Carrier
+**Delay to Carrier**
 
 The variable `delay_to_carrier` measures the number of days between the shipping date limit imposed by Olist and the actual delivery date to the customer.
 
 - What's the share of sellers that have an average `delay_to_carrier` above 0?
 - Model out the impact of variable `delay_to_carrier` to `average_review_score`. What do you conclude?
 
-### Seller location
+**Seller location**
 
 We now want to explore the impact of `seller_state` to `wait_time` and other variables:
 
 - Plot a text_scatterplot for states that had more than 100 orders, with `n_orders` on the x axis and `wait_time` on the y axis.
 - Model out the impact of each `seller_state` to variable `wait_time`. Which locations impact more `wait_time`?
 
-### Review score
+**Review score**
 
 All together now! Let's model out the impact of each variable to our target variable `avg_review_score`:
 
 - Run an OLS model with `n_orders`, `seller_state` and `delay_to_carrier` as dependent variable and `avg_review_score` as the target variable
-
-💪 (Optional): Start the next day with the first exerice. This week can be done at your own speed!
