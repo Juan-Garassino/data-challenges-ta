@@ -65,8 +65,9 @@ Reminder: you will collaborate by project team on a repo organized as follows
     └── 02_01_metric_design.ipynb
 ```
 
-- Project team lead (<user.team_lead_github_nickname>) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
+Pay attention to who does what:
 
+- Project team lead (<user.team_lead_github_nickname>) **and only him** should fork the [olist template](https://github.com/lewagon/olist) repository to its own github account using the github web interface, and invite its team members to collaborate on the forked repo (setting-->manage access-->invite collaborators). Collaborators should recieve an email for confirmation.
 - Each team member should then clone the forked repo in its local machine, and copy all challenges needed of the day in their local machine:
 
 ```bash
@@ -80,36 +81,39 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/README.
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/data/README.md data/README.md
 ```
 
-- Each team member should now create a branch to start working locally on its olist folder without conflicting with other team members.
+Each team member should now create a branch to start working locally on its olist folder without conflicting with other team members.
 
 ```bash
 git checkout -b <user.github_nickname>-01
 ```
 
-- Today, each team member will work on all exercices independently. At the end of the day, **one** of your team member should submit a pull request to upload one working version of the code in your shared repo online
+Today, each team member will work on all exercices independently. At the end of the day, **one** of your team member should submit a pull request to upload one working version of the code in your shared repo online
 
 ```bash
 git add olist/data.py
 git commit 'a message'
 git push -u origin <user.github_nickname>-01
 ```
-- That way, each morning this week, you will be able to resynchronize your code base by pulling the remote master branch
 
-- Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
+That way, each morning this week, you will be able to resynchronize your code base by pulling the remote master branch
+
+Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
 
 **2 - Edit your PYTHONPATH**
 
-- Add `olist` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
+Add `olist` path to your `PYTHONPATH`. This will help us easily import our modules throughout the class.
 
-On Mac and Linux:
+For macOS and Linux:
 
 _Open a terminal and run this._
+
 ```bash
 cd ~/code/<user.team_lead_github_nickname/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
-_Then copy the output line into your ~/.zshrc file by using st ~/.zshrc to open this config file as usual)_
 
-_Restart your terminal for the new .zshrc file to be loaded_
+_Then copy the output line into your ~/.zshrc file, using `st ~/.zshrc` to open this config file as usual)_
+
+_**Restart** your terminal for the new `~/.zshrc` file to be loaded_
 
 
 For Windows:
@@ -120,7 +124,7 @@ For Windows:
 
 **2 - Install required packages**
 
-- Install needed python packages with the command:
+Install needed python packages with the command:
 
 ```python
 pip install -r requirements-best_practices.txt
