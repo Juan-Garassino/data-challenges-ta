@@ -110,7 +110,7 @@ For macOS and Linux:
 _Open a terminal and run this._
 
 ```bash
-cd ~/code/<user.team_lead_github_nickname/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
+cd ~/code/<user.team_lead_github_nickname>/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
 
 _Then copy the output line into your ~/.zshrc file, using `st ~/.zshrc` to open this config file as usual)_
