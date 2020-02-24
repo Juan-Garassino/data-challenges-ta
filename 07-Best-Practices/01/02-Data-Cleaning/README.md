@@ -8,6 +8,8 @@ Reminder: Full dataset documentation is available [here](https://github.com/lewa
 
 ### 🔥 Warm-up
 
+We now work in your local olist foler.
+
 Go to the `olist` folder and run an `ipython` session:
 
 ```bash
@@ -25,21 +27,14 @@ Olist().ping()
 
 If you get something else than `pong`, raise a ticket to get some help from a TA. You might have a problem with the `$PYTHONPATH`.
 
-### Load data
+### Exploratory analysis on Jupyter Notebook
 
-Download 9 csv files from the Kaggle Olist page [here](https://www.kaggle.com/olistbr/brazilian-ecommerce). Place them in the `data/csv` folder.
+Download 9 csv files from the Kaggle Olist page [here](https://www.kaggle.com/olistbr/brazilian-ecommerce). Place them in your local `data/csv` folder.
 
-Run `jupyter lab` and open the `notebooks/01_02_data_cleaning.ipynb` file. Follow instructions within.
-
-### Pandas Profiling
-
-Run an exploratory analysis for the list of datasets below using [pandas-profiling](https://github.com/pandas-profiling/pandas-profiling). If you don't have it yet in your virtualenv you can get it with:
-
-```bash
-pip install pandas-profiling
-```
+Open the `notebooks/01_02_data_cleaning.ipynb` file and follow instructions within.
 
 ### Olist Class
+Once you are satisfied with your analysis on jupyter notebook, standard practice is to copy a clean version of your analysis into your committed code base.
 
 Challenge: within the `olist/data.py` file, implement two methods:
 
