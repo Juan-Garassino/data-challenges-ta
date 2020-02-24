@@ -69,7 +69,7 @@ Reminder, you will collaborate by project team on a repo organized with the foll
 
 Pay attention to who does what:
 
-- Project team lead (`<user.team_lead_github_nickname>`) **and only him/her** must use the [olist template](https://github.com/lewagon/olist) repository to create a repository on his/her own github account.
+- Project team lead (`<user.team_lead_github_nickname>`) **and only him/her** must use the [olist template](https://github.com/lewagon/olist) repository to create a repository on his/her own github account. (USe this template --> owner: you --> setting private)
 - Then project team lead can invite his/her team members to collaborate on the newly created repo (setting-->manage access-->invite collaborators).
 - Other team members will recieve an email invitation they need to accept.
 - Every team member (including `<user.team_lead_github_nickname>`) must clone the repo on his/her local machine and set it up with the following commands:
