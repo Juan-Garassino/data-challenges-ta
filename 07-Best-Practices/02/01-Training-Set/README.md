@@ -9,9 +9,10 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/02-Multiva
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/03-Reviews-Translator/review_translator.ipynb notebooks/02_03_review_translator.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/order.py olist/order.py
 ```
-- Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 2
+- Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 2:
 
 ```bash
+git status # Check that you're repo is clean. If not, ask a TA
 git checkout master
 git pull origin master
 git checkout -b <user.github_nickname>-02
