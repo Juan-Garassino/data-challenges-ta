@@ -1,6 +1,16 @@
-## Setup
+### Setup
 
-- let's start by copying the exercies of the day to your local olist folder
+Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 3:
+
+```bash
+cd ~/code/<user.team_lead_github_nickname>/olist
+git status # Check that you're repo is clean. If not, ask a TA
+git checkout master
+git pull origin master
+git checkout -b <user.github_nickname>-03
+```
+
+Then, copy the exercies of the day to your local olist folder
 
 ```bash
 cd ~/code/<user.team_lead_github_nickname>/olist
@@ -9,18 +19,13 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/02-Product
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/03-Seller-Performance/seller_performance.ipynb notebooks/03_03_seller_performance.ipynb
 ```
 
-- Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 3
+- At the end of the day, don't forget to push one working version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
 
-```bash
-git checkout master
-git pull origin master --rebase
-git checkout -b <user.github_nickname>-03
-```
 
 - At the end of the day, don't forget to push a version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
 
 
-## Exercice 01: Model orders reviews with logistic regression
+## Exercice 1: Model orders reviews with logistic regression
 
 In this section we want to understand, using a logistic regression this time, which variables correlate to either 1 star reviews or 5 stars reviews.
 

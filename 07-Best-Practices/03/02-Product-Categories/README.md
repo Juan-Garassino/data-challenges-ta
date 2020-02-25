@@ -2,7 +2,7 @@
 
 So far, have measured the impact of some variables to the overall customer experience. Negative correlation with `wait_time` was the most significant finding, but reading comments from bad reviews also shown that some were linked the the seller or the product itelf...
 
-The next two exercices will analyze which *product categories* and *seller* drive best customer satisfaction. Our goal is to identify patterns we will be able to use to increase quality supply on olist platform.
+The next two exercices will analyze which **product categories** and which **sellers** drive best customer satisfaction. Our goal is to identify patterns we will be able to use to increase quality supply on olist platform.
 
 We will answer questions like:
 
@@ -18,7 +18,7 @@ We will answer questions like:
 
 We look at the impact of product categories on customer satisfaction and wait time.
 
-### Preparation
+### Data preparation
 
 - Create the method `get_training_data` method in `olist/product.py` that will return the following DataFrame:
 
@@ -39,7 +39,7 @@ We look at the impact of product categories on customer satisfaction and wait ti
   - `share_of_one_stars` (_float_) _The share of one stars orders for orders in which the product was sold_
   - `review_score` (_float_) _Average review score_
 
-### Analyse
+### Analysis
 
 Open `notebooks/03_02_product_impact.ipynb`and follows instructions (copied below)
 

@@ -10,7 +10,7 @@ git pull origin master
 git checkout -b <user.github_nickname>-02
 ```
 
-Let's start by copying the exercies of the day to your local olist folder
+Then, copy the exercies of the day to your local olist folder
 
 ```bash
 cd ~/code/<user.team_lead_github_nickname>/olist
