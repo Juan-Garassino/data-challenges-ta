@@ -1,6 +1,16 @@
 ### Setup
 
-- let's start by copying the exercies of the day to your local olist folder
+Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 2:
+
+```bash
+cd ~/code/<user.team_lead_github_nickname>/olist
+git status # Check that you're repo is clean. If not, ask a TA
+git checkout master
+git pull origin master
+git checkout -b <user.github_nickname>-02
+```
+
+Let's start by copying the exercies of the day to your local olist folder
 
 ```bash
 cd ~/code/<user.team_lead_github_nickname>/olist
@@ -9,15 +19,6 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/02-Multiva
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/03-Reviews-Translator/review_translator.ipynb notebooks/02_03_review_translator.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/order.py olist/order.py
 ```
-- Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 2:
-
-```bash
-git status # Check that you're repo is clean. If not, ask a TA
-git checkout master
-git pull origin master
-git checkout -b <user.github_nickname>-02
-```
-
 - At the end of the day, don't forget to push one working version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
 
 #### Exercice: Training Set 🏋️‍
