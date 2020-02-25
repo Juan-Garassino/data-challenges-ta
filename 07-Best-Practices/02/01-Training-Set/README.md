@@ -8,6 +8,7 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/01-Trainin
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/02-Multivariate-Regression/multivariate_regression.ipynb notebooks/02_02_multivariate_regression.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/02/03-Reviews-Translator/review_translator.ipynb notebooks/02_03_review_translator.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/order.py olist/order.py
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/utils.py olist/utils.py
 ```
 - Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 2:
 
