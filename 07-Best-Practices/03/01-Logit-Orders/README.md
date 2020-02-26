@@ -14,9 +14,12 @@ Then, copy the exercies of the day to your local olist folder
 
 ```bash
 cd ~/code/<user.team_lead_github_nickname>/olist
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/01-Logit-Orders/logit_orders.ipynb notebooks/03_01_logit_orders.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/01-Logit-Orders/03_01_logit_orders.ipynb notebooks/03_01_logit_orders.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/02-Product-Categories/product_impact.ipynb notebooks/03_02_product_impact.ipynb.ipynb
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/03-Seller-Performance/seller_performance.ipynb notebooks/03_03_seller_performance.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/03-Seller-Performance/Sellers.ipynb notebooks/03_03_seller_performance.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/product.py olist/product.py
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/seller.py olist/seller.py
+
 ```
 
 - At the end of the day, don't forget to push one working version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
