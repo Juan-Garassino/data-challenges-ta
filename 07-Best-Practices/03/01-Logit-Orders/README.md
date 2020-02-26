@@ -15,7 +15,7 @@ Then, copy the exercies of the day to your local olist folder
 ```bash
 cd ~/code/<user.team_lead_github_nickname>/olist
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/01-Logit-Orders/03_01_logit_orders.ipynb notebooks/03_01_logit_orders.ipynb
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/02-Product-Categories/product_impact.ipynb notebooks/03_02_product_impact.ipynb.ipynb
+cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/02-Product-Categories/product_impact.ipynb notebooks/03_02_product_impact.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/03/03-Seller-Performance/Sellers.ipynb notebooks/03_03_seller_performance.ipynb
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/product.py olist/product.py
 cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/seller.py olist/seller.py
