@@ -18,9 +18,9 @@ We will answer questions like:
 
 We look at the impact of product categories on customer satisfaction and wait time.
 
-### Data preparation
+### 2.1 Data preparation
 
-- Create the method `get_training_data` method in `olist/product.py` that will return the following DataFrame:
+- Create the `get_training_data` method in `olist/product.py` that will return the following DataFrame:
 
   - `product_id` (_str_) _the id of the product_
   - `category` (_str_) _the category name (in english)_
@@ -39,7 +39,7 @@ We look at the impact of product categories on customer satisfaction and wait ti
   - `share_of_one_stars` (_float_) _The share of one stars orders for orders in which the product was sold_
   - `review_score` (_float_) _Average review score_
 
-### Analysis
+### 2.2 Analysis
 
 Open `notebooks/03_02_product_impact.ipynb`and follows instructions (copied below)
 

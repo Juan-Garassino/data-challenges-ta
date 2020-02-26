@@ -1,4 +1,4 @@
-### Setup
+## Setup
 
 Make sure everyone on your team starts with the same comitted code base, and create your own branch for the day 3:
 
@@ -23,9 +23,6 @@ cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/seller.
 ```
 
 - At the end of the day, don't forget to push one working version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
-
-
-- At the end of the day, don't forget to push a version of your code to your team repo, and (optionally) to summarize your key findings in your team google doc or shared notebook.
 
 
 ## Exercice 1: Model orders reviews with logistic regression

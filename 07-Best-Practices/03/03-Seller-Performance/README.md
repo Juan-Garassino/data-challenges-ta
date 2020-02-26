@@ -1,8 +1,8 @@
-## Sellers
+## 3. Sellers
 
 In this section we look at seller performance on customer satisfaction.
 
-### Data preparation
+### 3.1 Data preparation
 
 - Create the method `get_training_data` in `olist/seller.py` that will return the following DataFrame:
 
@@ -16,7 +16,7 @@ In this section we look at seller performance on customer satisfaction.
   - `seller_review_score` (_float_) _The average review score for orders in which the seller was involved_
   - `n_orders` (_int_) _The number of orders the seller was involved with._
 
-### Analysis
+### 3.2 Analysis
 
 Open `notebooks/03_03_seller_performance.ipynb`and follows instructions (copied below)
 
