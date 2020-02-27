@@ -14,18 +14,6 @@ class Review:
         self.matching_table = olist.get_matching_table()
         self.order = Order()
 
-    def get_review_length(self):
-        """
-        04-02 > Returns a DataFrame with:
-       'review_id', 'length_review', 'review_score'
-        """
-
-    def get_main_product_category(self):
-        """
-        04-02 > Returns a DataFrame with:
-       'review_id', 'order_id','length_review'
-        """
-
     def get_training_data(self):
         """
         04-02 > Returns a DataFrame with:

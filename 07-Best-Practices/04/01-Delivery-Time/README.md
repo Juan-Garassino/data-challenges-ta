@@ -42,9 +42,9 @@ We first need to understand the baseline we want to optimize.
 
 ### First Model
 
-Load orders training data and split it with a 30% test size in X_train, X_test, y_train, y_test.
+Load orders training data and split it with a 30% test size in X_train, X_test, y_train, y_test with `random_state = 42` so you can compare your results with the whole class.
 
-👉 Hint: make sure to drop the necessary variables to avoid data leakage.
+👉 Hint: make sure to drop all necessary variables to avoid data leakage.
 
 Build a first prediction with the model of your choice. What’s the best wait_time you get?
 
@@ -57,3 +57,5 @@ We did a first pass at improving Olist ETA. Can we do better using additional fe
 ### Auto ML
 
 Using the library [Tpot](http://epistasislab.github.io/tpot/), find the best model to optimize `wait_time`. What is the best `mean_square_error` you can achieve?
+
+Make sure you are able to recreate the model Tpot suggests you to use. After few minutes of training with Tpot, you should always get a higher score than your linear regression above.

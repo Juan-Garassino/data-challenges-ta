@@ -32,29 +32,28 @@ In addition, we estimate that it costs 500 BRL to acquire one seller due to sale
 
 ### The CEO's request
 
-Your goal is to increase Olist customer satisfaction and margin while maintaining a healthy order volume.
+You have been tasked by Olist CEO come with recommendations on **how to increase Olist customer satisfaction and margin while maintaining a healthy order volume**
 
-You have been tasked by Olist CEO to study the impact and come with a recommendation for one or more of the suggestion below:
-- Olist restrict deliveries to certain states.
-- Olist implements a `review_score` threshold for sellers. Below that threshold, sellers get removed from the platform.
-- Olist focuses its offering to some product categories.
+Hint: Below is a list of possible suggestion to explore (among other)
+- Olist restrict seller/customer matching between certain states
+- Olist implements a review_score threshold for sellers. Repetitively underperforming sellers get removed from the platform after a while.
+- Olist focuses its offering to some product categories, or remove some specific products from its platform
+- ...
 
 ### Your output
 
 Your task is to produce, per team, a cost-benefit analysis of one or more recommendations as suggested above.
 
-You are free to deep dive on one of the 3 option above, or evaluate each of them in less detail
+### Present your analysis to the class at 4pm as a team
 
-### Present your analysis to the class at 4pm as a Team
+You have 10 minutes max per group to convince Olist CEO of your recommendations
 
-- You have 10 minutes per group to convince Olist CEO of your recommendations
+Don't forget to explain the context, and the reasonning behing your recommendations
 
-- Don't forget to explain the context, and the reasonning behing your recommendations
+Remember: Olist CEO is not a data scientist!
 
-- Remember: Olist CEO is **not** a data scientist!
+Use Jupyter Noteobook **nbconvert** to make a slide-based presentation
 
-- Use Jupyter Noteobook **nbconvert** to make a slide-based presentation
 ```bash
 jupyter nbconvert --to slides --post serve <your_notebook.ipynb>
 ```
-
