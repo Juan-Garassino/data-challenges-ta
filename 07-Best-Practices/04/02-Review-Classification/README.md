@@ -54,3 +54,5 @@ Let's add more features to our model.
 
 Using the library [Tpot](http://epistasislab.github.io/tpot/), find the best model to optimize `dim_is_low_review`.
 What is the best `accuracy` and `recall` scores you can achieve?
+
+Make sure you are able to recreate and manipulate the model Tpot suggests you to use. After few minutes of training with Tpot, you should always get a higher score than your linear regression above.

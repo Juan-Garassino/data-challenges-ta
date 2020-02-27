@@ -33,7 +33,7 @@ Download 9 csv files from the Kaggle Olist page [here](https://www.kaggle.com/ol
 
 Open the `notebooks/01_02_data_cleaning.ipynb` file and follow instructions within.
 
-### Olist Class
+### Coding Olist Class
 Once you are satisfied with your analysis on jupyter notebook, standard practice is to copy a clean version of your analysis into your committed code base.
 
 Challenge: within the `olist/data.py` file, implement two methods:
