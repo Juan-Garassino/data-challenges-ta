@@ -10,21 +10,21 @@ In this section, your goal is to produce an analysis that will inform which deci
 
 ***Revenue***
 
-As we have detailed previously, Olist charges sellers with various fees. For simplicity, we will assume that Olist takes 20% of the `booking_value` of sellers and charge 80 BRL by month per seller.
+As we have detailed previously, Olist charges sellers with various fees. For simplicity, we will assume that Olist takes a **10% cut** on the product price of each order delivered and charge **80 BRL by month** per seller.
 
-👉 Note: The `booking_value` is defined as the sum of product `price`. It excludes `freight_value`.
+👉 Note: The product `price` excludes any `freight_value`
 
 ***Cost***
 
 On the long term, bad customer experience has business implications: low repeat rate, immediate customer support cost, refund or non favorable word of mouth.
 
-We will assume that we have an estimate measure of the monetary cost (in Brazilian Real) for each review:
+We will assume that we have an estimate measure of the monetary cost for each bad review:
 
 review_score|cost (BRL)
 ---|---
-1|100
-2|50
-3|40
+1|300
+2|200
+3|500
 4|0
 5|0
 
