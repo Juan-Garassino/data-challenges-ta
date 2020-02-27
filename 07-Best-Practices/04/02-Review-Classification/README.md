@@ -8,6 +8,8 @@ If this model is precise enough, it can help teams focus on at risk orders and t
 
 ### Features
 
+Open `04_02_review_classification.ipynb` and follows instructions (copied below)
+
 - Retrieve `orders` training_set defined in previous exercises and define a new column `dim_is_low_review`.
 
 👉Hint: `dim_is_low_review` is defined as reviews with 1 or 2 stars.
@@ -29,14 +31,14 @@ We now want to build a classification model to predict whether an order is low r
 
 ### More features
 
-Let's add more features to our model. For the sake of this exercise, we will add more features available from `olist_order_reviews_dataset`.
-
-- In file `olist/reviews.py`, add the method `get_training_data` that returns the following features:
+- Open file `olist/reviews.py`, add the method `get_training_data` that returns the following features available from `olist_order_reviews_dataset`.
 
     - `review_id` (_str_) _the id of the review_
     - `order_id` (_str_) _the id of the order_
     - `review_comment_length` (_int_) _string length of review comment_
     - `product_category` (_str_) _name of the main category for that review. Main category is defined as the most expensive category in the order_.
+
+- Back to your notebook `04_02_review_classification.ipynb`, let's add more features to our model.
 
 - Plot a distribution of `review_comment_length` per `review_score`. What do you observe?
 
