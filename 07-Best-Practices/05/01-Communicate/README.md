@@ -22,9 +22,9 @@ We will assume that we have an estimate measure of the monetary cost for each ba
 
 review_score|cost (BRL)
 ---|---
-1|500
-2|300
-3|100
+1|100
+2|50
+3|40
 4|0
 5|0
 
@@ -44,7 +44,7 @@ Hint: Below is a list of possible suggestion to explore (among other)
 
 Your task is to produce, per team, a cost-benefit analysis of one or more recommendations as suggested above.
 
-### Present your analysis to the class at 4pm as a team
+### Present your analysis to the class at 5pm as a team
 
 You have 10 minutes max per group (discussion included) to convince Olist CEO of your recommendations
 
