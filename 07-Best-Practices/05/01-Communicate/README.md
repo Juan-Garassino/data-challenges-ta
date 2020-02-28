@@ -22,13 +22,13 @@ We will assume that we have an estimate measure of the monetary cost for each ba
 
 review_score|cost (BRL)
 ---|---
-1|300
-2|200
-3|500
+1|500
+2|300
+3|100
 4|0
 5|0
 
-In addition, we estimate that it costs 500 BRL to acquire one seller due to sales acquisition and marketing costs.
+In addition, we estimate that it costs 800 BRL to acquire one seller due to sales acquisition and marketing costs.
 
 ### The CEO's request
 
