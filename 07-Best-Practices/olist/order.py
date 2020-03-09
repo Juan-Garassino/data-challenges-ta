@@ -31,7 +31,7 @@ class Order:
     def get_number_sellers(self):
         """
         02-01 > Returns a DataFrame with:
-        order_id, number_of_products
+        order_id, number_of_sellers
         """
 
     def get_price_and_freight(self):
@@ -45,11 +45,13 @@ class Order:
         02-01 > Returns a DataFrame with order_id
         and distance between seller and customer
         """
+        # Optional
+        # Hint: you can use the haversine_distance logic coded in olist/utils.py
 
     def get_training_data(self):
         """
         02-01 > Returns a DataFrame with:
         order_id, wait_time, wait_vs_expected,
-        dim_is_five_star, dim_is_one_star, number_of_product,
+        dim_is_five_star, dim_is_one_star, review_score, number_of_products,
         number_of_sellers, freight_value, distance_customer_seller
         """

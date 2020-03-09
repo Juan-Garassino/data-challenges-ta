@@ -9,6 +9,8 @@ class Olist:
         01-01 > This function returns all Olist datasets
         as DataFrames within a Python dict.
         """
+        # Hint: You will need to find the absolute path of the csv folder in order to call this method from anywhere.
+        # Hint 2: look at python __file__ attribute
 
     def get_matching_table(self):
         """

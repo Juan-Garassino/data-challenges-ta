@@ -5,6 +5,8 @@
 
 You have 200.000 Yelp reviews, associated to the number of starts associated to the review, from 1 (very poor) to 5 (very positive).
 
+The train set contains the reviews and the number of stars. The test set only contains the review.
+
 You can download the dataset here: [DL-06-challenge.csv.zip](http://wagon-public-datasets.s3.amazonaws.com/DL-05-challenge.zip)
 
 #### Objectives

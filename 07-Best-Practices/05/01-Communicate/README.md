@@ -1,24 +1,24 @@
-## Communicate 
+## Team Project!
 
-We have seen throughout the week that location, product categories or seller can impact review score. 
+We have seen throughout the week that location, product categories or seller can impact review score.
 
-Fundamentally review score can translate in lower business performance over the long term. 
+Fundamentally review score can translate in lower business performance over the long term.
 
-In this section, your goal is to produce an analysis that will inform which decision Olist CEO should take. 
+In this section, your goal is to produce an analysis that will inform which decision Olist CEO should take.
 
-### Unit Economics 
+### Unit Economics
 
 ***Revenue***
 
-As we have detailed previously, Olist charges sellers with various fees. For simplicity, we will assume that Olist takes 20% of the `booking_value` of sellers and charge 80 BRL by month per seller. 
+As we have detailed previously, Olist charges sellers with various fees. For simplicity, we will assume that Olist takes a **10% cut** on the product price of each order delivered and charge **80 BRL by month** per seller.
 
-👉 Note: The `booking_value` is defined as the sum of product `price`. It excludes `freight_value`. 
+👉 Note: The product `price` excludes any `freight_value`
 
 ***Cost***
 
 On the long term, bad customer experience has business implications: low repeat rate, immediate customer support cost, refund or non favorable word of mouth.
 
-We will assume that we have an estimate measure of the monetary cost (in Brazilian Real) for each review: 
+We will assume that we have an estimate measure of the monetary cost for each bad review:
 
 review_score|cost (BRL)
 ---|---
@@ -28,29 +28,32 @@ review_score|cost (BRL)
 4|0
 5|0
 
-In addition, we estimate that it costs 500 BRL to acquire one seller due to sales acquisition and marketing costs. 
+In addition, we estimate that it costs 800 BRL to acquire one seller due to sales acquisition and marketing costs.
 
-### Projects 
+### The CEO's request
 
-You have been tasked by Olist CEO to study the impact and come with a recommendation for **one of** the project below. 
+You have been tasked by Olist CEO come with recommendations on **how to increase Olist customer satisfaction and margin while maintaining a healthy order volume**
 
-Your goal is to increase Olist customer satisfaction and margin while maintaining a healthy order volume. 
+Hint: Below is a list of possible suggestion to explore (among other)
+- Olist restrict seller/customer matching between certain states
+- Olist implements a review_score threshold for sellers. Repetitively underperforming sellers get removed from the platform after a while.
+- Olist focuses its offering to some product categories, or remove some specific products from its platform
+- ...
 
-Pick one of the project below: 
+### Your output
 
-- Olist restrict deliveries to certain states. 
-- Olist implements a `review_score` threshold for sellers. Below that threshold, sellers get removed from the platform. 
-- Olist focuses its offering to some product categories.
+Your task is to produce, per team, a cost-benefit analysis of one or more recommendations as suggested above.
 
-### Output 
+### Present your analysis to the class at 5pm as a team
 
-For **one** of the project below, your task is to produce: 
+You have 10 minutes max per group (discussion included) to convince Olist CEO of your recommendations
 
-- A notebook with your code and logic. 
-- A one-pager document with your recommendations and main takeaways of your analysis. 
+Don't forget to explain the context, and the reasonning behing your recommendations
 
-### Github & Peer-review 
+Remember: Olist CEO is not a data scientist!
 
-[Peer view](https://en.wikipedia.org/wiki/Peer_review) is an important part of the scientific process. 
+Use Jupyter Noteobook **nbconvert** to make a slide-based presentation
 
-In order to make sure your analysis is rock solid push your work on a Github repo and request a review to your buddy of the day via a Pull Request. 
+```bash
+jupyter nbconvert --to slides --post serve <your_notebook.ipynb>
+```
