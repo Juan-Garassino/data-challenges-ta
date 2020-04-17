@@ -9,7 +9,7 @@ def query_orders(db):
 
 
 def get_orders_range(db, date_from, date_to):
-    """TO DO: return a list of orders with each column with OrderDate between date_from to date_to"""
+    """TO DO: return a list of orders with all columns with OrderDate between date_from to date_to"""
     pass
 
 
