@@ -1,7 +1,7 @@
-# Reboot
+Tonight, we will correct together the Data preparation challenge 🏆
 
-Let's explore and preprocess the `train.csv` dataset increase the linear model accuracy.
-
-```python
-jupyter notebook Reboot.ipynb
+```bash
+cd ~/code/<user.github_nickname>/data-challenges/05-ML/01-Prepare-the-dataset/06-Data-preparation-challenge
+jupyter notebook challenge.ipynb
 ```
+
