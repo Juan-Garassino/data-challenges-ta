@@ -1,4 +1,7 @@
 # pylint: disable=c0111
+'''
+Module Text
+'''
 
 def question_bar_plot():
     # Question:
@@ -8,7 +11,9 @@ def question_bar_plot():
         "Set the start of the Y-axis at zero",
         "Set the start of the Y-axis closest to the minimal value of my bars"
     ]
-    return []
+
+    my_answers = []
+    return my_answers
 
 def question_line_plot():
     # Question:
@@ -19,7 +24,8 @@ def question_line_plot():
         "Experiment and find the most relevant start value for the Y-axis",
         "Always keep the start of the Y-axis at zero"
     ]
-    return []
+    my_answers = []
+    return my_answers
 
 def question_bar_plot_columns():
     # Question:
@@ -30,7 +36,8 @@ def question_bar_plot_columns():
         "With columns name on the x axis",
         "With columns having a unique color."
     ]
-    return []
+    my_answers = []
+    return my_answers
 
 def question_color_uses():
     # Question:
@@ -41,7 +48,8 @@ def question_color_uses():
         "To highlight an item",
         "To represent a value",
     ]
-    return []
+    my_answers = []
+    return my_answers
 
 def question_color_pallette():
     # Question:
@@ -52,7 +60,8 @@ def question_color_pallette():
         "Bi-hues color palette",
         "Mono-hue color palette",
     ]
-    return []
+    my_answers = []
+    return my_answers
 
 def question_color_blind_pallette():
     # Question:
@@ -64,7 +73,8 @@ def question_color_blind_pallette():
         "Red and yellow",
         "Blue and red"
     ]
-    return []
+    my_answers = []
+    return my_answers
 
 def question_diverging_color_pallette():
     # Question:
@@ -74,4 +84,5 @@ def question_diverging_color_pallette():
         "You should use a mono-hue color gradient",
         "You should use a diverging color gradient"
     ]
-    return []
+    my_answers = []
+    return my_answers
