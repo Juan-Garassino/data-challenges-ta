@@ -42,7 +42,7 @@ Try to recreate approximately this bubble plot using seaborn
     <li>You will need to use <code>hue</code> and <code>size</code> arguments</li>
     <li>You will have to adjust bubble size with <code>sizes</code></li>
     <li>You can adjust the legend with <code>bbox_to_anchor</code> and <code>loc</code> argument</li>
-    <li>You can change axes visibility with <code>Axes.spines()<c/ode></li>
+    <li>You can change axes visibility with <code>Axes.spines()</code></li>
     <li>You can display the grid with <code>Axes.grid()</code></li>
     <li>You can change ticks aspect with <code>Axes.tick_params()</code></li>
     <li><code>handles, labels = ax.get_legend_handles_labels()</code> could be helpful</li>
@@ -62,6 +62,7 @@ Now add country name as **labels** for the countries where:
   <summary>💡Hint</summary>
   You can use <code>Axes.text()</code> and <code>DataFrame.iterrows()</code>
 </details>
+
 ### Part 3
 
 We will now use [Plotly](https://plot.ly/python/bubble-charts/) to create an **interactive** plot.
