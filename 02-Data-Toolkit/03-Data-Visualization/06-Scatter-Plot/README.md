@@ -1,7 +1,7 @@
-# Interactive plot with Plotly
+# Scatter Plot
 ### Introduction
 
-Same principle in this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/story/ThreeNum.html).
+In this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/story/ThreeNum.html).
 
 To learn more **best practices** around bubble plot read these **3 short articles**.
 
@@ -17,7 +17,7 @@ You will work with the **GDP per capita** dataset.
 
 ### First steps
 
-Create a notebook named `exercise04.ipynb` in the **same folder** as this **README**.
+Create a notebook named `scatter_plot.ipynb` in the **same folder** as this **README**.
 Now you can **import** the necessesary **libraries**.
 
 ```python
@@ -32,11 +32,23 @@ Then **import** the **dataset** from the CSV you just downloaded.
 
 ### Part 1
 
-Recreate this bubble plot with the **bubble size** in the **legend**.
-
-Set the `hue` of your plot on the **continent**.
+Try to recreate approximately this bubble plot using seaborn
 
 <img src="https://www.data-to-viz.com/story/ThreeNum_files/figure-html/unnamed-chunk-2-1.png" width="760">
+
+<details>
+  <summary>💡Hints</summary>
+  <ul>
+    <li>You will need to use <code>hue</code> and <code>size</code> arguments</li>
+    <li>You will have to adjust bubble size with <code>sizes</code></li>
+    <li>You can adjust the legend with <code>bbox_to_anchor</code> and <code>loc</code> argument</li>
+    <li>You can change axes visibility with <code>Axes.spines()<c/ode></li>
+    <li>You can display the grid with <code>Axes.grid()</code></li>
+    <li>You can change ticks aspect with <code>Axes.tick_params()</code></li>
+    <li><code>handles, labels = ax.get_legend_handles_labels()</code> could be helpful</li>
+    <li>You can change the <code>palette</code> of colors</li>
+  </ul>
+</details>
 
 ### Part 2
 
@@ -46,6 +58,10 @@ Now add country name as **labels** for the countries where:
 
 <img src="https://www.data-to-viz.com/story/ThreeNum_files/figure-html/unnamed-chunk-4-1.png" width="760">
 
+<details>
+  <summary>💡Hint</summary>
+  You can use <code>Axes.text()</code> and <code>DataFrame.iterrows()</code>
+</details>
 ### Part 3
 
 We will now use [Plotly](https://plot.ly/python/bubble-charts/) to create an **interactive** plot.
