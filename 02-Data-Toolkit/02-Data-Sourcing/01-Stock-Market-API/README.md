@@ -18,15 +18,15 @@ solution: <a href="https://iexcloud.io/docs/api/">https://iexcloud.io/docs/api/<
 
 ### API setup
 
-The endpoints of the API we want to use are protected **behind a paywall**. As Le Wagon, we kindly provide you with a paid API Key for you to use _only during the challenge today_. We trust you!
+The endpoints of the API we want to use are protected **behind a paywall**.
 
-Here it is:
+As Le Wagon, we kindly provide you with a **proxy** to that API for you to use _only during the challenge today_. We trust you!
 
-```bash
-pk_bb6b159d9ccd4ac2bedb4a98aaef5bad
-```
+Here how it works:
 
-You can [try it now](https://cloud.iexapis.com/stable/stock/aapl/stats?token=pk_bb6b159d9ccd4ac2bedb4a98aaef5bad)
+1. API would say: use `https://cloud.iexapis.com/stable/stock/aapl/stats?token=...`
+1. Copy this URL, and replace `https://cloud.iexapis.com` with `http://iex.lewagon.com`
+1. You can [try it now](http://iex.lewagon.com/stable/stock/tsla/chart/1d)
 
 ### Using the API
 
@@ -37,7 +37,7 @@ It should be a JSON looking like that:
 <details><summary markdown='span'>Show example
 </summary>
 
-```json
+```js
 [
     {
         date: "2014-04-17",
@@ -81,7 +81,7 @@ You can find this information here in the documentation:
 <br>
 The URL is:
 <pre>
-https://cloud.iexapis.com/stable/stock/aapl/chart/3m?token=YOUR_PUBLIC_API_KEY
+http://iex.lewagon.com/stable/stock/aapl/chart/3m
 </pre>
 </details>
 
@@ -196,11 +196,11 @@ Let's find out what kind of data we can get from this API 🕵️‍♂️
 <details><summary markdown='span'>All Solutions
 </summary>
 <ol>
-    <li>https://cloud.iexapis.com/stable/stock/amzn/chart/1y?token=API_KEY</li>
-    <li>https://cloud.iexapis.com/stable/stock/fb/stats?token=API_KEY</li>
-    <li>https://cloud.iexapis.com/stable/stock/aapl/financials?token=API_KEY</li>
-    <li>https://cloud.iexapis.com/stable/stock/tsla/news/last/1?token=API_KEY</li>
-    <li>https://cloud.iexapis.com/stable/stock/market/sector-performance?token=API_KEY</li>
+    <li></code>http://iex.lewagon.com/stable/stock/amzn/chart/1y</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/fb/stats</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/aapl/financials</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/tsla/news/last/1</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/market/sector-performance</code></li>
 </ol>
 </details>
 
