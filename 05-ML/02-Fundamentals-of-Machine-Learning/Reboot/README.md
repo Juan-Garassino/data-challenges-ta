@@ -1,5 +1,1 @@
-## Data transformation
-
-```python
-jupyter notebook Reboot.ipynb
-```
+Let's correct the Bonus challenge together!
