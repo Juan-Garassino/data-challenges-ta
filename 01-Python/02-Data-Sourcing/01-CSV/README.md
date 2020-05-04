@@ -59,7 +59,8 @@ Now that you understand the basics of loading data from a CSV, let's work with a
 Go ahead and open those two files in Sublime Text to try & understand what they contain. The goal of this challenge is to implement the method in `winter_olympic_games.py`:
 
 1. Who won the most winter olympic games medals (gold/silver/bronze) ever? (Hint: there's just one)
-1. From `min_year` to `max_year`, which country won the most gold medals?
+2. From `min_year` to `max_year`, which country won the most gold medals?
+3. Find the five women who won the most Super-G gold medals
 
 ⚠️ For this challenge, you _can't_ use `pandas` yet 😉. Let's see how far you can go with just Python & the [`csv` module](https://docs.python.org/3/library/csv.html).
 
