@@ -31,7 +31,7 @@ For this challenge, we will use Selenium + Chrome. If you want to try another br
 
 Open Google Chrome on your computer (if you don't have it, install it), then go to "About". You should see the version you are on (Maybe 78? More?).
 
-Based on that version, install the right [`chromedriver-binary`](https://pypi.org/project/chromedriver-binary/77.0.3865.40.0/#history) and [`selenium`](https://pypi.org/project/selenium/) module:
+Based on that version, install the right [`chromedriver-binary`](https://pypi.org/project/chromedriver-binary/77.0.3865.40.0/#history) and [`selenium`](https://pypi.org/project/selenium/) modules:
 
 ```bash
 pip install selenium
