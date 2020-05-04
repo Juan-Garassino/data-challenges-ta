@@ -60,7 +60,7 @@ Go ahead and open those two files in Sublime Text to try & understand what they 
 
 1. Who won the most winter olympic games medals (gold/silver/bronze) ever? (Hint: there's just one)
 2. From `min_year` to `max_year`, which country won the most gold medals?
-3. Find the three women with the most medals(gold/silver/bronze) in 5000 meters.
+3. Find the three women with the most 5000 meters medals(gold/silver/bronze).
 
 ⚠️ For this challenge, you _can't_ use `pandas` yet 😉. Let's see how far you can go with just Python & the [`csv` module](https://docs.python.org/3/library/csv.html).
 
