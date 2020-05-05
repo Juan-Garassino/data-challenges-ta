@@ -31,9 +31,10 @@ For this challenge, we will use Selenium + Chrome. If you want to try another br
 
 Open Google Chrome on your computer (if you don't have it, install it), then go to "About". You should see the version you are on (Maybe 78? More?).
 
-Based on that version, install the right [`chromedriver-binary`](https://pypi.org/project/chromedriver-binary/77.0.3865.40.0/#history) module:
+Based on that version, install the right [`chromedriver-binary`](https://pypi.org/project/chromedriver-binary/77.0.3865.40.0/#history) and [`selenium`](https://pypi.org/project/selenium/) modules:
 
 ```bash
+pip install selenium
 pip install chromedriver-binary==77.0.3865.40.0 # Version might be different!
 ```
 
@@ -82,13 +83,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
+# [...]
 wait = WebDriverWait(driver, 15)
 wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@itemprop='itemListElement']")))
 ```
 
 The weird string uses an [XPath](https://en.wikipedia.org/wiki/XPath) search in the DOM. It locates the `<div />` with an attribute `itemprop` which has the value `itemListElement`. After exploration of Airbnb's DOM, we found that this `<div />` contains all the results.
 
-Then it's a matter of looping over each result. Airbnb's HTML is quite hard to parse, there's no proper classnames as they use an advanced React technique for CSS. This means there's not much to which we can bind our code. Still we manage to find that each result has a `<meta itemprop='url'>` tag which allow us to gather the room ids from the results.
+Then it's a matter of looping over each result. Airbnb's HTML is quite hard to parse, there's no proper class names as they use an advanced React technique for CSS. This means there's not much to which we can bind our code to. Still we managed to find that each result has a `<meta itemprop='url'>` tag which allow us to gather the room ids from the results.
 
 ```html
 <div itemprop="itemListElement">
@@ -118,7 +120,7 @@ print(room_ids)
 
 Run the code from the terminal. You should get a list of ids printed.
 
-💡 Notice the usage of the `re` package to perform a regular expression with group extraction on the attribute `content`.
+💡 Notice that the `re` package allows us to perform a regular expression with group extraction on the attribute `content`.
 
 ## Scraping each place
 
