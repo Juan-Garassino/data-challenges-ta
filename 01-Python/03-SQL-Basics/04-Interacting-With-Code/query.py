@@ -12,7 +12,7 @@ def sorted_directors(db):
     pass
 
 def love_movies(db):
-    ''' TO-DO: return a list of movies with love in the names, sorted alphabetically '''
+    ''' TO-DO: return a list of movies with love in the title, sorted alphabetically '''
     pass
 
 def directors_with_name(db, name):
@@ -20,6 +20,6 @@ def directors_with_name(db, name):
     pass
 
 def long_movies(db, min_length):
-    ''' TO-DO: return a list of movies' names
+    ''' TO-DO: return a list of movie titles
     verifying: minutes > min_length, sorted by length (ascending)'''
     pass
