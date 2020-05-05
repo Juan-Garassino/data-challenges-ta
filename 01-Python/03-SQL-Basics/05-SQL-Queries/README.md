@@ -3,7 +3,7 @@
 Now it's time for something more complex. We'll be using `JOIN` queries to read data from multiple tables. To acquire instant Jedi skills in `JOIN` queries, [read this](http://stackoverflow.com/questions/17946221/sql-join-and-different-types-of-joins) - the picture is really helpful.
 ## Specs
 
-Complete the code in `sql_queries.py`. Each method takes a `db` argument, which is an Cursor Object
+Complete the code in `sql_queries.py`. Each method takes a `db` argument, which is a Cursor Object
 on which you can call the `execute` method. Exactly like in the previous exercise.
 
 ### Detailed Tracks
@@ -11,7 +11,7 @@ on which you can call the `execute` method. Exactly like in the previous exercis
 - Implement `detailed_movies` to get all the movies title with the corresponding director name and genre name.
 - Your output should be a list of tuples. **Hint:** you will have to use one `JOIN` sql statements.
 
-This method should return a list of movies. Each element of this list would be a tuple: first element being the movies title, second element the movie director name, third element the movie's genre name.
+This method should return a list of movies. Each element of this list would be a tuple: first element being the movies title, second element the movie's genre name, third element the movie director name.
 
 ### Statistics
 
