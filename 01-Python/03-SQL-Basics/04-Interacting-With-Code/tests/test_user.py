@@ -3,7 +3,7 @@
 import unittest
 import sqlite3
 import codecs
-from query import *
+from queries import *
 
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
