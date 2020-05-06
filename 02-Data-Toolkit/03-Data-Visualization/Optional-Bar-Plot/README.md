@@ -37,7 +37,7 @@ Then **import** the **dataset** from the CSV you just downloaded.
 
 Create a simple bar plot of the **frequency** of each **name** overall.
 
-### Gouped bar plot
+### Grouped bar plot
 
 Now let's re-create this plot from the article using **seaborn**.
 Make sure you are using a similar **color pallette**, the same **years** and **names**.

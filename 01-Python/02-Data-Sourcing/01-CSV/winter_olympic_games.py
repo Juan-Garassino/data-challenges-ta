@@ -10,11 +10,12 @@ def most_decorated_athlete_ever():
     pass
 
 def country_with_most_gold_medals(min_year, max_year):
-    # TODO: Return the _country name_ with the most gold medals in the given year interval
+    # TODO: Return the country name with the most gold medals in the given year interval
     pass
 
-def top_five_women_super_g_gold_medals(min_year):
-    # TODO: Return a _list_ of the top five women with most Suber G gold medals
+
+def top_three_women_in_five_thousand_meters():
+    # TODO: Return a list of the top five women with most 5000m medals
     pass
 
 

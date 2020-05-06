@@ -1,8 +1,8 @@
 ## Foreword
 
-A common way of collecting data is through APIs. Those can be [public API](https://github.com/public-apis/public-apis) with auth or not, free or paying, those can be internal APIs at your company, etc.
+A common way of collecting data is through APIs. Those can be [public API](https://github.com/public-apis/public-apis) with authentication or not, free or paying, internal APIs at your company, etc.
 
-When it comes to API, there are some keywords to know about:
+When it comes to APIs, there are some keywords to know about:
 
 - [SOAP](https://en.wikipedia.org/wiki/SOAP) (old)
 - [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (current)
@@ -10,11 +10,11 @@ When it comes to API, there are some keywords to know about:
 - [XML](https://en.wikipedia.org/wiki/XML) (old)
 - [JSON](https://en.wikipedia.org/wiki/JSON) (current)
 
-The first three keywords refer to a **protocol** on top of HTTP(s) and is really important to figure out as you want to **consume** data from an API.
+The first three keywords refer to a **protocol** on top of HTTP(s) and it is really important to figure out which protocol you are using when you want to **consume** data from an API.
 
 The two last keywords refer to a **data format** that would usually be sent back to you when performing an API call.
 
-ℹ️ Most modern APIs are RESTful and send JSON. In this challenge, we are going to use such an API.
+ℹ️ Most modern APIs are RESTful and send back JSON. In this challenge, we are going to use such an API.
 
 ## Reading the documentation
 
@@ -22,7 +22,7 @@ When presented with a new API to use, your first reflex should be to go straight
 
 1. Is this a REST API?
 1. Does it serve JSON?
-1. Is this API authenticated? (do I need to sign up to get an API key? do I need to pay?)
+1. Does this API require authentication? (do I need to sign up to get an API key? do I need to pay?)
 1. What is the base URI?
 1. What endpoints can I call? What data do they return?
 
@@ -54,11 +54,11 @@ What do you see? If you are on Chrome, you should install the [JSONView](https:/
 - Request headers (`Content-Type`, `Authorization`, etc.)
 - Request body (`application/x-www-form-urlencoded` or `raw`)
 
-This application allow to **save** some requests, has tabs and more advanced feature. Try it!
+This application allows us to **save** some requests, create tabs with different requests and more advanced feature. Try it!
 
 ### Using Python
 
-Finally, we want to use this API in _our code_. Python's standard library comes with a [`http.client`](https://docs.python.org/3/library/http.client.html) built-in module, but we are not going to use it. Instead, we are going to use the [`requests`](https://requests.readthedocs.io) library, an 'elegant and simple HTTP library for Python, built for human beings'.
+Finally, we want to use this API in _our code_. Python's standard library comes with an [`http.client`](https://docs.python.org/3/library/http.client.html) built-in module, but we are not going to use it. Instead, we are going to use the [`requests`](https://requests.readthedocs.io) library, an 'elegant and simple HTTP library for Python, built for human beings'.
 
 Open the `test_api.py` file and paste the following code:
 
@@ -77,7 +77,7 @@ Save and run the following command:
 python test_api.py
 ```
 
-Is it working? Did you grab successfully London's woeid? Some questions for you to answer with your buddy before moving forward:
+Is it working? Did you grab successfully London's `woeid`? Some questions for you to answer with your buddy before moving forward:
 
 - Line `4`, why are we chaining a `.json()` after `.get()`? Does it still work without that call? You can `print()` intermediate steps to convince yourself. (💡 [Doc](https://requests.readthedocs.io/en/master/user/quickstart/#json-response-content))
 - Line `5`, why do we do `[0]`? What's the type of `response`?
@@ -91,19 +91,19 @@ To answer those questions, don't hesitate to `print()` or **even better**, [debu
 
 Let's build a weather [CLI](https://en.wikipedia.org/wiki/Command-line_interface) using the API. Here's the flow for a user (pseudo-code!):
 
-1. Launch `python weather.py`
-1. Get asked to type a city name
-1. If city is unknown to the API, display an error message and get back to step 2.
-1. If user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) that might be useful)
-1. Fetch weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
-1. Go back to step 2 (loop to ask for a new city).
-1. At any point, `Ctrl`-`C` will take care of quitting the program
+1. Launch the app with `python weather.py`
+2. Get asked to type a city name
+3. If city is unknown to the API, display an error message and go back to step 2.
+4. If the user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function that might be useful)
+5. Fetch the weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
+6. Go back to step 2 (loop to ask for a new city).
+7. At any point, `Ctrl`-`C` will take care of quitting the program
 
 In action, it will should look like this:
 
 <iframe src="https://player.vimeo.com/video/364146887" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-Open the `weather.py` file. You will be greated by three empty methods:
+Open the `weather.py` file. You will be greeted by three empty methods:
 
 - `search_city(query)`
 - `weather_forecast(woeid)`
@@ -119,7 +119,7 @@ pytest -v tests/test_weather.py
 
 ## History
 
-If you read carefully the documentation of the API, you may have noticed there is a third endpoint exposed that we did not use yet, the **Location Day** one:
+If you read carefully the documentation of the API, you may have noticed there is a third endpoint exposed that we did not use yet, the **Location Day**:
 
 ```bash
 URL: /api/location/(woeid)/(date)/
@@ -133,7 +133,7 @@ It even gives some examples:
 - [/api/location/44418/2013/4/27/](https://www.metaweather.com/api/location/44418/2013/4/27/) - London on a 27th Apr 2013
 - [/api/location/2487956/2013/4/30/](https://www.metaweather.com/api/location/2487956/2013/4/30/) - San Francisco on 30th April 2013
 
-If you look closely at those examples, you can notice that it contains a list of datapoints for the **same `applicable_date`**, but the `created` shows either the same day _or_ days before. Which means you get an history of prediction + the _actual_ weather on the given day. This kind of data is exactly what we will want when working with Machine Learning, starting week 3 of this program.
+If you look closely at those examples, you can notice that it contains a list of datapoints for the **same `applicable_date`**, but the `created` shows either the same day _or_ days before. Which means you get a history of prediction + the _actual_ weather on the given day. This kind of data is exactly what we will want when working with Machine Learning, starting week 3 of this program.
 
 In the meantime, let's do some **data engineering**, by gathering data from this API and storing it into a CSV for now. In real life, we would like to write directly to a **data warehouse** like [Google BigQuery](https://cloud.google.com/bigquery/), but for this first week, let's [KISS](https://en.wikipedia.org/wiki/KISS_principle) and store the data to a file. That's actually not such a bad idea, as we could write a Python script later to read that CSV and feed the data warehouse.
 

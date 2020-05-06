@@ -7,7 +7,7 @@ class Users(unittest.TestCase):
 
 #1 in the good folders
 
-#2 should have a survey table
+#2 should have a customers table
     def test_customers_table_exists(self):
         with open('ecommerce.xml', 'r') as file:
           data = file.read().replace('\n', '')
@@ -18,7 +18,7 @@ class Users(unittest.TestCase):
            t.append(table['name'])
         self.assertEqual('customers' in t, True)
 
-#2' should have user_id, foreign_key?
+#2' customers should have the correct fields
     def test_customers_should_have_the_correct_fields(self):
         with open('ecommerce.xml', 'r') as file:
             data= file.read().replace('\n', '')
@@ -27,7 +27,7 @@ class Users(unittest.TestCase):
         for row in table[0].find_all('row'):
             self.assertEqual(row.get('name') in ['first_name', 'last_name', 'email', 'city', 'id'], True)
 
-#3 should have a product table
+#3 should have a products table
     def test_products_table_exists(self):
         with open('ecommerce.xml', 'r') as file:
           data = file.read().replace('\n', '')
@@ -38,7 +38,7 @@ class Users(unittest.TestCase):
            t.append(table['name'])
         self.assertEqual('products' in t, True)
 
-#3' should have survey_id, foreign_key
+#3' products should have the correct fields
     def test_products_should_have_the_correct_fields(self):
         with open('ecommerce.xml', 'r') as file:
             data= file.read().replace('\n', '')
@@ -58,7 +58,7 @@ class Users(unittest.TestCase):
            t.append(table['name'])
         self.assertEqual('orders' in t, True)
 
-#4' should have anwser_id, foreign_key
+#4' should have customer_id, foreign_key
     def test_orders_should_have_the_correct_fields(self):
         with open('ecommerce.xml', 'r') as file:
             data= file.read().replace('\n', '')
@@ -67,8 +67,8 @@ class Users(unittest.TestCase):
         for row in table[0].find_all('row'):
             self.assertEqual(row.get('name') in ['date_of_order', 'customer_id', 'id'], True)
 
-#5 should havee a product_orders table
-    def test_products_orders_table_exists(self):
+#5 should have a product_orders table
+    def test_product_orders_table_exists(self):
         with open('ecommerce.xml', 'r') as file:
           data = file.read().replace('\n', '')
         soup = BeautifulSoup(data, 'xml')
@@ -78,6 +78,7 @@ class Users(unittest.TestCase):
            t.append(table['name'])
         self.assertEqual('product_orders' in t, True)
 
+#5' products should have the correct fields
     def test_users_should_have_the_correct_fields(self):
         with open('ecommerce.xml', 'r') as file:
             data= file.read().replace('\n', '')
