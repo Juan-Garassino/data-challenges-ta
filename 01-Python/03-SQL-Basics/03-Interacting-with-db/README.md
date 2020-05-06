@@ -4,7 +4,7 @@
 You can read more on [en.wikipedia.org/wiki/SQLite](http://en.wikipedia.org/wiki/SQLite).
 
 The goal of this first exercise is to use the command line to read and query
-a sample database called `movies.sqlite` that we give you
+a sample database called `movies.sqlite` that we give you.
 
 ## Tooling
 
