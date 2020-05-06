@@ -14,8 +14,8 @@ def country_with_most_gold_medals(min_year, max_year):
     pass
 
 
-def top_three_women_in_five_hundred_meters():
-    # TODO: Return a list of the top five women with most Super-G medals
+def top_three_women_in_five_thousand_meters():
+    # TODO: Return a list of the top five women with most 5000m medals
     pass
 
 

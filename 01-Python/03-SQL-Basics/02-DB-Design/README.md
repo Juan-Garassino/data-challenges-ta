@@ -12,7 +12,7 @@ system with `customers`, `products` and `orders`.
 
 Here are the requirements of our system:
 
-- A customer has a `first_name`, `last_name`, an `e_mail` and a `city`,
+- A customer has a `first_name`, `last_name`, an `email` and a `city`,
 - A product has a `name` and a `unit_price`.
 - An order is defined by a `date_of_order`.
 - The e-commerce manages several `customers`.
@@ -23,7 +23,7 @@ Here are the requirements of our system:
 
 #### Design the schema
 
-Design a database schema for a survey app that meets the requirements.
+Design a database schema for an e-commerce app that meets the requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
 To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code
 in `ecommerce.xml`. You can then `make` to check your solution.
@@ -32,4 +32,4 @@ in `ecommerce.xml`. You can then `make` to check your solution.
 
 - Do you know what a schema is?
 - What's the relation between tables?
-- Could you draw the database scheme behind facebook? airbnb? Take a bit of paper and have a go!
+- Could you draw the database scheme behind facebook? airbnb? Grab a paper and a pen and have a go!
