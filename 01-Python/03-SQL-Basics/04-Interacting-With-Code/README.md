@@ -19,7 +19,7 @@ def the_method(db):
   return ?
 ```
 
-👉 To try your code in **IPyton** or in the `queries.py` file, you will need to build `db` yourself.
+👉 To try your code in **IPython** or in the `queries.py` file, you will need to build `db` yourself.
 
 ```python
 import sqlite3

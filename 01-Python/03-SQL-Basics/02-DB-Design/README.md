@@ -18,7 +18,7 @@ Here are the requirements of our system:
 - The e-commerce manages several `customers`.
 - A customer can make many `orders`, but an order is created by only one user.
 - A order can have several `products`.
-- A product can be in diferent `orders`.
+- A product can be in different `orders`.
 
 
 #### Design the schema
@@ -32,4 +32,4 @@ in `ecommerce.xml`. You can then `make` to check your solution.
 
 - Do you know what a schema is?
 - What's the relation between tables?
-- Could you draw the database scheme behind facebook? airbnb? Grab a paper and a pen and have a go!
+- Could you draw the database schema behind facebook? airbnb? Take a sheet of paper and have a go!
