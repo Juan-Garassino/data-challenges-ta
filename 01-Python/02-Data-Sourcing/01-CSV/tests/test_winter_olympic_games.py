@@ -4,6 +4,7 @@ import unittest
 
 from winter_olympic_games import most_decorated_athlete_ever
 from winter_olympic_games import country_with_most_gold_medals
+from winter_olympic_games import top_three_women_in_five_thousand_meters
 
 class TestWinterOlympicGames(unittest.TestCase):
     def test_most_decorated_athlete_ever(self):
@@ -18,10 +19,6 @@ class TestWinterOlympicGames(unittest.TestCase):
         country = country_with_most_gold_medals(1994, 1998)
         self.assertEqual(country, 'Germany')
 
-    def test_top_five_women_super_g_gold_medals_above_1994(self):
-      women = top_five_women_super_g_gold_medals(1994)
-      self.assertEqual(women, ['MEISSNITZER, Alexandra', 'DORFMEISTER, Michaela', 'KOSTELIC, Janica', 'KOSTNER, Isolde', 'ROFFE, Diann'])
-
-    def test_top_five_women_super_g_gold_medals_above_2010(self):
-      women = top_five_women_super_g_gold_medals(2010)
-      self.assertEqual(women, ['VONN, Lindsey', 'FISCHBACHER, Andrea', 'MAZE, Tina', 'FENNINGER, Anna', 'HOSP, Nicole'])
+    def test_top_three_women_in_five_thousand_meters(self):
+        women = top_three_women_in_five_thousand_meters()
+        self.assertEqual(women, ['PECHSTEIN, Claudia', 'NIEMANN-STIRNEMANN, Gunda', 'HUGHES, Clara'])
