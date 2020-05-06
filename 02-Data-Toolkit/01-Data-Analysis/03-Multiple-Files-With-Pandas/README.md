@@ -192,7 +192,7 @@ concat_df = pd.concat([a_df, b_df], axis="index", sort=False)
 concat_df
 ```
 
-This method is a bit more "dumb", it just combine the two dataframes into one by **stacking** their rows. This might prove useful in some situation though, so worth
+This method is a bit more "dumb", it just combines the two dataframes into one by **stacking** their rows. This might prove useful in some situation though, so it's worth to know how to use it.
 
 ---
 
@@ -204,7 +204,7 @@ To practice loading multiple CSVs and merging them, we're going to use the [Olym
 - `summer.csv`
 - `winter.csv`
 
-Make sure you download those files and put them in the _same folder_ as the notebook you are working on.
+Note, that the files are located in the _same folder_ as the notebook you are working on.
 
 Go ahead and write the code to load `dictionary.csv` into the DataFrame `countries_df`:
 
