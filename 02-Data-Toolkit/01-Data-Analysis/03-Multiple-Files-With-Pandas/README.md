@@ -204,7 +204,7 @@ To practice loading multiple CSVs and merging them, we're going to use the [Olym
 - `summer.csv`
 - `winter.csv`
 
-Make sure you download those files and put them in the _same folder_ as the notebook you are working on.
+Note, that the files are located in the _same folder_ as the notebook you are working on.
 
 Go ahead and write the code to load `dictionary.csv` into the DataFrame `countries_df`:
 
