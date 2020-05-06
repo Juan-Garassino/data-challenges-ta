@@ -192,7 +192,7 @@ concat_df = pd.concat([a_df, b_df], axis="index", sort=False)
 concat_df
 ```
 
-This method is a bit more "dumb", it just combine the two dataframes into one by **stacking** their rows. This might prove useful in some situation though, so worth
+This method is a bit more "dumb", it just combine the two dataframes into one by **stacking** their rows. This might prove useful in some situation though, so it's worth to know how to use it.
 
 ---
 
