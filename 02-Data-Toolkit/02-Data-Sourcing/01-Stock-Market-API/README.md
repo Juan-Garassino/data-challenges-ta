@@ -97,7 +97,7 @@ For this exercise we will work in a Notebook.
 jupyter notebook
 ```
 
-Go ahead and **create** a new Python Notebook in the `04-Data-Sourcing/01-Stock-Market-API` folder of your python-challenges repository.
+Go ahead and **create** a new Python Notebook in the `02-Data-Sourcing/01-Stock-Market-API` folder of your python-challenges repository.
 
 Start with the usual imports in the first cell:
 
@@ -128,8 +128,8 @@ You can now **create a dataframe** from this data.
 
 With this dataframe we can **plot** the evolution of the stock price.
 But before that we need to do 2 things:
-- Convert 'date' column to datetime object
-- Set the date column as the index
+- Convert `date` column to datetime object
+- Set the `date` column as the index
 
 ### Converting date to datetime object
 
@@ -196,11 +196,11 @@ Let's find out what kind of data we can get from this API 🕵️‍♂️
 <details><summary markdown='span'>All Solutions
 </summary>
 <ol>
-    <li></code>http://iex.lewagon.com/stable/stock/amzn/chart/1y</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/fb/stats</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/aapl/financials</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/tsla/news/last/1</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/market/sector-performance</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/amzn/chart/1y</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/fb/stats</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/aapl/financials</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/tsla/news/last/1</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/market/sector-performance</code></li>
 </ol>
 </details>
 
