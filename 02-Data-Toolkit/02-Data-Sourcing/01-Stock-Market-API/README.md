@@ -97,7 +97,7 @@ For this exercise we will work in a Notebook.
 jupyter notebook
 ```
 
-Go ahead and **create** a new Python Notebook in the `02-Data-Sourcing/01-Stock-Market-API` folder of your python-challenges repository.
+Go ahead and **create** a new Python Notebook in the `02-Data-Sourcing/01-Stock-Market-API` folder of your `data-challenges` repository.
 
 Start with the usual imports in the first cell:
 
