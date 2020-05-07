@@ -1,13 +1,13 @@
 ## Background & Objectives
 
-In this section, we will cover the SQL `PARTITION BY` clause and its difference with `GROUP BY` in a `SELECT` statement. You will also explore the usecase of  the SQL `PARTITION BY` clause.
+In this section, we will cover the SQL `PARTITION BY` clause and its difference with `GROUP BY` in a `SELECT` statement.
 
 ## Specs
 
 ### Bucketing The Movie Duration
 
 First. What is a bucket?
-To **'bin'** (or **'bucket'**) the range of values—that is, divide the entire range of values into a series of intervals—and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent, and are often (but not required to be) of equal size" - https://en.wikipedia.org/wiki/Histogram
+To **'bin'** (or **'bucket'**) the range of values — that is, divide the entire range of values into a series of intervals, and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent, and are often (but not required to be) of equal size" - https://en.wikipedia.org/wiki/Histogram
 
 👉 Implement `movie_duration_buckets()` to get the buckets of the movie duration of our database!<br>
 A bucket contain a **count** of all the movies with a duration in the **range** of the bucket.<br>
@@ -25,7 +25,7 @@ movie_duration_buckets(db)
 ### Partition By Directors
 
 The SQL `PARTITION BY` clause can be used with the:
-- OVER clause: to specify the column on which we need to perform aggregation
+- OVER clause: to specify the column on which we need to perform an aggregation
 - RANK clause: to have a row number of each row.
 
 In the previous example, we used `GROUP BY` with the Minutes column to bucket our data. Let's switch to a similar scenario with the SQL `PARTITION BY`.
@@ -35,7 +35,7 @@ Each rows returned by the query should look like:<br>
 `('Movie Title', 'Director Name', movie_duration (ex: 120), rank (ex:2))`<br>
 The **longest movie** by a director should have the **rank 1** and the **shortest** should have the **last rank**.<br>
 <br>
-Note that the function take a **second argument**, **first_letter** which should be used in you query to select only the directors names starting with the letter provided.<br>
+Note that the function takes a **second argument**, **first_letter** which should be used in you query to select only the director names starting with the letter provided.<br>
 
 
 We expect a result like:
@@ -54,7 +54,7 @@ longest_movies_by_director(db, "X")
 
 ### Top-3 longest movies
 
-👉 Implement the function `top_3_longest()` to find the top-3 of longest movies by director. 👌
+👉 Implement the function `top_3_longest()` to find the top-3 longest movies by director. 👌
 Here you will **build on** the request you created in the last exercise in order to **select** only the **first 3 longest movies by director**.
 
 We expect a result like:

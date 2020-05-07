@@ -125,7 +125,7 @@ If you read carefully the documentation of the API, you may have noticed there i
 URL: /api/location/(woeid)/(date)/
 Arguments
   woeid: Where On Earth ID.
-  date: Date in the format yyyy/mm/dd. Most location have data from early 2013.
+  date: Date in the format yyyy/mm/dd. Most locations have data from early 2013.
 ```
 
 It even gives some examples:
