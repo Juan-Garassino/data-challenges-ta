@@ -1,4 +1,4 @@
-# pylint: disable=c0103
+# pylint: disable=C0103
 def detailed_movies(db):
     # TODO: return the list of movies with their genre and director.
     request = '''
