@@ -24,8 +24,11 @@ class Users(unittest.TestCase):
             data= file.read().replace('\n', '')
         soup = BeautifulSoup(data, 'xml')
         table = soup.find_all('table', attrs={"name": "customers"})
-        for row in table[0].find_all('row'):
-            self.assertEqual(row.get('name') in ['first_name', 'last_name', 'email', 'city', 'id'], True)
+        fields = [row.get('name') for row in table[0].find_all('row')]
+        correct_fields = ['first_name', 'last_name', 'email', 'city', 'id']
+        fields.sort()
+        correct_fields.sort()
+        self.assertEqual(fields, correct_fields)
 
 #3 should have a products table
     def test_products_table_exists(self):
@@ -44,8 +47,11 @@ class Users(unittest.TestCase):
             data= file.read().replace('\n', '')
         soup = BeautifulSoup(data, 'xml')
         table = soup.find_all('table', attrs={"name": "products"})
-        for row in table[0].find_all('row'):
-            self.assertEqual(row.get('name') in ['name', 'unit_price', 'id'], True)
+        fields = [row.get('name') for row in table[0].find_all('row')]
+        correct_fields = ['name', 'unit_price', 'id']
+        fields.sort()
+        correct_fields.sort()
+        self.assertEqual(fields, correct_fields)
 
 #4 should have an orders table
     def test_orders_table_exists(self):
@@ -64,8 +70,11 @@ class Users(unittest.TestCase):
             data= file.read().replace('\n', '')
         soup = BeautifulSoup(data, 'xml')
         table = soup.find_all('table', attrs={"name": "orders"})
-        for row in table[0].find_all('row'):
-            self.assertEqual(row.get('name') in ['date_of_order', 'customer_id', 'id'], True)
+        fields = [row.get('name') for row in table[0].find_all('row')]
+        correct_fields = ['date_of_order', 'customer_id', 'id']
+        fields.sort()
+        correct_fields.sort()
+        self.assertEqual(fields, correct_fields)
 
 #5 should have a product_orders table
     def test_product_orders_table_exists(self):
@@ -78,15 +87,14 @@ class Users(unittest.TestCase):
            t.append(table['name'])
         self.assertEqual('product_orders' in t, True)
 
-#5' products should have the correct fields
+#5' product_orders should have the correct fields
     def test_users_should_have_the_correct_fields(self):
         with open('ecommerce.xml', 'r') as file:
             data= file.read().replace('\n', '')
         soup = BeautifulSoup(data, 'xml')
         table = soup.find_all('table', attrs={"name": "product_orders"})
-        for row in table[0].find_all('row'):
-            self.assertEqual(row.get('name') in ['product_id', 'order_id', 'quantity', 'id'], True)
-
-
-
-
+        fields = [row.get('name') for row in table[0].find_all('row')]
+        correct_fields = ['product_id', 'order_id', 'quantity', 'id']
+        fields.sort()
+        correct_fields.sort()
+        self.assertEqual(fields, correct_fields)
