@@ -48,7 +48,7 @@ you can use the [triple-quote](https://docs.python.org/3.2/tutorial/introduction
 
 ```python
 # Find the first 3 artists with the letter `Z` in their name.
-query = '''/
+query = '''
   SELECT * FROM movies
   WHERE title LIKE "%Z%"
   ORDER BY title
