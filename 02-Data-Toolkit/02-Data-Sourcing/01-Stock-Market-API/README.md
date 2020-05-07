@@ -157,14 +157,14 @@ To do that you can use the DataFrame method **set_index**
 
 ### Now we can plot 🎉
 
-First let's plot with only the values in the **'close'** column
+First let's plot with only the values in the `close` column
 
 <details><summary markdown='span'>Solution
 </summary>
 <code>apple_stock_df['close'].plot()</code>
 </details>
 
-Now we can make a plot with the values in **'open', 'close', 'high', 'low'**
+Now we can make a plot with the values in `open`, `close`, `high`, `low`.
 
 <details><summary markdown='span'>Solution
 </summary>
