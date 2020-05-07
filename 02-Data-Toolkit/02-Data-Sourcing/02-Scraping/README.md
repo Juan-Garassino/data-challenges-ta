@@ -12,7 +12,7 @@ The goal is to scrape **and** then use `pandas` to visualize the extracted infor
 jupyter notebook
 ```
 
-Go ahead and create a new Python Notebook in the `04-Data-Sourcing/02-Scraping` folder of your `python-challenges` repository.
+Go ahead and create a new Python Notebook in the `02-Data-Sourcing/02-Scraping` folder of your `data-challenges` repository.
 
 Start your notebook with the following imports in the first code cell:
 
@@ -29,7 +29,7 @@ import matplotlib
 
 ## First request
 
-Insert a new cell and work on the `TODO`s (the starter code is the same as the one in the lecture slides!
+Insert a new cell and work on the `TODO`s (the starter code is the same as the one in the lecture slides!)
 
 ```python
 url = "http://books.toscrape.com/"
@@ -55,7 +55,7 @@ soup = BeautifulSoup(response.content, "html.parser")
 
 </details>
 
-`soup` is now a variable containing the parser on which we can run our queries. For that, you need to analyze the "Books to Scrape"'s website HTML with the browser inspector.
+`soup` is now a variable containing the parser on which we can run our queries. For that, you need to analyze the **Books to Scrape** website HTML with the browser inspector.
 
 ![](https://res.cloudinary.com/wagon/image/upload/v1562063504/books-to-scrape_hojlqo.png)
 
@@ -74,7 +74,7 @@ The `<article />` element with the class `product_pod` is what we are looking fo
 
 </details>
 
-Now that we have identified the relevant HTML, we can can use the `soup` Python variable to query the document. Let's use the [searching by CSS class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class) approach. Insert a new cell and try to select **all** books in the HTML. Store this in a `books` variable.
+Now that we have identified the relevant HTML, we can can use the `soup` Python variable to query the document. Let's use the [searching by CSS class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class) approach. Insert a new cell and try to select **all** books in the HTML. Store this in a `books_html` variable.
 
 <details><summary markdown='span'>View solution
 </summary>
@@ -232,7 +232,7 @@ We are going to store the information collected about the books in a **Python `d
 - `Price` => `[51.77, 53.74, ...]`
 - `Rating` => `[3, 1, ...]`
 
-We store the information that way because we aim on giving that to Pandas, and it happens that giving the data in that format allow us to creates a Dataframe from it very easily.
+We store the information that way because we aim on giving that to Pandas, and it happens that giving the data in that format allow us to create a Dataframe from it very easily.
 
 Insert a new cell and initialize this dictionary
 
@@ -344,7 +344,7 @@ print("Done!")
 
 </details>
 
-All good? Check that you actually pased `MAX_PAGE` * 20 books with:
+All good? Check that you actually passed `MAX_PAGE` * 20 books with:
 
 ```python
 len(all_books_dict["Title"])
@@ -389,6 +389,6 @@ pip install xlsxwriter
 all_books_df.to_excel('books.xlsx', sheet_name='Books')
 ```
 
-A good practise is to create a **Data Pipeline** where one process will scrape and dump the Data to CSV, and another one will read back the data from the CSV file and go on to analyze it through a Pandas Dataframe!
+A good practice is to create a **Data Pipeline** where one process will scrape and dump the Data to CSV and another one will read back the data from the CSV file and go on to analyze it through a Pandas Dataframe!
 
 :bulb: Don't forget to **push your code to GitHub**
