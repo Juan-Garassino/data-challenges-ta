@@ -1,4 +1,4 @@
-In this exercise we are going to use **Regular Expression** in order to extract data from a plain text file.<br>
+In this exercise we are going to use **Regular Expressions** in order to extract data from a plain text file.<br>
 
 The text file path is `03-Text-Extraction-with-Regex/data/receipts.txt`. <br> You can download it [here](https://raw.githubusercontent.com/lewagon/python-beginners/day05_ex03/05-Best-Practices/03-Text-Extraction-with-Regex/data/receipts.txt?token=ACV62EXRC5SIBOAIP7MWX2C4YHUQ6) ( save: `cmd + s` on mac, `ctrl + s` on windows )
 
@@ -8,7 +8,7 @@ If we open the file we can see how the receipts are stored:
 <br>
 <img src="https://res.cloudinary.com/wagon/image/upload/v1562063870/Receipts_snapshot_dddner.png" alt="Receipts_snapshot.png" height="400" style="box-shadow: 0 0 25px -15px #88b">
 
-Before we start working with the receipts let's talk about **Regular Expressions**. We will need them to extract the **dates**, the **total amount** and the **quantity** fields from the *receipts.txt*.
+Before we start working with the receipts let's talk about **Regular Expressions**. We will need them to extract the **dates**, **total amount** and **quantity** fields from the *receipts.txt*.
 
 ## Part 1: Working with Regex
 
@@ -44,10 +44,10 @@ r"\d{10}"
 ```
 
 `r""` is the syntax for a string that will be used as Regex.<br>
-`\d` match a character that represents any **decimal digit** `[0,1,2..8,9]`<br>
-`{10}` match exactly 10 _consecutive_ occurence of the **previous character** (here `\d`, any digit)
+`\d` matches a character that represents any **decimal digit** `[0,1,2..8,9]`<br>
+`{10}` matches exactly 10 _consecutive_ occurences of the **previous character** (here `\d`, any digit)
 
-So now we will search in our string any match with this Regex.<br>
+So now we will search in our string for any match with this Regex.<br>
 We can use `re.findall(pattern, string)` to do that:
 [re.findall( ) documentation](https://docs.python.org/2/library/re.html#re.findall)
 
@@ -96,7 +96,7 @@ You should find two matches.
 </details>
 
 ### Words mixed with digits
-You can also _mix_ letters or word with a **token** like `\d`. For example, if we want to match the dates we can use:
+You can also _mix_ letters or words with a **token** like `\d`. For example, if we want to match the dates we can use:
 
 ```python
 # TEST THIS IN YOUR NOTEBOOK
@@ -134,11 +134,11 @@ re.findall(pattern, text_to_search)
 
 </details>
 
-### Token and Quantifier
+### Tokens and Quantifiers
 
-**Token** can either be a character like `a` or a character in a larger set, like `3` or `9` in the set `\d`.
+**Tokens** can either be characters like `a` or characters in a larger set, like `3` or `9` in the set `\d`.
 <br>
-The most common token:
+The most common tokens:
 
 - `a`, `4`, `@`... Matches the exact **same character**.
 - `\d`          Matches any **decimal digit**. Equivalent to _[0-9]_.
@@ -146,7 +146,7 @@ The most common token:
 - `\s`          Matches any **space, tab or newline** character.
 - `.`           Matches **any character** other than newline
 
-Tokens can work in pair with quantifiers.<br>
+Tokens can work in pairs with quantifiers.<br>
 **Quantifiers** specify how often a preceding element is allowed to occur, just like we did in this Regex:
 
 ```python
@@ -277,7 +277,6 @@ To create a list of all the receipts we need to find the **delimiter** between t
 So look at what you previously printed and choose a delimiter.<br>
 You can now use `split()` on your string to get the list of all the receipts, the list should contain **100 items**.
 <br>
-<br>
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -302,7 +301,7 @@ receipts_dict = {
 }
 ```
 
-And it should like this once filled with data:
+And it should look like this once filled with data:
 
 ```python
 receipts_dict
@@ -315,9 +314,8 @@ receipts_dict
 
 ### 4. Iterate over each receipt
 
-Ok let's start iterating!<br>
+Ok, let's start iterating!<br>
 You can first **print each receipt** in order to know what we are dealing with.
-<br>
 <br>
 
 <details><summary markdown='span'>Solution
@@ -389,9 +387,9 @@ If you add this line to your loop you should see all the data you found.
         ...
 ```
 
-### 4.2. Add these value to our dictionary
+### 4.2. Add these values to our dictionary
 
-We can now `append()` each value in the right list of the dictionary.
+We can now `append()` each value to the right list of the dictionary.
 
 
 <details><summary markdown='span'>Solution
@@ -450,8 +448,8 @@ With DateTime we will be able to **sort** our data.
 
 To do the conversion you can use `Pandas.to_datetime()`
 
-pd.to_datetime documentation: [pandas.to_datetime](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
-Format documentation: [http://strftime.org/](http://strftime.org/)
+pd.to_datetime documentation: [pandas.pydata.org](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
+Format documentation: [strftime.org](http://strftime.org/)
 
 <details><summary markdown='span'>Solution
 </summary>
