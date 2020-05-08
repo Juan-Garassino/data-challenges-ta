@@ -1,4 +1,4 @@
-In this exercise we are going to use **Regular Expression** in order to extract data from a plain text file.<br>
+In this exercise we are going to use **Regular Expressions** in order to extract data from a plain text file.<br>
 
 The text file path is `03-Text-Extraction-with-Regex/data/receipts.txt`. <br> You can download it [here](https://raw.githubusercontent.com/lewagon/python-beginners/day05_ex03/05-Best-Practices/03-Text-Extraction-with-Regex/data/receipts.txt?token=ACV62EXRC5SIBOAIP7MWX2C4YHUQ6) ( save: `cmd + s` on mac, `ctrl + s` on windows )
 
@@ -44,10 +44,10 @@ r"\d{10}"
 ```
 
 `r""` is the syntax for a string that will be used as Regex.<br>
-`\d` match a character that represents any **decimal digit** `[0,1,2..8,9]`<br>
-`{10}` match exactly 10 _consecutive_ occurence of the **previous character** (here `\d`, any digit)
+`\d` matches a character that represents any **decimal digit** `[0,1,2..8,9]`<br>
+`{10}` matches exactly 10 _consecutive_ occurences of the **previous character** (here `\d`, any digit)
 
-So now we will search in our string any match with this Regex.<br>
+So now we will search in our string for any match with this Regex.<br>
 We can use `re.findall(patter, string)` to do that:
 [re.findall( ) documentation](https://docs.python.org/2/library/re.html#re.findall)
 
@@ -138,13 +138,13 @@ re.findall(pattern, text_to_search)
 
 **Token** can either be a character like `a` or a character in a larger set, like `3` or `9` in the set `\d`.
 <br>
-The most common token:
+The most common tokens:
 
-- `a`, `4`, `@`... Matches the exact **same character**.
-- `\d`          Matches any **decimal digit**. Equivalent to _[0-9]_.
-- `\w`          Matches any **letter, digit or underscore**. Equivalent to *[a-zA-Z0-9_]*.
-- `\s`          Matches any **space, tab or newline** character.
-- `.`           Matches **any character** other than newline
+- `a`, `4`, `@`... matches the exact **same character**.
+- `\d`          matches any **decimal digit**. Equivalent to _[0-9]_.
+- `\w`          matches any **letter, digit or underscore**. Equivalent to *[a-zA-Z0-9_]*.
+- `\s`          matches any **space, tab or newline** character.
+- `.`           matches **any character** other than newline.
 
 Tokens can work in pair with quantifiers.<br>
 **Quantifiers** specifies how often that a preceding element is allowed to occur, just like we did in this Regex:
@@ -250,7 +250,7 @@ What we want to do:
  3. Prepare a **dictionary** where we will save our data
  4. **Iterate** over each receipt
     - *Find the data* we want with a regex
-    - *Add thoses data* to our dictionary
+    - *Add that data* to our dictionary
  5. Create a **dataframe** from this dictionary
 
 ### 1. Read the receipt text file
@@ -277,7 +277,6 @@ To create a list of all the receipts we need to find the **delimiter** between t
 So look at what you previously printed and choose a delimiter.<br>
 You can now use `split()` on your string to get the list of all the receipts, the list should contain **100 items**.
 <br>
-<br>
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -302,7 +301,7 @@ receipts_dict = {
 }
 ```
 
-And it should like this once filled with data:
+And it should look like this once filled with data:
 
 ```python
 receipts_dict
@@ -315,9 +314,8 @@ receipts_dict
 
 ### 4. Iterate over each receipt
 
-Ok let's start iterating!<br>
+Ok, let's start iterating!<br>
 You can first **print each receipt** in order to know what we are dealing with.
-<br>
 <br>
 
 <details><summary markdown='span'>Solution
@@ -389,9 +387,9 @@ If you add this line to your loop you should see all the data you found.
         ...
 ```
 
-### 4.2. Add these value to our dictionary
+### 4.2. Add these values to our dictionary
 
-We can now `append()` each value in the right list of the dictionary.
+We can now `append()` each value to the right list of the dictionary.
 
 
 <details><summary markdown='span'>Solution
@@ -450,8 +448,8 @@ With DateTime we will be able to **sort** our data.
 
 To do the conversion you can use `Pandas.to_datetime()`
 
-pd.to_datetime documentation: http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime
-Format documentation: http://strftime.org/
+`pd.to_datetime` documentation: [pandas.pydata.org](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
+`format` documentation: [strftime.org](http://strftime.org/)
 
 <details><summary markdown='span'>Solution
 </summary>
@@ -475,7 +473,7 @@ receipts_df.sort_values('date', inplace=True)
 
 You can use the DataFrame method `set_index()`
 
-documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html
+documentation: [set_index()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html)
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -507,7 +505,7 @@ receipts_df["total_amount"] = pd.to_numeric(receipts_df["total_amount"])
 
 Ok, now we can start **exploring** and **plotting** our data.
 <br>
-Let's see the evolution of the **"total_amount"**!
+Let's see the evolution of the **`total_amount`**!
 
 <details><summary markdown='span'>Solution
 </summary>
@@ -517,4 +515,4 @@ receipts_df['total_amount'].plot(figsize=(14,5))
 ```
 </details>
 
-### 🎉 Congratulation! You now know how to work with "unstructured data"
+### 🎉 Congratulations! You now know how to work with "unstructured data"
