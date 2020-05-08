@@ -48,7 +48,7 @@ r"\d{10}"
 `{10}` match exactly 10 _consecutive_ occurence of the **previous character** (here `\d`, any digit)
 
 So now we will search in our string any match with this Regex.<br>
-We can use `re.findall(patter, string)` to do that:
+We can use `re.findall(pattern, string)` to do that:
 [re.findall( ) documentation](https://docs.python.org/2/library/re.html#re.findall)
 
 ```python
@@ -58,7 +58,7 @@ text_to_search = "Hello my name is sebastien, you can call me on 0664533519. See
 re.findall(pattern, text_to_search)
 ```
 ----
-**Your turn now!** Try to find the right Regex to find the **ZIP code** in this string:
+**Your turn now!** Try to find the right Regex to extract the **ZIP code** in this string:
 
 ```python
 "I moved to Paris 75011, it's closer to my workplace."
@@ -147,13 +147,13 @@ The most common token:
 - `.`           Matches **any character** other than newline
 
 Tokens can work in pair with quantifiers.<br>
-**Quantifiers** specifies how often that a preceding element is allowed to occur, just like we did in this Regex:
+**Quantifiers** specify how often a preceding element is allowed to occur, just like we did in this Regex:
 
 ```python
 r"\d{10}"
 ```
 
-The most common quantifiers:
+The most common quantifiers are:
 
 - `?` The question mark indicates **zero or one** occurrences of the preceding element. For example, colou?r matches both "color" and "colour".
 - `*` The asterisk indicates **zero or more** occurrences of the preceding element. For example, ab*c matches "ac", "abc", "abbc", "abbbc", and so on.
@@ -239,7 +239,7 @@ r"Total Amount +(\d+\.\d{2}) €"
 
 ---
 
-🎉Awesome! You now know everything you need to know to get the **dates**, the **total amount** and the **quantity** values from the receipts.
+🎉Awesome! You now know everything you need to know to get the **dates**, **total amount** and **quantity** values from the receipts.
 
 ## Part 2: From a text file to a DataFrame
 
@@ -250,7 +250,7 @@ What we want to do:
  3. Prepare a **dictionary** where we will save our data
  4. **Iterate** over each receipt
     - *Find the data* we want with a regex
-    - *Add thoses data* to our dictionary
+    - *Add the data* to our dictionary
  5. Create a **dataframe** from this dictionary
 
 ### 1. Read the receipt text file
@@ -411,7 +411,7 @@ for receipt in receipts_list:
 ```
 </details>
 
-Before going to the next step make sure your dictionary look something like this:
+Before going to the next step make sure your dictionary looks somehow like this:
 
 ```python
 # The way its printed might be a bit different on your computer
@@ -450,8 +450,8 @@ With DateTime we will be able to **sort** our data.
 
 To do the conversion you can use `Pandas.to_datetime()`
 
-pd.to_datetime documentation: http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime
-Format documentation: http://strftime.org/
+pd.to_datetime documentation: [http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
+Format documentation: [http://strftime.org/](http://strftime.org/)
 
 <details><summary markdown='span'>Solution
 </summary>
@@ -475,7 +475,7 @@ receipts_df.sort_values('date', inplace=True)
 
 You can use the DataFrame method `set_index()`
 
-documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html
+documentation: [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html)
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -487,7 +487,7 @@ receipts_df = receipts_df.set_index('date')
 ### 4. Convert strings to floats
 
 At this point, if we do a `receipts_df.info()` we see that we still have strings in our columns **quantity** and **total_amount**.
-<br>In order to print some plots we need to convert "quantity" and "total_amount" to float.
+<br>In order to generate some plots we need to convert "quantity" and "total_amount" to float.
 
 To do the conversion you can use `pandas.to_numeric()`
 
@@ -506,7 +506,6 @@ receipts_df["total_amount"] = pd.to_numeric(receipts_df["total_amount"])
 ### 3. Plot the total_amount column
 
 Ok, now we can start **exploring** and **plotting** our data.
-<br>
 Let's see the evolution of the **"total_amount"**!
 
 <details><summary markdown='span'>Solution
