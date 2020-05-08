@@ -450,7 +450,7 @@ With DateTime we will be able to **sort** our data.
 
 To do the conversion you can use `Pandas.to_datetime()`
 
-pd.to_datetime documentation: [http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
+pd.to_datetime documentation: [pandas.to_datetime](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
 Format documentation: [http://strftime.org/](http://strftime.org/)
 
 <details><summary markdown='span'>Solution
@@ -475,7 +475,7 @@ receipts_df.sort_values('date', inplace=True)
 
 You can use the DataFrame method `set_index()`
 
-documentation: [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html)
+documentation: [set_index()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html)
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -506,7 +506,7 @@ receipts_df["total_amount"] = pd.to_numeric(receipts_df["total_amount"])
 ### 3. Plot the total_amount column
 
 Ok, now we can start **exploring** and **plotting** our data.
-Let's see the evolution of the **"total_amount"**!
+Let's see the evolution of the **`total_amount`**!
 
 <details><summary markdown='span'>Solution
 </summary>
@@ -516,4 +516,4 @@ receipts_df['total_amount'].plot(figsize=(14,5))
 ```
 </details>
 
-### 🎉 Congratulation! You now know how to work with "unstructured data"
+### 🎉 Congratulations! You now know how to work with "unstructured data"
