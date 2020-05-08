@@ -224,7 +224,7 @@ Once again, it's a good time to insert a **Markdown cell** and type in the follo
 ## Parsing _all_ books
 ```
 
-We now need to _glue_ all the code above and put it inside a `for` loop over the `books` variable! This variable is given by `soup` in return of the `.find_all` function call.
+We now need to _glue_ all the code above and put it inside a `for` loop over the `books_html` variable! This variable is given by `soup` in return of the `.find_all` function call.
 
 We are going to store the information collected about the books in a **Python `dict`**. This dictionary will have three keys. The **values** stored in that dictionary would be `list`s to which we append whatever we find in the HTML:
 
