@@ -74,7 +74,7 @@ The `<article />` element with the class `product_pod` is what we are looking fo
 
 </details>
 
-Now that we have identified the relevant HTML, we can can use the `soup` Python variable to query the document. Let's use the [searching by CSS class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class) approach. Insert a new cell and try to select **all** books in the HTML. Store this in a `books` variable.
+Now that we have identified the relevant HTML, we can can use the `soup` Python variable to query the document. Let's use the [searching by CSS class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class) approach. Insert a new cell and try to select **all** books in the HTML. Store this in a `books_html` variable.
 
 <details><summary markdown='span'>View solution
 </summary>
