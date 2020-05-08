@@ -344,7 +344,7 @@ print("Done!")
 
 </details>
 
-All good? Check that you actually pased `MAX_PAGE` * 20 books with:
+All good? Check that you actually passed `MAX_PAGE` * 20 books with:
 
 ```python
 len(all_books_dict["Title"])
