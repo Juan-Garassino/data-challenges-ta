@@ -196,11 +196,11 @@ Let's find out what kind of data we can get from this API 🕵️‍♂️
 <details><summary markdown='span'>All Solutions
 </summary>
 <ol>
-    <li></code>http://iex.lewagon.com/stable/stock/amzn/chart/1y</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/fb/stats</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/aapl/financials</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/tsla/news/last/1</code></li>
-    <li></code>http://iex.lewagon.com/stable/stock/market/sector-performance</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/amzn/chart/1y</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/fb/stats</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/aapl/financials</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/tsla/news/last/1</code></li>
+    <li><code>http://iex.lewagon.com/stable/stock/market/sector-performance</code></li>
 </ol>
 </details>
 
