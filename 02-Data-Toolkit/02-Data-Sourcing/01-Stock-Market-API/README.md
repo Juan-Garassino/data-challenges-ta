@@ -22,7 +22,7 @@ The endpoints of the API we want to use are protected **behind a paywall**.
 
 As Le Wagon, we kindly provide you with a **proxy** to that API for you to use _only during the challenge today_. We trust you!
 
-Here how it works:
+Here's how it works:
 
 1. API would say: use `https://cloud.iexapis.com/stable/stock/aapl/stats?token=...`
 1. Copy this URL, and replace `https://cloud.iexapis.com` with `http://iex.lewagon.com`
@@ -72,7 +72,7 @@ It should be a JSON looking like that:
 ```
 </details>
 
-⚠️ Take your time before reading the solution, finding what we want in API documentation can usually take **10 to 15 minutes of reading**
+⚠️ Take your time before reading the solution, finding what we want in an API documentation can usually take **10 to 15 minutes of reading**
 
 <details><summary markdown='span'>Solution
 </summary>
@@ -97,7 +97,7 @@ For this exercise we will work in a Notebook.
 jupyter notebook
 ```
 
-Go ahead and **create** a new Python Notebook in the `02-Data-Sourcing/01-Stock-Market-API` folder of your `data-challenges` repository.
+Go ahead and **create** a new Python Notebook in the `04-Data-Sourcing/01-Stock-Market-API` folder of your `data-challenges` repository.
 
 Start with the usual imports in the first cell:
 
@@ -127,11 +127,11 @@ You can now **create a dataframe** from this data.
 </details>
 
 With this dataframe we can **plot** the evolution of the stock price.
-But before that we need to do 2 things:
-- Convert `date` column to datetime object
-- Set the `date` column as the index
+But before doing that, we need to do 2 things:
+- Convert the 'date' column to a datetime object
+- Set the 'date' column as the index
 
-### Converting date to datetime object
+### Converting the date to a datetime object
 
 To do that you can use Pandas.to_datetime()
 
@@ -157,21 +157,21 @@ To do that you can use the DataFrame method **set_index**
 
 ### Now we can plot 🎉
 
-First let's plot with only the values in the `close` column
+First let's plot with only the values in the **'close'** column
 
 <details><summary markdown='span'>Solution
 </summary>
 <code>apple_stock_df['close'].plot()</code>
 </details>
 
-Now we can make a plot with the values in `open`, `close`, `high`, `low`.
+Now we can make a plot with the values in the **'open', 'close', 'high', and 'low'** columns
 
 <details><summary markdown='span'>Solution
 </summary>
 <code>apple_stock_df[['open', 'close', 'high', 'low']].plot()</code>
 </details>
 
-As we can see our plot is really hard to read. We can improve its readability with the **figsize** argument of the `plot()` method.
+As we can see, our plot is really hard to read. We can improve its readability with the **figsize** argument of the `plot()` method.
 - documentation: [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html)
 
 <details><summary markdown='span'>Solution
@@ -185,22 +185,22 @@ As we can see our plot is really hard to read. We can improve its readability wi
 
 Let's find out what kind of data we can get from this API 🕵️‍♂️
 
-### What is the URL for:
+### What is the URL for the:
 
-1) Amazon stock prices since last year?
-2) Facebook market cap?
-3) Apple research and development spendings quarterly?
-4) The last news about Tesla?
-5) The performance of the 'Energy' sector?
+1. Amazon stock prices since last year?
+2. Facebook market cap?
+3. Apple research and development spendings quarterly?
+4. Last news about Tesla?
+5. Performance of the 'Energy' sector?
 
 <details><summary markdown='span'>All Solutions
 </summary>
 <ol>
-    <li><code>http://iex.lewagon.com/stable/stock/amzn/chart/1y</code></li>
-    <li><code>http://iex.lewagon.com/stable/stock/fb/stats</code></li>
-    <li><code>http://iex.lewagon.com/stable/stock/aapl/financials</code></li>
-    <li><code>http://iex.lewagon.com/stable/stock/tsla/news/last/1</code></li>
-    <li><code>http://iex.lewagon.com/stable/stock/market/sector-performance</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/amzn/chart/1y</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/fb/stats</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/aapl/financials</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/tsla/news/last/1</code></li>
+    <li></code>http://iex.lewagon.com/stable/stock/market/sector-performance</code></li>
 </ol>
 </details>
 
