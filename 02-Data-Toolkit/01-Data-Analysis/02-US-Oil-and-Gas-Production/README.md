@@ -4,7 +4,7 @@ In this exercise, we will analyze the US Oil & Gas production from June 2008 to 
 jupyter notebook
 ```
 
-Your browser should _automatically_ open Jupyter. You should see the exercise folder with `data`, `README.md`, etc. Click on the `Exercise.ipynb` link to open the notebook. This is where you will write notes & Python code. When analyzing data, we don't start with Spyder and write code, we stay in the notebook. Spyder will come later when we want to do some **Data Engineering** and create a script to be run at once.
+Your browser should _automatically_ open Jupyter. You should see the exercise folder with `data`, `README.md`, etc. Click on the `Exercise.ipynb` link to open the notebook. This is where you will write notes & Python code. When analyzing data, we don't start with sublime text/VS Code and write code, we stay in the notebook. sublime text/VS Code will come later when we want to do some **Data Engineering** and create a script to be run at once.
 
 In the Notebook exercises of today and the following days, you will go back & forth between these instructions and the Notebook where you will write the code. Have fun!
 
@@ -43,7 +43,7 @@ Change the type of the last cell to Markdown and copy-paste the following in it:
 Let's load the Gas production:
 ```
 
-Remember, a Jupyter notebook is not just about writing Python code, otherwise we would have stayed in Spyder!
+Remember, a Jupyter notebook is not just about writing Python code, otherwise we would have stayed in sublime text/VS Code!
 
 
 Insert a cell below (code, the default) and write the two lines to load the **gas** consumption. Then visualize the `DataFrame` with the `.head()` function. When you are done, type `Ctrl` + `↩` to run the code.
