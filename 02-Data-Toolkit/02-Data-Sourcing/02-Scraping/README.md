@@ -1,18 +1,18 @@
-In this second exercise, we will put in practise the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website content with Python.
+In this second exercise, we will put in practise the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website with Python.
 
 The website we are scrapping is [books.toscrape.com](http://books.toscrape.com/). It's a website which has been created exactly for that purpose! To learn how to scrape.
 
-The goal will be to automatically retrieve information about books sold, like their name, price, their rating etc. The trick is that the website is **paginated**. Can you see how? Do you foresee it being a difficulty?
+The goal will be to automatically retrieve information about sold books, like their name, price, rating, etc. The trick is that the website is **paginated**. Can you see how? Do you foresee it being a difficulty?
 
 ## Setup
 
-The goal is to scrape **and** then use `pandas` to visualize the extracted information. For this exercise, it still makes sense to work in a Notebook.
+The goal is to scrape the website **and** then use `pandas` to visualize the extracted information. For this exercise, it still makes sense to work in a Notebook.
 
 ```bash
 jupyter notebook
 ```
 
-Go ahead and create a new Python Notebook in the `04-Data-Sourcing/02-Scraping` folder of your `python-challenges` repository.
+Go ahead and create a new Python Notebook in the `04-Data-Sourcing/02-Scraping` folder of your `data-challenges` repository.
 
 Start your notebook with the following imports in the first code cell:
 
@@ -29,7 +29,7 @@ import matplotlib
 
 ## First request
 
-Insert a new cell and work on the `TODO`s (the starter code is the same as the one in the lecture slides!
+Insert a new cell and work on the `TODO`s (the starter code is the same as the one in the lecture's slides!)
 
 ```python
 url = "http://books.toscrape.com/"
@@ -41,7 +41,7 @@ url = "http://books.toscrape.com/"
 <details><summary markdown='span'>View solution
 </summary>
 
-This code is quite generic and should be the same as the lecture! If you already have a scraping project, what you usually do is open it and copy-paste those first lines!
+This code is quite generic and should be the same as the lecture! If you already have a scraping project, what you usually do, is open it and copy-paste those first lines!
 
 ```python
 url = "http://books.toscrape.com/"
@@ -74,7 +74,7 @@ The `<article />` element with the class `product_pod` is what we are looking fo
 
 </details>
 
-Now that we have identified the relevant HTML, we can can use the `soup` Python variable to query the document. Let's use the [searching by CSS class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class) approach. Insert a new cell and try to select **all** books in the HTML. Store this in a `books` variable.
+Now that we have identified the relevant HTML, we can use the `soup` Python variable to query the document. Let's use the [searching by CSS class](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class) approach. Insert a new cell and try to select **all** books in the HTML. Store this in a `books_html` variable.
 
 <details><summary markdown='span'>View solution
 </summary>
@@ -96,7 +96,7 @@ It's a good time for you to insert a **Markdown cell** and type in the following
 ## Parsing _one_ book
 ```
 
-Of course you can write more text! We are just helping you to put more structure in your Notebook.
+Of course you can write more text! The goal is to document your train of thoughts in your notebook to eventually a well documented/structured Notebook.
 
 Let's have a look at the HTML fragment of the first book. Insert a code cell and type in:
 
@@ -104,20 +104,20 @@ Let's have a look at the HTML fragment of the first book. Insert a code cell and
 books_html[0]
 ```
 
-Great! We now have tinier piece of HTML to deal with. We can **chain** the [`.find()`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find) on this HTML fragment to **extract** 3 pieces of information from it.
+Great! We now have a smaller piece of HTML to deal with. We can **chain** the [`.find()`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find) on this HTML fragment to **extract** 3 pieces of information from it.
 
 Let's start with the book *title*. Try to retrieve this information on `books_html[0]` and store it in a `book_title` variable.
 
 <details><summary markdown='span'>View solution
 </summary>
 
-The title is located in an HTML link `<a />` inside the `<h3 />` tag. So we need to first `.find()` the `h3`, then the `a`:
+The title is located in an HTML link tag `<a />` inside the `<h3 />` tag. So we need to first `.find()` the `h3`, then the `a`:
 
 ```python
 books_html[0].find("h3").find("a")
 ```
 
-That's almost it. Now we need to select the title in the `<a />` **attributes**:
+That's almost it. Now we need to select the title in the `<a />` tag's **attributes**:
 
 ```python
 books_html[0].find("h3").find("a").attrs
@@ -138,13 +138,13 @@ Awesome! Let's now try to retrieve the **price** of that book. Going back to the
 <details><summary markdown='span'>View solution
 </summary>
 
-Like for the `<article />` before to select books, we are going to use a the "Searching by CSS class" approach, combined with using the [`.string`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#string) method:
+Like for the `<article />` before to select books, we are going to use the "Searching by CSS class" approach, combined with using the [`.string`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#string) method:
 
 ```python
 books_html[0].find("p", class_="price_color").string
 ```
 
-The thing is that you want to extract the **number** (here that would be a Python `float`) rather than just text. We get rid of the first character `£` with the slice selector on the `list` and then passes all to `float()`:
+The thing is that we want to extract the **number** (here that would be a Python `float`) rather than just text. We need to get rid of the first character `£` with the slice method on the `list` and then pass the sliced string to the `float()` method to convert it:
 
 ```python
 book_price = float(books_html[0].find("p", class_="price_color").string[1:])
@@ -153,7 +153,7 @@ book_price
 
 </details>
 
-Finally we need to get the **rating** (how many yellow stars there are for the book). Back to the browser inspector, we find that there is a `<p class="star-rating TEXT"></p>` where `TEXT` can take the values `"One"`, `"Two"`, `"Three"`, `"Four"` or `"Five"`. This one is a bit more difficult then, but doable. Insert a cell and copy/paste the following code:
+Finally we need to get the **rating** (how many yellow stars does the book have). Back to the browser inspector, we can see that there is a `<p class="star-rating TEXT"></p>` where `TEXT` can take the values `"One"`, `"Two"`, `"Three"`, `"Four"` or `"Five"`. This one is a bit more difficult then, but doable. Insert a cell and copy/paste the following code:
 
 ```python
 book_stars_html = books_html[0].find("p", class_="star-rating")
@@ -210,7 +210,7 @@ def parse_rating(rating_classes):
 
 </details>
 
-Once you have this method, you can use it to read the book's rating! Insert a new code cell and copy/paste the following code:
+Once you implemented this method, you can use it to read the book's rating! Insert a new code cell and copy/paste the following code:
 
 ```python
 book_rating = parse_rating(books_html[0].find("p", class_="star-rating").attrs['class'])
@@ -224,7 +224,7 @@ Once again, it's a good time to insert a **Markdown cell** and type in the follo
 ## Parsing _all_ books
 ```
 
-We now need to _glue_ all the code above and put it inside a `for` loop over the `books` variable! This variable is given by `soup` in return of the `.find_all` function call.
+We now need to _glue_ all the code above and put it inside a `for` loop over the `books_html` variable! This variable is given by `soup` in return of the `.find_all` function call.
 
 We are going to store the information collected about the books in a **Python `dict`**. This dictionary will have three keys. The **values** stored in that dictionary would be `list`s to which we append whatever we find in the HTML:
 
@@ -232,7 +232,7 @@ We are going to store the information collected about the books in a **Python `d
 - `Price` => `[51.77, 53.74, ...]`
 - `Rating` => `[3, 1, ...]`
 
-We store the information that way because we aim on giving that to Pandas, and it happens that giving the data in that format allow us to creates a Dataframe from it very easily.
+We store the information that way because we aim to give that to Pandas, and, conveniently enough, giving the data in that format to pandas allow us to create a Dataframe from it very easily.
 
 Insert a new cell and initialize this dictionary
 
@@ -240,7 +240,7 @@ Insert a new cell and initialize this dictionary
 books_dict = { 'Title': [], 'Price': [], 'Rating': [] }
 ```
 
-:question: Write a loop over `books_html` to populate the `books_dict` dictionary reusing all the code from above.
+:question: Implement a loop that will iterate over `books_html` to populate the `books_dict` dictionary by reusing all the code from above.
 
 <details><summary markdown='span'>View solution
 </summary>
@@ -281,19 +281,19 @@ books_df = pd.DataFrame.from_dict(books_dict)
 books_df
 ```
 
-Looks great! Let's do a small plot to celebrate, let's show how many books there are per possible **Rating**:
+Looks great! Let's generate a small plot to celebrate. The plot will show how many books there are per possible **Rating**:
 
 ```python
 books_df.groupby("Rating").count()["Title"].plot(kind="bar")
 ```
 
-Quite a lot of books with a very poor rating (1). Is it only the first page? What about the **other** pages? Time to look at page 2 and beyond!
+Quite a lot of books with a very poor rating (1). Is it only the first page? What about the **other** pages? Time to look at page 2 and above!
 
 ## Going through _all_ the pages of the catalogue
 
 New section! Don't forget about the **Markdown cell**.
 
-On [books.toscrape.com](http://books.toscrape.com/), scroll down to the bottom and click on the "Next" button. Do it again. Do you see the **pattern** of the URL?
+On [books.toscrape.com](http://books.toscrape.com/), scroll down to the bottom and click on the "Next" button. Do it again. Do you see the **pattern** of the URL for the different pages?
 
 <details><summary markdown='span'>View solution
 </summary>
@@ -315,7 +315,7 @@ for page in range(1, MAX_PAGE + 1):
     print(url)
 ```
 
-Loop's working! Let's replace the `print` with the actual code to scrape. Then run another `for` loop to scrape **all** books from the **current** page. All the code is already on your notebook, above. Time to pick it up and glue it together!
+Seems like the loop is working! Let's replace the `print` with the actual code to scrape. Then run another `for` loop to scrape **all** the books from the **current** page. All the code is already in your notebook. Time to pick it up and glue everything together!
 
 
 <details><summary markdown='span'>View solution
@@ -344,7 +344,7 @@ print("Done!")
 
 </details>
 
-All good? Check that you actually pased `MAX_PAGE` * 20 books with:
+All good? Check that you actually parsed `MAX_PAGE` * 20 books with:
 
 ```python
 len(all_books_dict["Title"])
@@ -357,7 +357,7 @@ all_books_df = pd.DataFrame.from_dict(all_books_dict)
 all_books_df.tail()
 ```
 
-Let's see how much the books are:
+Let's see how expensive the books are:
 
 ```python
 all_books_df["Price"].hist()
@@ -371,7 +371,7 @@ all_books_df.groupby("Rating").count()["Title"].plot(kind="bar")
 
 ## Saving the data for later
 
-Right now, all the scraped data is living **in memory** of the Notebook, and will be lost as soon as will `Ctrl` + `C` it. It would be a shame, so a good practise is to actually save to a file the results of a successful scraping session.
+Right now, all the scraped data is living **in memory** of the Notebook, and will be lost as soon as will `Ctrl` + `C` it. It would be a shame, so a good practise is to actually save the results of a successful scraping session into a file.
 
 For that we will use one of the [**writers**](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html) Pandas provide. We can write a `DataFrame` to disk like this:
 
