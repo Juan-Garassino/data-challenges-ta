@@ -1,4 +1,4 @@
-# pylint: disable=c0103
+# pylint: disable=C0103
 ''' Complete each fonction with the right query '''
 
 def directors_count(db):

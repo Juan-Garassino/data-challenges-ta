@@ -19,6 +19,11 @@ class TestStrings(unittest.TestCase):
         result = convert(amount, "EUR")
         self.assertEqual(339, result)
 
+    def test_convert_eur_to_gbp(self):
+        amount = (339, "EUR")
+        result = convert(amount, "GBP")
+        self.assertEqual(300, result)
+
     def test_should_handle_a_missing_rate(self):
         amount = (300, "RMB")
         result = convert(amount, "EUR")
