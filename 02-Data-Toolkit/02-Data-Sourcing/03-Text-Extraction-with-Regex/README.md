@@ -365,7 +365,7 @@ for receipt in receipts_list:
     date = re.findall(date_pattern, receipt)[0]
     total_amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
     total_amount = re.findall(total_amount_pattern, receipt)[0]
-    quantity_pattern = r"Total Amount +(\d+\.\d{2}) €"
+    quantity_pattern = r"Quantity +(\d+)"
     quantity = re.findall(quantity_pattern, receipt)[0]
 ```
 
