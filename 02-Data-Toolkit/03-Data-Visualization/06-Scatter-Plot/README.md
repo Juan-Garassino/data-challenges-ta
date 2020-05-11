@@ -37,7 +37,7 @@ Try to recreate approximately this bubble plot using seaborn
 <img src="https://www.data-to-viz.com/story/ThreeNum_files/figure-html/unnamed-chunk-2-1.png" width="760">
 
 <details>
-  <summary>💡Hints</summary>
+  <summary markdown='span'>💡Hints</summary>
   <ul>
     <li>You will need to use <code>hue</code> and <code>size</code> arguments</li>
     <li>You will have to adjust bubble size with <code>sizes</code></li>
@@ -59,7 +59,7 @@ Now add country name as **labels** for the countries where:
 <img src="https://www.data-to-viz.com/story/ThreeNum_files/figure-html/unnamed-chunk-4-1.png" width="760">
 
 <details>
-  <summary>💡Hint</summary>
+  <summary markdown='span'>💡Hint</summary>
   You can use <code>Axes.text()</code> and <code>DataFrame.iterrows()</code>
 </details>
 
