@@ -1,10 +1,8 @@
 ## Objectives of the week
 
-1. Bringing all concepts you learned together
-1. Work on a real open ended problem
-1. Provide guided steps ahead of next week project
+We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com) to answer's the CEO question
 
-We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com).
+> How to increase customer satisfaction (so as to increase profit margin) while maintaining a healthy order volume?
 
 ## About Olist 🇧🇷
 
@@ -37,68 +35,38 @@ Here are the seller and customer workflows:
 
 ## Dataset
 
-The dataset consists of 9 csv files that can be downloaded on [Kaggle](https://www.kaggle.com/olistbr/brazilian-ecommerce).
+The dataset consists of 100k orders from 2016 and 2018 that were made on Olist store, available as csv on [Kaggle](https://www.kaggle.com/olistbr/brazilian-ecommerce)
 
-You have access to information (customer, seller, product, reviews..) of 100k orders from 2016 and 2018 that were made on Olist store.
-
-More information can be found on [Olist dataset documentation](https://github.com/lewagon/data-challenges/tree/master/07-Best-Practices/data) or on the original Kaggle page.
-
+✅ Download the 9 datasets and store them to your `~/code/<user.github_nickname>/04-Decision-Science/data/csv` folder.
 
 ## Setup
 
-### 1 - Collaborate as a team on a common repository
-
-Reminder, you will collaborate by project team on a repo organized with the following tree structure:
+### 1 - Project Structure
+Go to your local `04-Decision-Science` folder
+This will be your project structure for the week
 
 ```bash
 .
-├── data                                 # all csv data (not comitted)
-|   └── csv
-|       ├── olist_customers_dataset.csv
-|       └── olist_orders_dataset.csv
-├── olist                                # all scripts contained in Python classes (comitted)
-|   ├── order.py
+├── 01-Project-Setup             # your notebooks & analyses, day-by-day
+├── 02-Statistical-Inference
+├── 03-Linear-Regression
+├── 04-Logistic-Regression
+├── 05-Communicate
+|
+├── data                        # Your data source (git ignored)
+|   ├── csv
+|   |   ├── olist_customers_dataset.csv
+|   |   └── olist_orders_dataset.csv
+|   |   └── ...
+|   ├── README.md   # database documentation
+|
+├── olist                       # Your data-processing logic
+|   ├── data.py
 |   ├── product.py
 |   ├── seller.py
-|   └── utils.py
-└── notebooks                            # your *personal* notebooks (not comitted)
-    ├── 01_02_training_set.ipynb
-    └── 01_03_metric_design.ipynb
-    └── 02_01_metric_design.ipynb
+|   ├── utils.py
+|   └── __init__.py.   # turn your folder into a "package"
 ```
-
-Pay attention to who does what:
-
-- Project team lead (`<user.team_lead_github_nickname>`) **and only him/her** must use the [olist template](https://github.com/lewagon/olist) repository to create a repository on his/her own github account. (USe this template --> owner: you --> setting private)
-- Then project team lead can invite his/her team members to collaborate on the newly created repo (setting-->manage access-->invite collaborators).
-- Other team members will recieve an email invitation they need to accept.
-- Every team member (including `<user.team_lead_github_nickname>`) must clone the repo on his/her local machine and set it up with the following commands:
-
-```bash
-mkdir -p ~/code/<user.team_lead_github_nickname> && cd $_
-git clone git@github.com:<user.team_lead_github_nickname>/olist.git && cd olist
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/02-Data-Cleaning/data_cleaning.ipynb notebooks/01_02_data_cleaning.ipynb
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/01/03-Metric-Design/metric_design.ipynb notebooks/01_03_metric_design.ipynb
-cp ~/code/<user.github_nickname>/data-challenges/07-Best-Practices/olist/data.py olist/data.py
-```
-
-Each team member can now create a branch to start working locally on his/her olist folder without conflicting with other team members:
-
-```bash
-git checkout -b <user.github_nickname>-01
-```
-
-Today, each team member will work on all exercices independently. At the end of the day, **one** of your team member should submit a pull request to upload one working version of the code in your shared repo online
-
-```bash
-git add olist/data.py
-git commit 'Completed Day 1'
-git push -u origin <user.github_nickname>-01
-```
-
-That way, each morning this week, you will be able to resynchronize your code base by pulling the remote master branch
-
-Notebooks are ignored by git (see `.gitignore`) and will never be uploaded on your shared repo. You may want to collaborate on your findings & graphs throughout the week, in order to prepare for Friday's team presentation. Feel free to create a shared google doc/slide, or create a shared jupyter notebook that you can force to commit by using `git add -force <your_shared_notebook.ipynb>`
 
 ### 2 - Edit the `PYTHONPATH`
 
@@ -109,7 +77,7 @@ This will allow you to easily import modules defined in `olist` in your notebook
 For macOS and Linux, open a terminal and run:
 
 ```bash
-cd ~/code/<user.team_lead_github_nickname>/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
+cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
 
 Then copy the output line at the bottom of your `~/.zshrc` file. (You can open it with Sublime Text or `vim` or any text editor you like).
@@ -121,3 +89,22 @@ For Windows:
 - `System Properties > Advanced> Environment Variables.`
 - Locate the Variable name `PYTHONPATH`
 - Add the path to `C:\path\to\olist`
+
+### 🔥 Check your setup
+
+Go to your `01-Project-Setup` folder and run an `ipython` session:
+
+```bash
+cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/01-Project-Setup
+ipython
+```
+
+Then type the following to check that the setup phase from the previous exercise worked:
+
+```python
+from olist.data import Olist
+Olist().ping()
+# => pong
+```
+
+If you get something else than `pong`, raise a ticket to get some help from a TA. You might have a problem with the `$PYTHONPATH`.
