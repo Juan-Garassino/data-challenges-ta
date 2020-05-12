@@ -73,7 +73,7 @@ That way we will be able to:
 **Plotly install:**
 
 ```sh
-pip install -c plotly plotly=4.1.0
+pip install plotly==4.7.1
 ```
 
 <img src="https://i.ibb.co/9y0JLbF/Screen-Shot-2019-10-15-at-16-34-09.png" width="760">
