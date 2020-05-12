@@ -51,7 +51,7 @@ def question_color_uses():
     my_answers = []
     return my_answers
 
-def question_color_pallette():
+def question_color_palette():
     # Question:
     # I should never use...
 
@@ -63,9 +63,9 @@ def question_color_pallette():
     my_answers = []
     return my_answers
 
-def question_color_blind_pallette():
+def question_color_blind_palette():
     # Question:
-    # For color blind people, I should choose these color pallette...
+    # For color blind people, I should choose these color palette...
 
     possible_answers = [
         "Blue and yellow",
@@ -76,7 +76,7 @@ def question_color_blind_pallette():
     my_answers = []
     return my_answers
 
-def question_diverging_color_pallette():
+def question_diverging_color_palette():
     # Question:
     # If you want to emphasize how a variable diverts from a baseline...
 

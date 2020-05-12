@@ -49,7 +49,7 @@ class TestCaveatQuiz(unittest.TestCase):
         ]
         self.assertEqual(question_color_uses(), possible_answers)
 
-    def test_question_color_pallette(self):
+    def test_question_color_palette(self):
         # Question:
         # I should never use...
 
@@ -58,11 +58,11 @@ class TestCaveatQuiz(unittest.TestCase):
             #"Bi-hues color palette",
             #"Mono-hue color palette",
         ]
-        self.assertEqual(question_color_pallette(), possible_answers)
+        self.assertEqual(question_color_palette(), possible_answers)
 
-    def test_question_color_blind_pallette(self):
+    def test_question_color_blind_palette(self):
         # Question:
-        # For color blind people, I should choose these color pallette...
+        # For color blind people, I should choose these color palette...
 
         possible_answers = [
             "Blue and yellow",
@@ -70,9 +70,9 @@ class TestCaveatQuiz(unittest.TestCase):
             #"Red and yellow",
             "Blue and red"
         ]
-        self.assertEqual(question_color_blind_pallette(), possible_answers)
+        self.assertEqual(question_color_blind_palette(), possible_answers)
 
-    def test_question_diverging_color_pallette(self):
+    def test_question_diverging_color_palette(self):
         # Question:
         # If you want to emphasize how a variable diverts from a baseline...
 
@@ -80,4 +80,4 @@ class TestCaveatQuiz(unittest.TestCase):
             #"You should use a mono-hue color gradient",
             "You should use a diverging color gradient"
         ]
-        self.assertEqual(question_diverging_color_pallette(), possible_answers)
+        self.assertEqual(question_diverging_color_palette(), possible_answers)
