@@ -1,6 +1,6 @@
 In this exercise we are going to use **Regular Expressions** in order to extract data from a plain text file.<br>
 
-The text file path is `03-Text-Extraction-with-Regex/data/receipts.txt`. <br> You can download it [here](https://raw.githubusercontent.com/lewagon/python-beginners/day05_ex03/05-Best-Practices/03-Text-Extraction-with-Regex/data/receipts.txt?token=ACV62EXRC5SIBOAIP7MWX2C4YHUQ6) ( save: `cmd + s` on mac, `ctrl + s` on windows )
+The text file path is `03-Text-Extraction-with-Regex/data/receipts.txt`. <br> You can download it [here](https://gist.githubusercontent.com/ssaunier/5da499eb08817d8b7f56d397870df33d/raw/receipts.txt) ( save: `cmd + s` on mac, `ctrl + s` on windows )
 
 The receipts in this file are from a **restaurant**. Each receipt gives us how many plates were served and how much money the restaurant made that day.
 
