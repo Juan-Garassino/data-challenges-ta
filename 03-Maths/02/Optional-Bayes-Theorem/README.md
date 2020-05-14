@@ -1,26 +1,26 @@
 ## Bayes Theorem - a manual proof
 
-In thise exercise, we have a dataset of 'Weather' conditions (Rain, Sunny, Overcast), and corresponding ‘Play’ conditions (Yes or No), suggesting possibilities of playing sports or not depending on weather conditions.
+In thise exercise, we have a dataset of 'Weather' conditions (Rain, Sunny, Overcast), and corresponding ‘Play’ conditions (Yes or No), suggesting whether or not a sport should be played based on weather conditions.
 
 ```python
 weather_data= ['Sunny','Overcast','Rainy','Sunny','Sunny','Overcast','Rainy','Rainy','Sunny',
 'Rainy','Sunny','Overcast','Overcast','Rainy']
 play_data   =['No','Yes','Yes','Yes','Yes','Yes','No','No','Yes','Yes','No','Yes','Yes','No']
 ```
-Where the index i in `weather` correspond to the index i in `play`. For example, the 3th game, the weather was Overcast and they played game.
+Where the index i in `weather` correspond to the index i in `play`. For example, the 2nd game, the weather was 'Overcast' and the game was played.
 
-Our goal is to compute the probability $P(play|weather)$ to be able to anticipate if a new match will be allowed to take place tomorrow given a new weather condition.
+Our goal is to compute the probability $$P(play|weather)$$ to be able to anticipate if a new match will be allowed to take place the next day given a new weather condition.
 
-In doing so, we will also demonstrate the followig **Bayes Theorem** by counting ourself each of these 4 probabilities:
+By doing so, we will also demonstrate the **Bayes Theorem** by counting ourselves each of these 4 probabilities:
 
-$$P(play|weather) = \frac{P(play) P(weather|play)}{P(weather)}$$
+$P(play|weather) = \frac{P(play) P(weather|play)}{P(weather)}$
 $$Posterior = \frac{Prior * Likelihood}{constant}$$
 
 Where :
-- P(play) is our **prior** belief on the probability of the class (Play = Yes or No) given all data we have seen so far.
-- P(weather|play) is the **likelihood** of seeing this type of weather (evidence), given that the match has played or not
-- P(play|weather) is the **posterior** probability of actually playing or not, given the weather condition
-- P(weather) is a constant that does not affect
+- $$P(play)$$ is our **prior** belief on the probability of the class (Play = Yes or No) given all data we have seen so far.
+- $$P(weather|play)$$ is the **likelihood** of seeing this type of weather (evidence), given whether the match was played or not
+- $$P(play|weather)$$ is the **posterior** probability of actually playing or not, given the weather condition
+- $$P(weather)$$ is a constant that does not affect
 
 Let's start!
 
@@ -71,9 +71,9 @@ Congratulations, it's almost finished.
 
 ### 4. Step back and understand
 
-Thanks to what you learned in this challenge could you answer these questions :
-- Players will play if weather is sunny. Is this statement is correct?
-- You know for sure, it will be raining for the next game. Do you think the game will be cancelled?
+Thanks to what you've learned in this challenge, could you answer these questions :
+- Players will play if weather is sunny. Is this statement correct?
+- If you know for sure that it will be raining during the next game, Do you think the game will be cancelled?
 
 
 
