@@ -57,7 +57,7 @@ For example, given the following array, you should get this result :
 weather_data = ['Sunny','Overcast','Rainy','Sunny','Sunny','Overcast','Rainy','Rainy','Sunny',
 'Rainy','Sunny','Overcast','Overcast','Rainy']
 play_data   = ['No','Yes','Yes','Yes','Yes','Yes','No','No','Yes','Yes','No','Yes','Yes','No']
-likelihood("Sunny", "Yes", weather, play) = 3/9 = 0.33333
+likelihood("Sunny", "Yes", weather_data, play_data) = 3/9 = 0.33333
 ```
 
 ### 3. Posterior Probability $P(play|weather)$
