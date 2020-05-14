@@ -9,18 +9,20 @@ play_data   =['No','Yes','Yes','Yes','Yes','Yes','No','No','Yes','Yes','No','Yes
 ```
 Where the index i in `weather` correspond to the index i in `play`. For example, the 3th game, the weather was Overcast and they played game.
 
-Our goal is to compute the probability $P(play|weather)$ to be able to anticipate if a new match will be allowed to take place tomorrow given a new weather condition.
+Our goal is to understand the probability of playing a match or not.
+
+More precisely compute the probability **P(play|weather)** to be able to anticipate if a new match will be allowed to take place tomorrow given a new weather condition.
 
 In doing so, we will also demonstrate the followig **Bayes Theorem** by counting ourself each of these 4 probabilities:
 
-$$P(play|weather) = \frac{P(play) P(weather|play)}{P(weather)}$$
-$$Posterior = \frac{Prior * Likelihood}{constant}$$
+<img src='https://github.com/lewagon/data-images/blob/master/math/bayes-theorem.png?raw=true'>
+
 
 Where :
-- P(play) is our **prior** belief on the probability of the class (Play = Yes or No) given all data we have seen so far.
-- P(weather|play) is the **likelihood** of seeing this type of weather (evidence), given that the match has played or not
+- P(play) is our **prior** belief on the probability of the class (Play = Yes or No) given all data we have seen so far
+- P(weather|play) is the **likelihood** of observing this type of weather, given that the match has played or not
 - P(play|weather) is the **posterior** probability of actually playing or not, given the weather condition
-- P(weather) is a constant that does not affect
+- P(weather) is a constant, form the point of view of our problem: it does not depends on the choice of playing or not
 
 Let's start!
 
