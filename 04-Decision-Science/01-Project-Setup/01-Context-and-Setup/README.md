@@ -78,7 +78,7 @@ This will allow you to easily import modules defined in `olist` in your notebook
 
 Open a terminal and run:
 ```bash
-cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
+cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
 
 Then copy the output line at the bottom of your `~/.zshrc` file. (You can open it with Sublime Text or `vim` or any text editor you like).
@@ -87,9 +87,26 @@ Then copy the output line at the bottom of your `~/.zshrc` file. (You can open i
 
 **Windows:**
 
-- `Start → Edit the system environment variables → Environment Variables`
-- Locate the Variable name `PYTHONPATH`
-- Add the path to `C:\path\to\olist`
+Open a Git Bash terminal and run:
+```bash
+cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && explorer.exe .
+```
+This will open the folder in Windows file explorer.
+Click in the folder tree bar:
+<img src="https://raw.githubusercontent.com/lewagon/data-images/master/decision-science/pythonpath.jpg" width="500"/>
+
+This will highlight the path to that folder, copy it.
+
+Click on `Start → Edit the system environment variables → Environment Variables`
+Under System variables, click on **New**
+    Variable name: `PYTHONPATH`
+    Variable value: the path you copied above
+
+It should look like this:
+<img src="https://raw.githubusercontent.com/lewagon/data-images/master/decision-science/pythonpath_var.jpg" width="500"/>
+
+Click on **OK**
+Restart your Git Bash terminal.
 
 ### 🔥 Check your setup
 
