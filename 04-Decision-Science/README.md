@@ -5,4 +5,4 @@ Goals of this week:
 1. Work on a real open ended problem
 1. Provide guided steps ahead of next week project
 
-We will analyze a dataset provided by e-commerce marketplace [Olist](www.olist.com).
+We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com).
