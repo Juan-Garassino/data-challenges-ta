@@ -1,6 +1,6 @@
 ## Metric Design ⚙️
 
-Open `notebooks/01_03_metric_design.ipynb` and follows instructions.
+Open `metric_design.ipynb` and follow instructions.
 
 
 ### 💪 Optional Challenge
