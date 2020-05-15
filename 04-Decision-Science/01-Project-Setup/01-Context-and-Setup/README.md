@@ -74,19 +74,20 @@ Add `olist` path to your `PYTHONPATH`.
 
 This will allow you to easily import modules defined in `olist` in your notebooks throughout the week.
 
-For macOS and Linux, open a terminal and run:
+**macOS and Linux:**
 
+Open a terminal and run:
 ```bash
 cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science/olist && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
 
 Then copy the output line at the bottom of your `~/.zshrc` file. (You can open it with Sublime Text or `vim` or any text editor you like).
 
-⚠️ Restart all your temrinal windows to take into account this change.
+⚠️ Restart all your terminal windows to take into account this change.
 
-For Windows:
+**Windows:**
 
-- `System Properties > Advanced> Environment Variables.`
+- `Start → Edit the system environment variables → Environment Variables`
 - Locate the Variable name `PYTHONPATH`
 - Add the path to `C:\path\to\olist`
 
