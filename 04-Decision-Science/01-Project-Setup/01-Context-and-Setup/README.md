@@ -1,6 +1,6 @@
 ## Objectives of the week
 
-We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com) to answer's the CEO question
+We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com) to answer's the CEO question:
 
 > How to increase customer satisfaction (so as to increase profit margin) while maintaining a healthy order volume?
 
@@ -16,10 +16,10 @@ Here are the seller and customer workflows:
 
 **Seller:**
 
-- Seller join Olist
-- Seller upload product catalogue
-- Seller get notified when a product is sold.
-- Seller hand over item to logistic carrier.
+- Seller joins Olist
+- Seller upload products catalogue
+- Seller gets notified when a product is sold
+- Seller hands over an item to the logistic carrier
 
 👉 Note that multiple sellers can be involved in one customer order!
 
@@ -42,8 +42,8 @@ The dataset consists of 100k orders from 2016 and 2018 that were made on Olist s
 ## Setup
 
 ### 1 - Project Structure
-Go to your local `04-Decision-Science` folder
-This will be your project structure for the week
+Go to your local `04-Decision-Science` folder.
+This will be your project structure for the week.
 
 ```bash
 .
