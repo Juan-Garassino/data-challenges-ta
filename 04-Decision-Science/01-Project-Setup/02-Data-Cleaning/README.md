@@ -6,9 +6,9 @@ In this exercise, you will perform an **Exploratory Data Analysis** (EDA) and lo
 
 ### Data Schema
 
-❓You challenge is to build the data schema of olist using [db.lewagon.org](db.lewagon.org). Don't forget to quick-save it regularily ("F2") to your kitt profile.
+Your challenge is to build the data schema of olist using [db.lewagon.org](db.lewagon.org). Don't forget to quick-save it regularily ("F2") to your kitt profile.
 
-Notice that we have written for you in `csv/README.md` a detailed de description of the data schema. The `.md` format (called "markdown") is better viewed online on github, on your fork or direclty in lewagon upstream repo [here](https://github.com/lewagon/data-challenges/tree/master/04-Decision-Science/data)
+Notice that we have written for you in `csv/README.md` a detailed description of the data schema. The `.md` format (called "markdown") is better viewed on github. On your fork or direclty in lewagon upstream repository [here](https://github.com/lewagon/data-challenges/tree/master/04-Decision-Science/data)
 
 ### Exploratory Data Analysis with Jupyter
 
