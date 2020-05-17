@@ -1,4 +1,4 @@
-Welcome to week 3 of Le Wagon Data Bootcamp 🎉
+Welcome to the Decision Science module 🎉
 
 Goals of this week:
 1. Bringing all concepts you learned together
