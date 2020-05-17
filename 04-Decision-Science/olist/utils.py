@@ -15,26 +15,6 @@ def haversine_distance(lon1, lat1, lon2, lat2):
     return 2 * 6371 * asin(sqrt(a))
 
 
-def text_scatterplot(df, x, y):
-    """
-    For a Dataframe df, create a scatterplot with the index
-    as text label.
-    """
-    f, ax = plt.subplots(figsize=(15, 10))
-
-    f = sns.scatterplot(x=x,
-                        y=y,
-                        data=df,
-                        ax=ax)
-
-    # For each point, we add a text inside the bubble
-    for i in df.index:
-        f.text(df.loc[i][x],
-               df.loc[i][y],
-               i,
-               horizontalalignment='left')
-
-
 def return_significative_coef(model):
     """
     Returns p_value, lower and upper bound coefficients

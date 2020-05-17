@@ -10,11 +10,11 @@ Let's confront our quantitative findings to a qualitative analysis of reviews fr
 
 ### Exercise
 
-- Implement a Python script that translate from Portuguese to English a sample of 100 1-star reviews, leveraring the the Python library [googletrans](https://pypi.org/project/googletrans/)
+- Implement a Python script that translates from Portuguese to English a sample of 100 1-star reviews, leveraging the Python library [googletrans](https://pypi.org/project/googletrans/)
 - ⚠️ **Do not translate all the 100,000 comments or the whole class might get temporarily banned from most free API translators**
 - Are those trends similar to your previous findings?
 - What other trends are you uncovering and you would like to explore?
 
 Hints:
 - Try to read the doc and make the API works on your own - it's no more than 10 lines of code
-- Feel free to create a new notebook, or code directly on you favorite code editor
+- Feel free to create a new notebook, or code directly on your favorite code editor
