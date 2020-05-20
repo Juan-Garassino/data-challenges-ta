@@ -1,4 +1,9 @@
-Let's correct together a challenge of the day to make sure you understood:
+## From Data to Viz
 
-- how to draw multiple subplots plots
-- OOP vs state-based plotting syntax
+The purpose of this reboot is to choose the right data visualization for a given question on a dataset. Freely inspired from https://www.data-to-viz.com/.
+
+Launch the notebook from your terminal:
+
+```bash
+jupyter notebook From-Data-to-Viz.ipynb
+```

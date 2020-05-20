@@ -15,8 +15,7 @@ class Olist:
     def get_matching_table(self):
         """
         01-01 > This function returns a matching table between
-        columns [`customer_id`, `customer_unique_id`,
-        `order_id`, `seller_id`]
+        columns [ "order_id", "review_id", "customer_id", "product_id", "seller_id"]
         """
 
     def ping(self):

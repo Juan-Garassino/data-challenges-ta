@@ -24,7 +24,6 @@ def the_method(db):
 
   # Then you'll need to return something.
   return ?
-end
 ```
 
 
