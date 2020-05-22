@@ -1,10 +1,23 @@
-## Team Project!
+## CEO Request
 
-We have seen throughout the week that location, product categories or seller can impact review score.
+Our preliminary analysis is good enough for the limited time we have.
 
-Fundamentally review score can translate in lower business performance over the long term.
+Let's recap our key findings:
 
-In this section, your goal is to produce an analysis that will inform which decision Olist CEO should take.
+We have seen how `wait_time` was the most significant factor explaining low review scores, but reading comments of the bad reviews also showed that some of them were linked to the seller or to the product itself.
+
+Besides, `wait_time` is not known ahead of the order, and thus can hardly be acted-upon by your data-consulting team as an actionable recommendation to the Olist CEO directly.
+
+On the contrary, you have built an analysis of sellers and products that demonstrated how some sellers, products, product categories and states can all negatively impact `review_score`, which translate into lower business performance over the long term.
+
+ℹ️ We recommand you to focus on finishing the analyses of `products.ipynb` **or** `sellers.ipynb` before moving on.
+
+What about potentially removing some of them from Olist marketplace, at least for those who persistently under-perform ? That may slighly reduce revenues but increase profit margin.
+
+You have until Friday afternoon to produce a cost/benefit analysis for the recommendations of your choice, that will inform which decision Olist CEO should take in order to
+
+> _increase Olist customer satisfaction and margin while maintaining a healthy order volume_
+
 
 ### Unit Economics
 
@@ -30,29 +43,32 @@ review_score|cost (BRL)
 
 In addition, we estimate that it costs 800 BRL to acquire one seller due to sales acquisition and marketing costs.
 
-### The CEO's request
+### Your objective
 
-You have been tasked by Olist CEO come with recommendations on **how to increase Olist customer satisfaction and margin while maintaining a healthy order volume**
+Your task is to produce a detailed cost-benefit analysis of one or more recommendations as suggested above.
 
 Hint: Below is a list of possible suggestion to explore (among other)
-- Olist restrict seller/customer matching between certain states
-- Olist implements a review_score threshold for sellers. Repetitively underperforming sellers get removed from the platform after a while.
-- Olist focuses its offering to some product categories, or remove some specific products from its platform
+- Olist restricts seller/customer matching between certain states?
+- Repetitively underperforming sellers get removed from the platform after a while?
+- Olist removes the worst performing products from its marketplace?
+- Olist focuses on some product categories only?
+- Olist acquire new sellers, with some assumption?
+- Any combination of all of the above suggestions?
 - ...
 
-### Your output
 
-Your task is to produce, per team, a cost-benefit analysis of one or more recommendations as suggested above.
+### Present your analysis to your whereby room, Friday afternoon at 5pm
 
-### Present your analysis to the class at 5pm as a team
+You have 15 minutes max per person (discussion included) to convince Olist CEO of your recommendations.
 
-You have 10 minutes max per group (discussion included) to convince Olist CEO of your recommendations
+- A teacher assistant will play the role of the CEO
+- Other whereby room members will also attend allowed to ask questions
 
 Don't forget to explain the context, and the reasonning behing your recommendations
 
 Remember: Olist CEO is not a data scientist!
 
-Use Jupyter Noteobook **nbconvert** to make a slide-based presentation
+👉 You will have to make a slide-based presentation using Jupyter Noteobook **nbconvert**
 
 ```bash
 jupyter nbconvert --to slides --post serve <your_notebook.ipynb>
