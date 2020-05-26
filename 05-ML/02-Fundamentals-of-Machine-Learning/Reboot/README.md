@@ -1,1 +1,1 @@
-Let's correct the Bonus challenge together!
+Let's go over the bonus together and optimize K for a KNN model.

@@ -1,8 +1,20 @@
 ## CEO Request
 
-Our preliminary analysis is over. We have seen how location, product categories, sellers can all negatively impact `review_score`, which translates into lower business performance over the long term.
+Our preliminary analysis is good enough for the limited time we have.
 
-You have until Friday afternoon to produce a cost/benefit analysis that will inform which decision Olist CEO should take, in order to
+Let's recap our key findings:
+
+We have seen how `wait_time` was the most significant factor explaining low review scores, but reading comments of the bad reviews also showed that some of them were linked to the seller or to the product itself.
+
+Besides, `wait_time` is not known ahead of the order, and thus can hardly be acted-upon by your data-consulting team as an actionable recommendation to the Olist CEO directly.
+
+On the contrary, you have built an analysis of sellers and products that demonstrated how some sellers, products, product categories and states can all negatively impact `review_score`, which translate into lower business performance over the long term.
+
+ℹ️ We recommand you to focus on finishing the analyses of `products.ipynb` **or** `sellers.ipynb` before moving on.
+
+What about potentially removing some of them from Olist marketplace, at least for those who persistently under-perform ? That may slighly reduce revenues but increase profit margin.
+
+You have until Friday afternoon to produce a cost/benefit analysis for the recommendations of your choice, that will inform which decision Olist CEO should take in order to
 
 > _increase Olist customer satisfaction and margin while maintaining a healthy order volume_
 
@@ -36,10 +48,12 @@ In addition, we estimate that it costs 800 BRL to acquire one seller due to sale
 Your task is to produce a detailed cost-benefit analysis of one or more recommendations as suggested above.
 
 Hint: Below is a list of possible suggestion to explore (among other)
-- Olist restrict seller/customer matching between certain states
-- Olist implements a review_score threshold for sellers. Repetitively underperforming sellers get removed from the platform after a while.
-- Olist focuses its offering to some product categories, or remove some specific products from its platform
-- Olist acquire new sellers
+- Olist restricts seller/customer matching between certain states?
+- Repetitively underperforming sellers get removed from the platform after a while?
+- Olist removes the worst performing products from its marketplace?
+- Olist focuses on some product categories only?
+- Olist acquire new sellers, with some assumption?
+- Any combination of all of the above suggestions?
 - ...
 
 
