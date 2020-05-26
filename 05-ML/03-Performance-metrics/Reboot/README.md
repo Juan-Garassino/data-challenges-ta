@@ -1,1 +1,1 @@
-We will go over the last exercice of the day as a Reboot.
+We will go over the last exercise of the day as a Reboot.
