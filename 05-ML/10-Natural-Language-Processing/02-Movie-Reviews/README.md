@@ -1,0 +1,1 @@
+In this exercice, you will perform some preprocessing on movie reviews. You will then compare the impact of standard Bag-of-words and 2-gram Bag-of-Words representations when training a MultinomialNB Classification model.
