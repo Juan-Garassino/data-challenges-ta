@@ -5,8 +5,8 @@ It is time to move away from Jupyter Notebook, and start writing reusable code w
 In the exercice, nothing new, simply copy pasting functions we already implemented yesterday, and organize them inside different modules.
 
 # Package structure
-We have crated for you the following structure
-```
+We have created for you the following structure
+```bash
 * TaxiFareModel
     * __init__.py     -> to make it a python package
     * data.py         -> functions to get and clean data 
@@ -18,17 +18,17 @@ This exercice loads the train data from an Amazon AWS S3 bucket, in order to acc
 - `pip install s3fs`
 
 ## data.py
-- Inspect functions `get_data` and `clean_df` that are already given to you.
+Inspect functions `get_data` and `clean_df` that are already given to you.
 
 NB: Here we provide you with the same functions so that we all get and clean data the same way.
 
 ## utils.py
-- In `utils.py` this is where you can have :
+In `utils.py` this is where you can have :
  - `haversine_distance` method
  - `compute_rmse` method
 
 ## encoders.py
-- In `encoders.py` let's put the custom encoders and transformers you have for distance and time features
+In `encoders.py` let's put the custom encoders and transformers you have for distance and time features
 
 #### Reminder
 Let us be clear about the use of `encoders.py` here:
@@ -45,7 +45,7 @@ Implement the main class here
   - a `def train()` method that trains the pipeline
   - a `def evaluate()` method evaluating model
 
-- Make sure you are confident with following notions
+Make sure you are confident with following notions
  - attributes and methods of a class
  - `**kwargs` argument of a function and how to use it, (help [HERE](https://www.programiz.com/python-programming/args-and-kwargs) if unclear)
  - use of `__init__(self, **kwargs)` method
@@ -74,8 +74,8 @@ class Trainer(object):
 ```
 
 ## Test it!
-- Once you have everything setup, test that it works by running :
-```
+Once you have everything setup, test that it works by running :
+```bash
 python -m TaxiFareModel.trainer
 ```
 Or
@@ -96,7 +96,7 @@ And then install and run `ipython` inside terminal:
 pip install ipython
 ipython
 ```
-```
+```bash
 Python 3.7.2 (default, Feb 20 2020, 16:34:30)
 Type 'copyright', 'credits' or 'license' for more information
 IPython 7.12.0 -- An enhanced Interactive Python. Type '?' for help.

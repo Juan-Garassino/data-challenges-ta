@@ -22,22 +22,23 @@ This is what MLFlow tracking is about.
 
 ## MlFlow Quickstart
 Install MLFlow:
-```
+```bash
 pip install mlflow
 ```
-launch mlflow server in your current directory:
-```
+Now Open a new terminal window and launch mlflow ui **in your current directory (where `ml_flow_test.py` is)**:
+```bash
 mlflow ui
 ```
 
-Check [here](http://127.0.0.1:5000/#/) your local mlflow tracking server
+👉 Check [here](http://127.0.0.1:5000/#/) your local mlflow tracking server  
+
 MLFlow defines experiments and runs, you have different runs inside one experiment
 For instance for experiment *model_experiment*, you'll have :
  - 1 run for a linear model
  - 1 run for Randomforest model
 For each run you will logs parameters and metrics
 
-Open `ml_flow_test.py` and create your first experiment and first 2 runs inside this experiment:
+Open `ml_flow_test.py` and inspect the code that will allow you to log your first params on your local instance:
 
 ```python
 from  mlflow.tracking import MlflowClient
@@ -129,7 +130,7 @@ EXPERIMENT_NAME = f"TaxifareModel_{myname}"
 ```
 - log the model name and rmse at correct place inside `Trainer()` class
 - run whole workflow:
-```
+```bash
 python -m TaxiFareModel.trainer
 ```
 - check it logged correctly  on [wagon hosted mlflow server](http://35.210.166.253:5000/)

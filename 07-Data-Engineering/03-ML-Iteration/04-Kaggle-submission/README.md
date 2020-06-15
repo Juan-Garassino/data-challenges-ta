@@ -40,6 +40,11 @@ Inspect code inside predict.py and and identify following steps:
 - loading test sample from `data/test.csv` (it is the test sample form kaggle here)
 - apply predicitions to test set and saves results under `predictions_test_ex.csv`
 
+Now run:
+```bash
+python predict.py
+```
+
 Now take the outputed csv and [submit it to kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/submit)  
 
 YUou might need to login to kaggle or register [here](https://www.kaggle.com/account/login) if you don't already have an account 
