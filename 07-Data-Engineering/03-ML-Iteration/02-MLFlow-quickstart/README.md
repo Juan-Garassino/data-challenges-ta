@@ -25,10 +25,11 @@ Install MLFlow:
 ```
 pip install mlflow
 ```
-launch mlflow server in your current directory `mlflow ui`
+launch mlflow server in your current directory:
 ```
 mlflow ui
 ```
+
 Check [here](http://127.0.0.1:5000/#/) your local mlflow tracking server
 MLFlow defines experiments and runs, you have different runs inside one experiment
 For instance for experiment *model_experiment*, you'll have :
@@ -42,7 +43,10 @@ Open `ml_flow_test.py` and create your first experiment and first 2 runs inside 
 from  mlflow.tracking import MlflowClient
 EXPERIMENT_NAME = "test_experiment"
 client = MlflowClient()
-experiment_id = client.create_experiment(EXPERIMENT_NAME)
+try:
+    experiment_id = client.create_experiment(EXPERIMENT_NAME)
+except BaseException:
+    experiment_id = client.get_experiment_by_name(EXPERIMENT_NAME).experiment_id
 
 for model in ["linear", "Randomforest"]:
     run = client.create_run(experiment_id)
@@ -59,11 +63,13 @@ We will now log same parameter on remote instance. For that we will slightly mod
 import mlflow
 from  mlflow.tracking import MlflowClient
 EXPERIMENT_NAME = "test_experiment"
-# Indicate mlflow toi log to remote server
+# Indicate mlflow to log to remote server
 mlflow.set_tracking_uri("http://35.210.166.253:5000")
 client = MlflowClient()
-# Here experiment name already exists so we just get its existing id
-experiment_id = client.get_experiment_by_name(EXPERIMENT_NAME).experiment_id
+try:
+    experiment_id = client.create_experiment(EXPERIMENT_NAME)
+except BaseException:
+    experiment_id = client.get_experiment_by_name(EXPERIMENT_NAME).experiment_id
 
 yourname=None
 
