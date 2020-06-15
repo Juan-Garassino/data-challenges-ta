@@ -17,7 +17,7 @@ Beyond training models, you will see how you can make your models available to t
 - Make sure that billing is enabled for your Google Cloud project. Don't worry, as a first time user, you have a **$300 credit** to use for Google Cloud resources, which will be more than enough for this project.
 - [Enable the AI Platform Training & Prediction and Compute Engine APIs.](https://console.cloud.google.com/flows/enableapi?apiid=ml.googleapis.com,compute_component&_ga=2.269215094.662509797.1580849510-2071889129.1567861089&_gac=1.154971594.1580849512.CjwKCAiAyeTxBRBvEiwAuM8dnbZ6uMwizbZW44J2mBCX6ncEjwjwpgF8S8QsvhYAXLkJ8awDnIRTNRoCJ_0QAvD_BwE) This step may take a few minutes.
 
-### Install Cloud sdk
+## Install Cloud sdk
 
 We need to install a new cli called gcloud. Once you are authenticated, this tool will allow you to perform any operation on the GCP platform from the command line.
 
@@ -48,7 +48,7 @@ gcloud config list
 gcloud init
 ```
 
-### Create a service account key 🔑
+## Create a service account key 🔑
 Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
 
 Since API calls are not free, it may be important to define these with caution, but for the purpose of the bootcamp this will not be an issue and we are going to allow our code to use all API without any restrictions (see the project owner part later).
