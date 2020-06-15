@@ -34,6 +34,6 @@ if __name__ == '__main__':
                         help='Example here')
     args = parser.parse_args()
     lon1, lat1, lon2, lat2 = args.coords
-    dist = haversine(int(lon1), int(lat1), int(lon2), int(lat2))
+    dist = haversine(float(lon1), float(lat1), float(lon2), float(lat2))
     print(colored("###### Distance ######", "blue"))
     print(colored(dist, "red"))
