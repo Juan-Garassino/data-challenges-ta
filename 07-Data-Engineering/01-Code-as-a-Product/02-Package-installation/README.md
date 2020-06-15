@@ -117,7 +117,7 @@ The objective here is to implement a new script under `scripts/` called mlprojec
 
 Install termcolor to allow your script to output colored text `pip install termcolor`.
 
-You can inspect code from `mlproject-computedist` file to understand how to give arguments to a script
+You can inspect code from `computedist.py` file to understand how to give arguments to a script
 Run :
 ```bash
 python computedist.py --coords 48.865 2.380 48.235 2.393
