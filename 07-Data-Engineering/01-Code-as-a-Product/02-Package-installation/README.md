@@ -117,11 +117,16 @@ The objective here is to implement a new script under `scripts/` called mlprojec
 
 Install termcolor to allow your script to output colored text `pip install termcolor`.
 
-You can inspect code from `computedist.py` file to understand how to give arguments to a script
+You can inspect code from `computedist.py` (or `script.py`) file to understand how to give arguments to a script
 Run :
 ```bash
 python computedist.py --coords 48.865 2.380 48.235 2.393
 ```
+or 
+```bash
+python scriptt.py --coords 48.865 2.380 48.235 2.393
+```
+
 Basically you'll want to run the exact same command but without `python` and anywhere on your laptop.
 For that simply:
 - Create `scripts/mlproject-computedist` file with the exact same code as in `computedist.py`  
