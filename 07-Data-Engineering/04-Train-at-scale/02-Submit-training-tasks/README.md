@@ -11,7 +11,7 @@ Here a quick reminder of our packaging notions from last monday, to package pyth
  - structure your code in `.py` files (modules) in the directory of your package
  - make sure you have an `__init__.py` file
  - add a `setup.py` file
- - add an exhaustive list of the python packages required in order to run your code inside `requirements.txt`
+ - add an exhaustive list of the python packages required in order to run your code inside `setup.py`
 
 Packaging basically means I want my code to be able to run anywhere by any user.
 
