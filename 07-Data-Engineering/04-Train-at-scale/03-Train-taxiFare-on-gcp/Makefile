@@ -17,7 +17,7 @@ BUCKET_NAME=XXX
 ##### Training  - - - - - - - - - - - - - - - - - - - - - -
 
 # will store the packages uploaded to GCP for the training
-BUCKET_TRAINING_FOLDER = 'trainings'
+BUCKET_TRAINING_FOLDER = trainings
 
 ##### Model - - - - - - - - - - - - - - - - - - - - - - - -
 
