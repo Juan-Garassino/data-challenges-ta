@@ -35,7 +35,7 @@ cd ~/code/taxifare_streamlit/ && git init
 You'll see once again how heroku is easy to use, here you simply need to:
 - Create a `Procfile` with following line inside it:
 ```bash
-web: streamlit run app_streamlit.py
+web: sh setup.sh && streamlit run app_streamlit.py
 ```
 ```bash
 git add . && git commit -am "add streamlit app"
@@ -59,7 +59,7 @@ git push heroku master
 ```bash
 heroku ps:scale web=1
 ```
-click on the link `https://YOUR_APP_NAME.herokuapp.com/` and it should return `OK`
+click on the link `https://YOUR_APP_NAME.herokuapp.com/` to visualize your app
 
 # Usefull links
 
