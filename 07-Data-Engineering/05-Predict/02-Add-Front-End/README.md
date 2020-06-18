@@ -15,7 +15,7 @@ This is how most modern websites are built:
 Here we provide you with a [wagon homemade frontend](https://github.com/lewagon/taxi-fare-interface)
 
 Create a duplicate template of this repo on your own github account, by clicking [HERE](https://github.com/lewagon/taxi-fare-interface/generate)  
-👉 **VERY IMPORTANT** make it a **PRIVATE REPO**. 
+👉 **VERY IMPORTANT** make it a **PRIVATE REPO**  
 👉 name it `taxi-fare-interface` 
 
 Clone it
