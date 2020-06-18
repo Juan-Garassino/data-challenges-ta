@@ -26,6 +26,6 @@ cd ~/code && git clone git@github.com:YOUR_GIHUB_USERNAME/taxi-fare-interface.gi
 cd ~/code/taxi-fare-interface
 ```
 
-Follow instructions from [taxi-fare-interface](https://github.com/lewagon/taxi-fare-interface) repo to 
-👉 run your front-end locally
+Follow instructions from [taxi-fare-interface](https://github.com/lewagon/taxi-fare-interface) repo to   
+👉 run your front-end locally  
 👉 deploy your front-end on a github page
