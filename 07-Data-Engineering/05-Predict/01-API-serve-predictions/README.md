@@ -48,14 +48,14 @@ python app.py
 ```
 And check that it work by pinging it: [http://127.0.0.1:8080/](http://127.0.0.1:8080/) 
 
-## Use your api te obtain predictions
+## Use your api to obtain predictions
 Open `Predict.ipynb` under `jupy` folder and start interrogating your api
 
 # Deploy
 Now that you checked your app works locally, you might want it to run free on a remote server.  
 
 ## Create folder outside data-challenges
-Here as heroku is based on git, we will create a folder outside our gitted `data-challenges` folder.
+Here, as heroku is based on git, we will create a folder outside our gitted `data-challenges`.  
 ```bash
 mkdir -p ~/code/taxifare_api
 cp -rf * ~/code/taxifare_api/ 
