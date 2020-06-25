@@ -1,4 +1,4 @@
-## Objective 
+## Objective
 
 Create your own toolbox package where you'll store all bits of code you'll want to reuse in the future in order to :
 
@@ -7,7 +7,7 @@ Every time you spend time implementing cool functions, just add it to a file ins
 ## First steps
 
 - Create a project with `wagon-make-package` command
-- Create a repository under GitHub or Gitlab if you're keen on easy CI/CD
+- Create a repository on GitHub
 - Start filling in your package with awesome functions you already used
 
 ## Examples
@@ -22,9 +22,9 @@ You can add to your repo:
 - Function implementing your favorite ARIMA forecasts
 - Function calling for help from your TAs
 - Function Sending Emails
-- ...  
+- ...
 
 Enjoy !
 
-**NB: don't forget to add test functions such as**  
-`len(test_functions) == len(functions)` 
+**NB: don't forget to add test functions such as**
+`len(test_functions) == len(functions)`

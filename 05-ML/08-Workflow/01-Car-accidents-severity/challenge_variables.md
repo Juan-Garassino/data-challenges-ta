@@ -1,4 +1,4 @@
-CARACTERISTICS :
+# CARACTERISTICS :
 
 Num_Acc : Accident ID
 
@@ -108,7 +108,7 @@ lat : Latitude
 
 long : Longitude
 
-Places:
+# PLACES:
 
 Num_Acc : Accident ID
 
@@ -232,7 +232,7 @@ situ: Situation of the accident:
 
 env1: school point: near a school
 
-USERS:
+# USERS:
 
 Acc_number: Accident identifier.
 
@@ -354,7 +354,7 @@ etatp: This variable is used to specify whether the injured pedestrian was alone
 
 3 - In a group
 
-VEHICLES:
+# VEHICLES:
 
 Num_Acc Accident ID
 
