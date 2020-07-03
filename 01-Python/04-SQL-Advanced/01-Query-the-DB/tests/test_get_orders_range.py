@@ -3,7 +3,7 @@ import unittest
 from query_db import get_orders_range
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.db')
+conn = sqlite3.connect('db/ecommerce.sqlite')
 db = conn.cursor()
 
 # 2. Test type(results = list) : TO DO

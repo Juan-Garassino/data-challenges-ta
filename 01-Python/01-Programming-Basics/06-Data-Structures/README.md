@@ -32,3 +32,4 @@ You may notice some tests failing. Update your rates with the following values a
 - `USDEUR`: `0.85`
 - `GBPEUR`: `1.13`
 - `CHFEUR`: `0.86`
+- `EURGBP`: `0.885`
