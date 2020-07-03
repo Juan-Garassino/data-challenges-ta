@@ -1,3 +1,10 @@
-In this exercise, chose which multiclass classification approach (One-vs-One or One-vs-Rest) is better suited to the dataset and task. You will train  a classifier accordingly and use it to predict new data.
+The exercice consists of training and scoring a Logistic Regression model for a multiclass task. You will then use the trained model to answer some questions.
+
+The task is to predict the university rating based on the student's CGPA and whether or not he got accepted.
+
+The dataset:
+- `rating` : the rating of the university in a range [0,5]
+- `CGPA` : the Cumulative Grade Points Average of the student
+- `admitted` : whether or not a student is admitted to the university
 
 To start the exercise, open `Multiclass Logistic Regression.ipynb` in `jupyter notebook` and follow the instructions.

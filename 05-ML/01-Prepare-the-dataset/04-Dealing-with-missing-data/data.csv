@@ -1,9 +1,0 @@
-swimming_pool,country,city,surface_m2,total_bedrooms,total_rooms,price_range
-,-999,Paris,40,1,3,low
-,England,London,81,2,4,high
-,-999,Paris,,1,3,mid
-,England,London,57,1,3,mid
-,England,London,61,1,3,mid
-,France,Paris,60,1,3,mid
-,France,Paris,58,1,?,mid
-,,,-999,1,,
