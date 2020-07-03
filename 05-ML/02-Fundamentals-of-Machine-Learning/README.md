@@ -1,12 +1,12 @@
 # Machine Learning Fundamentals
 
 
-In the following challenges, you will make prediction using these 3 classic models:
+In the following challenges, you will train and score 3 Machine Learning models:
 
 - Linear Regression
-- Logistic Regression (and also multi-class application)
-- k-NN
+- Logistic Regression (binary and multiclass!)
+- K-Nearest-Neighbours
 
-You will also build your first Learning curve!
+You will also use Learning Curves to diagnose model performance, and make predictions on new data!
 
 Your turn 🚀
