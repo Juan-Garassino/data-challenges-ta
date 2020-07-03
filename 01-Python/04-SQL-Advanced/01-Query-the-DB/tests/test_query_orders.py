@@ -3,7 +3,7 @@ import unittest
 from query_db import query_orders
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.db')
+conn = sqlite3.connect('db/ecommerce.sqlite')
 db = conn.cursor()
 
 class TestQueryOrders(unittest.TestCase):

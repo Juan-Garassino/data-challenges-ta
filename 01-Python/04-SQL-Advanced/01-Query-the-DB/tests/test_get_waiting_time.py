@@ -3,7 +3,7 @@ import unittest
 from query_db import get_waiting_time
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.db')
+conn = sqlite3.connect('db/ecommerce.sqlite')
 db = conn.cursor()
 
 class TestWaitingTime(unittest.TestCase):
