@@ -91,7 +91,7 @@ When you are done, time to perform the third commit of the challenge:
 
 ```bash
 git diff
-````
+```
 
 ```bash
 git add today.py
