@@ -27,7 +27,7 @@ Let's create a Python file:
 touch today.py
 ```
 
-Open this file in your text editor and declare + implement a function `my_name_is` which takes zero parameter and returns a constant `str`: your GitHub nickname.
+Open this file in your text editor. You will need to declare and implement a function called `my_name_is` which takes zero parameter and returns a constant of type `str`: The value of this constant will be your GitHub nickname.
 
 Run `make` until one test passes (no need for the second one to be successful).
 
@@ -36,7 +36,7 @@ tests/test_git.py::TestGit::test_hi_my_name_is PASSED
 tests/test_git.py::TestGit::test_my_buddy_is   FAILED
 ```
 
-Good, you made some progress. It's time to pause and save your progression like a checkpoint!
+Good, you made some progress. It's time to pause and save your progression. Just like a checkpoint! 
 
 ```bash
 git add today.py
@@ -48,7 +48,7 @@ Kitt should pick up the change and show you a 50% progress. Good job!
 
 ## Second commit
 
-Let's start solving the second test. To do so, you need to declare + implement a function `my_buddy_is` which takes zero parameter and returns a constant `str`: your buddy's GitHub nickname (or yours if you don't have any buddy today).
+Let's start solving the second test. To do so, you need to declare and implement a function `my_buddy_is` which takes zero parameter and returns a constant `str`: The value of the constant will be your buddy's GitHub nickname (or yours if you don't have any buddy today).
 
 You can use this useful command to check what has changed in the file:
 
@@ -76,7 +76,7 @@ C0116: Missing function or method docstring (missing-function-docstring)
 
 You are missing [docstrings](https://www.python.org/dev/peps/pep-0257/). One for the module, and one for each function. A docstring gives context / documentation to a module or function.
 
-To fix the first error, add a docstring at the **first line** of `today.py`:
+To fix the first error, add a docstring on the **first line** of `today.py`:
 
 ```python
 """A module computing buddy pair names for the day"""
