@@ -334,7 +334,7 @@ for page in range(1, MAX_PAGE + 1):
     for book in soup.find_all("article", class_="product_pod"):
         title = book.find("h3").find("a").attrs["title"]
         price = float(book.find("p", class_="price_color").text[1:])
-        rating = parse_rating(book.find("p", class_="star-rating").attr["class"])
+        rating = parse_rating(book.find("p", class_="star-rating").attrs["class"])
         all_books_dict["Title"].append(title)
         all_books_dict["Price"].append(price)
         all_books_dict["Rating"].append(rating)

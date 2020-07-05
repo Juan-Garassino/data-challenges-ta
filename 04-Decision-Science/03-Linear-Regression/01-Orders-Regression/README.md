@@ -6,4 +6,4 @@ However, these two features were also highly correlated with each other.
 
 In this exercise, we will use `statsmodels` to distinguish the effect of one feature, **holding the other one constant**
 
-Open `orders_regression.ipynb` and follows instructions
+Open `orders_regression.ipynb` and follow the instructions

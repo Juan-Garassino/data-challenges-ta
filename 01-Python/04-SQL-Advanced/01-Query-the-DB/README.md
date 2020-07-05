@@ -30,4 +30,4 @@ def the_method(db):
 
 ## Tools
 
-You can use [DBeaver](https://dbeaver.io/) to visualize the databe.
+You can use [DBeaver](https://dbeaver.io/) to visualize the database.
