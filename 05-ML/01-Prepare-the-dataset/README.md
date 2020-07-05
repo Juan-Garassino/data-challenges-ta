@@ -1,13 +1,19 @@
 # Data Preprocessing
 
-Data preprocessing is the first step in the Machine Learning stages after the data sourcing.
+Today's challenges consist of preprocessing a dataset to ready it for modelling.
 
-In the following challenges you will explore some of the preprocessing methods:
+The dataset:
 
-- Binning: the art of discretize continuous data
-- Dataset imbalance: manage unbalanced data
-- Encoding: transformed categorical data into numbers
-- Missing data: deal with it
-- Scaling: force your data to fit in a given range
+- Each obervation represents a car
+- The features are a mixture of ordinal, categorical, and continous specificities of each car
+- The target is the price of the car
 
-🚀 Good luck !
+ You will:
+
+- Deal with missing values
+- Hunt down outliers
+- Scale the features
+- Encode features
+- Train Classification and Regression models
+
+Your turn 🚀
