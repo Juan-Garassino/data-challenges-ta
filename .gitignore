@@ -8,6 +8,7 @@ __pycache__
 *checkpoint.ipynb
 .idea
 *.vscode/
+.ipynb_checkpoints
 
 # Datasets in challenges
 02-Data-Toolkit/02-Data-Sourcing/Reboot/books.csv

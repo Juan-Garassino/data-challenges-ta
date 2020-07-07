@@ -18,7 +18,7 @@ When `make` is happy and all green, do not forget to push to GitHub!
 
 ```bash
 git add demo.py
-git commit --message "Solved the first challenge of the bootcamp \o/"
+git commit --message "Solved the first challenge of the bootcamp :)"
 git push origin master
 ```
 
