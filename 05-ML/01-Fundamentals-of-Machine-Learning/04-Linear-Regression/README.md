@@ -1,5 +1,15 @@
-In this exercice, you will train a basic Linear Regression model, and visualize it's line of best fit over the data.
+# Linear Regression
 
-The task is to predict the amount paid by a client according to its`bmi`.
+The exercice consists of training and visualizing a basic Linear Regression model.
 
-To start the exercise, open `Linear Regression.ipynb` in `jupiter notebook` and follow the instructions.
+👉 The dataset:
+- Each row corresponds to the profile of health insurance client
+- The features are client specificities
+- `charges` is the amount paid by the client for the insurance
+    
+👉 The task:
+- Predict the amount paid by a client according to its `bmi`
+
+To start the exercise, open `Linear_Regression.ipynb` in `jupyter notebook` and follow the instructions.
+
+🚀 Your turn!
