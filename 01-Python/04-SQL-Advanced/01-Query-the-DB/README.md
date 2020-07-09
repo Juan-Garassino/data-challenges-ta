@@ -26,8 +26,6 @@ def the_method(db):
   return ?
 ```
 
-
-
 ## Tools
 
 You can use [DBeaver](https://dbeaver.io/) to visualize the database.
