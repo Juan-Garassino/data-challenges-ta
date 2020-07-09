@@ -1,3 +1,20 @@
-# Challenge
+## Car Accident Severity Challenge 🚙
 
-In this challenge, you'll try to predict the severity of car accidents. You'll have multiple `.csv` files at your disposition. You can load them, extract the features you think would be relevant and build a data pipeline. Then, you'll iterate on the different phase and try to get the best model!
+In this challenge, you'll try to predict the severity of car accidents, based on features collected from after-crash real police investigation
+
+This Kaggle challenge comprises of 1,000,000 accidents report, split into multiple .csv files
+
+Download the data here:
+
+```bash
+cd ~/code/$GITHUB_NICKNAME/data-challenges/05-ML/08-Workflow/01-Car-accidents-severity
+curl https://wagon-public-datasets.s3.amazonaws.com/car_acccidents_datasets.zip > data.zip
+unzip data.zip -d data
+rm -rf data.zip
+```
+
+### 🔥 Today is a special challenge:
+- You will send your best score to your batch slack channel!
+- The winner will present its notebook to the class during the recap session at 5pm 💪
+
+Open `car-severity-accident.ipynb` and starts coding!

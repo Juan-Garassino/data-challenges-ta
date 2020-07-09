@@ -405,7 +405,6 @@ Fixed Obstacle Hit :
  7 - Vertical signalling support or emergency call station
  8 - Post
  9 - Street furniture
-8
  10 - Parapet
  11 - Island, refuge, high bollard
  12 - Sidewalk curb
