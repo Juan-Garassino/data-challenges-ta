@@ -3,8 +3,8 @@
 def query_orders(db):
     """TODO: return a list of orders with displaying each column"""
     request = '''YOUR CODE HERE'''
-    results = db.execute(request)
-    results = results.fetchall()
+    db.execute(request)
+    results = db.fetchall()
     return results
 
 
