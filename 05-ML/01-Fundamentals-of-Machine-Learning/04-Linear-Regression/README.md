@@ -1,6 +1,6 @@
 # Linear Regression
 
-The exercice consists of training and visualizing a basic Linear Regression model.
+The exercise consists of training and visualizing a basic Linear Regression model.
 
 👉 The dataset:
 - Each row corresponds to the profile of health insurance client
