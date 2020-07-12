@@ -393,3 +393,75 @@ CATV Category of vehicle:
 12 - Most used since 2006 (VU (10) + trailer)
 
 13 - PL only 3,5T
+
+## obs
+Fixed Obstacle Hit :
+ 1 - Parked vehicle
+ 2 - Shaft
+ 3 - Metal slide
+ 4 - Concrete slide
+ 5 - Other slide
+ 6 - Building, wall, bridge pier
+ 7 - Vertical signalling support or emergency call station
+ 8 - Post
+ 9 - Street furniture
+ 10 - Parapet
+ 11 - Island, refuge, high bollard
+ 12 - Sidewalk curb
+ 13 - Ditch, embankment, rock face
+ 14 - Other fixed obstacles on the road
+ 15 - Other fixed obstacle on sidewalk or shoulder
+ 16 - Unobstructed road exit
+
+## obsm
+Moving Obstacle Hit :
+ 1 - Pedestrian
+ 2 - Vehicle
+ 4 - Rail vehicle
+ 5 - Pets
+ 6 - Wild animal
+9 - Other
+
+## choc
+Initial shock point:
+ 1 - Before
+ 2 - Front right
+ 3 - Front left
+ 4 - Rear
+ 5 - Rear right
+ 6 - Rear left
+ 7 - Right side
+ 8 - Left side
+ 9 - Multiple shocks (barrels)
+
+## manv
+Main manoeuvre before the accident:
+ 1 - Without change of direction
+ 2 - Same direction, same line
+ 3 - Between 2 rows
+ 4 - In reverse
+ 5 - The wrong way around
+ 6 - By crossing the central reservation area
+ 7 - In the bus lane, in the same direction
+ 8 - In the bus lane, in the opposite direction
+ 9 - By inserting
+ 10 - Turning back on the roadway
+Lane changer
+11 - On the left
+12 - To the right
+Deportee
+13 - On the left
+14 - On the right
+Turning
+15 - On the left
+16 - On the right
+Exceeding
+17 - On the left
+18 - On the right
+Miscellaneous
+19 - Crossing the roadway
+20 - Parking maneuver
+21 - Avoidance maneuver
+22 - Door opening
+23 - Stopped (excluding parking)
+24 - Parked (with occupants)
