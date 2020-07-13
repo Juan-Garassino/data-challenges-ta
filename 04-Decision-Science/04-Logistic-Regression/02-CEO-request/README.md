@@ -8,16 +8,9 @@ We have seen how `wait_time` was the most significant factor explaining low revi
 
 Besides, `wait_time` is not known ahead of the order, and thus can hardly be acted-upon by your data-consulting team as an actionable recommendation to the Olist CEO directly.
 
-On the contrary, you have built an analysis of sellers and products that demonstrated how some sellers, products, product categories and states can all negatively impact `review_score`, which translate into lower business performance over the long term.
+On the contrary, you have built an analysis of sellers (and opt. products) that demonstrated how some sellers, products, or product categories can all negatively impact `review_score`, which translate into lower business performance over the long term.
 
-ℹ️ We recommand you to focus on finishing the analyses of `products.ipynb` **or** `sellers.ipynb` before moving on.
-
-What about potentially removing some of them from Olist marketplace, at least for those who persistently under-perform ? That may slighly reduce revenues but increase profit margin.
-
-You have until Friday afternoon to produce a cost/benefit analysis for the recommendations of your choice, that will inform which decision Olist CEO should take in order to
-
-> _increase Olist customer satisfaction and margin while maintaining a healthy order volume_
-
+What about potentially banning some sellers/products from Olist marketplace, at least for those who persistently under-perform ? That may slighly reduce revenues but increase profit margin, as described below
 
 ### Unit Economics
 
@@ -43,26 +36,33 @@ review_score|cost (BRL)
 
 In addition, we estimate that it costs 800 BRL to acquire one seller due to sales acquisition and marketing costs.
 
-### Your objective
+### Your turn!
 
-Your task is to produce a detailed cost-benefit analysis of one or more recommendations as suggested above.
+Time to start from a blank Notebook and re-use what we have already coded in our `olist` package.
+(don't try to re-use previous notebooks, which were made for investigation only!)
 
-Hint: Below is a list of possible suggestion to explore (among other)
-- Olist restricts seller/customer matching between certain states?
-- Repetitively underperforming sellers get removed from the platform after a while?
-- Olist removes the worst performing products from its marketplace?
-- Olist focuses on some product categories only?
-- Olist acquire new sellers, with some assumption?
+Open the `ceo_request.ipynb` notebook and start from there.
+
+You have until Friday afternoon to produce a cost/benefit analysis for the recommendations of your choice, that will inform which decision Olist CEO should take in order to
+
+> _increase Olist customer satisfaction and margin while maintaining a healthy order volume_
+
+Your task is to produce a detailed cost-benefit analysis of one or more recommendations as discussed above.
+- Olist removes underperforming sellers from the platform?
+- Olist removes only repetively underperforming sellers, after a honeymoon period of few months
+- Olist restricts (seller,customer) combination between certain states to avoid delays?
+- Olist removes the worst performing products / categories from its marketplace entirely?
+- Olist acquire new sellers, with some assumption to be suggested?
 - Any combination of all of the above suggestions?
 - ...
 
 
-### Present your analysis to your whereby room, Friday afternoon at 5pm
+### Tomorrow evening, you will present your analysis in front of your favorite TAs & classmates!
 
-You have 15 minutes max per person (discussion included) to convince Olist CEO of your recommendations.
+You have 10 minutes max per person (discussion included) to convince Olist CEO of your recommendations.
 
-- A teacher assistant will play the role of the CEO
-- Other whereby room members will also attend allowed to ask questions
+- A TA will play the role of the CEO
+- You will be paired by group of 4/6 students for each TA
 
 Don't forget to explain the context, and the reasonning behing your recommendations
 
