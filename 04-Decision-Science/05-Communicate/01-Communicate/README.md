@@ -1,75 +1,31 @@
-## CEO Request
+## CEO Request (bis)
 
-Our preliminary analysis is good enough for the limited time we have.
+### Finalize your analysis
 
-Let's recap our key findings:
+Continue working on yesterday's `ceo-request.ipynb` notebook as needed, and complete your analysis if needed with the following suggestions
 
-We have seen how `wait_time` was the most significant factor explaining low review scores, but reading comments of the bad reviews also showed that some of them were linked to the seller or to the product itself.
-
-Besides, `wait_time` is not known ahead of the order, and thus can hardly be acted-upon by your data-consulting team as an actionable recommendation to the Olist CEO directly.
-
-On the contrary, you have built an analysis of sellers and products that demonstrated how some sellers, products, product categories and states can all negatively impact `review_score`, which translate into lower business performance over the long term.
-
-ℹ️ We recommand you to focus on finishing the analyses of `products.ipynb` **or** `sellers.ipynb` before moving on.
-
-What about potentially removing some of them from Olist marketplace, at least for those who persistently under-perform ? That may slighly reduce revenues but increase profit margin.
-
-You have until Friday afternoon to produce a cost/benefit analysis for the recommendations of your choice, that will inform which decision Olist CEO should take in order to
-
-> _increase Olist customer satisfaction and margin while maintaining a healthy order volume_
-
-
-### Unit Economics
-
-***Revenue***
-
-As we have detailed previously, Olist charges sellers with various fees. For simplicity, we will assume that Olist takes a **10% cut** on the product price of each order delivered and charge **80 BRL by month** per seller.
-
-👉 Note: The product `price` excludes any `freight_value`
-
-***Cost***
-
-On the long term, bad customer experience has business implications: low repeat rate, immediate customer support cost, refund or non favorable word of mouth.
-
-We will assume that we have an estimate measure of the monetary cost for each bad review:
-
-review_score|cost (BRL)
----|---
-1|100
-2|50
-3|40
-4|0
-5|0
-
-In addition, we estimate that it costs 800 BRL to acquire one seller due to sales acquisition and marketing costs.
-
-### Your objective
-
-Your task is to produce a detailed cost-benefit analysis of one or more recommendations as suggested above.
-
-Hint: Below is a list of possible suggestion to explore (among other)
-- Olist restricts seller/customer matching between certain states?
-- Repetitively underperforming sellers get removed from the platform after a while?
-- Olist removes the worst performing products from its marketplace?
-- Olist focuses on some product categories only?
-- Olist acquire new sellers, with some assumption?
+- Olist removes underperforming sellers from the platform?
+- Olist removes only repetively underperforming sellers, after a honeymoon period of few months
+- Olist restricts (seller,customer) combination between certain states to avoid delays?
+- Olist removes the worst performing products / categories from its marketplace entirely?
+- Olist acquire new sellers, with some assumption to be suggested?
 - Any combination of all of the above suggestions?
 - ...
 
+### Prepare your presentation for this afternoon 5pm
 
-### Present your analysis to your whereby room, Friday afternoon at 5pm
+You have 10 minutes per person (Q&A included) to convince Olist CEO of your recommendations.
 
-You have 15 minutes max per person (discussion included) to convince Olist CEO of your recommendations.
+- We will create one group of student per Teacher/TAs
+- Each one of you will present your analysis in front of your group
+- The TA will play the role of the CEO. 
 
-- A teacher assistant will play the role of the CEO
-- Other whereby room members will also attend allowed to ask questions
-
-Don't forget to explain the context, and the reasonning behing your recommendations
-
-Remember: Olist CEO is not a data scientist!
+Don't forget the pyramid-principle!
 
 👉 You will have to make a slide-based presentation using Jupyter Noteobook **nbconvert**
 
 ```bash
 jupyter nbconvert --to slides --post serve <your_notebook.ipynb>
 ```
+
+**Take time to polish your presentation and your speech! It's show time now! 💫**

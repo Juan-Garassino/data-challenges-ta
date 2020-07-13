@@ -26,7 +26,10 @@ class Seller:
         """
 
     def get_active_dates(self):
-        pass
+        """
+        Returns a DataFrame with:
+       'seller_id', 'date_first_sale', 'date_last_sale'
+        """
 
     def get_review_score(self):
         """
@@ -50,9 +53,9 @@ class Seller:
     def get_training_data(self):
         """
         Returns a DataFrame with:
-        seller_id, seller_state, seller_city, delay_to_carrier,
-        seller_wait_time, share_of_five_stars, share_of_one_stars,
-        seller_review_score, n_orders
+        'seller_id', 'seller_state', 'seller_city', 'delay_to_carrier',
+        'seller_wait_time', 'share_of_five_stars', 'share_of_one_stars',
+        'seller_review_score', 'n_orders', 'quantity', 'date_first_sale', 'date_last_sale', 'sales'
         """
 
 
