@@ -1,6 +1,6 @@
 ## Objectives of the week
 
-We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com) to answer the CEO question:
+We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com) to answer's the CEO question:
 
 > How to increase customer satisfaction (so as to increase profit margin) while maintaining a healthy order volume?
 
