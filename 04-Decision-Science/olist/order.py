@@ -55,7 +55,7 @@ class Order:
     def get_training_data(self, is_delivered=True):
         """
         02-01 > Returns a clean DataFrame (without NaN), with the following columns:
-        [order_id, wait_time, wait_vs_expected,
+        [order_id, wait_time, delay_vs_expected,
         dim_is_five_star, dim_is_one_star, review_score, number_of_products,
         number_of_sellers, freight_value, distance_customer_seller]
         """

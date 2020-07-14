@@ -36,7 +36,7 @@ from olist.order import Order
 - `get_number_products`: returns a DataFrame with: `order_id, number_of_products`
 - `get_number_sellers`: returns a DataFrame with: `order_id, number_of_products`
 - `get_price_and_freight`: returns a DataFrame with: `order_id, price, freight_value`
-- `get_training_data`: returns a DataFrame with: `order_id, wait_time, wait_vs_expected, dim_is_five_star, dim_is_one_star, number_of_product, number_of_sellers, freight_value, distance_customer_seller`.
+- `get_training_data`: returns a DataFrame with: `order_id, wait_time, delay_vs_expected, dim_is_five_star, dim_is_one_star, number_of_product, number_of_sellers, freight_value, distance_customer_seller`.
 
 ### Product
 
