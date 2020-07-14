@@ -1,4 +1,4 @@
-In this second exercise, we will put in practise the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website with Python.
+In this exercise, we will put in practise the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website with Python.
 
 The website we are scrapping is [books.toscrape.com](http://books.toscrape.com/). It's a website which has been created exactly for that purpose! To learn how to scrape.
 
@@ -251,7 +251,7 @@ In a new cell, we write the `for` loop and copy paste the code
 for book in books_html:
     title = book.find("h3").find("a").attrs["title"]
     price = float(book.find("p", class_="price_color").text[1:])
-    rating = parse_rating(book.find("p", class_="star-rating"))
+    rating = parse_rating(book.find("p", class_="star-rating").attrs["class"])
     books_dict["Title"].append(title)
     books_dict["Price"].append(price)
     books_dict["Rating"].append(rating)
