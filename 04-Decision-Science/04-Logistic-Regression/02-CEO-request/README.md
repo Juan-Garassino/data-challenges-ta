@@ -22,7 +22,7 @@ As we have detailed previously, Olist charges sellers with various fees. For sim
 
 ***Cost***
 
-On the long term, bad customer experience has business implications: low repeat rate, immediate customer support cost, refund or non favorable word of mouth.
+- On the long term, bad customer experience has business implications: low repeat rate, immediate customer support cost, refund or non favorable word of mouth.
 
 We will assume that we have an estimate measure of the monetary cost for each bad review:
 
@@ -34,7 +34,9 @@ review_score|cost (BRL)
 4|0
 5|0
 
-In addition, we estimate that it costs 800 BRL to acquire one seller due to sales acquisition and marketing costs.
+- In addition, Olist experiences internal **IT costs**, which can be considered approximatively proportional to the square-root of the number of orders processed (think scaling effects). Since inception, total IT costs amounted to 500,000 BRL.
+
+- Finally, we estimate that it costs 800 BRL to acquire one new seller due to sales acquisition and marketing costs.
 
 ### Your turn!
 
