@@ -1,6 +1,6 @@
 ## Background
 
-In this challenge, we will learn the concepts of Mean, Mode, Median and Standard Deviation. To illustrate that, let us import a dataset to perform our statistics. We will be looking at the consumption of alcohol by country in 2010.
+In this challenge, we will learn the concepts of Mean, Mode, Median and Standard Deviation. In the file `basic_functions.py` there are four functions to implement. Each one of those functions will implement one of the aforementioned concepts.
 
 ## The Mean and Variance
 The sample **mean** (mu) is the average and is computed as the sum of all the observed outcomes from the sample divided by the total number of events.
