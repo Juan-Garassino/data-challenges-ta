@@ -4,18 +4,20 @@ In this challenge, we will learn the concepts of Mean, Mode, Median and Standard
 
 ## The Mean and Variance
 The sample **mean** (mu) is the average and is computed as the sum of all the observed outcomes from the sample divided by the total number of events.
+
 ```python
 n = len(samples)
 mu = (1/n) * sum(samples)
 ```
 
 The **standard deviation** (sigma) on the other hand is a statistical metric that describes the spread of the data, or how far the values are from the mean.
+
 ```python
 n = len(samples)
 sigma = ((1/(n - 1) * sum((samples - mu)**2))**0.5
 ```
 
-Thanks to these definitions, implement the functions `mean(samples)` and `standard_deviation(samples)` in the file `basic_functions.py`. These functions take a list as parameters and return the mean and the standard deviation respectively.
+Thanks to these definitions, implement the functions `my_mean(samples)` and `my_standard_deviation(samples)` in the file `basic_functions.py`. These functions take a list as parameters and return the mean and the standard deviation respectively.
 
 ## The Median
 
@@ -25,7 +27,7 @@ One problem when using the mean, is that it often does not depict the typical ou
 
 Read this [wikipedia article](https://en.wikipedia.org/wiki/Median) to see how the **median** is computed.
 
-Implement in the file `basic_functions.py` the function `median(samples)`. The function takes a list as a parameter and return the median of the list.
+Implement in the file `basic_functions.py` the function `my_median(samples)`. The function takes a list as a parameter and return the median of the list.
 
 ## The Quartiles
 
@@ -33,10 +35,10 @@ The **first quartile (Q1)** is defined as the middle number between the smallest
 
 Read this [wikipedia article](https://en.wikipedia.org/wiki/Quartile) to see how the **quartiles** are computed.
 
-Implement in the file `basic_functions.py` the function `quartiles(samples)`. The function takes a list as a parameter and return the three quartiles of the list (i.e. this function returns a list).
+Implement in the file `basic_functions.py` the function `my_quartiles(samples)`. The function takes a list as a parameter and return the three quartiles of the list (i.e. this function returns a list).
 
 ```python
-# quartiles([10,11,23,18,20]) => [10.5, 18, 21.5]
+# my_quartiles([10,11,23,18,20]) => [10.5, 18, 21.5]
 ```
 
 ## The Mode
@@ -45,4 +47,4 @@ The mode of a set of data values is the value that appears most often. In other 
 
 Read this [wikipedia article](https://en.wikipedia.org/wiki/Mode_(statistics)) to see how the **mode** is computed.
 
-Implement in the file `basic_functions.py` the function `mode(samples)`.
+Implement in the file `basic_functions.py` the function `my_mode(samples)`.
