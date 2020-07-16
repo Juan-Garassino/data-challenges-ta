@@ -1,16 +1,16 @@
 def my_mean(samples):
     pass
 
-def my_standard_deviation(samples):
+def standard_deviation(samples):
     pass
 
-def my_median(samples):
+def median(samples):
     pass
 
-def my_quartiles(samples):
+def quartiles(samples):
     # Expected to return a list of float or int => [Q1, Q2, Q3]
     #   ex: quartiles([10,11,23,18,20]) => [10.5, 18, 21.5]
     pass
 
-def my_mode(samples):
+def mode(samples):
     pass
