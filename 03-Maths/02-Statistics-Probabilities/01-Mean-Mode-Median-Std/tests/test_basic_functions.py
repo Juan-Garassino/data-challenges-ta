@@ -2,14 +2,14 @@
 
 import unittest
 import statistics
-import numpy as np 
-from basic_function import *
+import numpy as np
+from basic_functions import *
 
 class TestBasicFunctions(unittest.TestCase):
     def test_my_mean(self):
         test1 = [5,7,2,2,7,9,30,20,2,6,44,44,4,4,225]
         self.assertEqual(my_mean(test1), statistics.mean(test1))
-    
+
     def test_my_standard_deviation(self):
         test1 = [5,7,2,2,7,9,30,20,2,6,44,44,4,4,225]
         self.assertEqual(my_standard_deviation(test1), statistics.stdev(test1))
@@ -31,9 +31,9 @@ class TestBasicFunctions(unittest.TestCase):
         self.assertEqual(my_mode(test3), statistics.mode(test3))
 
     def test_my_quartiles(self):
-        test1 = [1,2,3,4,5]
-        self.assertEqual(my_quartiles(test1), [1.5,3,4.5])
-        test2 = [6,3,4,5,2,1]
-        self.assertEqual(my_quartiles(test2), [2,3.5,5])
+        test1 = [10,22,37,12, 34]
+        self.assertEqual(my_quartiles(test1), [11.0, 22, 35.5])
+        test2 = [12, 65, 98, 20, 9]
+        self.assertEqual(my_quartiles(test2), [10.5, 20, 81.5])
         self.assertEqual(my_quartiles([2,4,9]), [2,4,9])
         self.assertEqual(my_quartiles([2,9]), [2,5.5,9])
