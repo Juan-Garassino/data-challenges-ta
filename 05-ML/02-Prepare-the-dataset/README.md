@@ -15,5 +15,6 @@ The dataset:
 - Scale the features
 - Encode features
 - Train Classification and Regression models
+- Perform feature selection
 
 Your turn 🚀
