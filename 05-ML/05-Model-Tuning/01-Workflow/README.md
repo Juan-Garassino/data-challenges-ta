@@ -6,7 +6,7 @@ In this exercice, you will implement the model tuning and evaluation workflow:
 2. Cross-validated parameter tuning on train set
 3. Final evaluation on test set
 
-To start the exercise, open `01-Workflow.ipynb` in `jupyter notebook` and follow the instructions.
+To start the exercise, open `Workflow.ipynb` in `jupyter notebook` and follow the instructions.
 
 🚀 Your turn!
 
