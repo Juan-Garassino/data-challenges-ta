@@ -119,7 +119,7 @@ Click in the folder tree bar:
 
 This will highlight the path to that folder, copy it.
 
-Click on `Control Panel → System and Security → System > Advanced system settings → Environment Variable`
+Click on `Control Panel → System and Security → System > Advanced system settings → Environment Variables`
 
 Under System variables, click on **New**
     Variable name: `PYTHONPATH`
