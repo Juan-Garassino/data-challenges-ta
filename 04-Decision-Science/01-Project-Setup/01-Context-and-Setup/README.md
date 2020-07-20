@@ -76,12 +76,34 @@ This will allow you to easily import modules defined in `olist` in your notebook
 
 **macOS and Linux:**
 
-Open a terminal and run:
+Open your terminal and navigate to your home directory by running:
+
+```bash
+cd
+```
+
+Now you'll need to open your `.zshrc` file. As you might have noticed the file starts with a dot which means it's a hidden file. To be able to see this file in your terminal you'll need to run the command below:
+
+```bash
+ls -a
+```
+
+the flag `-a` will allow you to see hidden files. You can open the file using either `vim` or sublime text or any other text editor
+
+```bash
+# with vim
+vim .zshrc
+
+# sublime text
+st .zshrc
+```
+
+Now in your terminal run:
 ```bash
 cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
 
-Then copy the output line at the bottom of your `~/.zshrc` file. (You can open it with Sublime Text or `vim` or any text editor you like).
+Copy the output line at the bottom of your `~/.zshrc` file.
 
 ⚠️ Restart all your terminal windows to take into account this change.
 
