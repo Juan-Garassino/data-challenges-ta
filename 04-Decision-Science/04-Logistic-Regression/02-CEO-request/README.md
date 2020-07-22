@@ -1,5 +1,5 @@
-## ⚠️ Finish yesterday's challange 02 first
-**Take your time to finish and understand entirely `sellers.ipynb` analysis and code the associated `seller.py` before moving to this final challenge**
+## ⚠️ Finish yesterday's seller challenge
+**Take your time to finish `sellers.ipynb` analysis and the associated `seller.py` logic before moving to this final challenge for the week**
 
 
 ## CEO Request
