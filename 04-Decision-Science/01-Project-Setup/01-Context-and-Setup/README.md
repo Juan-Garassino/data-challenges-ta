@@ -1,6 +1,6 @@
 ## Objectives of the week
 
-We will analyze a dataset provided by an e-commerce marketplace called [Olist](https://www.olist.com) to answer the CEO's question:
+We will analyze a dataset provided by e-commerce marketplace [Olist](https://www.olist.com) to answer's the CEO question:
 
 > How to increase customer satisfaction (so as to increase profit margin) while maintaining a healthy order volume?
 
@@ -37,7 +37,7 @@ Here are the seller and customer workflows:
 
 The dataset consists of 100k orders from 2016 and 2018 that were made on Olist store, available as csv on [Kaggle](https://www.kaggle.com/olistbr/brazilian-ecommerce)
 
-✅ Download the 9 datasets and store them in your `~/code/<user.github_nickname>/04-Decision-Science/data/csv` folder.
+✅ Download the 9 datasets and store them to your `~/code/<user.github_nickname>/04-Decision-Science/data/csv` folder.
 
 ## Setup
 
@@ -65,7 +65,7 @@ This will be your project structure for the week.
 |   ├── product.py
 |   ├── seller.py
 |   ├── utils.py
-|   └── __init__.py.   # turns your folder into a "package"
+|   └── __init__.py.   # turn your folder into a "package"
 ```
 
 ### 2 - Edit the `PYTHONPATH`
@@ -97,7 +97,7 @@ Click in the folder tree bar:
 
 This will highlight the path to that folder, copy it.
 
-Click on `Start → Edit the system environment variables → Environment Variables`
+Click on `Control Panel → System and Security → System > Advanced system settings → Environment Variable`
 Under System variables, click on **New**
     Variable name: `PYTHONPATH`
     Variable value: the path you copied above

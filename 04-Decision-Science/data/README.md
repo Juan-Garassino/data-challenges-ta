@@ -2,8 +2,7 @@
 
 The Olist dataset consists of information (customers, reviews, products etc..) on 100k orders on [Olist Store](http://www.olist.com/).
 
-9 csv (~120mb) are available and can be [downloaded here](https://www.kaggle.com/olistbr/brazilian-ecommerce). We recommend placing them under the `data/csv` folder. 
-
+9 csv (~120mb) are available and can be [downloaded here](https://www.kaggle.com/olistbr/brazilian-ecommerce). We recommend placing them under the `data/csv` folder.
 - <a href="#data_model">**Data Model**</a>
 - <a href="#olist_customers_dataset">**olist_customers_dataset**</a>
 - <a href="#olist_geolocation_dataset">**olist_geolocation_dataset**</a>
@@ -17,7 +16,7 @@ The Olist dataset consists of information (customers, reviews, products etc..) o
 
 ### Data Model
 
-The schema below represents each dataset and which key to use to join them: 
+The schema below represents each dataset and which key to use to join them:
 
 <div id="data_model">
 
@@ -53,7 +52,7 @@ This dataset has information Brazilian zip codes and its lat/lng coordinates. Us
 
 This dataset includes data about the items purchased within each order.
 
-⚠️ If 3 items are purchased in an order, the dataset will display one row per item. If the same product is bought 2 times, 2 rows will be displayed. 
+⚠️ If 3 items are purchased in an order, the dataset will display one row per item. If the same product is bought 2 times, 2 rows will be displayed.
 
 - `order_id`: order unique identifier
 - `order_item_id`: sequential number identifying number of items included in the same order.
@@ -114,8 +113,8 @@ This dataset includes data about the products sold by Olist.
 
 - `product_id`: unique product identifier
 - `product_category_name`: root category of product, in Portuguese.
-- `product_name_lenght`: number of characters extracted from the product name.
-- `product_description_lenght`: number of characters extracted from the product description.
+- `product_name_length`: number of characters extracted from the product name.
+- `product_description_length`: number of characters extracted from the product description.
 - `product_photos_qty`: number of product published photos
 - `product_weight_g`: product weight measured in grams.
 - `product_length_cm`: product length measured in centimeters.

@@ -47,8 +47,8 @@ from olist.product import Product
 ```
 
 - `get_product_features`: returns a DataFrame with:
-   `'product_id', 'product_category_name', 'product_name_lenght',
-   'product_description_lenght', 'product_photos_qty', 'product_weight_g',
+   `'product_id', 'product_category_name', 'product_name_length',
+   'product_description_length', 'product_photos_qty', 'product_weight_g',
    'product_length_cm', 'product_height_cm', 'product_width_cm'`
 - `get_wait_time`: returns a DataFrame with: `'product_id', 'wait_time'`.
 - `get_review_score`: returns a DataFrame with: `'product_id', 'share_of_five_stars', 'share_of_one_stars', 'review_score'`

@@ -18,7 +18,7 @@ You have 10 minutes per person (Q&A included) to convince Olist CEO of your reco
 
 - We will create one group of student per Teacher/TAs
 - Each one of you will present your analysis in front of your group
-- The TA will play the role of the CEO. 
+- The TA will play the role of the CEO.
 
 Don't forget the pyramid-principle!
 

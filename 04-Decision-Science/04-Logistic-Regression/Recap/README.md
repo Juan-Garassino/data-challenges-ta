@@ -1,5 +1,5 @@
 ```bash
-jupyter notebook Reboot-net_profit_per_seller.ipynb
+jupyter notebook ceo_request_recap.ipynb
 ```
 
 The goal of this exercice is to compute, for each `seller_id`:
