@@ -9,7 +9,7 @@ The [IPython](https://ipython.org/) [REPL](https://en.wikipedia.org/wiki/Read%E2
 ipython
 ```
 
-1. It **reads** the expression written by the user, which can be any valid ruby expression like `"Hello"`, `2+2`, `"hello".upper()` ...
+1. It **reads** the expression written by the user, which can be any valid Python expression like `"Hello"`, `2+2`, `"hello".upper()` ...
 2. It **evaluates** the result of this expression.
 3. It **prints** this result.
 4. It **loops** back to point 1, waiting for a new user input.
