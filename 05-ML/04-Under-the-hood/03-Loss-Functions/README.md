@@ -1,1 +1,1 @@
-Open `Loss-Functions.ipynb` and follow instructions!
+open the jupyter notebook and follow instructions
