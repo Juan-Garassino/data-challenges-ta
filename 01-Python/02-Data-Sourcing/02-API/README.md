@@ -46,7 +46,7 @@ https://www.metaweather.com/api/location/search/?query=london
 
 What do you see? If you are on Chrome, you should install the [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) extension for a prettier look. In the end, JSON is just text that needs to be **parsed**, that's what the extension will do
 
-### Using Postman
+### *Optional - Using Postman
 
 [Postman](https://www.getpostman.com/) is an app that many developers download on their laptop to use when building software consuming APIs. It provides a more advanced experience where you need to a fine control over:
 
@@ -83,7 +83,19 @@ Is it working? Did you grab successfully London's `woeid`? Some questions for yo
 - Line `5`, why do we do `[0]`? What's the type of `response`?
 - Line `6`, what's the type of `city['woeid']`, `str` or `int`? Why?
 
-To answer those questions, don't hesitate to `print()` or **even better**, [debug](https://pypi.org/project/ipdb/). This first week is a good time to sharpen your debugging skills before diving into more advanced topics.
+To answer those questions, don't hesitate to `print()` or **even better**, [debug](https://pypi.org/project/ipdb/). This first week is a good time to sharpen your debugging skills before diving into more advanced topics. Don't remember how to do it? Think of the challenge from yesterday where you had to put this line into your code:
+```python
+import ipdb; ipdb.set_trace()
+```
+
+And run the file with:
+
+```bash
+python test_api.py
+```
+
+It will stop execution at the line where you added the `ipdb.set_trace()` and open a command line. From there you can check what is the `url`, `response`, `city` or any other variable you defined in the code!
+
 
 ## Let the challenge begin!
 
@@ -94,14 +106,17 @@ Let's build a weather [CLI](https://en.wikipedia.org/wiki/Command-line_interface
 1. Launch the app with `python weather.py`
 2. Get asked to type a city name
 3. If city is unknown to the API, display an error message and go back to step 2.
-4. If the user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function that might be useful)
-5. Fetch the weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
-6. Go back to step 2 (loop to ask for a new city).
-7. At any point, `Ctrl`-`C` will take care of quitting the program
+4. Fetch the weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
+5. Go back to step 2 (loop to ask for a new city).
+6. At any point, `Ctrl`-`C` will take care of quitting the program
 
 In action, it will should look like this:
 
-<iframe src="https://player.vimeo.com/video/364146887" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+```bash
+python weather.py
+```
+
+![](weathergif.gif)
 
 Open the `weather.py` file. You will be greeted by three empty methods:
 
@@ -109,7 +124,11 @@ Open the `weather.py` file. You will be greeted by three empty methods:
 - `weather_forecast(woeid)`
 - `main()`
 
-You need to implement them, in that order. `make` will assist you for the first two methods, and for the last one you will need to run the Python program directly with `python weather.py`.
+You need to implement them **in that order**. `make` will assist you for the first two methods, and for the last one you will need to run the Python program directly with `python weather.py`.
+
+1. Start with the `search_city` method which should return the full dictionary of information about the city. Not just `woeid`!
+2. Continue to `weather_forecast` which takes city `woeid` as an argument and returns the forecast for five days.
+3. Finish off with coding the `main` function. It will be called when you run the `weather.py` file from the terminal. Which functions should be called from within `main`? In what order?
 
 💡 By the way, did you check the content of the `Makefile`? It runs `pylint` for every Python file in your project, and `pytest` for the whole project. You can launch the tests for the weather CLI only with:
 
@@ -117,7 +136,13 @@ You need to implement them, in that order. `make` will assist you for the first 
 pytest -v tests/test_weather.py
 ```
 
-## History
+## Optional - you can come back to it once you're done with Scraping challenge.
+
+### List of cities
+
+After `step 3`: if the user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function that might be useful)
+
+### History
 
 If you read carefully the documentation of the API, you may have noticed there is a third endpoint exposed that we did not use yet, the **Location Day**:
 
