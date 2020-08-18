@@ -4,8 +4,9 @@ Install your first package called `mlproject`
 
 ## Your first package
 
-Now sit anywhere you want your package to live and run:
+Now navigate outside of your `data-challenges` directory and create a new `mlproject`:
 ```bash
+cd ~/code/<user.github_nickname>
 wagon-make-package mlproject
 ```
 
@@ -23,13 +24,13 @@ To install your package, as seen in lecture, simply run:
 ```bash
 pip install .
 ```
-💡 __Here pip understands what he has to do thanks to his budy and MVP `setup.py` file__  
+💡 __Here pip understands what he has to do thanks to his buddy and MVP `setup.py` file__  
 💡 __Thanks to his MVP, he knew he had to install dependencies from `requirements.txt`__
 
 ## Project as a package
 Your mlproject is now a package, just like pandas or sklearn
 
-Go anywhere you want and launch inside `ipython` or `python` interpreter or inside a notebook:
+Go anywhere you want and run inside either `ipython` or a `python` interpreter or a notebook:
 
 ```python
 from mlproject.lib import clean_data
@@ -37,13 +38,13 @@ from mlproject.lib import clean_data
 
 ## Project as scripts
 
-You also have installed a script, test it:
-```
+You also have installed a script, test it in your terminal:
+```bash
 mlproject-run
 ```
 
 ## Your first module now
-Create a new python file called `mlproject/distance.py` inside which you'll add following function
+Create a new python file called `mlproject/distance.py` inside which you'll add the following function
 
 ```python
 from math import radians, cos, sin, asin, sqrt
@@ -65,7 +66,7 @@ def haversine(lon1, lat1, lon2, lat2):
     return c * r
 ```
 
-To check your function works, good practice is to add `if __name__ == "__main__"` at the end of `distance.py` and compute your first distance:
+To check if your function works, a good practice is to add `if __name__ == "__main__"` at the end of `distance.py` and compute your first distance:
 ```python
 if __name__ == "__main__":
     # Le Wagon location
@@ -75,12 +76,14 @@ if __name__ == "__main__":
     distance = haversine(lon1, lat1, lon2, lat2)
     print(distance)
 ```
-🤔Ask [Sam&Max](http://sametmax.com/pourquoi-if-__name__-__main__-en-python/) if not clear
+🤔[Here's a link](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) to understand what the condition above does if it's not clear
 
 Then run :
 ```bash
 python -i mlproject/distance.py
 ```
+If you see `>>>` in your terminal after running this commmand, it's completely normal. the `-i` stands for interactive mode. This means that you can explore the variables you created in your python script. To exit the interactive mode either type `exit()` or `CTRL-D`.
+
 💡 __You could also run `%run mlproject/distance.py` inside a notebook or ipython interpreter (do not forget to `import mlproject.lib`, you must be located in `mlproject/`)__
 
 Your new tree should look like:
@@ -103,7 +106,7 @@ Your new tree should look like:
     └── lib_test.py
 ```
 
-Install package and start using your new function from anywhere you want:
+Install package and start using your new function from anywhere you want (you need to be located inside the `mlproject` directory):
 ```bash
 make install
 ```
@@ -111,20 +114,26 @@ In any notebook:
 ```python
 from mlproject.distance import haversine
 ```
+👆You should now be able to use your `haversine` function in the notebook.
 
 ## Your own script now
-The objective here is to implement a new script under `scripts/` called mlproject-computedist taking as parameter 4 coordinates points as input and returning haversine distance.
+The objective here is to implement a new script under `scripts/` called mlproject-computedist taking as parameters 4 (long1, lat1, long2, lat2) and returning the haversine distance.
 
 Install termcolor to allow your script to output colored text `pip install termcolor`.
 
-You can inspect code from `computedist.py` (or `script.py`) file to understand how to give arguments to a script
+You can inspect code from `computedist.py` (or `script.py`) file located in
+```bash
+~/code/data-challenges/<user.github_nickname>/data-challenges/07-Data-Engineering/01-Code-as-a-Product/ 02-Package-installation
+```
+to understand how to give arguments to a script.
+
 Run :
 ```bash
 python computedist.py --coords 48.865 2.380 48.235 2.393
 ```
 or 
 ```bash
-python scriptt.py --coords 48.865 2.380 48.235 2.393
+python script.py --coords 48.865 2.380 48.235 2.393
 ```
 
 Basically you'll want to run the exact same command but without `python` and anywhere on your laptop.
