@@ -3,9 +3,7 @@
 ## Setup a new `virtualenv` (opt.)
 
 <details>
-  <summary>
-    <strong>MacOSX</strong>
-  </summary>
+  <summary markdown='span'><strong>MacOSX</strong></summary>
 
 ```bash
 pyenv virtualenv project_name
@@ -16,9 +14,7 @@ pip install --upgrade pip
 </details>
 
 <details>
-  <summary>
-    <strong>Windows</strong>
-  </summary>
+  <summary markdown='span'><strong>Windows</strong></summary>
 
 ```bash
 cd ~/.venvs
@@ -38,9 +34,7 @@ pip list
 ## Setup the project
 
 <details>
-  <summary>
-    <strong>I am the project leader</strong>
-  </summary>
+  <summary markdown='span'><strong>I am the project leader</strong></summary>
 Let's create a new project:
 
 ```bash
@@ -76,9 +70,7 @@ Finally, add your teammates as collaborators on GitHub.
 </details>
 
 <details>
-  <summary>
-    <strong>I am a teammate</strong>
-  </summary>
+  <summary markdown='span'><strong>I am a teammate</strong></summary>
 Let's clone the project:
 
 ```bash
@@ -103,3 +95,4 @@ You're good to go.
 3. Each teammate take one job and split it into small task
 
 You can use Post-it, a [Trello](https://trello.com/) board, GitHub [Projects](https://docs.github.com/en/github/managing-your-work-on-github/creating-a-project-board) or any other project management tool your want to drive your project tasks.
+ga . &&
