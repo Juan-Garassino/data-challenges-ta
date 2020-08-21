@@ -37,6 +37,7 @@ python -m TaxiFareModel.trainer
 
 To start we need to create a python module. We will use notion we saw on monday.
 We will start by creating the following structure:
+
 ```bash
 ├── Makefile          # store all necessary bash commands here
 ├── README.md
@@ -91,6 +92,7 @@ if __name__ == '__main__':
     clf = train_model(X_train, y_train)
     save_model(clf)
 ```
+
 👉 Get help from [google documentation](https://pypi.org/project/google-cloud-storage/) to upload file to storage
 👉 [Why if __name__ == '__main__' ?](http://sametmax.com/pourquoi-if-__name__-__main__-en-python/)
 
@@ -98,9 +100,11 @@ if __name__ == '__main__':
 Here we will run this simple workflow on our own machines
 
 ## Install correct python dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
+
 ## Check that the code runs locally
 
 In Sublime Text, open the `Makefile` and set the two first lines variables:
@@ -178,6 +182,7 @@ The command requires:
 - `PYTHON_VERSION`: the version of python to be used for the training
 - `RUNTIME_VERSION`: the version of the machine learning libraries provided by GCP for the training
 - `REGION`: the physical region of the server on which to train (we will use the same region as the region we used for our bucket in order to reduce the latency when fetching the data)
+
 ```bash
 gcloud ai-platform jobs submit training ${JOB_NAME} \
 	--job-dir gs://${BUCKET_NAME}/${BUCKET_TRAINING_FOLDER}  \
@@ -187,13 +192,14 @@ gcloud ai-platform jobs submit training ${JOB_NAME} \
 	--runtime-version=${RUNTIME_VERSION} \
 	--region ${REGION} \
 	--stream-logs
-
 ```
+
 👉 [Full documentation here](https://cloud.google.com/sdk/gcloud/reference/ai-platform/jobs/submit/training)
 You imagine how painfull it would be to write this very long command every time we want to submit a training task to GCP.
 That's where our precious `Makefile` enters in action with its variables and commands.
 
 Variables:
+
 ```
 BUCKET_NAME=XXXXX
 
