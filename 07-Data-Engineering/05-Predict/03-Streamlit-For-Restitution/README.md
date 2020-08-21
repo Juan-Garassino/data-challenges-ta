@@ -61,7 +61,7 @@ heroku ps:scale web=1
 ```
 click on the link `https://YOUR_APP_NAME.herokuapp.com/` to visualize your app
 
-# Usefull links
+# Useful links
 
 - [Altair](https://altair-viz.github.io/gallery/)
 
