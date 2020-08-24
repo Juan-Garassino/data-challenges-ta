@@ -146,7 +146,7 @@ Here we will just want to find a way to ask GCP to:
 
 👉 Copy our code (our package) to a GCP machine
 
-👉 Install the package and its requirements thanks to `setup.py` (you should start to love him right)
+👉 Install the package and its requirements thanks to `setup.py` (you should start to love it right)
 
 👉 Run `trainer.py` on the GCP machine
 

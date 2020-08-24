@@ -9,7 +9,7 @@ In the following, we suppose that:
 3. If your pipeline includes custom transformers, they should be present inside  `TaxiFaremodel/encoders.py`  
     🚨 This point is very important here, please call TA if unclear 🚨
 4. You have installed [heroku cli](https://devcenter.heroku.com/articles/heroku-cli)
-5. you have created an [free heroku account](https://signup.heroku.com/)
+5. you have created a [free heroku account](https://signup.heroku.com/)
 
 ## Summary
 
@@ -37,9 +37,9 @@ pip install -r requirements.txt
 
 We will use `flask` python package to develop our API
 
-Inspect `app.py` and check the code of two routes `/predict_fare` and `/` 
+Inspect `app.py` and check the code of the two routes `/predict_fare` and `/` 
 
-For simplicity purpose you will develop your first api locally with a local `model.joblib` stored in `data/` directory that we provide you  
+For simplicity purpose you will develop your first api locally with a local `model.joblib` stored in `data/` directory that we provide to you  
 We will see later on how to get your stored model from gcp
 
 Now you can run your api locally by simply running 
@@ -67,7 +67,7 @@ cd ~/code/taxifare_api/ && git init
 ```
 
 ## Deploy to heroku
-You'll see once again how heroku is easy to use, here you simply need to:
+You'll see once again how easy heroku is to use, here you simply need to:
 - Create a `Procfile` with following line inside it:
 ```bash
 web: gunicorn app:app
