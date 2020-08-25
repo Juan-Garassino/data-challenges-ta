@@ -32,6 +32,7 @@ from yourpackage.lib import try_me
 
 Create a project with `wagon-make-package` command:
 - Name it as you please (avoid using dashes `-` in the name of your package, this is against conventions and makes importing your package harder)
+- Create it outside of the `data-challenges` folder
 - Add a `try_me()` function to `lib.py` file
 - Insert any code you want in that function, try being inventive
 - Create a [new public (obviously) repository](https://github.com/new) on github named after your package name
