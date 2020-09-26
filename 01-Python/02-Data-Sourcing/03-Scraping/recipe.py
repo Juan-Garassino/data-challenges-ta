@@ -16,13 +16,13 @@ def scrape_from_file(ingredient):
     if path.exists(file):
         return open(file)
     print("Please, run the following command first:")
-    print(f'  curl "https://www.bbcgoodfood.com/search/recipes?query={ingredient}" > pages/{ingredient}.html')
+    print(f'  curl "https://recipes.lewagon.com/?search[query]={ingredient}" > pages/{ingredient}.html')
     sys.exit(1)
 
 def main():
     if len(sys.argv) > 1:
         ingredient = sys.argv[1]
-        # TODO: Replace scrape_from_file with scrape_from_internet and implement pagination (5 pages needed)
+        # TODO: Replace scrape_from_file with scrape_from_internet and implement pagination (more than 2 pages needed)
         recipes = parse(scrape_from_file(ingredient))
         write_csv(ingredient, recipes)
     else:
