@@ -1,4 +1,4 @@
-Python scripts can read arguments passed on the command line. This may come in handy when you want to add options to your script.
+Python scripts can read arguments passed in the command line. This may come in handy when you want to add options to your script.
 
 ## Some words about `sys.argv`
 
@@ -12,7 +12,7 @@ print('Number of arguments:', len(sys.argv), 'arguments.')
 print('Argument List:', str(sys.argv))
 ```
 
-You can save it to a file `args.py` and run it:
+You can save it in the file called `args.py` and run it:
 
 ```bash
 python args.py arg1 arg2 arg3
@@ -35,7 +35,7 @@ python calc.py 3 - 9
 # => -6
 ```
 
-Open the `calc.py` file and implement this behavior! You will find that a `main` function that is automatically executed thanks to [this idiom](https://docs.python.org/3/library/__main__.html).
+Open the `calc.py` file and implement this behavior! You will find that a `main` function is automatically executed thanks to [this idiom](https://docs.python.org/3/library/__main__.html).
 
 💡 **Hint**: Don't hesitate to `print()` a lot, to better understand how the program behaves.
 

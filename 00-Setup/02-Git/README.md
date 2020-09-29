@@ -102,4 +102,3 @@ git push origin master
 ## Conclusion
 
 You now know how to navigate Kitt, position yourself on a challenge, open it in a text editor and work on it, switching to the terminal to run `make` and some git commands. Congratulations!
-
