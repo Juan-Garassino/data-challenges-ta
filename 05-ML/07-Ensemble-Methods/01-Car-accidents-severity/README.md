@@ -2,7 +2,7 @@
 
 In this challenge, you'll try to predict the severity of car accidents, based on features collected from after-crash real police investigation
 
-This Kaggle challenge comprises of 1,000,000 accidents report, split into multiple .csv files
+This Kaggle challenge comprises of 1,000,000 accidents report, split into multiple CSV files
 
 Download the data here:
 
@@ -17,4 +17,4 @@ rm -rf data.zip
 - You will send your best score to your batch slack channel!
 - The winner will present its notebook to the class during the recap session at 5pm 💪
 
-Open `car-severity-accident.ipynb` and starts coding!
+Open `car_accidents_severity.ipynb` and starts coding!

@@ -1,3 +1,1 @@
-# Recap
-
-This recap focuses on model probability calibration.
+Keep your challenge `car_accidents_severity` notebook open for this recap!
