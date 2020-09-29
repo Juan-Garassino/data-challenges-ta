@@ -1,3 +1,3 @@
 # Ensemble Methods
 
-A one day long challenge is waiting for you today :rocket: :rocket: :rocket:
+A one day long challenge is waiting for you today 🚀🚀🚀

@@ -1,1 +1,1 @@
-Keep your challenge `car-severity-accident` notebook open for this recap!
+Keep your challenge `car_accidents_severity` notebook open for this recap!
