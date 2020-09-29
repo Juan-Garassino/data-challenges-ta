@@ -10,7 +10,7 @@ here is the formula:
 
 Open the `demo.py` file and implement it!
 
-There are **3 tests** checked by the `make` command. Make sure they are all green!
+There are **3 tests** that you can run with the `make` command from the terminal. Make sure they are all green before moving to the next challenge!
 
 ## Pushing to Kitt
 
