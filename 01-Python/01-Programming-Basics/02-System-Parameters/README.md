@@ -29,7 +29,7 @@ Let's write a simple calculator for **integers**. Here's how it should work:
 ```bash
 python calc.py 4 + 5
 # => 9
-python calc.py 2 \* 6
+python calc.py 2 * 6
 # => 12
 python calc.py 3 - 9
 # => -6
