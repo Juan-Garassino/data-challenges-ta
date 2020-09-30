@@ -1,4 +1,4 @@
-In this exercise, we will put in practise the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website with Python.
+In this exercise, we will put in practice the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website with Python.
 
 The website we are scrapping is [books.toscrape.com](http://books.toscrape.com/). It's a website which has been created exactly for that purpose! To learn how to scrape.
 
@@ -96,7 +96,7 @@ It's a good time for you to insert a **Markdown cell** and type in the following
 ## Parsing _one_ book
 ```
 
-Of course you can write more text! The goal is to document your train of thoughts in your notebook to eventually a well documented/structured Notebook.
+Of course you can write more text! The goal is to document your train of thoughts in your notebook to eventually have a well documented/structured Notebook.
 
 Let's have a look at the HTML fragment of the first book. Insert a code cell and type in:
 

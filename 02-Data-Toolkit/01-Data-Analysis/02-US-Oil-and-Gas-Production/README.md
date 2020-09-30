@@ -4,7 +4,7 @@ In this exercise, we will analyze the US Oil & Gas production from June 2008 to 
 jupyter notebook
 ```
 
-Your browser should _automatically_ open Jupyter. You should see the exercise folder with `data`, `README.md`, etc. Click on the `Exercise.ipynb` link to open the notebook. This is where you will write notes & Python code. When analyzing data, we don't start with sublime text/VS Code and write code, we stay in the notebook. sublime text/VS Code will come later when we want to do some **Data Engineering** and create a script to be run at once.
+Your browser should _automatically_ open Jupyter. You should see the exercise folder with `data`, `README.md`, etc. Click on the `Exercise.ipynb` link to open the notebook. This is where you will write notes & Python code. When analyzing data, we don't start with sublime text/VS Code and write code, we stay in the notebook. Sublime text/VS Code will come later when we will do some **Data Engineering** and create a script to be run at once.
 
 In the Notebook exercises of today and the following days, you will go back & forth between these instructions and the Notebook where you will write the code. Have fun!
 

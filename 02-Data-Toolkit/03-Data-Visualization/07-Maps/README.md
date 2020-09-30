@@ -2,7 +2,7 @@
 
 In this section, we will discover how to plot maps!
 
-We will use **Ploty** again to create meaningful and interactive maps. 💪
+We will use **Plotly** again to create meaningful and interactive maps. 💪
 
 Open the file `bubble-map-visualization.ipynb` in Jupyter Notebook and follow the instructions. 🙂
 

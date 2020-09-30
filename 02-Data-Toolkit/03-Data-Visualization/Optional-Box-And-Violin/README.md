@@ -46,7 +46,7 @@ We will recreate the following plot.
 
 Use seaborn violin plot option `split`, to have a violin with, on one side the **female** distribution and on the other side the **male** distribution.
 
-Make sure you have the right **legend**, male and female .
+Make sure you have the right **legend**, male and female.
 
 **Example:**
 
