@@ -20,6 +20,8 @@ What is the problem with the output of this program? Let's try to debug the prob
 import ipdb; ipdb.set_trace()
 ```
 
+`import ipdb` will import the [ipdb](https://pypi.org/project/ipdb/) module while `ipdb.set_trace()` will allow us to halt the program at a certain line.
+
 Go back to the terminal and run the command again:
 
 ```bash
