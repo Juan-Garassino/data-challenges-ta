@@ -12,13 +12,13 @@ To drive Chrome from code, you need a pilot. We will use [**Selenium**](https://
 
 ## Example
 
-Imagine you want to get some information about a rental car. The URL structure is easy to understand:
+Imagine you want to get some information about a recipe. The URL structure is easy to understand. `251` is the id of the recipe we are looking for:
 
 ```bash
-https://uk.getaround.com/car-hire/roissy-en-france/chevrolet-aveo-545062
+https://recipes.lewagon.com/recipes/251/advanced
 ```
 
-Go to [that URL](https://uk.getaround.com/search?address=CDG+-+Paris+Charles+de+Gaulle+Airport&address_source=poi&poi_id=210&latitude=49.0128&longitude=2.55&city_display_name=&start_date=&start_time=&end_date=&end_time=&country_scope=FR&car_sharing=true&user_interacted_with_car_sharing=false), disable JavaScript in your browser, and reload. To disable JS quickly you can install those extensions:
+Go to [that URL](https://recipes.lewagon.com/recipes/advanced?search[query]=carrot&page=1), disable JavaScript in your browser, and reload. To disable JS quickly you can install those extensions:
 
 - [Disable JavaScript](https://addons.mozilla.org/en-US/firefox/addon/disable-javascript/) for Firefox 🦊
 - [Disable JavaScript](https://chrome.google.com/webstore/detail/disable-javascript/jfpdlihdedhlmhlbgooailmfhahieoem) for Chrome 🎈
@@ -45,7 +45,7 @@ from selenium import webdriver
 import chromedriver_binary
 
 driver = webdriver.Chrome()
-driver.get("https://uk.getaround.com/")
+driver.get("https://recipes.lewagon.com/recipes/advanced")
 
 # driver.quit()
 ```
@@ -58,9 +58,9 @@ python test_advanced_scraping.py
 
 🚀 It should open a Chrome Window, navigate to the page and stay like that! If you uncomment the last line `driver.quit()` then you will see that Chrome will close automatically. You need to do that otherwise you'll have plenty of Chrome Windows opened after a while!
 
-## Searching cars in Paris Charles de Gaulle Airport
+## Searching chocolate based recipes 😋
 
-We will now simulate a user interaction with the page. Something one can do is click on the search bar and type a location. Go ahead and try it: type `CDG - Paris Charles de Gaulle Airport`. You should see a popup opening with some suggestions. Now click on `CDG - Paris Charles de Gaulle Airport` and click on the big `Search` button to launch the search.
+We will now simulate a user interaction with the page. Something one can do is click on the search bar and type a location. Go ahead and try it: type `chocolate`. Now click on the magnifying glass button to launch the search.
 
 This is what we want to emulate! We will use the [`find_element_by_id`](https://selenium-python.readthedocs.io/locating-elements.html#locating-by-id) method to locate the input in which we want to type.
 
@@ -68,16 +68,26 @@ This is what we want to emulate! We will use the [`find_element_by_id`](https://
 from selenium.webdriver.common.keys import Keys
 
 search_input = driver.find_element_by_id('TODO') # Open the inspector in Chrome and find the input id!
-search_input.send_keys('CDG - Paris Charles de Gaulle Airport')
+search_input.send_keys('chocolate')
 ```
 
-With that piece of code you should see your Chrome browser opening on the specified URL and filling the location input with `CDG - Paris Charles de Gaulle Airport`
+With that piece of code you should see your Chrome browser opening on the specified URL and filling the location input with `chocolate`
 
 ## Submitting the form
 
-This is where it starts to become tricky. If we try to just submit on the form, we will get an error message from the website saying we need to select one of the proposed suggestions in the popup. You may notice that the suggestions take some time to actually load. THis means that we can't select one of those suggestions right away after filling the input with a location. We have to wait for the suggestions to load.
+Next step will be to submit the form in order to get the chocolate based recipes back. To do that we can add the following line to our code
 
-This means we need to use an [**explicit wait**](https://selenium-python.readthedocs.io/waits.html):
+```python
+search_input.submit()
+```
+
+Just like that you should see the updated list of recipes.
+
+## Retrieving the urls of each recipe
+
+As you can see, the list of updated recipes is also fetched using Javascript, and we have to wait a little bit in order to see the results. This means we need to wait for the recipes to appear before being able to gather the recipes' urls.
+
+To do that we will use [**explicit wait**](https://selenium-python.readthedocs.io/waits.html):
 
 ```python
 from selenium.webdriver.common.by import By
@@ -86,63 +96,39 @@ from selenium.webdriver.support import expected_conditions as ec
 
 # [...]
 wait = WebDriverWait(driver, 15)
-wait.until(ec.visibility_of_element_located((By.XPATH, "//li[@id='-1291973610']")))
+wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@id='recipes']")))
 ```
 
-The weird string uses an [XPath](https://en.wikipedia.org/wiki/XPath) search in the DOM. It locates the `<li/>` with an `id` which has the value `-1291973610`. After exploration of GetAround's DOM, we found that this `<li/>` is the `CDG - Paris Charles de Gaulle Airport` suggestion. We're then left with two things to do. Click on the suggestion and submit the form.
+The weird string in the method call uses an [XPath](https://en.wikipedia.org/wiki/XPath) search in the DOM. It locates the `<div/>` with an `id` which has the value `recipes`. After exploration of the website's DOM, we found that this `<div/>` is the element that contains all the recipes fetched by the search.
+
+Now that we waited for the filtered out recipes to appear, it's time to collect the url of each recipe to be able to scrape each one of them.
 
 ```python
-suggestion = driver.find_element_by_id('-1291973610')
-suggestion.click()
-search_input.submit()
-```
-
-Copy the code above and run your script. You should see that the search form is submitted and you are redirected to the search results. You may notice that the results are also loaded using Javascript so we have to follow the same technique as before. After inspecting the DOM of the page, we can see that the results are all listed inside a `<div/>` with two classes.
-
-```html
-<div class="js_picks_results_container picks_results_container">
-<!-- ... -->
-</div>
-```
-
-We will use the same technique as before and we will wait for this HTML element to appear in the DOM to actually gather the URLS of all the cars listed on that page
-
-```python
-wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@class='js_picks_results_container picks_results_container']")))
-```
-
-Then it's a matter of looping over each result. GetAround's HTML is not too bad to parse. We can see that each card representing a car is an `<a/>` tag with two classes
-
-```html
-<a href="..." class="car_card_revamp js_picks_car_card"></a>
-```
-
-This means we can write the following code:
-
-```python
-car_urls = []
-cards = driver.find_elements_by_xpath("//a[@class='car_card_revamp js_picks_car_card']")
+recipe_urls = []
+cards = driver.find_elements_by_xpath("//div[@class='recipe my-3']")
 print(f"Found {len(cards)} results on the page")
 for card in cards:
-    url = card.get_attribute('href')
-    car_urls.append(url)
-print(car_urls)
+    url = card.get_attribute('data-href')
+    recipe_urls.append(url)
+
+print(recipe_urls)
 ```
 
-Run the code from the terminal. You should get a list of urls printed.
+Run the code from the terminal. You should get back 12 urls (i.e. all the recipes on the first page).
 
-## Scraping each place
+## Scraping each recipe
 
-Now that we have a list of urls, we can now navigate to each page, and give it to BeautifulSoup to gather the data we need!
+Now that we have a list of urls, we can now navigate to each page, wait for the result to appear and give it to BeautifulSoup to gather the data we need!
 
-For each car, the following code will gather:
+For each recipe, the following code will gather:
 
-- The name of the car
-- The year of the car
-- the owner name
-- the price to rent the car
+- The name of the recipe
+- The cooktime of the recipe
+- the difficulty of the recipe
+- the price range of the recipe
+- the description of the recipe
 
-We start with an empty list `cars` that we will populate with `dict` storing information about each car:
+We start with an empty list `recipes` that we will populate with a `dict` storing the desired information about each recipe:
 
 
 ```python
@@ -150,20 +136,24 @@ from bs4 import BeautifulSoup
 
 # [...]
 
-cars = []
-for url in car_urls:
+recipes = []
+for url in recipe_urls:
   print(f"Navigating to {url}")
   driver.get(url)
+  wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@class='p-3 border bg-white rounded-lg recipe-container']")))
+
   soup = BeautifulSoup(driver.page_source, 'html.parser')
-  name = soup.find('h1', class_='car_info_header__title').string.strip()
-  year = soup.find('span', class_='car_info_header__attributes').text.strip().split()[0]
-  owner_name = soup.find(class_='car_owner_section').find(class_='link_no_style js_drk_lnk').string.strip()
-  price = soup.find(class_='js_default_price').find(class_='cobalt-text-titleLarge').text.strip()
-  cars.append({
+  name = soup.find('h2').string.strip()
+  cooktime = soup.find('span', class_='recipe-cooktime').text.strip()
+  difficulty = soup.find('span', class_='recipe-difficulty').text.strip()
+  price = soup.find('small', class_='recipe-price').attrs.get('data-price').strip()
+  description = soup.find('p', class_='recipe-description').text.strip()
+  recipes.append({
     'name': name,
-    'year': year,
-    'owner': owner_name,
-    'price': price
+    'cooktime': cooktime,
+    'difficulty': difficulty,
+    'price': price,
+    'description': description
   })
 ```
 
@@ -172,10 +162,12 @@ Finally we can save the results in a csv file using the techniques we learned ea
 ```python
 import csv
 
-with open('data/cars.csv', 'w') as file:
-  writer = csv.DictWriter(file, fieldnames=cars[0].keys())
+# [...]
+
+with open('data/recipes.csv', 'w') as file:
+  writer = csv.DictWriter(file, fieldnames=recipes[0].keys())
   writer.writeheader()
-  writer.writerows(cars)
+  writer.writerows(recipes)
 
 driver.quit()
 ```

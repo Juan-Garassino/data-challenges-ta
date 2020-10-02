@@ -1,10 +1,10 @@
-Nice job with the **sudoku validator**! Now we are going to implement a **Sudoku Solver**. Its goal is simple: given a Sudoku **9x9 grid**, with few numbers in the grid, find the missing numbers to create a valid grid!
+Nice job with the **sudoku validator**! Now we are going to implement a **Sudoku Solver**. The goal is simple: given a Sudoku **9x9 grid**, with few numbers in the grid, find the missing numbers to create a valid grid!
 
 ![](https://i.ibb.co/nDj9RFk/largeprintsudoku.jpg)
 
-## Method
+## Function
 
-The method `sudoku_solver(grid)` take a sudoku grid as an argument and return a grid filled with the right digits.
+The function `sudoku_solver(grid)` take a sudoku grid as an argument and return a grid filled with the right digits.
 
 ## Data Model
 
@@ -26,7 +26,9 @@ grid = [
 ]
 ```
 
-The **output** grid returned by your method should also be represented as a Python list of list:
+The **zeros** represent empty slots that need to be filled with the correct numbers.
+
+The **output** grid returned by your function should also be represented as a Python list of list:
 
 ```python
 grid_solution = [
@@ -46,7 +48,7 @@ grid_solution = [
 
 ## Exercise
 
-Open the `sudoku_solver.py` file and implement the `sudoku_solver()` method. To check if your code is working, you can run the tests with:
+Open the `sudoku_solver.py` file and implement the `sudoku_solver()` function. To check if your code is working, you can run the tests with:
 
 ```bash
 ./check.sh

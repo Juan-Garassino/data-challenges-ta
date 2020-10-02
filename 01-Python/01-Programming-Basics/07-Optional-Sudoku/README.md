@@ -1,4 +1,4 @@
-Congratulations for reaching this exercise! We are going to implement a Sudoku Validator. Its goal is simple: given a Sudoku **9x9 grid**, determine if it is valid!
+Congratulations for reaching this exercise! We are going to implement a Sudoku Validator. The goal is simple: given a **9x9 Sudoku grid**, determine if it's valid!
 
 ![](https://res.cloudinary.com/wagon/image/upload/v1560713910/sudoku_szhhdf.png)
 
@@ -40,7 +40,7 @@ grid[i][j]
 
 ## Exercise
 
-Open the `sudoku.py` file and implement the `sudoku_validator()` method. To check if your code is working, you can run the tests with:
+Open the `sudoku.py` file and implement the `sudoku_validator()` method. To check if your code is working. You can run the tests with:
 
 ```bash
 make

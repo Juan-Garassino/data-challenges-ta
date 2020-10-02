@@ -1,4 +1,4 @@
-Web Scraping is the last solution one need to use to automate data retrieval and there is _no API_ at disposal. This technique is actually the one used by Google to build its index for the famous Search Engine. The Google bot performing this action is called a [crawler](https://www.google.com/search/howsearchworks/crawling-indexing/).
+Web Scraping is the last solution one needs to use to automate data retrieval and there is _no API_ at disposal. This technique is actually the one used by Google to build its index for the famous Search Engine. The Google bot performing this action is called a [crawler](https://www.google.com/search/howsearchworks/crawling-indexing/).
 
 In the Python world, scraping means importing [`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/), a library to pull data out of HTML.
 
@@ -25,7 +25,7 @@ python test_scraping.py
 
 💣 OK, you got an error. Can you read it? What are you missing?
 
-What we want to do here is called **offline scraping**. While developing the scraper, we don't want to send an HTTP requests to the server every time we run the code. We'll take the risk of spamming the site, get detected and _banned_.
+What we want to do here is called **offline scraping**. While developing the scraper, we don't want to send an HTTP requests to the server every time we run the code. We'll take the risk of spamming the site, get detected and _banned_ from it.
 
 Let's download the search results for the keyword `carrot`:
 
