@@ -6,11 +6,13 @@ class Olist:
 
     def get_data(self):
         """
-        01-01 > This function returns all Olist datasets
-        as DataFrames within a Python dict.
+        This function returns a Python dict.
+        Its keys should be 'sellers', 'orders', 'order_items' etc...
+        Its values should be pandas.DataFrame loaded from csv files
         """
-        # Hint: You will need to find the absolute path of the csv folder in order to call this method from anywhere.
-        # Hint 2: look at python __file__ attribute
+        # Hint: Build csv_path as "absolute path" in order to call this method from anywhere.
+        # Hint2: Use __file__ as absolute path anchor to avoid displaying your username or computer-specific folder architecture.
+        # Hint3: Use os.path library to construct path independent of Unix vs. Windows specificities
 
     def get_matching_table(self):
         """
