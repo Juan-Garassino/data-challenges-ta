@@ -201,7 +201,7 @@ Use boolean indexing, grouping & sorting to print a list of the Top 10 countries
 
 ### Optional - Top 10 Countries (by Season) since 1984
 
-Let's reuse `all_df` to group but this time we don't just want to count the total number of medals for each country, we want to count the number of medal for Winter Games on the one hand, and for Summer Games on the other hand. Then we want to plot them (sorting should still be based on the _total_ number of medals).
+Let's reuse `all_df` to group but this time we don't just want to count the total number of medals for each country, we want to count the number of medals for Winter Games on the one hand, and for Summer Games on the other hand. Then we want to plot them (sorting should still be based on the _total_ number of medals).
 
 :bulb: **Hint 1** The [`pandas.DataFrame.groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) can group over a **`list`** of columns.
 

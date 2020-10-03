@@ -37,8 +37,6 @@ Recreate this interactive plot with [Plotly's Sankey diagram](https://plot.ly/py
 
 ### Heatmaps
 
-Try to reacreate an heatmap either in [Seaborn](http://seaborn.pydata.org/generated/seaborn.heatmap.html) or with [Ploty](https://plot.ly/python/heatmaps/).
+Try to reacreate an heatmap either in [Seaborn](http://seaborn.pydata.org/generated/seaborn.heatmap.html) or with [Plotly](https://plot.ly/python/heatmaps/).
 
 <img src="https://i.ibb.co/tQrTP05/Screen-Shot-2019-10-16-at-11-29-20.png" width="560">
-
-
