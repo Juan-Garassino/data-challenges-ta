@@ -8,7 +8,7 @@ class TestWeather(unittest.TestCase):
         self.assertEqual(city['title'], 'Paris')
         self.assertEqual(city['woeid'], 615702)
 
-    def test_search_city_for_paris(self):
+    def test_search_city_for_london(self):
         city = weather.search_city('London')
         self.assertEqual(city['title'], 'London')
         self.assertEqual(city['woeid'], 44418)
