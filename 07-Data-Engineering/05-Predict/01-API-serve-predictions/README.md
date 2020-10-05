@@ -57,13 +57,13 @@ Now that you checked your app works locally, you might want it to run free on a 
 ## Create folder outside data-challenges
 Here, as heroku is based on git, we will create a folder outside our gitted `data-challenges`.
 ```bash
-mkdir -p ~/code/taxifare_api
-cp -rf * ~/code/taxifare_api/
-cd ~/code/taxifare_api/
+mkdir -p ~/code/<user.github_nickname>/taxifare_api
+cp -rf * ~/code/<user.github_nickname>/taxifare_api
+cd ~/code/<user.github_nickname>/taxifare_api
 ```
 Version it for future heroku use:
 ```bash
-cd ~/code/taxifare_api/ && git init
+cd ~/code/<user.github_nickname>/taxifare_api && git init
 ```
 
 ## Deploy to heroku
