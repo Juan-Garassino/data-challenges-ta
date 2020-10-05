@@ -1,1 +1,3 @@
-In this series of exercices, you will start from a simple Decision Tree Classifier, and increase the complexity of modelling with various ensemble methods.
+# Ensemble Methods
+
+A one day long challenge is waiting for you today 🚀🚀🚀

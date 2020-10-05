@@ -37,7 +37,7 @@ In your terminal, run the file:
 python phone_book.py
 ```
 
-Does that seem correct to you? What is the type of the `row` variable line 7 in the `print(row)` statement? Compare your guess with your buddy, and also check the actual result with `type()`.
+Does that seem correct to you? What is the type of the `row` variable line 7 in the `print(row)` statement? Compare your guess with your buddy, and check the actual result with `type()` as well.
 
 Try updating the code of `phone_book.py` to ignore the header (first line) and only print last name + phone number. This is the output you should get:
 
@@ -46,6 +46,8 @@ Lennon: 123
 Harrisson: 456
 Saunier: 123
 ```
+
+## Optional
 
 Now try refactoring the code using the [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader) class. You should no longer need the `line_count` variable. Also, what is the type of `row` now? Is it still the same as before? As usual, discuss about the code with your buddy and check your understanding with `type()`.
 

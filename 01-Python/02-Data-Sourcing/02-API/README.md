@@ -2,7 +2,7 @@
 
 A common way of collecting data is through APIs. Those can be [public API](https://github.com/public-apis/public-apis) with authentication or not, free or paying, internal APIs at your company, etc.
 
-When it comes to APIs, there are some keywords to know about:
+When it comes to APIs, there are some keywords that you should understand:
 
 - [SOAP](https://en.wikipedia.org/wiki/SOAP) (old)
 - [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (current)
@@ -32,7 +32,7 @@ When presented with a new API to use, your first reflex should be to go straight
 
 Before building something fancy, we need to make sure that we can run a first API call successfully. This is a sanity check to make sure we don't start coding too much before realizing that the API we intended to use is not a good fit.
 
-So how should make our first call? There are several options:
+So how can we make our first call? There are several options:
 
 ### Using the browser
 
@@ -46,15 +46,15 @@ https://www.metaweather.com/api/location/search/?query=london
 
 What do you see? If you are on Chrome, you should install the [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) extension for a prettier look. In the end, JSON is just text that needs to be **parsed**, that's what the extension will do
 
-### Using Postman
+### Optional - Using Postman
 
-[Postman](https://www.getpostman.com/) is an app that many developers download on their laptop to use when building software consuming APIs. It provides a more advanced experience where you need to a fine control over:
+[Postman](https://www.getpostman.com/) is an app that many developers download on their laptop to use when building software consuming APIs. It provides a more advanced experience where you need to have a better control over:
 
 - HTTP Verb (`GET`, `POST`, `PATCH`, `DELETE`, etc.)
 - Request headers (`Content-Type`, `Authorization`, etc.)
 - Request body (`application/x-www-form-urlencoded` or `raw`)
 
-This application allows us to **save** some requests, create tabs with different requests and more advanced feature. Try it!
+This application allows us to **save** some requests, create tabs with different requests and offers more advanced features. Go ahead and try it!
 
 ### Using Python
 
@@ -71,7 +71,7 @@ city = response[0]
 print(f"{city['title']}: {city['woeid']} ({city['latt_long']})")
 ```
 
-Save and run the following command:
+Save the file and run the following command:
 
 ```bash
 python test_api.py
@@ -83,7 +83,19 @@ Is it working? Did you grab successfully London's `woeid`? Some questions for yo
 - Line `5`, why do we do `[0]`? What's the type of `response`?
 - Line `6`, what's the type of `city['woeid']`, `str` or `int`? Why?
 
-To answer those questions, don't hesitate to `print()` or **even better**, [debug](https://pypi.org/project/ipdb/). This first week is a good time to sharpen your debugging skills before diving into more advanced topics.
+To answer those questions, don't hesitate to `print()` or **even better**, [debug](https://pypi.org/project/ipdb/). This first week is a good time to sharpen your debugging skills before diving into more advanced topics. Don't remember how to do it? Remember yesterday's challenge in which you had to insert this line in your code:
+```python
+import ipdb; ipdb.set_trace()
+```
+
+And run the file with:
+
+```bash
+python test_api.py
+```
+
+It will stop execution at the line where you added the `ipdb.set_trace()` and open a command line. From there you can check what is the `url`, `response`, `city` or any other variable you defined in the code!
+
 
 ## Let the challenge begin!
 
@@ -94,22 +106,40 @@ Let's build a weather [CLI](https://en.wikipedia.org/wiki/Command-line_interface
 1. Launch the app with `python weather.py`
 2. Get asked to type a city name
 3. If city is unknown to the API, display an error message and go back to step 2.
-4. If the user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function that might be useful)
-5. Fetch the weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
-6. Go back to step 2 (loop to ask for a new city).
-7. At any point, `Ctrl`-`C` will take care of quitting the program
+4. Fetch the weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
+5. Go back to step 2 (loop to ask for a new city).
+6. At any point, `Ctrl`-`C` will take care of quitting the program
 
-In action, it will should look like this:
+In action, it should look like this:
 
-<iframe src="https://player.vimeo.com/video/364146887" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+```bash
+python weather.py
+```
 
-Open the `weather.py` file. You will be greeted by three empty methods:
+```text
+City?
+> london
+Here's the weather in London
+2020-09-30: Heavy Rain 16.4°C
+2020-10-01: Light Rain 15.1°C
+2020-10-02: Heavy Rain 13.4°C
+2020-10-03: Heavy Rain 14.3°C
+2020-10-04: Heavy Rain 14.6°C
+City?
+>
+```
+
+Open the `weather.py` file. You will be greeted by three empty functions:
 
 - `search_city(query)`
 - `weather_forecast(woeid)`
 - `main()`
 
-You need to implement them, in that order. `make` will assist you for the first two methods, and for the last one you will need to run the Python program directly with `python weather.py`.
+You need to implement them **in that order**. `make` will assist you for the first two functions, and for the last one you will need to run the Python program directly with `python weather.py`.
+
+1. Start with the `search_city` function which should return the dictionary with all the information about the city. Not just `woeid`!
+2. Continue to `weather_forecast` which takes the city `woeid` as an argument and returns the forecast for five days.
+3. Finish off with coding the `main` function. It will be called when you run the `weather.py` file from the terminal. Which functions should be called from within `main`? In what order?
 
 💡 By the way, did you check the content of the `Makefile`? It runs `pylint` for every Python file in your project, and `pytest` for the whole project. You can launch the tests for the weather CLI only with:
 
@@ -117,7 +147,13 @@ You need to implement them, in that order. `make` will assist you for the first 
 pytest -v tests/test_weather.py
 ```
 
-## History
+## Optional - you can come back to it once you're done with the Scraping challenge.
+
+### List of cities
+
+After `step 3`: if the user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function that might be useful)
+
+### History
 
 If you read carefully the documentation of the API, you may have noticed there is a third endpoint exposed that we did not use yet, the **Location Day**:
 
@@ -145,7 +181,7 @@ ls -lh ./data
 # -rw-r--r--  344K  2019_02_615702_paris.csv
 ```
 
-Your job is to complete the `history.py` file so that when run with three arguments (the `CITY`, the `YEAR` and the `MONTH` (1 to 12)), it calls the historical API for every day of the month and dump the forecasts in a _single_ csv file inside the `data` folder, named `YEAR_MONTH_WOEID_CITY.csv`
+Your job is to complete the `history.py` file so that when run with three arguments (the `CITY`, the `YEAR` and the `MONTH` (1 to 12)), it calls the historical API for every day of the month and dumps the forecasts in a _single_ csv file inside the `data` folder, named `YEAR_MONTH_WOEID_CITY.csv`
 
 In the file given to you, you will need to implement three functions:
 
@@ -159,7 +195,7 @@ The `main()` function is already implemented at the bottom of the file and reuse
 from weather import search_city
 ```
 
-The two first function are tested, the last one (`write_csv`) is not, which means you will need to run the Python code directly (with 3 arguments like explained above) and look inside the `data` folder to manually check if it worked. If you run it with `paris 2019 2`, you should generate the following file:
+The first two functions are tested, the last one (`write_csv`) is not, which means you will need to run the Python code directly (with 3 arguments like explained above) and look inside the `data` folder to manually check if it worked. If you run it with `paris 2019 2`, you should generate the following file:
 
 ```csv
 # 2019_02_615702_paris.csv
@@ -170,7 +206,7 @@ id,weather_state_name,weather_state_abbr,wind_direction_compass,created,applicab
 # [...]
 ```
 
-💡 **Hint**: Here are some methods you might need:
+💡 **Hint**: Here are some methods you might find useful:
 
 - [`urllib.parse.urljoin`](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urljoin)
 - [`datetime.date`](https://docs.python.org/3/library/datetime.html#available-types)

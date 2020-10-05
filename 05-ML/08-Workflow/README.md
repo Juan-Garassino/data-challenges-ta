@@ -1,3 +1,3 @@
-# Workflow
+# Machine Learning Workflow
 
-A one day long challenge is waiting for you today :rocket: :rocket: :rocket:
+Wrap up Machine Learning stages together and build iterative Pipelines.

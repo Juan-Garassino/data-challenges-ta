@@ -8,7 +8,7 @@ First, let's make sure that our working directory is **clean**:
 git status
 ```
 
-If you get the following result, then all good, you can start working on this challenge:
+If you get the following result, then you're all set and can start working on this challenge:
 
 ```text
 On branch master
@@ -17,7 +17,7 @@ Your branch is up to date with 'origin/master'.
 nothing to commit, working tree clean
 ```
 
-If you don't get this message, you need first to commit / clean some other challenges before you can start. Do not hesitate to raise a ticket to get some help from a TA over the first few days. `git` can be hard, so please ask!
+If you do not get this message, you need to first commit / clean some other challenges before you can start. Do not hesitate to raise a ticket to get some help from a TA over the first few days. `git` can be hard, so please do ask!
 
 ## First commit
 
@@ -27,9 +27,9 @@ Let's create a Python file:
 touch today.py
 ```
 
-Open this file in your text editor. You will need to declare and implement a function called `my_name_is` which takes zero parameter and returns a constant of type `str`: The value of this constant will be your GitHub nickname.
+Open this file in your text editor. You will need to declare and implement a function called `my_name_is`, which doesn't take any parameter and returns a constant of type `str`: The value of this constant will be your GitHub nickname.
 
-Run `make` until one test passes (no need for the second one to be successful).
+Run `make` until one test passes (no need for the second one to be successful, we'll take care of it in a second).
 
 ```text
 tests/test_git.py::TestGit::test_hi_my_name_is PASSED
@@ -48,7 +48,7 @@ Kitt should pick up the change and show you a 50% progress. Good job!
 
 ## Second commit
 
-Let's start solving the second test. To do so, you need to declare and implement a function `my_buddy_is` which takes zero parameter and returns a constant `str`: The value of the constant will be your buddy's GitHub nickname (or yours if you don't have any buddy today).
+Let's start solving the second test. To do so, you need to declare and implement a function called `my_buddy_is`, which doesn't take any parameter and returns a constant `str`: The value of the constant will be your buddy's GitHub nickname (or yours if you don't have a buddy today).
 
 You can use this useful command to check what has changed in the file:
 
@@ -102,4 +102,3 @@ git push origin master
 ## Conclusion
 
 You now know how to navigate Kitt, position yourself on a challenge, open it in a text editor and work on it, switching to the terminal to run `make` and some git commands. Congratulations!
-

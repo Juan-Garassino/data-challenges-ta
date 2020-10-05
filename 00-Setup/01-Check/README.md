@@ -2,7 +2,7 @@ Welcome to Kitt! The teacher will now demonstrate how to work on an exercise.
 
 ## What's this is about?
 
-The goal is to implement a `circle_area` method which takes **one** parameter,
+The goal is to implement a function called `circle_area`, which takes **one** parameter,
 `radius`, and returns the area of the circle of this given radius. As a reminder,
 here is the formula:
 
@@ -10,7 +10,7 @@ here is the formula:
 
 Open the `demo.py` file and implement it!
 
-There are **3 tests** checked by the `make` command. Make sure they are all green!
+There are **3 tests** that you can run with the `make` command from the terminal. Make sure they are all green before moving to the next challenge!
 
 ## Pushing to Kitt
 

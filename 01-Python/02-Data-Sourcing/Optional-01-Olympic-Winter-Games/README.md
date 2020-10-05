@@ -13,7 +13,7 @@ Go ahead and open those two files in Sublime Text to try & understand what they 
 
 ⚠️ For this challenge, you _can't_ use `pandas` yet 😉. Let's see how far you can go with just Python & the [`csv` module](https://docs.python.org/3/library/csv.html).
 
-For this part of the challenge, you can use to check your implementation for the two questions.
+For this part of the challenge, you can use `make` to check your implementation for the three questions.
 
 ```bash
 make

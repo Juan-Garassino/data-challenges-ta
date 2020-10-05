@@ -128,12 +128,12 @@ You can now **create a dataframe** from this data.
 
 With this dataframe we can **plot** the evolution of the stock price.
 But before doing that, we need to do 2 things:
-- Convert the 'date' column to a datetime object
-- Set the 'date' column as the index
+- Convert the `date` column to a datetime object
+- Set the `date` column as the index
 
 ### Converting the date to a datetime object
 
-To do that you can use Pandas.to_datetime()
+To do that you can use `Pandas.to_datetime()`
 
 - **pd.to_datetime** documentation: [http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
 - **Format** documentation: [http://strftime.org/](http://strftime.org/)
@@ -157,14 +157,14 @@ To do that you can use the DataFrame method **set_index**
 
 ### Now we can plot 🎉
 
-First let's plot with only the values in the **'close'** column
+First let's plot with only the values in the **`close`** column
 
 <details><summary markdown='span'>Solution
 </summary>
 <code>apple_stock_df['close'].plot()</code>
 </details>
 
-Now we can make a plot with the values in the **'open', 'close', 'high', and 'low'** columns
+Now we can make a plot with the values in the **`open`, `close`, `high`, and `low`** columns
 
 <details><summary markdown='span'>Solution
 </summary>
