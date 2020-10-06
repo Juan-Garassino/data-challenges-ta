@@ -16,6 +16,7 @@ Here are the requirements of our system:
 - A `customer` can make many `orders`, but an `order` is created by only one `customer`.
 - An `order` can have several `products`.
 - A `product` can be in different `orders`.
+- There should be the `quantity` for a given `product` per `order`.
 
 
 #### Design the schema
