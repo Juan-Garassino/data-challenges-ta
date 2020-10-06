@@ -1,17 +1,17 @@
 ## Bayes Theorem - a manual proof
 
-In thise exercise, we have a dataset of 'Weather' conditions (Rain, Sunny, Overcast), and corresponding ‘Play’ conditions (Yes or No), suggesting whether or not a sport should be played based on weather conditions.
+In this challenge, we have a dataset of 'Weather' conditions (Rain, Sunny, Overcast), and their corresponding ‘Play’ conditions (Yes or No), suggesting whether or not a sport should be played based on the weather conditions.
 
 ```python
 weather_data= ['Sunny','Overcast','Rainy','Sunny','Sunny','Overcast','Rainy','Rainy','Sunny',
 'Rainy','Sunny','Overcast','Overcast','Rainy']
 play_data   =['No','Yes','Yes','Yes','Yes','Yes','No','No','Yes','Yes','No','Yes','Yes','No']
 ```
-Where the index i in `weather` correspond to the index i in `play`. For example, the 2nd game, the weather was 'Overcast' and the game was played.
+Where the index `i` in `weather` corresponds to the index `i` in `play`. For example, for the 2nd game, the weather was 'Overcast' and the game was played.
 
 Our goal is to understand the probability of playing a match or not.
 
-More precisely compute the probability **P(play|weather)** to be able to anticipate if a new match will be allowed to take place tomorrow given a new weather condition.
+More precisely compute the probability **P(play|weather)** to be able to anticipate if a new match will be allowed to take place on the next day given a new weather condition.
 
 By doing so, we will also demonstrate the **Bayes Theorem** by counting ourselves each of these 4 probabilities:
 
@@ -20,14 +20,14 @@ By doing so, we will also demonstrate the **Bayes Theorem** by counting ourselve
 
 Where :
 - P(play) is our **prior** belief on the probability of the class (Play = Yes or No) given all data we have seen so far
-- P(weather|play) is the **likelihood** of observing this type of weather, given that the match has played or not
+- P(weather|play) is the **likelihood** of observing this type of weather, given whether or not the match was played
 - P(play|weather) is the **posterior** probability of actually playing or not, given the weather condition
 - P(weather) is a constant, from the point of view of our problem: it does not depends on the choice of playing or not
 
 Let's start!
 
 ### 0. Frequency Table
-To see things clearly, start by constructing **manually** the frequency table (use a sheet of paper!). It should look like this :
+To see things clearly, start by constructing **manually** the frequency table (use a sheet of paper!). It should look like this:
 
 | Weather  | Play  | Pause |
 | ---------| ----- | ----- |
@@ -37,7 +37,7 @@ To see things clearly, start by constructing **manually** the frequency table (u
 | Total    |       |       |
 
 
-### 1. Calculate the prior probability $P(play)$
+### 1. Calculate the prior probability P(play)
 The idea is to compute the probability with a python logic, in case you have a much longer dataset!
 Implement the function, `prior_probability(play, play_data)`. This should return the probability that the play happened.
 for example :
@@ -48,9 +48,9 @@ prior_probability(event, list_events)
 ==> 0.66666
 ```
 
-### 2. Likelihood $P(weather|play)$
+### 2. Likelihood P(weather|play)
 
-Well done, now we will implement a function to calculate the likelihood of observing a given weather, knowing that the match has been played or not. Basically, that means that we want to calculate the probability of an event (ex: weather = 'Sunny') being True given that the other event (ex: play=Yes) was True
+Well done, now we will implement a function to calculate the likelihood of observing a given weather, knowing whether or not the match has been played. Basically, that means that we want to calculate the probability of an event (ex: weather = 'Sunny') being `True` given that the other event (ex: play=Yes) was `True`
 
 Implement the function `likelihood(weather, play, weather_data, play_data)`. This function should return the probability that `event_condition` takes a given value, knowing `event_occur` value.
 
@@ -62,11 +62,11 @@ play_data   = ['No','Yes','Yes','Yes','Yes','Yes','No','No','Yes','Yes','No','Ye
 likelihood("Sunny", "Yes", weather_data, play_data) = 3/9 = 0.33333
 ```
 
-### 3. Posterior Probability $P(play|weather)$
+### 3. Posterior Probability P(play|weather)
 
 Congratulations, it's almost finished.
 
-❓ Using the Bayes Theorem and the two function coded before, implement the function `posterior_probability(play, weather, weather_data, play_data)` which gives you $P(play|weather)$
+❓ Using Bayes Theorem and the two function coded before, implement the function `posterior_probability(play, weather, weather_data, play_data)` which gives you P(play|weather)
 
 ❓ Compare the result you found with a direct counting of P(play|weather) using the likelihood function with arguments reversed:
 `likelihood(play, weather, play_data, weather_data)`

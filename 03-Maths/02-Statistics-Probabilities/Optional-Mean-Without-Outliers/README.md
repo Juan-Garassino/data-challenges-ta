@@ -1,4 +1,4 @@
-Congratulations on finishing challenges of the day!
+Congratulations on finishing the challenges of the day!
 
 Why don't you head over to the previous days of this week and complete them as well?
 
