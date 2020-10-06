@@ -9,7 +9,7 @@ on which you can call the `execute` method. Exactly like in the previous exercis
 ### Detailed Tracks
 
 - Implement `detailed_movies` to get all the movies title with the corresponding director name and genre name.
-- Your output should be a list of tuples. **Hint:** you will have to use one `JOIN` sql statements.
+- Your output should be a list of tuples. **Hint:** you will have to use one `JOIN` sql statement.
 
 This method should return a list of movies. Each element of this list would be a tuple: first element being the movies title, second element the movie's genre name, third element the movie director name.
 
@@ -26,8 +26,7 @@ print(results)
     'genre': 'Action,Adventure,Comedy',
     'number_of_movies': 153,
     'avg_length': 100.98
-  }
-
+}
 ```
 
 ### Top 5
@@ -37,5 +36,11 @@ Find the top 5 directors that made the most movies in a given genre. This method
 ```python
 results = top_five_artists(db, "Action,Adventure,Comedy")
 print(type(results[0]))
-# => [('Robert Rodriguez', 5), ('Jonathan Frakes', 4), ('Anthony C. Ferrante', 3), ('Barry Sonnenfeld', 3), ('Jackie Chan', 3)]
+=> [
+    ('Robert Rodriguez', 5),
+    ('Jonathan Frakes', 4),
+    ('Anthony C. Ferrante', 3),
+    ('Barry Sonnenfeld', 3),
+    ('Jackie Chan', 3)
+]
 ```
