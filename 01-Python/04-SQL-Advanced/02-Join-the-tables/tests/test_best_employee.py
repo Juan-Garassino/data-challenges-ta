@@ -3,7 +3,7 @@ import unittest
 from join_queries import best_employee
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.db')
+conn = sqlite3.connect('db/ecommerce.sqlite')
 db = conn.cursor()
 
 
