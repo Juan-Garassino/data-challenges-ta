@@ -4,7 +4,7 @@ import unittest
 import sqlite3
 from yaml import load, FullLoader
 from os import path
-from query import directors_count, sorted_directors, love_movies,\
+from queries import directors_count, sorted_directors, love_movies,\
     directors_with_name, long_movies
 
 conn = sqlite3.connect('data/movies.sqlite')
