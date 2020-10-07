@@ -13,7 +13,8 @@ Here are the requirements of our system:
 - A `customer` has a `first_name`, `last_name`, an `email` and a `city`.
 - A `product` has a `name` and a `unit_price`.
 - An `order` is defined by a `date_of_order`.
-- A `customer` can make many `orders`, but an `order` is created by only one `customer`.
+- An `order` is created by only one `customer`.
+- A `customer` can make many `orders`.
 - An `order` can have many `products`.
 - A `product` can be in many `orders`.
 - There should be the `quantity` for a given `product` per `order`.
