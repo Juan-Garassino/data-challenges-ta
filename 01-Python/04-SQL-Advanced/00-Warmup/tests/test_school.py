@@ -6,8 +6,8 @@ import sqlite3
 conn = sqlite3.connect('db/school.sqlite')
 db = conn.cursor()
 
-class TestSchool(unittest.TestCase):
 
+class TestSchool(unittest.TestCase):
     def test_paris(self):
         results = students_from_city(db, 'Paris')
         self.assertIsInstance(results, list)
