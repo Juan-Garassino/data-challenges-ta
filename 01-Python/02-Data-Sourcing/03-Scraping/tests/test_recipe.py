@@ -3,7 +3,7 @@ from recipe import parse
 
 
 class TestRecipe(unittest.TestCase):
-    def test_parse_cucumber(self):
+    def test_parse_carrot(self):
         recipes = parse(open('pages/carrot.html'))
         self.assertIsInstance(recipes, list, "The `parse` method should return a `list`")
         self.assertIsInstance(recipes[0], dict, "The `parse` method should return a `list` of `dict` objects")
