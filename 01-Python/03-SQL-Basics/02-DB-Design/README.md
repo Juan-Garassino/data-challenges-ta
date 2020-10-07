@@ -17,7 +17,7 @@ Here are the requirements of our system:
 - A `customer` can make many `orders`.
 - An `order` can have many `products`.
 - A `product` can be in many `orders`.
-- There should be the `quantity` for a given `product` per `order`.
+- A given `order` can have the same `product` multiple times so we need to record the `quantity` for a given `product` per `order`.
 
 
 #### Design the schema
