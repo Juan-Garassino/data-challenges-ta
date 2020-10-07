@@ -6,6 +6,7 @@ import sqlite3
 conn = sqlite3.connect('db/ecommerce.db')
 db = conn.cursor()
 
+
 class TestGeneralAverage(unittest.TestCase):
     def test_length_results(self):
         results = get_general_avg_order(db)
@@ -13,7 +14,7 @@ class TestGeneralAverage(unittest.TestCase):
 
     def test_results(self):
         results = get_general_avg_order(db)
-        expected = [(418.48,)]
+        expected = 418.48
         self.assertEqual(results, expected)
 
     def test_type_results(self):

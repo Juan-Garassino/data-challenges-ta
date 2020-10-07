@@ -26,5 +26,6 @@ def best_employee(db):
 
 def orders_per_customer(db):
     '''return a list of tuple where each tupe contains the contactName of the
-    customer and the number of orders he made (contactName, number_of_orders). Order the list by ascending number of orders'''
+    customer and the number of orders he made (contactName, number_of_orders).
+    Order the list by ascending number of orders'''
     pass
