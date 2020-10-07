@@ -10,7 +10,7 @@ There are many ways to build an e-commerce database, but let's start by building
 
 Here are the requirements of our system:
 
-- A `customer` has a `first_name`, `last_name`, an `e_mail` and a `city`,
+- A `customer` has a `first_name`, `last_name`, an `email` and a `city`.
 - A `product` has a `name` and a `unit_price`.
 - An `order` is defined by a `date_of_order`.
 - A `customer` can make many `orders`, but an `order` is created by only one `customer`.
