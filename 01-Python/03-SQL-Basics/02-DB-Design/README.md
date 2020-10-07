@@ -10,13 +10,14 @@ There are many ways to build an e-commerce database, but let's start by building
 
 Here are the requirements of our system:
 
-- A `customer` has a `first_name`, `last_name`, an `e_mail` and a `city`,
+- A `customer` has a `first_name`, `last_name`, an `email` and a `city`.
 - A `product` has a `name` and a `unit_price`.
 - An `order` is defined by a `date_of_order`.
-- A `customer` can make many `orders`, but an `order` is created by only one `customer`.
-- An `order` can have several `products`.
-- A `product` can be in different `orders`.
-- There should be the `quantity` for a given `product` per `order`.
+- An `order` is created by only one `customer`.
+- A `customer` can make many `orders`.
+- An `order` can have many `products`.
+- A `product` can be in many `orders`.
+- A given `order` can have the same `product` multiple times so we need to record the `quantity` for a given `product` per `order`.
 
 
 #### Design the schema
