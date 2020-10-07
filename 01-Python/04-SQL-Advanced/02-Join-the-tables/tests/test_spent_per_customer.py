@@ -6,6 +6,7 @@ import sqlite3
 conn = sqlite3.connect('db/ecommerce.db')
 db = conn.cursor()
 
+
 class TestSpentCustomer(unittest.TestCase):
     def test_type_results(self):
         results = spent_per_customer(db)

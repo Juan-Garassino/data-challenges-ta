@@ -6,8 +6,9 @@ import sqlite3
 conn = sqlite3.connect('db/ecommerce.db')
 db = conn.cursor()
 
+
 class TestDetailOrders(unittest.TestCase):
-    def test_type_results(self):
+    def test_length_results(self):
         results = detailed_orders(db)
         self.assertEqual(len(results), 20)
 
