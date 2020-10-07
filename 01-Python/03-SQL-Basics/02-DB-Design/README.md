@@ -22,7 +22,7 @@ Here are the requirements of our system:
 
 #### Design the schema
 
-Design a database schema for a survey app that meets the requirements.
+Design a database schema for an-ecommerce app that meets the requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
 To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code in `ecommerce.xml`. You can then `make` to check your solution.
 
