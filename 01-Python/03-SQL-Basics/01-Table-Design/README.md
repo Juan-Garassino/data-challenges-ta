@@ -1,9 +1,9 @@
 ## Setup
 
-The `make` relies on an external [`lxml`](https://pypi.org/project/lxml/) package to read the XML from the SQL Designer tool. In the terminal, run:
+The `make` relies on external [`lxml`](https://pypi.org/project/lxml/) and [`pyyaml`](https://pypi.org/project/pyyaml/) package to read the XML from the SQL Designer tool. In the terminal, run:
 
 ```bash
-pip install lxml
+pip install lxml pyyaml
 ```
 
 ## Background & Objectives
