@@ -6,6 +6,7 @@ import sqlite3
 conn = sqlite3.connect('db/ecommerce.sqlite')
 db = conn.cursor()
 
+
 class TestQueryOrders(unittest.TestCase):
     def test_length_list(self):
         results = query_orders(db)

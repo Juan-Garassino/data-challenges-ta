@@ -26,7 +26,7 @@ To test your code, don't run `make` just yet, instead try to run the code yourse
 If something feels weird, you can **debug** your code by adding a **breaking point** with:
 
 ```python
-import pdb; pdb.set_trace()
+import ipdb; ipdb.set_trace()
 ```
 
 That way you can inspect the local variables at the breaking point and check your assumption about the code (what variables hold what? what are the types?). Getting good as debugging code is a critical skill to develop throughout the bootcamp!

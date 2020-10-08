@@ -3,8 +3,9 @@ import unittest
 from join_queries import spent_per_customer
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.db')
+conn = sqlite3.connect('db/ecommerce.sqlite')
 db = conn.cursor()
+
 
 class TestSpentCustomer(unittest.TestCase):
     def test_type_results(self):

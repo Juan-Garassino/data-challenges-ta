@@ -10,7 +10,7 @@ In the section we will discover subquery-refactoring! Indeed we may need to nest
 
 ### General Average
 
-👉  Implement`get_general_avg_order` to get the average order in terms of price.
+👉  Implement`get_general_avg_order` to get a `float` representing the average order in terms of price.
 
 ### Who are the best buyers?
 
