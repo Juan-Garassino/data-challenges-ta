@@ -9,7 +9,7 @@ from queries import directors_count, sorted_directors, love_movies,\
 
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
-with open(path.join(path.dirname(__file__), 'results.yml')) as f:
+with open(path.join(path.dirname(__file__), 'results.yml'), encoding='utf-8') as f:
     results = load(f, Loader=FullLoader)
 
 
