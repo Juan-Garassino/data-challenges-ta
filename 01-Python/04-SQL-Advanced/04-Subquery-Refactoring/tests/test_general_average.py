@@ -8,15 +8,11 @@ db = conn.cursor()
 
 
 class TestGeneralAverage(unittest.TestCase):
-    def test_length_results(self):
+    def test_type_results(self):
         results = get_general_avg_order(db)
-        self.assertEqual(len(results), 1)
+        self.assertIsInstance(results, float)
 
     def test_results(self):
         results = get_general_avg_order(db)
         expected = 418.48
         self.assertEqual(results, expected)
-
-    def test_type_results(self):
-        results = get_general_avg_order(db)
-        self.assertIsInstance(results, list)

@@ -8,7 +8,6 @@ db = conn.cursor()
 
 
 class TestOrdersRange(unittest.TestCase):
-
     def test_type_results(self):
         date_from = "2012-01-04"
         date_to = "2012-03-04"

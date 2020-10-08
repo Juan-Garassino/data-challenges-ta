@@ -10,7 +10,7 @@ There are four methods to implement:
 
 ### Detailed Orders
 
-👉 Implement `detailed_orders` to get the customer contact name and the  employee firstname of all the orders made.
+👉 Implement `detailed_orders` to get the customer contact name and the employee firstname of all the orders made.
 
 ### Spent per Customer
 
