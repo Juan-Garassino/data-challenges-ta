@@ -19,12 +19,9 @@ Here are the requirements of our system:
 - A `product` can be in many `orders`.
 - A given `order` can have the same `product` multiple times so we need to record the `quantity` for a given `product` per `order`.
 
-<details>
-  <summary>
-    💡 Hint
-  </summary>
+<details><summary markdown='span'>💡 Hint</summary>
   You need to introduce a join table <code>product_orders</code>.
-  
+
 </details>
 
 #### Design the schema
