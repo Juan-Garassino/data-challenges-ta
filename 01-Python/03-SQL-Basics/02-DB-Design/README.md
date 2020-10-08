@@ -24,6 +24,7 @@ Here are the requirements of our system:
     💡 Hint
   </summary>
   You need to introduce a join table <code>product_orders</code>.
+  
 </details>
 
 #### Design the schema
