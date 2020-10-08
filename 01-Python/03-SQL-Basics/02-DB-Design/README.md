@@ -24,7 +24,7 @@ Here are the requirements of our system:
 
 </details>
 
-### Design the schema
+#### Design the schema
 
 Design a database schema for an-ecommerce app that meets the requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
