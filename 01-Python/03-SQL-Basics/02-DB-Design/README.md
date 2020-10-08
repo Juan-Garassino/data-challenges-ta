@@ -19,15 +19,12 @@ Here are the requirements of our system:
 - A `product` can be in many `orders`.
 - A given `order` can have the same `product` multiple times so we need to record the `quantity` for a given `product` per `order`.
 
-<details>
-  <summary>
-    💡 Hint
-  </summary>
+<details><summary markdown='span'>💡 Hint</summary>
   You need to introduce a join table <code>product_orders</code>.
-  
+
 </details>
 
-#### Design the schema
+### Design the schema
 
 Design a database schema for an-ecommerce app that meets the requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
