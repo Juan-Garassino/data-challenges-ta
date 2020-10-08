@@ -1,1 +1,1 @@
-open the jupyter notebook and follow instructions
+Let's correct the optional challenge Advanced-Gradient-Descent together!
