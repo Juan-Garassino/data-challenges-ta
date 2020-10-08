@@ -1,1 +1,1 @@
-Open the notebook and follow instructions
+Open the notebook and follow the instructions
