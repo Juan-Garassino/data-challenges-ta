@@ -1,7 +1,6 @@
 ⚠️ This is the final challenge of the week (you have until Friday evening to complete it).
 **Before diving into it, take time to finish yesterday's challenge 02 on sellers analysis**.
 
-## CEO Request
 
 Our preliminary analysis is good enough for the limited time we have. Let's recap our key findings:
 - We have seen how `wait_time` was the most significant factor explaining low review scores, but reading comments of the bad reviews also showed that some of them were linked to the seller or to the product itself.
@@ -10,7 +9,7 @@ Our preliminary analysis is good enough for the limited time we have. Let's reca
 
 💡 Let's investigate the economic impact of banning some sellers from Olist marketplace:
 
-### Unit Economics
+## Unit Economics
 
 ***Revenue***
 
@@ -30,10 +29,10 @@ review_score|cost (BRL)
 5 stars|0
 
 - In addition, Olist's **IT costs** (servers, etc...) increase with the amount of orders processed, albeit less and less rapidly (scale effects).
-For the sake of simplificy, we will consider **IT Costs to be proportional to the square-root of the number of orders processed**
+For the sake of simplificy, we will consider IT Costs to be _proportional to the square-root of the number of orders processed_
 The IT department also told you that since birth of the marketplace, cumulated IT costs have amounted to 500,000 BRL.
 
-### ✏️ Your turn!
+## ✏️ Your turn!
 
 👉 **Open the `ceo_request.ipynb` notebook and start from there.**
 
@@ -43,9 +42,9 @@ The IT department also told you that since birth of the marketplace, cumulated I
 
 You have until Friday afternoon to produce the following analysis:
 
-> _Should Olist remove underperforming sellers from its marketplace?_
+> **Should Olist remove underperforming sellers from its marketplace?**
 
-(Optionally): Feel free to extend your analysis to the following options:
+### (Optional): Feel free to extend your analysis to the following options:
 
 - Should Olist remove the worst performing products / categories from its marketplace entirely?
 - Should Olist remove only repetively underperforming sellers, after it has a honeymoon period of few months
