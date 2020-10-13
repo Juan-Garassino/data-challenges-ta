@@ -14,5 +14,5 @@ class TestGeneralAverage(unittest.TestCase):
 
     def test_results(self):
         results = get_general_avg_order(db)
-        expected = 418.48
+        expected = 983.43
         self.assertEqual(results, expected)
