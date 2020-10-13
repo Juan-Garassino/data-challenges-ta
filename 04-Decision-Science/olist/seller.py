@@ -41,7 +41,7 @@ class Seller:
     def get_quantity(self):
         """
         Returns a DataFrame with:
-        'seller_id', 'n_orders', 'quantity'
+        'seller_id', 'n_orders', 'quantity', 'quantity_per_order'
         """
 
     def get_sales(self):

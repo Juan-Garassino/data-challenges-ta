@@ -10,9 +10,11 @@ class Olist:
         Its keys should be 'sellers', 'orders', 'order_items' etc...
         Its values should be pandas.DataFrame loaded from csv files
         """
-        # Hint: Build csv_path as "absolute path" in order to call this method from anywhere.
-        # Hint2: Use __file__ as absolute path anchor to avoid displaying your username or computer-specific folder architecture.
-        # Hint3: Use os.path library to construct path independent of Unix vs. Windows specificities
+        # Hints: Build csv_path as "absolute path" in order to call this method from anywhere.
+        # Do not hardcode your path as it only works on your machine ('Users/username/code...')
+        # Use __file__ as absolute path anchor independant of your computer
+        # Make extensive use of `import ipdb; ipdb.set_trace()` to investigate what `__file__` variable is really
+        # Use os.path library to construct path independent of Unix vs. Windows specificities
 
     def get_matching_table(self):
         """
