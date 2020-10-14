@@ -3,15 +3,13 @@
 In this challenge, we will learn the concepts of Mean, Mode, Median and Standard Deviation. In the file `basic_functions.py` there are four functions to implement. Each one of those functions will implement one of the aforementioned concepts.
 
 ## The Mean and Variance
-The sample **mean** (mu) is the average and is computed as the sum of all the observed outcomes from the sample divided by the total number of events.
-
+The sample **mean** (mu) is the average and is computed as the sum of all the observed outcomes from the sample divided by the total number of events. Here's the formula:
 ```python
 n = len(samples)
 mu = (1/n) * sum(samples)
 ```
 
-The **standard deviation** (sigma) on the other hand is a statistical metric that describes the spread of the data, or how far the values are from the mean.
-
+The **standard deviation** (sigma) on the other hand is a statistical metric that describes the spread of the data, or how far the values are from the mean. Here's the formula:
 ```python
 n = len(samples)
 sigma = ((1/(n - 1) * sum((samples - mu)**2))**0.5
