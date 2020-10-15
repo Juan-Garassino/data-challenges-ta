@@ -1,1 +1,1 @@
-Open the notebook and follow the instructions
+open the jupyter notebook and follow instructions
