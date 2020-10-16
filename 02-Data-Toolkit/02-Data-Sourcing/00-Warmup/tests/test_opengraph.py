@@ -16,7 +16,7 @@ class TestOpenGraph(unittest.TestCase):
         data = fetch_metadata("")
         self.assertTrue(data is None or data == "")
 
-    def test_saved_df(self):
+    def test_the_headers_of_newly_saved_df(self):
         with open('urls_df.csv', mode='r') as csv_file:
             headers = csv.DictReader(csv_file).fieldnames
             self.assertTrue('title' in headers)
