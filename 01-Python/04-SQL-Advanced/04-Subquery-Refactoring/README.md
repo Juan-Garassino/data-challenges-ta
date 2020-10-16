@@ -6,15 +6,16 @@ In the section we will discover subquery-refactoring! Indeed we may need to nest
 
 ### Average per Customer
 
-👉 Implement `get_average_purchase` to get the average amount spent per customer (by ascending CustomerID).
+👉 Implement `get_average_purchase` to get the average amount spent per order for each customer, ordered by customer ID.
 
 ### General Average
 
-👉  Implement`get_general_avg_order` to get a `float` representing the average order in terms of price.
+👉  Implement `get_general_avg_order` to get a `float` representing the average amount spent per order.
+
 
 ### Who are the best buyers?
 
-Now let's find the customers who have made bigger order than the average (average_purchase_per_customer > general_average_purchase).
+Now let's find the customers who spent more than the average, that is their average amount spent per order is greater than the general average amount spent per order.
 
 Can you see that the main part has already been done in the 2 previous questions? Let's use our previous queries thanks to the `WITH` clause.
 
@@ -24,7 +25,7 @@ You should get this:
 
 ```python
 display_best_buyers(db)
-=> [(572.91, 2), [...], (548.15, 5)]
+=> [(1031.24, 2), [...], (1096.3, 5)]
 ```
 
-Meaning that the customer with ID 2 spent on average €572,91 per Order
+Meaning that the customer with ID 2 spent on average €1031.24 per order

@@ -14,13 +14,7 @@ class TestAveragePerCustomer(unittest.TestCase):
 
     def test_results(self):
         results = get_average_purchase(db)
-        expected = [
-            (288.81, 1),
-            (572.91, 2),
-            (93.99, 3),
-            (870.01, 4),
-            (548.15, 5)
-        ]
+        expected = [(673.9, 1), (1031.24, 2), (266.32, 3), (2175.03, 4), (1096.3, 5)]
         self.assertEqual(results, expected)
 
     def test_type_results(self):
