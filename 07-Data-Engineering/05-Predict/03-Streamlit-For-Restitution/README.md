@@ -1,7 +1,7 @@
 # Streamlit
 
-We will learn how to simply setup an app for Data visualisation and restitution.  
-this will be usefull for you projects on the weeks to come.  
+We will learn how to simply setup an app for Data visualisation and restitution.
+this will be usefull for you projects on the weeks to come.
 
 # Introduction
 
@@ -17,18 +17,18 @@ streamlit run app_streamlit.py
 Now inspect `app_streamlit.py`  and check what is being done inside
 
 # Deploy
-Now that you checked your app works locally, you might want it to run free on a remote server.  
+Now that you checked your app works locally, you might want it to run free on a remote server.
 
 ## Create folder outside data-challenges
 Here as heroku is based on git, we will create a folder outside our gitted `data-challenges` folder.
 ```bash
-mkdir -p ~/code/taxifare_streamlit
-cp -rf * ~/code/taxifare_streamlit/ 
-cd ~/code/taxifare_streamlit/ 
+mkdir -p ~/code/<user.github_nickname>/taxifare_streamlit
+cp -rf * ~/code/<user.github_nickname>/taxifare_streamlit
+cd ~/code/<user.github_nickname>/taxifare_streamlit
 ```
 Version it for future heroku use:
 ```bash
-cd ~/code/taxifare_streamlit/ && git init
+cd ~/code/<user.github_nickname>/taxifare_streamlit && git init
 ```
 
 ## Deploy to heroku

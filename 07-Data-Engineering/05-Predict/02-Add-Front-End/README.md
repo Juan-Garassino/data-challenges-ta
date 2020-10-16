@@ -6,7 +6,7 @@ Add Front-End on top of your API to visualize your predictions.
 
 You have deployed your API on Heroku.
 
-Now you will build a beautiful front-end that will interrogate your API.  
+Now you will build a beautiful front-end that will interrogate your API.
 
 This is how most modern websites are built:
 
@@ -18,7 +18,7 @@ Here we provide you with a [wagon homemade frontend](https://github.com/lewagon/
 
 Create a duplicate template of this repo on your own github account, by clicking on the button `Use this template`.
 
-👉 name it `taxi-fare-interface` 
+👉 name it `taxi-fare-interface`
 
 Clone it:
 
