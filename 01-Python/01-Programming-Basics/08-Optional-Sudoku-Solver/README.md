@@ -51,7 +51,7 @@ grid_solution = [
 Open the `sudoku_solver.py` file and implement the `sudoku_solver()` function. To check if your code is working, you can run the tests with:
 
 ```bash
-./check.sh
+make
 ```
 
 Here is an interesting wikipedia article on this subject:<br>
