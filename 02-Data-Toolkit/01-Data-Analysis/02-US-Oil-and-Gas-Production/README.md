@@ -157,7 +157,7 @@ Create a new dataframe for the oil:
 - Load it with the [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) function
 - Parse the `Month` column into a `datetime` object
 
-Then create two dataframes `yearly_gas` and `yearly_oil` by grouping by year, summing and filtering the **global** production for both commodities. [Rename the columns](https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas) to `Gas` and `Crude oil`.
+Then create two dataframes `yearly_gas` and `yearly_oil` by grouping by year, summing and filtering the **total US** production for both commodities. [Rename the columns](https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas) to `Gas` and `Crude oil`.
 
 Now that you have those two dataframes, create one by concatenating both. Store this new dataframe into a `yearly_merged` variable. You should use the [`pd.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html), and don't forget to set the `axis` parameter!
 
