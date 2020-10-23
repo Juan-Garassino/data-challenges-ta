@@ -3,13 +3,13 @@
 In this challenge, we will learn the concepts of Mean, Mode, Median and Standard Deviation. In the file `basic_functions.py` there are four functions to implement. Each one of those functions will implement one of the aforementioned concepts.
 
 ## The Mean and Variance
-The sample **mean** (mu) is the average and is computed as the sum of all the observed outcomes from the sample divided by the total number of events. Here's the formula:
+The sample **mean** (mu) is the average and is computed as the sum of all the observed outcomes from the sample divided by the total number of events.
 ```python
 n = len(samples)
 mu = (1/n) * sum(samples)
 ```
 
-The **standard deviation** (sigma) on the other hand is a statistical metric that describes the spread of the data, or how far the values are from the mean. Here's the formula:
+The **standard deviation** (sigma) on the other hand is a statistical metric that describes the spread of the data, or how far the values are from the mean.
 ```python
 n = len(samples)
 sigma = ((1/(n - 1) * sum((samples - mu)**2))**0.5
@@ -26,18 +26,6 @@ One problem when using the mean, is that it often does not depict the typical ou
 Read this [wikipedia article](https://en.wikipedia.org/wiki/Median) to see how the **median** is computed.
 
 Implement in the file `basic_functions.py` the function `my_median(samples)`. The function takes a list as a parameter and return the median of the list.
-
-## The Quartiles
-
-The **first quartile (Q1)** is defined as the middle number between the smallest number and the median of the data set. The **second quartile (Q2)** is the median of the data. The **third quartile (Q3)** is the middle value between the median and the highest value of the data set.
-
-Read this [wikipedia article](https://en.wikipedia.org/wiki/Quartile) to see how the **quartiles** are computed.
-
-Implement in the file `basic_functions.py` the function `my_quartiles(samples)`. The function takes a list as a parameter and return the three quartiles of the list (i.e. this function returns a list).
-
-```python
-# my_quartiles([10,11,23,18,20]) => [10.5, 18, 21.5]
-```
 
 ## The Mode
 
