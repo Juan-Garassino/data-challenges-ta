@@ -4,16 +4,12 @@ In this challenge, we will learn the concepts of Mean, Mode, Median and Standard
 
 ## The Mean and Variance
 The sample **mean** (mu) is the average and is computed as the sum of all the observed outcomes from the sample divided by the total number of events. Here's the formula:
-```python
-n = len(samples)
-mu = (1/n) * sum(samples)
-```
+
+$\mu = \frac{1}{N}\sum_{i=0}^{N}x_i$
 
 The **standard deviation** (sigma) on the other hand is a statistical metric that describes the spread of the data, or how far the values are from the mean. Here's the formula:
-```python
-n = len(samples)
-sigma = ((1/(n - 1) * sum((samples - mu)**2))**0.5
-```
+
+$\sigma = \sqrt{\frac{\sum_{i=0}^N(x_i - \mu)^2}{N - 1}}$
 
 Thanks to these definitions, implement the functions `my_mean(samples)` and `my_standard_deviation(samples)` in the file `basic_functions.py`. These functions take a list as parameters and return the mean and the standard deviation respectively.
 
@@ -29,14 +25,21 @@ Implement in the file `basic_functions.py` the function `my_median(samples)`. Th
 
 ## The Quartiles
 
-The **first quartile (Q1)** is defined as the middle number between the smallest number and the median of the data set. The **second quartile (Q2)** is the median of the data. The **third quartile (Q3)** is the middle value between the median and the highest value of the data set.
+The quartiles are the three cut points that divide a dataset into four equal-sized groups. As it exists different methods to compute the quartiles, here are the specifications of the computation. Given a data sample of size $N$:
 
-Read this [wikipedia article](https://en.wikipedia.org/wiki/Quartile) to see how the **quartiles** are computed.
+- The **first quartile** $Q1$ is the value at the rank $(N+3)/4$
+- The **second quartile** $Q2$ is the median of the data sample
+- The **third quartile** $Q3$ is the value at the rank $(3N +1)/4$
+
+**If the rank of a quartile is not an integer**, a linear interpolation is applied between the values at the ranks flanking the quartile rank. These flanking values are noted $R_{inf}$ and $R_{sup}$, respectively.
+- if the quartile rank ends with $.25$, the quartile is $(3R_{inf} + R_{sup})/4$
+- if the quartile rank ends with $.5$, the quartile is $(R_{inf} + R_{sup})/2$
+- if the quartile rank ends with $.75$, the quartile is $(R_{inf} + 3R_{sup})/4$
 
 Implement in the file `basic_functions.py` the function `my_quartiles(samples)`. The function takes a list as a parameter and return the three quartiles of the list (i.e. this function returns a list).
 
 ```python
-# my_quartiles([10,11,23,18,20]) => [10.5, 18, 21.5]
+# my_quartiles([10,11,23,18,20]) => [11, 18, 20]
 ```
 
 ## The Mode
