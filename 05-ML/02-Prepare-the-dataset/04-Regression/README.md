@@ -1,6 +1,6 @@
-# Regression
+Time for modelling!
 
-Time for modelling! In this exercice, you will:
+In this exercice, you will:
 
 - Train and score a base regression model to predict the price of a car
 - Perform feature selection with the Feature Permutation Algorithm
