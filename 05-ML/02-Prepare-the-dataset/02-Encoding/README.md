@@ -1,5 +1,3 @@
-# Encoding
-
 In this exercice, you must encode the necessary features according to their nature:
 
 - Binary

@@ -1,6 +1,4 @@
-# Classification
-
-This exercice consists of turning the dataset into a Classification task. You are going to:
+This exercise consists of turning the dataset into a Classification task. You are going to:
 
 - Turn the price of the cars into two categories: Cheap and Expensive
 - Encode the newly created target
