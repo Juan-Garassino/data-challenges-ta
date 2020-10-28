@@ -2,9 +2,7 @@
 
 import unittest
 import statistics
-import numpy as np
-from basic_functions import my_mean, my_median, my_mode, my_quartiles, \
-    my_standard_deviation
+from basic_functions import my_mean, my_median, my_mode, my_standard_deviation
 
 
 class TestBasicFunctions(unittest.TestCase):
