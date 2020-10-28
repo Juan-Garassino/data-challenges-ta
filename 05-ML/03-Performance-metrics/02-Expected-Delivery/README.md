@@ -1,5 +1,3 @@
-# Expected delivery
-
 In this exercice, your task is to model the expected delivery time of an order to inform customers. You will:
 
 - Perform target engineering with `datetime` objects

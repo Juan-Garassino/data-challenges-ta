@@ -1,5 +1,3 @@
-# Bonus
-
-This bonus consists of combining the preprocessing technique you have learnt today. Have fun!
+This bonus exercise consists of combining the preprocessing techniques you have learnt today. Have fun!
 
 🚀 Your turn!
