@@ -27,9 +27,9 @@ class TestReality(unittest.TestCase):
 
     # Test for play_n_game
     def test_play_n_game_1(self):
-        expected = {1: 1.0}
+        expected = 1
         random.seed(1)
-        self.assertEqual(play_n_game(1,1), expected)
+        self.assertEqual(play_n_game(1,1)[1], expected)
 
     def test_play_n_game_100(self):
         expected = 0.24
@@ -40,10 +40,5 @@ class TestReality(unittest.TestCase):
         expected = 0.08
         random.seed(1)
         self.assertAlmostEqual(play_n_game(1000,100)[50], expected, places = 2)
-
-    def test_play_n_game_10000(self):
-        expected = 0.08
-        random.seed(1)
-        self.assertAlmostEqual(play_n_game(10000,100)[50], expected, places = 2)
 
 

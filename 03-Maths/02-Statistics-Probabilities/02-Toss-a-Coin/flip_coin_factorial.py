@@ -1,9 +1,5 @@
 # pylint: disable=missing-docstring
 
-def factorial(number):
-    '''TO DO: '''
-    pass
-
 def count_possibilities(n_toss, n_heads):
     '''TO DO: '''
     pass
