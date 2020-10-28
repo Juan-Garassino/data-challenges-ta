@@ -1,11 +1,7 @@
 
-# Bonus
+How would you GridSearchCV a model hyperparams in order to optimize a **custom scoring metric**?
 
-Using what you have learnt this week, build a model to flag as many malginant tumors as possible. 
-
-Have fun!
-
-To start the exercise, open `Bonus.ipynb` in `jupyter notebook` and follow the instructions.
+Open `recap.ipynb` in `jupyter notebook` to find out!
 
 🚀 Your turn!
 
