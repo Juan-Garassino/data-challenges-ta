@@ -17,7 +17,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-MLFLOW_URI = "http://35.210.166.253:5000"
+MLFLOW_URI = "https://mlflow.lewagon.co/"
 myname="youshouldwriteyournameinstead"
 EXPERIMENT_NAME = f"TaxifareModel_{myname}"
 

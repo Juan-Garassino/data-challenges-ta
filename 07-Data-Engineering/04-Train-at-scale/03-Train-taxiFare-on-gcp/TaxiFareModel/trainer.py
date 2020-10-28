@@ -24,7 +24,7 @@ from termcolor import colored
 from xgboost import XGBRegressor
 
 # Mlflow wagon server
-MLFLOW_URI = "http://35.210.166.253:5000"
+MLFLOW_URI = "https://mlflow.lewagon.co/"
 
 
 class Trainer(object):
