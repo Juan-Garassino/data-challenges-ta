@@ -5,7 +5,7 @@ Using what you have learnt this week, build a model to flag as many malginant tu
 
 Have fun!
 
-To start the exercise, open `Bonus.ipynb` in `jupyter notebook` and follow the instructions.
+To start the exercise, open `recap.ipynb` in `jupyter notebook` and follow the instructions.
 
 🚀 Your turn!
 

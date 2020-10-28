@@ -1,5 +1,3 @@
-# Workflow
-
 In this exercice, you will implement the model tuning and evaluation workflow:
 
 1. Holdout
