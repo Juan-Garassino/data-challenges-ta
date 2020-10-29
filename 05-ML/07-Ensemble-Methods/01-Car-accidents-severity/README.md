@@ -7,7 +7,7 @@ This Kaggle challenge comprises of 1,000,000 accidents report, split into multip
 Download the data here:
 
 ```bash
-cd ~/code/$GITHUB_NICKNAME/data-challenges/05-ML/08-Workflow/01-Car-accidents-severity
+cd ~/code/$GITHUB_NICKNAME/data-challenges/05-ML/07-Ensemble-Methods/01-Car-accidents-severity
 curl https://wagon-public-datasets.s3.amazonaws.com/car_acccidents_datasets.zip > data.zip
 unzip data.zip -d data
 rm -rf data.zip
