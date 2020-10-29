@@ -22,19 +22,19 @@ This is what MLFlow tracking is about.
 ## Prerequisites
 Before carrying on make sure you understood:
 - the structure of the `Trainer()` class from ex1 is clear, if not please reach out to one of your TA's
-- the way to log a metric and a parameter on [wagon_hosted_mlflow server](http://35.210.166.253:5000/#/experiments/0)
+- the way to log a metric and a parameter on [wagon_hosted_mlflow server](https://mlflow.lewagon.co/#/experiments/0)
 - how to pass random number of parameters to a class or functions (`**kwargs`), and how to access them
 - you might need to `pip install category_encoders memoized_property psutil xgboost pygeohash`
 
-Please also inspect new `trainer.py` from today, the structure is slightly different from yesterday.    
-👉 Amongst other we added `save_model()` method, keep it in mind for later  
+Please also inspect new `trainer.py` from today, the structure is slightly different from yesterday.
+👉 Amongst other we added `save_model()` method, keep it in mind for later
 👉 Once you'll be happy about your final model, you will submit your your best model's predictions to kaggle
 
 Last thing, we suggested here a package structure to organize your code and your run, feel free to tweak is as you like if need be.
 ## 0. Define your experiment name
-You will all log you run results and parameters on the same MLFLOW instance hosted on le wagon server.  
+You will all log you run results and parameters on the same MLFLOW instance hosted on le wagon server.
 From now on, you will have have your own `experiment` defined inside `trainer.py` as follow:
-```python 
+```python
 experiment = "taxifare_YOURNAME"
 ```
 Please update your name for all following exercices
@@ -44,7 +44,7 @@ Please update your name for all following exercices
 - Implement a short script that will loop through all estimators, train the model and evaluate it on a validation set.
 👉 Here you might need to tweek `TaxiFareModel` package
 - Be careful: make sure you always use the same validation set accross all your trainings. **Tip** you can set the random seed for `train_test_split` to make sure the split is always the same.
-- View results with on [wagon_hosted_mlflow server](http://35.210.166.253:5000/#/experiments/0)  
+- View results with on [wagon_hosted_mlflow server](https://mlflow.lewagon.co/#/experiments/0)
 
 And last advice, while building your pipeline, run it on small datasample, and preferably locally
 
