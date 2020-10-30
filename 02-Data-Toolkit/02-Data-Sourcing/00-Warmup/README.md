@@ -35,7 +35,7 @@ Use `curl` or your browser to perform a few requests and have a look at the JSON
 
 Open the `opengraph.py` file in Sublime Text. You will find an empty `fetch_metadata` function that you need to implement. This function takes a `url` parameter and, using the [`requests`](https://requests.readthedocs.io/en/master/) package, will retrieves Open Graph metadata of the specified url + return them as a dictionary. If for some reason the API returns an error (`422` or `500`, not `200` for the HTTP status code), then the function should return `None`.
 
-This function implementation is about 4 lines of Python, please _make a ticket_ if you are stuck at this step. You'll know you're done with this file when `make` is 100% green, don't hesitate to commit that checkpoint!
+This function implementation is about 4 lines of Python, please _make a ticket_ if you are stuck at this step. You'll know you're done with this file when `make` passes first 3 tests, don't hesitate to commit that checkpoint!
 
 ```bash
 make
@@ -53,7 +53,7 @@ Time to use the `fetch_metadata` in a Notebook context!
 jupyter notebook Warmup.ipynb
 ```
 
-When you are done with the notebook, please commit and push your work to keep your repository tidy:
+When you are done with the notebook, check whether **`make` is 100% green** and if yes please commit and push your work to keep your repository tidy:
 
 ```bash
 git add opengraph.py Warmup.ipynb urls.csv

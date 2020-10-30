@@ -29,7 +29,7 @@ from TaxiFareModel.utils import compute_rmse, simple_time_tracker
 from TaxiFareModel.params import MODEL_VERSION
 
 # Mlflow wagon server
-MLFLOW_URI = "http://35.210.166.253:5000"
+MLFLOW_URI = "https://mlflow.lewagon.co/"
 
 
 class Trainer(object):

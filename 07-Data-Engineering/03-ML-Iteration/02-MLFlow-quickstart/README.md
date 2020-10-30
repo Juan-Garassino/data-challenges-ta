@@ -10,7 +10,7 @@ There are many different things that make models better:
 - tune hyperparameters
 
 
-The problem is that it is often hard to keep track of this different experimentations. There are many different parameters that we can tune and many different combinations.  
+The problem is that it is often hard to keep track of this different experimentations. There are many different parameters that we can tune and many different combinations.
 
 👉 **[MLFlow](https://www.mlflow.org/docs/latest/concepts.html) is a very useful tool to help us in machine learning models iteration.**
 
@@ -30,7 +30,7 @@ Now Open a new terminal window and launch mlflow ui **in your current directory 
 mlflow ui
 ```
 
-👉 Check [here](http://127.0.0.1:5000/#/) your local mlflow tracking server  
+👉 Check [here](http://127.0.0.1:5000/#/) your local mlflow tracking server
 
 MLFlow defines experiments and runs, you have different runs inside one experiment
 For instance for experiment *model_experiment*, you'll have :
@@ -57,7 +57,7 @@ for model in ["linear", "Randomforest"]:
 
 ## Hosted MLFlow server
 
-For simplicity purpose, le wagon ran `mlflow ui` on its own server so that we all have the same [mlflow server](http://35.210.166.253:5000/#/experiments/0) to log our future experiments
+For simplicity purpose, le wagon ran `mlflow ui` on its own server so that we all have the same [mlflow server](https://mlflow.lewagon.co/#/experiments/0) to log our future experiments
 
 We will now log same parameter on remote instance. For that we will slightly modify `ml_flow_test.py` to log info to the remote server:
 ```python
@@ -65,7 +65,7 @@ import mlflow
 from  mlflow.tracking import MlflowClient
 EXPERIMENT_NAME = "test_experiment"
 # Indicate mlflow to log to remote server
-mlflow.set_tracking_uri("http://35.210.166.253:5000")
+mlflow.set_tracking_uri("https://mlflow.lewagon.co/")
 client = MlflowClient()
 try:
     experiment_id = client.create_experiment(EXPERIMENT_NAME)
@@ -83,7 +83,7 @@ for model in ["linear", "Randomforest"]:
     client.log_param(run.info.run_id, "model", model)
     client.log_param(run.info.run_id, "student_name", yourname)
 ```
-Check out  [mlflow server](http://35.210.166.253:5000) to visualise your logs
+Check out  [mlflow server](https://mlflow.lewagon.co/) to visualise your logs
 
 ## Mlfow integrated to our Taxifare ml project
 Now we will add a few methods to our existing class in order to start logging training runs
@@ -124,7 +124,7 @@ Notice how [@memoized_property](https://pypi.org/project/memoized-property/) is 
 We've done the hard work, we can now easily log any param and metric by simply adding `self.mlflow_log_param(param, value)` or `self.mlflow_log_metric(metric_name, metric_value)` anywhere in our class:
 - Define 2 global variables at the beginning `trainer.py`:
 ```python
-MLFLOW_URI = "http://35.210.166.253:5000"
+MLFLOW_URI = "https://mlflow.lewagon.co/"
 myname="youshouldwriteyournameinstead"
 EXPERIMENT_NAME = f"TaxifareModel_{myname}"
 ```
@@ -133,4 +133,4 @@ EXPERIMENT_NAME = f"TaxifareModel_{myname}"
 ```bash
 python -m TaxiFareModel.trainer
 ```
-- check it logged correctly  on [wagon hosted mlflow server](http://35.210.166.253:5000/)
+- check it logged correctly  on [wagon hosted mlflow server](https://mlflow.lewagon.co/)

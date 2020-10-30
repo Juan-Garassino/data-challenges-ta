@@ -1,25 +1,8 @@
 
 import unittest
-from flip_coin_factorial import factorial, count_possibilities, count_total_possibilities, probability
+from flip_coin_factorial import count_possibilities, count_total_possibilities, probability
 
 class TestTheory(unittest.TestCase):
-    # Test for factorial
-    def test_factorial_0(self):
-        expected = 1
-        self.assertEqual(factorial(0), expected)
-
-    def test_factorial_1(self):
-        expected = 1
-        self.assertEqual(factorial(1), expected)
-
-    def test_factorial_5(self):
-        expected = 120
-        self.assertEqual(factorial(5), expected)
-
-    def test_factorial_6(self):
-        expected = 720
-        self.assertEqual(factorial(6), expected)
-
 
     # Test for count_possibilities
     def test_count_possibilities_11(self):

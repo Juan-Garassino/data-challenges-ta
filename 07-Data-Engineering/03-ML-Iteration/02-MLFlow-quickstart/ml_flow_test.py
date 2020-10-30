@@ -2,7 +2,7 @@ import mlflow
 from  mlflow.tracking import MlflowClient
 EXPERIMENT_NAME = "test_experiment"
 # Indicate mlflow to log to remote server
-mlflow.set_tracking_uri("http://35.210.166.253:5000")
+mlflow.set_tracking_uri("https://mlflow.lewagon.co/")
 client = MlflowClient()
 # Here experiment name already exists so we just get its existing id
 experiment_id = client.get_experiment_by_name(EXPERIMENT_NAME).experiment_id

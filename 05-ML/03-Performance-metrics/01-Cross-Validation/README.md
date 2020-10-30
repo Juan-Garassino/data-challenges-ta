@@ -1,5 +1,3 @@
-# Cross Validation
-
 In this exercice, you will familiarize yourself with the systematic use of cross-validation to evaluate model performance. You will:
 
 - Train and score a baseline model

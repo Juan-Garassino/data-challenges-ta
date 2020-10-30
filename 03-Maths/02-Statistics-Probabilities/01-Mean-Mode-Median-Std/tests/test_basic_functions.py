@@ -2,8 +2,7 @@
 
 import unittest
 import statistics
-from basic_functions import my_mean, my_median, my_mode, my_quartiles, \
-    my_standard_deviation
+from basic_functions import my_mean, my_median, my_mode, my_standard_deviation
 
 
 class TestBasicFunctions(unittest.TestCase):
@@ -30,11 +29,3 @@ class TestBasicFunctions(unittest.TestCase):
         self.assertEqual(my_mode(test2), statistics.mode(test2))
         test3 = [5, 3, 4, 6, 0, 2, 2]
         self.assertEqual(my_mode(test3), statistics.mode(test3))
-
-    def test_my_quartiles(self):
-        test1 = [10, 22, 37, 12, 34]
-        self.assertEqual(my_quartiles(test1), [12, 22, 34])
-        test2 = [12, 65, 98, 20, 9]
-        self.assertEqual(my_quartiles(test2), [12, 20, 65])
-        self.assertEqual(my_quartiles([2, 4, 9]), [3.0, 4, 6.5])
-        self.assertEqual(my_quartiles([2, 9]), [3.75, 5.5, 7.25])

@@ -1,6 +1,4 @@
-# Recap
-
-The objective of the Recap is to:
+The objectives of the Recap is to:
 
 - Expose the limitations of Logistic Regression models when dealing with imbalanced datasets
 - Introduce Cost-Sensitive learning and its associated parameter

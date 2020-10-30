@@ -23,25 +23,6 @@ Read this [wikipedia article](https://en.wikipedia.org/wiki/Median) to see how t
 
 Implement in the file `basic_functions.py` the function `my_median(samples)`. The function takes a list as a parameter and return the median of the list.
 
-## The Quartiles
-
-The quartiles are the three cut points that divide a dataset into four equal-sized groups. As it exists different methods to compute the quartiles, here are the specifications of the computation. Given a data sample of size $N$:
-
-- The **first quartile** $Q1$ is the value at the rank $(N+3)/4$
-- The **second quartile** $Q2$ is the median of the data sample
-- The **third quartile** $Q3$ is the value at the rank $(3N +1)/4$
-
-**If the rank of a quartile is not an integer**, a linear interpolation is applied between the values at the ranks flanking the quartile rank. These flanking values are noted $R_{inf}$ and $R_{sup}$, respectively.
-- if the quartile rank ends with $.25$, the quartile is $(3R_{inf} + R_{sup})/4$
-- if the quartile rank ends with $.5$, the quartile is $(R_{inf} + R_{sup})/2$
-- if the quartile rank ends with $.75$, the quartile is $(R_{inf} + 3R_{sup})/4$
-
-Implement in the file `basic_functions.py` the function `my_quartiles(samples)`. The function takes a list as a parameter and return the three quartiles of the list (i.e. this function returns a list).
-
-```python
-# my_quartiles([10,11,23,18,20]) => [11, 18, 20]
-```
-
 ## The Mode
 
 The mode of a set of data values is the value that appears most often. In other words, it is the value that is most likely to be sampled.
