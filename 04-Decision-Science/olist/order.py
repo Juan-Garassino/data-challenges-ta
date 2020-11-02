@@ -26,7 +26,7 @@ class Order:
     def get_review_score(self):
         """
         02-01 > Returns a DataFrame with:
-        order_id, dim_is_five_star, dim_is_one_star
+        order_id, dim_is_five_star, dim_is_one_star, review_score
         """
 
     def get_number_products(self):
