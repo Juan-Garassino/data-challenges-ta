@@ -74,7 +74,7 @@ Add `olist` path to your `PYTHONPATH`.
 
 This will allow you to easily import modules defined in `olist` in your notebooks throughout the week.
 
-**macOS and Linux:**
+**For macOS, Linux and Windows WSL2:**
 
 Open your terminal and navigate to your home directory by running:
 
@@ -103,11 +103,11 @@ Now in your terminal run:
 cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && echo "export PYTHONPATH=\"$(pwd):\$PYTHONPATH\""
 ```
 
-Copy the output line at the bottom of your `~/.zshrc` file.
+👉 Copy the output line at the bottom of your `~/.zshrc` file.
 
 ⚠️ Restart all your terminal windows to take into account this change.
 
-**Windows:**
+**For Windows without WSL2:**
 
 Open a Git Bash terminal and run:
 ```bash

@@ -29,7 +29,7 @@ review_score|cost (BRL)
 5 stars|0
 
 - In addition, Olist's **IT costs** (servers, etc...) increase with the amount of orders processed, albeit less and less rapidly (scale effects).
-For the sake of simplificy, we will consider IT Costs to be _proportional to the square-root of the number of orders processed_
+For the sake of simplificy, we will consider Olist's total IT Costs to be _proportional to the square-root of the number of orders processed_
 The IT department also told you that since birth of the marketplace, cumulated IT costs have amounted to 500,000 BRL.
 
 ## ✏️ Your turn!

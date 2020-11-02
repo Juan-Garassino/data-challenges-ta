@@ -1,10 +1,11 @@
-## CEO Request (bis)
-
 ### Finalize your analysis
 
 Continue working on yesterday's `ceo-request.ipynb` notebook as needed to answer the question
 
 > _Should Olist remove underperforming sellers from its marketplace?_
+
+🚀 Feel free to start from the solutions `seller_updated_solution.py` and `product_updated_solution.py` available to download from yesterday's recap challenge.
+They contain profits_per_seller and profits_per_products.
 
 ### Present your analysis at 5pm!
 
