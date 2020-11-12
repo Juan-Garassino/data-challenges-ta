@@ -123,7 +123,7 @@ Install termcolor to allow your script to output colored text `pip install termc
 
 You can inspect code from `computedist.py` (or `script.py`) file located in
 ```bash
-~/code/data-challenges/<user.github_nickname>/data-challenges/07-Data-Engineering/01-Code-as-a-Product/ 02-Package-installation
+~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/01-Code-as-a-Product/02-Package-installation
 ```
 to understand how to give arguments to a script.
 
