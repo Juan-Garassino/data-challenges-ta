@@ -6,9 +6,23 @@
 .pytest_cache
 __pycache__
 *checkpoint.ipynb
+.ipynb_checkpoints
+
+# inteliJ #
 .idea
 *.vscode/
-.ipynb_checkpoints
+*.gz
+*PKG-INFO
+*.egg-info
+05-Production/01-ML-Workflow/data/*.csv
+05-Production/01-ML-Workflow/data/*.csv
+05-Production/01-ML-Workflow/data/*.csv
+05-Production/03-ML-Iteration/TaxiFareModel/data/test.csv
+05-Production/03-ML-Iteration/TaxiFareModel/data/train.csv
+05-Production/03-ML-Iteration/data/*.csv
+05-Production/03-ML-Iteration/mlruns/*
+05-Production/**/data/*
+05-Production/**/**/data/*
 
 # Datasets in challenges
 02-Data-Toolkit/02-Data-Sourcing/Reboot/books.csv
