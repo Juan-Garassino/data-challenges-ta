@@ -1,22 +1,10 @@
-# This last exercise is actually a real challenge
+# Week 06 - Deep Learning - Day 1 - Regression
 
+The last exercise is an open challenge.
 
-It is intended for students that already seen Deep Learning in the past and went fast on the previous exercises.
-
-You are given real data, for which the goal is to set the neural network that has the best architecture to predict the problem at hand. This means that you should optimize :
-
+You are given real data, for which the goal is to set the neural network that has the best architecture to predict the problem at hand. This means that you should select:
 - The architecture of the Neural network (NN) : number of layers, number of neurons, activation functions, ...
 - The loss of the NN
 - The optimizer of the NN
 
-This should be all done in a Cross-validation setting to make sure that you do not overfit one split of the testing data!
-
-
-The data you are given are from the abalone dataset (http://archive.ics.uci.edu/ml/datasets/Abalone)
-
-The abalone is a shell from which you are given multiple properties and you have to infer its age.
-1. Download the data directly from the website
-2. Split it into X and y
-3. Do one train/test split
-4. Find one suitable architecture, loss, optimizer, ...
-5. Once you have a full pipeline, evaluate it in a cross-validation procedure
+This exercise will get your hands dirty with application without much guidance, as in real-life problems.

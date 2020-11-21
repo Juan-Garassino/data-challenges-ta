@@ -1,3 +1,4 @@
-# Week 06 - Deep Learning - Day 1 - Exercise 4
+# Week 06 - Deep Learning - Day 1 - Regression
 
-The final exercise is a regression task, so that, on top of the second and third exercise, the students will see each of the possible task and their related architecture. The data corresponds to the Boston Housing dataset that uses features related to the quality of a housing.
+The final exercise is a regression task which is (after the 2-class and multi-class classification) the last supervised task you will tackle with Neural Networks during the week.
+The data corresponds to the Boston Housing dataset that uses features related to the quality of a housing.
