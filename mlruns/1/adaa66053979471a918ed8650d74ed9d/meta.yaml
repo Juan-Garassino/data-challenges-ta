@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/krokrob/code/lewagon/data-challenges/mlruns/1/adaa66053979471a918ed8650d74ed9d/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: adaa66053979471a918ed8650d74ed9d
+run_uuid: adaa66053979471a918ed8650d74ed9d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1606142895100
+status: 1
+tags: []
+user_id: unknown
