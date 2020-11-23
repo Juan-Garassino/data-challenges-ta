@@ -62,7 +62,7 @@ git commit -m 'add notebooks and raw_data directories'
 Then create a GitHub repository and push your project:
 
 ```bash
-hub create
+gh repo create
 git push origin master
 ```
 
