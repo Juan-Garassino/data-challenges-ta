@@ -37,7 +37,9 @@ packgenlite TaxiFareModel
 - Copy the code we provide into your project
 
 <details>
-  <summary>💡 Hint</summary>
+<summary>
+💡 Hint
+</summary>
 
 ```bash
 cp -r ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/02-ML-Iteration/03-Notebook-to-package/TaxiFareModel ~/code/<user.github_nickname>/TaxiFareModel/
