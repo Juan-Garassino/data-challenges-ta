@@ -37,8 +37,7 @@ packgenlite TaxiFareModel
 - Copy the code we provide into your project
 
 <details>
-<summary>
-💡 Hint
+<summary>💡 Hint
 </summary>
 
 ```bash
