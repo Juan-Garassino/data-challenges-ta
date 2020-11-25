@@ -110,7 +110,7 @@ class Trainer(object):
         pipe_time_features = make_pipeline(TimeFeaturesEncoder(time_column='pickup_datetime'),
                                            OneHotEncoder(handle_unknown='ignore'))
         pipe_distance = make_pipeline(DistanceTransformer(distance_type=dist, **DIST_ARGS), RobustScaler())
-        pipe_geohash = make_pipeline(AddGeohash(), ce.HashingEncoder())
+        # pipe_geohash = make_pipeline(AddGeohash(), ce.HashingEncoder())
         pipe_direction = make_pipeline(Direction(), RobustScaler())
         pipe_distance_to_center = make_pipeline(DistanceToCenter(), RobustScaler())
 
@@ -118,7 +118,7 @@ class Trainer(object):
         feateng_blocks = [
             ('distance', pipe_distance, list(DIST_ARGS.values())),
             ('time_features', pipe_time_features, ['pickup_datetime']),
-            ('geohash', pipe_geohash, list(DIST_ARGS.values())),
+            # ('geohash', pipe_geohash, list(DIST_ARGS.values())),
             ('direction', pipe_direction, list(DIST_ARGS.values())),
             ('distance_to_center', pipe_distance_to_center, list(DIST_ARGS.values())),
         ]
