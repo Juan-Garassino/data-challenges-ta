@@ -1,8 +1,8 @@
 ## Foreword
 
-A common way of collecting data is through APIs. Those can be [public API](https://github.com/public-apis/public-apis) with auth or not, free or paying, those can be internal APIs at your company, etc.
+A common way of collecting data is through APIs. Those can be [public API](https://github.com/public-apis/public-apis) with authentication or not, free or paying, internal APIs at your company, etc.
 
-When it comes to API, there are some keywords to know about:
+When it comes to APIs, there are some keywords that you should understand:
 
 - [SOAP](https://en.wikipedia.org/wiki/SOAP) (old)
 - [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (current)
@@ -10,11 +10,11 @@ When it comes to API, there are some keywords to know about:
 - [XML](https://en.wikipedia.org/wiki/XML) (old)
 - [JSON](https://en.wikipedia.org/wiki/JSON) (current)
 
-The first three keywords refer to a **protocol** on top of HTTP(s) and is really important to figure out as you want to **consume** data from an API.
+The first three keywords refer to a **protocol** on top of HTTP(s) and it is really important to figure out which protocol you are using when you want to **consume** data from an API.
 
 The two last keywords refer to a **data format** that would usually be sent back to you when performing an API call.
 
-ℹ️ Most modern APIs are RESTful and send JSON. In this challenge, we are going to use such an API.
+ℹ️ Most modern APIs are RESTful and send back JSON. In this challenge, we are going to use such an API.
 
 ## Reading the documentation
 
@@ -22,7 +22,7 @@ When presented with a new API to use, your first reflex should be to go straight
 
 1. Is this a REST API?
 1. Does it serve JSON?
-1. Is this API authenticated? (do I need to sign up to get an API key? do I need to pay?)
+1. Does this API require authentication? (do I need to sign up to get an API key? do I need to pay?)
 1. What is the base URI?
 1. What endpoints can I call? What data do they return?
 
@@ -32,7 +32,7 @@ When presented with a new API to use, your first reflex should be to go straight
 
 Before building something fancy, we need to make sure that we can run a first API call successfully. This is a sanity check to make sure we don't start coding too much before realizing that the API we intended to use is not a good fit.
 
-So how should make our first call? There are several options:
+So how can we make our first call? There are several options:
 
 ### Using the browser
 
@@ -46,19 +46,19 @@ https://www.metaweather.com/api/location/search/?query=london
 
 What do you see? If you are on Chrome, you should install the [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) extension for a prettier look. In the end, JSON is just text that needs to be **parsed**, that's what the extension will do
 
-### Using Postman
+### Optional - Using Postman
 
-[Postman](https://www.getpostman.com/) is an app that many developers download on their laptop to use when building software consuming APIs. It provides a more advanced experience where you need to a fine control over:
+[Postman](https://www.getpostman.com/) is an app that many developers download on their laptop to use when building software consuming APIs. It provides a more advanced experience where you need to have a better control over:
 
 - HTTP Verb (`GET`, `POST`, `PATCH`, `DELETE`, etc.)
 - Request headers (`Content-Type`, `Authorization`, etc.)
 - Request body (`application/x-www-form-urlencoded` or `raw`)
 
-This application allow to **save** some requests, has tabs and more advanced feature. Try it!
+This application allows us to **save** some requests, create tabs with different requests and offers more advanced features. Go ahead and try it!
 
 ### Using Python
 
-Finally, we want to use this API in _our code_. Python's standard library comes with a [`http.client`](https://docs.python.org/3/library/http.client.html) built-in module, but we are not going to use it. Instead, we are going to use the [`requests`](https://requests.readthedocs.io) library, an 'elegant and simple HTTP library for Python, built for human beings'.
+Finally, we want to use this API in _our code_. Python's standard library comes with an [`http.client`](https://docs.python.org/3/library/http.client.html) built-in module, but we are not going to use it. Instead, we are going to use the [`requests`](https://requests.readthedocs.io) library, an 'elegant and simple HTTP library for Python, built for human beings'.
 
 Open the `test_api.py` file and paste the following code:
 
@@ -71,19 +71,31 @@ city = response[0]
 print(f"{city['title']}: {city['woeid']} ({city['latt_long']})")
 ```
 
-Save and run the following command:
+Save the file and run the following command:
 
 ```bash
 python test_api.py
 ```
 
-Is it working? Did you grab successfully London's woeid? Some questions for you to answer with your buddy before moving forward:
+Is it working? Did you grab successfully London's `woeid`? Some questions for you to answer with your buddy before moving forward:
 
 - Line `4`, why are we chaining a `.json()` after `.get()`? Does it still work without that call? You can `print()` intermediate steps to convince yourself. (💡 [Doc](https://requests.readthedocs.io/en/master/user/quickstart/#json-response-content))
 - Line `5`, why do we do `[0]`? What's the type of `response`?
 - Line `6`, what's the type of `city['woeid']`, `str` or `int`? Why?
 
-To answer those questions, don't hesitate to `print()` or **even better**, [debug](https://pypi.org/project/ipdb/). This first week is a good time to sharpen your debugging skills before diving into more advanced topics.
+To answer those questions, don't hesitate to `print()` or **even better**, [debug](https://pypi.org/project/ipdb/). This first week is a good time to sharpen your debugging skills before diving into more advanced topics. Don't remember how to do it? Remember yesterday's challenge in which you had to insert this line in your code:
+```python
+import ipdb; ipdb.set_trace()
+```
+
+And run the file with:
+
+```bash
+python test_api.py
+```
+
+It will stop execution at the line where you added the `ipdb.set_trace()` and open a command line. From there you can check what is the `url`, `response`, `city` or any other variable you defined in the code!
+
 
 ## Let the challenge begin!
 
@@ -91,25 +103,43 @@ To answer those questions, don't hesitate to `print()` or **even better**, [debu
 
 Let's build a weather [CLI](https://en.wikipedia.org/wiki/Command-line_interface) using the API. Here's the flow for a user (pseudo-code!):
 
-1. Launch `python weather.py`
-1. Get asked to type a city name
-1. If city is unknown to the API, display an error message and get back to step 2.
-1. If user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) that might be useful)
-1. Fetch weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
-1. Go back to step 2 (loop to ask for a new city).
-1. At any point, `Ctrl`-`C` will take care of quitting the program
+1. Launch the app with `python weather.py`
+2. Get asked to type a city name
+3. If city is unknown to the API, display an error message and go back to step 2.
+4. Fetch the weather forecast for the next 5 days and display it (Date, Weather and max temperature in °C)
+5. Go back to step 2 (loop to ask for a new city).
+6. At any point, `Ctrl`-`C` will take care of quitting the program
 
-In action, it will should look like this:
+In action, it should look like this:
 
-<iframe src="https://player.vimeo.com/video/364146887" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+```bash
+python weather.py
+```
 
-Open the `weather.py` file. You will be greated by three empty methods:
+```text
+City?
+> london
+Here's the weather in London
+2020-09-30: Heavy Rain 16.4°C
+2020-10-01: Light Rain 15.1°C
+2020-10-02: Heavy Rain 13.4°C
+2020-10-03: Heavy Rain 14.3°C
+2020-10-04: Heavy Rain 14.6°C
+City?
+>
+```
+
+Open the `weather.py` file. You will be greeted by three empty functions:
 
 - `search_city(query)`
 - `weather_forecast(woeid)`
 - `main()`
 
-You need to implement them, in that order. `make` will assist you for the first two methods, and for the last one you will need to run the Python program directly with `python weather.py`.
+You need to implement them **in that order**. `make` will assist you for the first two functions, and for the last one you will need to run the Python program directly with `python weather.py`.
+
+1. Start with the `search_city` function which should return the dictionary with all the information about the city. Not just `woeid`!
+2. Continue to `weather_forecast` which takes the city `woeid` as an argument and returns the forecast for five days.
+3. Finish off with coding the `main` function. It will be called when you run the `weather.py` file from the terminal. Which functions should be called from within `main`? In what order?
 
 💡 By the way, did you check the content of the `Makefile`? It runs `pylint` for every Python file in your project, and `pytest` for the whole project. You can launch the tests for the weather CLI only with:
 
@@ -117,15 +147,21 @@ You need to implement them, in that order. `make` will assist you for the first 
 pytest -v tests/test_weather.py
 ```
 
-## History
+## Optional - you can come back to it once you're done with the Scraping challenge.
 
-If you read carefully the documentation of the API, you may have noticed there is a third endpoint exposed that we did not use yet, the **Location Day** one:
+### List of cities
+
+After `step 3`: if the user input is ambiguous (several cities comes back from search), display them and ask the user to pick one. (💡 Hint: there's a built-in [`enumerate()`](https://docs.python.org/3/library/functions.html#enumerate) function that might be useful)
+
+### History
+
+If you read carefully the documentation of the API, you may have noticed there is a third endpoint exposed that we did not use yet, the **Location Day**:
 
 ```bash
 URL: /api/location/(woeid)/(date)/
 Arguments
   woeid: Where On Earth ID.
-  date: Date in the format yyyy/mm/dd. Most location have data from early 2013.
+  date: Date in the format yyyy/mm/dd. Most locations have data from early 2013.
 ```
 
 It even gives some examples:
@@ -133,7 +169,7 @@ It even gives some examples:
 - [/api/location/44418/2013/4/27/](https://www.metaweather.com/api/location/44418/2013/4/27/) - London on a 27th Apr 2013
 - [/api/location/2487956/2013/4/30/](https://www.metaweather.com/api/location/2487956/2013/4/30/) - San Francisco on 30th April 2013
 
-If you look closely at those examples, you can notice that it contains a list of datapoints for the **same `applicable_date`**, but the `created` shows either the same day _or_ days before. Which means you get an history of prediction + the _actual_ weather on the given day. This kind of data is exactly what we will want when working with Machine Learning, starting week 3 of this program.
+If you look closely at those examples, you can notice that it contains a list of datapoints for the **same `applicable_date`**, but the `created` shows either the same day _or_ days before. Which means you get a history of prediction + the _actual_ weather on the given day. This kind of data is exactly what we will want when working with Machine Learning, starting week 3 of this program.
 
 In the meantime, let's do some **data engineering**, by gathering data from this API and storing it into a CSV for now. In real life, we would like to write directly to a **data warehouse** like [Google BigQuery](https://cloud.google.com/bigquery/), but for this first week, let's [KISS](https://en.wikipedia.org/wiki/KISS_principle) and store the data to a file. That's actually not such a bad idea, as we could write a Python script later to read that CSV and feed the data warehouse.
 
@@ -145,7 +181,7 @@ ls -lh ./data
 # -rw-r--r--  344K  2019_02_615702_paris.csv
 ```
 
-Your job is to complete the `history.py` file so that when run with three arguments (the `CITY`, the `YEAR` and the `MONTH` (1 to 12)), it calls the historical API for every day of the month and dump the forecasts in a _single_ csv file inside the `data` folder, named `YEAR_MONTH_WOEID_CITY.csv`
+Your job is to complete the `history.py` file so that when run with three arguments (the `CITY`, the `YEAR` and the `MONTH` (1 to 12)), it calls the historical API for every day of the month and dumps the forecasts in a _single_ csv file inside the `data` folder, named `YEAR_MONTH_WOEID_CITY.csv`
 
 In the file given to you, you will need to implement three functions:
 
@@ -159,7 +195,7 @@ The `main()` function is already implemented at the bottom of the file and reuse
 from weather import search_city
 ```
 
-The two first function are tested, the last one (`write_csv`) is not, which means you will need to run the Python code directly (with 3 arguments like explained above) and look inside the `data` folder to manually check if it worked. If you run it with `paris 2019 2`, you should generate the following file:
+The first two functions are tested, the last one (`write_csv`) is not, which means you will need to run the Python code directly (with 3 arguments like explained above) and look inside the `data` folder to manually check if it worked. If you run it with `paris 2019 2`, you should generate the following file:
 
 ```csv
 # 2019_02_615702_paris.csv
@@ -170,7 +206,7 @@ id,weather_state_name,weather_state_abbr,wind_direction_compass,created,applicab
 # [...]
 ```
 
-💡 **Hint**: Here are some methods you might need:
+💡 **Hint**: Here are some methods you might find useful:
 
 - [`urllib.parse.urljoin`](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urljoin)
 - [`datetime.date`](https://docs.python.org/3/library/datetime.html#available-types)

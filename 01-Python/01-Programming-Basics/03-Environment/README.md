@@ -2,7 +2,7 @@ Another way of modifying the behavior of a Python script (other than command lin
 
 ## Exercise
 
-Open the `flask_option.py` file and implement the `start` method. It should return a `String` depending on the presence and value of the `FLASK_ENV` environment variable.
+Open the `flask_option.py` file and implement the `start` function. It should return a `String` depending on the presence and value of the `FLASK_ENV` environment variable.
 
 Here is the expected behavior:
 

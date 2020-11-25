@@ -1,10 +1,7 @@
 ## Background & Objectives
 
 `Sqlite` is a simple database that relies on a standalone file.
-You can read more on [en.wikipedia.org/wiki/SQLite](http://en.wikipedia.org/wiki/SQLite).
-
-The goal of this first exercise is to use the command line to read and query
-a sample database called `movies.sqlite` that we give you
+You can read more about it on [en.wikipedia.org/wiki/SQLite](http://en.wikipedia.org/wiki/SQLite).
 
 ## Tooling
 
@@ -20,4 +17,4 @@ The goal of this exercise is to explore the Movies database, and understand its 
 - Use SQL Design tool to draw the schema of this database.
 - How many rows does each table contain? What are the column names for each table?
 
-Use [db.lewagon.com](http://db.lewagon.com/) to draw the Movies schema. Save it in XML format to `movies.xml` and check it with `make`.
+Use the [SQL Designer](http://db.lewagon.com/) to draw the Movies schema. Save it in XML format to `movies.xml` and check it with `make`.

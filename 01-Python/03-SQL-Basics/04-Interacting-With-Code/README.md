@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-Now it is time to use python to interact with the `movies` database. For that we will use a library that comes with Anaconda, called **sqlite3**.
+Now it is time to use python to interact with the `movies` database. For that we will use a library that comes with Python, called **sqlite3**.
 
 The goal of this challenge is to talk to the database **from our Python code**.
 
@@ -10,16 +10,16 @@ The goal of this challenge is to talk to the database **from our Python code**.
 
 ```python
 def the_method(db):
-  results = db.execute("YOUR SQL QUERY")
-  results = results.fetchall()
-  # results in a list (rows) of list (columns)
-  print(results)  # Inspect what you get back! Don't guess!
+    results = db.execute("YOUR SQL QUERY")
+    results = results.fetchall()
+    # results in a list (rows) of list (columns)
+    print(results)  # Inspect what you get back! Don't guess!
 
-  # Then you'll need to return something.
-  return ?
+    # Then you'll need to return something.
+    return ?
 ```
 
-👉 To try your code in **IPyton** or in the `queries.py` file, you will need to build `db` yourself.
+👉 To try your code in **IPython** or in the `queries.py` file, you will need to build `db` yourself.
 
 ```python
 import sqlite3
@@ -48,11 +48,11 @@ you can use the [triple-quote](https://docs.python.org/3.2/tutorial/introduction
 
 ```python
 # Find the first 3 artists with the letter `Z` in their name.
-query = '''/
-  SELECT * FROM movies
-  WHERE title LIKE "%Z%"
-  ORDER BY title
-  LIMIT 3
+query = '''
+    SELECT * FROM movies
+    WHERE title LIKE "%Z%"
+    ORDER BY title
+    LIMIT 3
 '''
 rows = db.execute(query)
 ```

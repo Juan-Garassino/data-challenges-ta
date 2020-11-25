@@ -2,23 +2,25 @@ Debugging is the process of _finding_ and _resolving_ problems in your code. As 
 
 > [...] can involve **interactive** debugging, control flow analysis, unit testing, integration testing, log file analysis, monitoring at the application or system level, memory dumps, and profiling.
 
-In this exercise, we will focus on Interactive debugging & control flow analysis, the basics of debugging.
+In this exercise, we will focus on Interactive debugging & control flow analysis, which are the basics of debugging.
 
 ## The Python Debugger
 
-One great thing about Python is that it comes with an included debugger, ready to use! The documentation has an [extensive article about the `pdb` module](https://docs.python.org/3/library/pdb.html) that you can should have a look to. We are going to use [`ipdb`](https://pypi.org/project/ipdb/), a variant of `pdb` which gives you a better developer experience with tab completion, syntax highlighting, etc.
+One great thing about Python is that it comes with a built-in debugger, ready to be used! The documentation has an [extensive article about the `pdb` module](https://docs.python.org/3/library/pdb.html) that you should have a look at. We are going to use [`ipdb`](https://pypi.org/project/ipdb/), a variant of `pdb` which gives you a better developer experience with tab completion, syntax highlighting, etc.
 
-Let's get to the bottom of it right away. In this exercise folder, you will find an `hello.py` which contains a program. This program has a bug, let's use the Python debugger to find it!
+Let's get to the bottom of it right away. In this exercise folder, you will find a file called `hello.py` which contains a program. This program has a bug, let's use the Python debugger to find it!
 
 ```bash
 python hello.py john lennon
 ```
 
-What is the problem with the output of this program? Let's try to debug this problem! It seems there is a problem with the creation of the concatenated full name. Let's try to debug this. Insert the following line just after the `def full_name`:
+What is the problem with the output of this program? Let's try to debug the problem! It seems there is a problem with the creation of the concatenated full name. Let's try to debug this. Insert the following line just after `def full_name`:
 
 ```python
 import ipdb; ipdb.set_trace()
 ```
+
+`import ipdb` will import the [ipdb](https://pypi.org/project/ipdb/) module while `ipdb.set_trace()` will allow us to halt the program at a certain line.
 
 Go back to the terminal and run the command again:
 
@@ -26,7 +28,7 @@ Go back to the terminal and run the command again:
 python hello.py john lennon
 ```
 
-The program will **halt** at the line you inserted the `pdb.set_trace()`:
+The program will **halt** at the line where you inserted the `pdb.set_trace()`:
 
 ```bash
 > [...]data-challenges/01-Python/01-Programming-Basics/04-Debugging/hello.py(9)full_name()
@@ -37,7 +39,7 @@ The program will **halt** at the line you inserted the `pdb.set_trace()`:
 ipdb>
 ```
 
-ℹ️ `ipdb` is not a module which is available by default in Python, so you need to `conda install ipdb` (something we did on Setup day). Alternatively, you can use the default `pdb` module embedded in Python:
+ℹ️ `ipdb` is not a module which is available by default in Python, so you need to `pip install ipdb` (something we did on Setup day). Alternatively, you can use the default `pdb` module embedded in Python:
 
 ```python
 import pdb; pdb.set_trace()
@@ -45,7 +47,7 @@ import pdb; pdb.set_trace()
 
 It's time to play with the debugger. From there, you can do two things:
 
-1. Control the flow of the program, telling the debugger to execute the next line, to step in a function or step out from it.
+1. Control the flow of the program, tell the debugger to execute the next line, step in a function or step out from it.
 2. Have a look at the current memory, basically what is stored in variables at this moment. The program is halted so that you can have a closer look to its internals.
 
 Type this:
@@ -55,7 +57,7 @@ ipdb> sys.argv
 # => ['hello.py', 'john', 'lennon']
 ```
 
-See how it works? You just asked the debugger to call the `sys.argv` and look what is stored in this array.
+See how it works? You just asked the debugger to call `sys.argv` and look at what is stored in this list.
 
 Our problem is that there is a missing space between `John` and `Lennon`. So we would like to have a look at the local variable `name`. Let's type:
 
@@ -74,7 +76,7 @@ ipdb> ll
 # 7         return name
 ```
 
-The program stopped **before** the line pointed by the little arrow `->`. This means that the `name` variable has **not yet been assigned**, thus we get the "`name` is not defined" error. OK, everything is clear now!
+The program stopped **before** the line pointed at by the little arrow `->`. This means that the `name` variable has **not yet been assigned**. This is why we get the "`name` is not defined" error. OK, everything is clear now!
 
 We are inside a function. Something useful is to display the argument list of the current function:
 
@@ -84,7 +86,7 @@ ipdb> args
 # last_name = 'lennon'
 ```
 
-What we can do now? We can ask the debugger to execute the next line with:
+What can we do now? We can ask the debugger to execute the next line with:
 
 ```bash
 ipdb> next
@@ -103,19 +105,19 @@ ipdb> name
 # => 'JohnLennon'
 ```
 
-That's it! We have identified the culprit line! The interpolation is missing a space.
+That's it! We have identified the culprit! The interpolation is missing a space.
 
-You can let the program runs until the next breakpoint (or the end of it) with:
+You can let the program run until the next breakpoint (or the end of it) with:
 
 ```bash
 ipdb> continue
 ```
 
-Fix the `full_name` method in `hello.py`, and run the program again. Don't forget to remove the debugger line! That's something that easily forget and add to a commit. Some teams might want to add a [pre-commit hook](http://blog.keul.it/2013/11/no-more-pdbsettrace-committed-git-pre.html) to prevent this from happening.
+Fix the `full_name` method in `hello.py`, and run the program again. Don't forget to remove the debugger line! That's something that can be easily forgettten and added to a commit. Some teams might want to add a [pre-commit hook](http://blog.keul.it/2013/11/no-more-pdbsettrace-committed-git-pre.html) to prevent this from happening.
 
 ## Going further
 
-The previous section was about understanding the basic commands of the debugger. You can think of it as a DVD player with the following buttons:
+The previous section is about understanding the basic commands of the debugger. You can think of it as a DVD player with the following buttons:
 
 - Pause (`pdb.set_trace()` in the source code)
 - Next frame (`next`)
@@ -131,6 +133,6 @@ Now that you have learnt how to debug a faulty code, you can run the tests for t
 make
 ```
 
-You can see that the implementation we ask you is a tad more complicated. We want the `full_name` method to behavor correctly whitespace-wise when given an empty first name _or_ an empty last name.
+You can see that the implementation we ask you is a tad more complicated. We want the `full_name` method to behave correctly whitespace-wise when given an empty first name _or_ an empty last name.
 
  💡 **Tip**: have a look at the [`str.join(iterable)`](https://docs.python.org/3.7/library/stdtypes.html?highlight=join#str.join) method.

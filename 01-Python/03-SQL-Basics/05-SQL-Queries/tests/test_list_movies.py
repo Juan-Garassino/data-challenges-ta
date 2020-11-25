@@ -6,6 +6,7 @@ import sqlite3
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
 
+
 class TestQueryOrders(unittest.TestCase):
     def test_is_list(self):
         results = detailed_movies(db)
@@ -18,9 +19,12 @@ class TestQueryOrders(unittest.TestCase):
 
     def test_first_element(self):
         results = detailed_movies(db)
-
-        result_0 = [results[0][0],results[0][1],results[0][2]]
-        expected = ['A Trip to the Moon', 'Action,Adventure,Comedy', 'Georges Méliès']
+        result_0 = results[0]
+        expected = (
+            'A Trip to the Moon',
+            'Action,Adventure,Comedy',
+            'Georges Méliès'
+        )
         self.assertEqual(result_0, expected)
 
     def test_len_each_tuple(self):

@@ -6,6 +6,7 @@ import sqlite3
 conn = sqlite3.connect('db/ecommerce.db')
 db = conn.cursor()
 
+
 class TestBestCustomers(unittest.TestCase):
     def test_length_results(self):
         results = display_best_buyers(db)
@@ -13,7 +14,7 @@ class TestBestCustomers(unittest.TestCase):
 
     def test_results(self):
         results = display_best_buyers(db)
-        expected = [(572.91, 2), (870.01, 4), (548.15, 5)]
+        expected = [(1031.24, 2), (2175.03, 4), (1096.3, 5)]
         self.assertEqual(results, expected)
 
     def test_type_results(self):

@@ -1,23 +1,23 @@
-# Scatter plots
+# Scatter Plot
 ### Introduction
 
-Same principle in this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/caveat/overplotting.html).
+In this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/story/ThreeNum.html).
 
-To go further and learn more best practices you can read theses **4 articles**.
+To learn more **best practices** around bubble plot read these **3 short articles**.
 
-[Scatter plots](https://www.data-to-viz.com/graph/scatter.html),
-[2D density](https://www.data-to-viz.com/graph/density2d.html)
-
-[Simpson Paradox](https://www.data-to-viz.com/caveat/simpson.html),
-[The issue with 3D](https://www.data-to-viz.com/caveat/3d.html)
+[Radius or Area](https://www.data-to-viz.com/caveat/radius_or_area.html),
+[Area lisibility](https://www.data-to-viz.com/caveat/area_hard.html),
+[Overplotting](https://www.data-to-viz.com/caveat/overplotting.html)
 
 ### Dataset
 
-You will work with the dataset `data/blobs.csv`, located in this exercise folder.
+You will work with the **GDP per capita** dataset.
+
+[Download here](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv)
 
 ### First steps
 
-Create a notebook named `exercise06.ipynb` in the **same folder** as this **README**.
+Create a notebook named `scatter_plot.ipynb` in the **same folder** as this **README**.
 Now you can **import** the necessesary **libraries**.
 
 ```python
@@ -30,28 +30,50 @@ import seaborn as sns
 
 Then **import** the **dataset** from the CSV you just downloaded.
 
-### Size and transparency
+### Part 1
 
-Increase the **lisibility** of your scatter plot with **smaller dot** and a **lower opacity**.
-Create a plot with **both** techniques used at the same time.
+Try to recreate approximately this bubble plot using seaborn
 
-<img src="https://i.ibb.co/VVby1Pb/visualize-1255x420.png" width="760">
+<img src="https://www.data-to-viz.com/story/ThreeNum_files/figure-html/unnamed-chunk-2-1.png" width="760">
 
-### Groupes
+<details>
+  <summary markdown='span'>💡Hints</summary>
+  <ul>
+    <li>You will need to use <code>hue</code> and <code>size</code> arguments</li>
+    <li>You will have to adjust bubble size with <code>sizes</code></li>
+    <li>You can adjust the legend with <code>bbox_to_anchor</code> and <code>loc</code> argument</li>
+    <li>You can change axes visibility with <code>Axes.spines()</code></li>
+    <li>You can display the grid with <code>Axes.grid()</code></li>
+    <li>You can change ticks aspect with <code>Axes.tick_params()</code></li>
+    <li><code>handles, labels = ax.get_legend_handles_labels()</code> could be helpful</li>
+    <li>You can change the <code>palette</code> of colors</li>
+  </ul>
+</details>
 
-Recreate this plot and use the `hue` option in seaborn scatter plot to **group by category**.
-<img src="https://i.ibb.co/sJ1BZBj/Screen-Shot-2019-10-15-at-20-34-12.png" width="360">
+### Part 2
 
-### Faceting and group highlight
+Now add country name as **labels** for the countries where:
+- the gdp per capita is greater than **5000**.
+- the life expectancy is smaller than **65** years old.
 
-Create a **grid** of scatter plot, each group **highlighted**.
-<img src="https://i.ibb.co/0Vyr6Nc/Screen-Shot-2019-10-15-at-20-34-17.png" width="760">
+<img src="https://www.data-to-viz.com/story/ThreeNum_files/figure-html/unnamed-chunk-4-1.png" width="760">
 
-### Optional - 3D Plot
+<details>
+  <summary markdown='span'>💡Hint</summary>
+  You can use <code>Axes.text()</code> and <code>DataFrame.iterrows()</code>
+</details>
 
-Recreate this 3D plot with **Plotly**. Use this documentation page: [https://plot.ly/python/3d-surface-plots/](https://plot.ly/python/3d-surface-plots/)
+### Part 3
 
-The difficulty here will be to convert our **scatter plot** to a **density matrix** that will be used by **Plotly**.
+We will now use [Plotly](https://plot.ly/python/bubble-charts/) to create an **interactive** plot.
+That way we will be able to:
+- zoom in the chart
+- lookup values for each data point
 
-Only do this exercise if you are done with the map exercise.
-<img src="https://i.ibb.co/2nYn883/Screen-Shot-2019-10-15-at-22-21-50.png" width="760">
+**Plotly install:**
+
+```sh
+pip install plotly==4.7.1
+```
+
+<img src="https://i.ibb.co/9y0JLbF/Screen-Shot-2019-10-15-at-16-34-09.png" width="760">

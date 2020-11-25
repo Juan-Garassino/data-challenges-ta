@@ -3,8 +3,9 @@ import unittest
 from join_queries import orders_per_customer
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.db')
+conn = sqlite3.connect('db/ecommerce.sqlite')
 db = conn.cursor()
+
 
 class TestOrdersPerCustomer(unittest.TestCase):
     def test_length_results(self):

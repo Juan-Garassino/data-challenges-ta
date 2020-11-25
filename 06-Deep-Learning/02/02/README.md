@@ -1,2 +1,0 @@
-In this notebook, we look at a way to use a pre-trained model for a different task. Namely, we will take a vgg16 neural network (https://neurohive.io/en/popular-networks/vgg16/), remove its fully connected layers, add new connected layers with the right ouput format and retrain only these layers to a classification task on flowers.
-We take vgg16 trained on Imagenet (a very large database of images of different categories), so that its filters are already trained to 'see' and extract meaningful features from the images.

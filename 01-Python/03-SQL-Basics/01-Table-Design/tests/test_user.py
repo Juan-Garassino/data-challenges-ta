@@ -21,10 +21,8 @@ class Users(unittest.TestCase):
         with open('customers.xml', 'r') as file:
             data= file.read().replace('\n', '')
         soup = BeautifulSoup(data, 'xml')
-        for row in soup.find_all('row'):
-            self.assertEqual(row.get('name') in ['email', 'first_name', 'id', 'city', 'last_name'], True)
-
-
-#contexte à modifier
-
-#text-schema-in-users.
+        fields = [row.get('name') for row in soup.find_all('row')]
+        correct_fields = ['email', 'first_name', 'id', 'city', 'last_name']
+        fields.sort()
+        correct_fields.sort()
+        self.assertEqual(fields, correct_fields)

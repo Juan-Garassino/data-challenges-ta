@@ -10,7 +10,7 @@ There are four methods to implement:
 
 ### Detailed Orders
 
-👉 Implement `detailed_orders` to get the shipper name and the customer first name of all the orders made.
+👉 Implement `detailed_orders` to get the customer contact name and the employee firstname of all the orders made.
 
 ### Spent per Customer
 
@@ -24,4 +24,4 @@ We expect the function to return a value like: `[('FirstName', 'LastName', 6000 
 ### Who doesn't buy anything?
 Implement `orders_per_customer` to get the amount of Orders made by each Customer. As you can guess with the title, you should also display customer(s) with no order?
 
-**Hint**: JOIN LEFT could be usefull. And in this case, the driving table is important...
+**Hint**: LEFT JOIN could be useful. And in this case, the driving table is important...

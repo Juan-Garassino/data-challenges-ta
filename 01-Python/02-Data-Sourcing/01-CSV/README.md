@@ -37,7 +37,7 @@ In your terminal, run the file:
 python phone_book.py
 ```
 
-Does that seem correct to you? What is the type of the `row` variable line 7 in the `print(row)` statement? Compare your guess with your buddy, and also check the actual result with `type()`.
+Does that seem correct to you? What is the type of the `row` variable line 7 in the `print(row)` statement? Compare your guess with your buddy, and check the actual result with `type()` as well.
 
 Try updating the code of `phone_book.py` to ignore the header (first line) and only print last name + phone number. This is the output you should get:
 
@@ -47,28 +47,10 @@ Harrisson: 456
 Saunier: 123
 ```
 
+## Optional
+
 Now try refactoring the code using the [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader) class. You should no longer need the `line_count` variable. Also, what is the type of `row` now? Is it still the same as before? As usual, discuss about the code with your buddy and check your understanding with `type()`.
 
-## 🏅 Olympic Winter Games
-
-Now that you understand the basics of loading data from a CSV, let's work with a real dataset from [Kaggle](https://www.kaggle.com/the-guardian/olympic-games). If you have a look at the `data` folder in this challenge, you will find two files coming from Kaggle (you don't need to download anything):
-
-- `dictionary.csv`
-- `winter.csv`
-
-Go ahead and open those two files in Sublime Text to try & understand what they contain. The goal of this challenge is to implement the method in `winter_olympic_games.py`:
-
-1. Who won the most winter olympic games medals (gold/silver/bronze) ever? (Hint: there's just one)
-1. From `min_year` to `max_year`, which country won the most gold medals?
-
-⚠️ For this challenge, you _can't_ use `pandas` yet 😉. Let's see how far you can go with just Python & the [`csv` module](https://docs.python.org/3/library/csv.html).
-
-For this part of the challenge, you can use to check your implementation for the two questions.
-
-```bash
-make
-```
-
-After each question is solved, please run the checks + `add`/`commit`/`push` your code in this current challenge. Don't wait to solve the two questions.
+After each question is solved please `add`/`commit`/`push` your code in this current challenge.
 
 Have fun!

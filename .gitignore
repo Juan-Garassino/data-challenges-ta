@@ -6,4 +6,12 @@
 .pytest_cache
 __pycache__
 *checkpoint.ipynb
+.ipynb_checkpoints
+
+# inteliJ #
 .idea
+*.vscode/
+*.gz
+*PKG-INFO
+*.egg-info
+*.csv
