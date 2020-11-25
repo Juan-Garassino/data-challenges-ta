@@ -144,7 +144,7 @@ There are 2 ways to create bucket and upload data:
         - Select `Location type`: `Region` since we will not need to access our bucket from all over the world
         - Bucket should be created in the nearest region (`europe-west1` for France)
         - Keep other options default
-    - Go inside your bucket and uplaod your training data from you computer
+    - Go inside your bucket and upload your training data from you computer
 - Programmatically (**recommended**):
     - Open `Makefile` and complete following env variable :
 ```bash
