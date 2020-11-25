@@ -9,13 +9,13 @@ Let's use our best performing model in order to make predictions.
 
 ⚠️ Do not forget that we cannot load our model without the code that was used in order to train it! ⚠️
 
-### First step: let's create an API entry point and test it
+### First step: let's create an API endpoint and test it
 
-In `api/fast.py`, let's create a root entry point that will welcome the developers using our API.
+In `api/fast.py`, let's create a root endpoint that will welcome the developers using our API.
 
 In order to do that, we will use **FastAPI**.
 
-The entry point will simply return the following json content when a developer hits the root of our API : http://localhost:8000/
+The endpoint will simply return the following json content when a developer hits the root of our API : http://localhost:8000/
 
 ``` json
 {
@@ -31,11 +31,11 @@ Once the server is started, you can play with the API either directly: http://lo
 
 ### Receive the parameters for the prediction
 
-We have a basic entry point for our API, but that is not very useful...
+We have a basic endpoint for our API, but that is not very useful...
 
-Let's create a `/predict_fare` entry point that will be used for the predictions.
+Let's create a `/predict_fare` endpoint that will be used for the predictions.
 
-We want developers to provide the following parameters to the entry point:
+We want developers to provide the following parameters to the endpoint:
 - `pickup_datetime`
 - `pickup_longitude`
 - `pickup_latitude`
