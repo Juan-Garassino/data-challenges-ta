@@ -1,8 +1,9 @@
 
 ## Push our prediction API image to Google Container Registry
 
-Google Container Registry is a service storing Docker images on the cloud with the purpose of allowing Cloud Run or Kubernetes Engine to serve them.
-It is in a way similar to GitHub allowing you to store your git repositories in the cloud (except for the lack of a dedicated user interface and additional services such as forks and pull requests).
+**Google Container Registry** is a service storing Docker images on the cloud with the purpose of allowing **Cloud Run** or **Kubernetes Engine** to serve them.
+
+It is in a way similar to **GitHub** allowing you to store your git repositories in the cloud (except for the lack of a dedicated user interface and additional services such as `forks` and `pull requests`).
 
 First, let's make sure to enable [Google Container Registry API](https://console.cloud.google.com/flows/enableapi?apiid=containerregistry.googleapis.com&redirect=https://cloud.google.com/container-registry/docs/quickstart) for your project in GCP.
 
