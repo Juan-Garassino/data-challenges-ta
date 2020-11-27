@@ -88,7 +88,7 @@ We just need to store the resulting prediction in our **json** response:
 
 ⚠️ The notebook is built to query an API responding to the following URL... Maybe you will want to adapt the way the notebook works if you choose a different format for your API ⚠️
 
-http://127.0.0.1:8000/predict_fare/2012-10-06%2012:10:20.0000001/2012-10-06%2012:10:20%20UTC/40.7614327/-73.9798156/40.6513111/-73.8803331/2
+`http://127.0.0.1:8000/predict_fare/?key=2012-10-06 12:10:20.0000001&pickup_datetime=2012-10-06 12:10:20 UTC&pickup_longitude=40.7614327&pickup_latitude=-73.9798156&dropoff_longitude=40.6513111&dropoff_latitude=-73.8803331&passenger_count=2`
 
 Congratulations, you just created your first API! 🎉
 
