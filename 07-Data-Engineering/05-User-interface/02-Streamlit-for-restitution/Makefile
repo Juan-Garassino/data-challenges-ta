@@ -1,21 +1,17 @@
+
 # ----------------------------------
 #         LOCAL SET UP
 # ----------------------------------
+
 install_requirements:
 	@pip install -r requirements.txt
 
-install:
-	@pip install . -U
-
-upload_simple_model:
-	@python -m TaxiFareModel.trainer
-
 # ----------------------------------
-#         API COMMANDS
+#         HEROKU COMMANDS
 # ----------------------------------
-APP_NAME=api-wagon
-api:
-	-@python app.py
+
+streamlit:
+	-@streamlit run app.py
 
 heroku_login:
 	-@heroku login
@@ -27,18 +23,17 @@ deploy_heroku:
 	-@git push heroku master
 	-@heroku ps:scale web=1
 
-heroku_set_gcp_env:
-	-@heroku config:set GOOGLE_APPLICATION_CREDENTIALS="$(< /Users/jbizot/Documents/wagon-bootcamp-256316-51756099e206.json)"
-
-heroku_update: deploy_heroku heroku_set_gcp_env
 # ----------------------------------
-#    CLEANING COMMAND
+#    LOCAL INSTALL COMMANDS
 # ----------------------------------
+install:
+	@pip install . -U
 
 clean:
 	@rm -fr */__pycache__
 	@rm -fr __init__.py
 	@rm -fr build
 	@rm -fr dist
-	@rm -fr $TaxiFareModel-*.dist-info
-	@rm -fr $TaxiFareModel.egg-info
+	@rm -fr *.dist-info
+	@rm -fr *.egg-info
+	-@rm model.joblib
