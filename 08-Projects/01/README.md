@@ -39,24 +39,8 @@ Let's create a new project:
 
 ```bash
 cd ~/code/<user.github_nickname>
-wagon-make-package project_name
+packgenlite project_name
 cd project_name
-```
-
-Add `notebooks` and `raw_data` directories:
-
-```bash
-mkdir notebooks
-touch notebooks/.keep
-mkdir raw_data
-echo '/raw_data/' >> .gitignore
-```
-
-Commit all changes:
-
-```bash
-git add .
-git commit -m 'add notebooks and raw_data directories'
 ```
 
 Then create a GitHub repository and push your project:
@@ -77,12 +61,6 @@ Let's clone the project:
 mkdir ~/code/<PROJECT_LEADER_GITHUB_NICKNAME> && cd "$_"
 git clone git@github.com:<PROJECT_LEADER_GITHUB_NICKNAME>/<PROJECT_NAME>.git
 cd project_name
-```
-
-Then add a `raw_data` directory:
-
-```bash
-mkdir raw_data
 ```
 
 You're good to go.
