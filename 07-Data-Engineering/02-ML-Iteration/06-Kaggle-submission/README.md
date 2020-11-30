@@ -47,7 +47,7 @@ python predict.py
 
 Now take the outputed csv and [submit it to kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/submit)
 
-YUou might need to login to kaggle or register [here](https://www.kaggle.com/account/login) if you don't already have an account
+You might need to login to kaggle or register [here](https://www.kaggle.com/account/login) if you don't already have an account.
 
 
 # Train on bigger sample and check score evolution
