@@ -1,10 +1,10 @@
 # Use you saved model
-Now you will submit your first submission to kaggle.  
+Now you will submit your first submission to kaggle.
 
 For that as you probably have different pipeline blocs, we will all retrain the same given pipeline inside `TaxiFareModel`, which is the correction from last exercice.
 
 # Train on small sample
-Let us train our pipeline on 100 000 line.   
+Let us train our pipeline on 100 000 lines.
 For that please check that following parameters are set inside `trainer.py`:
 ```python
 params = dict(nrows=100000, # number of samples
@@ -26,10 +26,10 @@ Wait a bit and check that your pipeline has been saved under `model.joblib`
 
 You might wonder why we ran `make install` ?
 
-🚨 This step is very important 🚨  
-👉 You remember that your whole Pipeline is integrated inside your `model.joblib` now ...  
-👉 Including your custom encoders written inside `encoders.py` ...   
-👉 When executing predictions from your loaded pipeline, the pipeline will look for your `TimeFeaturesEncoder` or `DistanceTransformer`...  
+🚨 This step is very important 🚨
+👉 You remember that your whole Pipeline is integrated inside your `model.joblib` now ...
+👉 Including your custom encoders written inside `encoders.py` ...
+👉 When executing predictions from your loaded pipeline, the pipeline will look for your `TimeFeaturesEncoder` or `DistanceTransformer`...
 👉 Which are function imported from TaxiFareModel
 👉 so **they need to be installed as a module** with `pip install . -U`
 
@@ -45,13 +45,13 @@ Now run:
 python predict.py
 ```
 
-Now take the outputed csv and [submit it to kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/submit)  
+Now take the outputed csv and [submit it to kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/submit)
 
-YUou might need to login to kaggle or register [here](https://www.kaggle.com/account/login) if you don't already have an account 
+You might need to login to kaggle or register [here](https://www.kaggle.com/account/login) if you don't already have an account.
 
 
 # Train on bigger sample and check score evolution
-Modify parameters to train model on 1 000 000 lines, by simply setting `n_rows=1000000` inside `trainer.py`  
+Modify parameters to train model on 1 000 000 lines, by simply setting `n_rows=1000000` inside `trainer.py`
 
 Then again:
 ```bash
@@ -70,5 +70,3 @@ pip install kaggle
 ```python
 kaggle competitions list
 ```
-
-
