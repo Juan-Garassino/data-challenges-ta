@@ -54,7 +54,7 @@ experiment = "taxifare_YOURNAME"
 - Think about the different estimators that you know that can be used to solve prediction problems
 - Implement a short script that will loop through all estimators, train the model and evaluate it on a validation set.
 👉 Here you might need to tweek `TaxiFareModel` package
-- Be careful: make sure you always use the same validation set accross all your trainings. **Tip** you can set the random seed for `train_test_split` to make sure the split is always the same.
+- Be careful: make sure you **cross validate** all your trainings
 - View results with on [wagon_hosted_mlflow server](https://mlflow.lewagon.co/#/experiments/0)
 
 And last advice, while building your pipeline, run it on small datasample, and preferably locally
@@ -74,9 +74,9 @@ You just tried different models, and you now see that some estimators may be mor
 ### 💡 Suggested method to track influence of Feature Engineering:
 You will use the benefits of Pipelines integrated into our custom class.
 We will start with one additional feature: `distance_to_center`:
-- Get back to day2 first notebook with complete feature engineering
+- Get back to data-challenges/07-Data-Engineering/02-ML-Iteration/01-Kaggle-Taxi-Fare first notebook with complete feature engineering
 - Implement Custom Transformer inside `encoders.py` called `DistanceToCenter`, that adds `distance_to_center`
-💡 Use notions from day2 on Pipeline's custom transformers here
+💡 Use notions from Pipeline's custom transformers here
 - adapt `set_pipeline()` method inside our main `Trainer()` class so that it integrates your new bloc
 - modify params to feed to our `Trainer()` class in order to easily run 2 runs to compare influence of added feature
 - launch 2 new runs and check influence of `distance_to_center` new feature
