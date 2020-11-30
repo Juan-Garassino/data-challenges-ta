@@ -63,6 +63,12 @@ git clone git@github.com:<PROJECT_LEADER_GITHUB_NICKNAME>/<PROJECT_NAME>.git
 cd project_name
 ```
 
+Then add a `raw_data` directory (as it is not tracked by `git`):
+
+```bash
+mkdir raw_data
+```
+
 You're good to go.
 </details>
 
