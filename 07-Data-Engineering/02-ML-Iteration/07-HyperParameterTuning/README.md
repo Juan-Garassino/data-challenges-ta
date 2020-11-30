@@ -9,7 +9,7 @@ The idea is to tune the hyperparameters of this estimator. The most important pa
 - `n_estimators`
 
 # Prerequisite
-Please keep in mind `save_model()` function saving locally your models under `model.joblib`
+Please keep in mind that the `save_model()` method saves locally your model under the `model.joblib` file.
 
 You may want to upload to **Google Cloud Storage** the different trained models in separate bucket directories in order to save them. In order to do that, you may have a look at the content of the `gcp.py` file.
 
@@ -42,4 +42,3 @@ To perform hyperparameters search, you have the choice between three `search` me
 
 ## Final Step
 Once you are satisfied with your tuned model, keep preciously your last `model.joblib`, and you can submit your new submissions on kaggle
-
