@@ -9,21 +9,24 @@ The idea is to tune the hyperparameters of this estimator. The most important pa
 - `n_estimators`
 
 # Prerequisite
-Please keep in mind `save_model()` function saving locally your models under `model.joblib`    
-You will later load your best performing model to submit redictions to kaggle.   
+Please keep in mind `save_model()` function saving locally your models under `model.joblib`
+
+You may want to upload to **Google Cloud Storage** the different trained models in separate bucket directories in order to save them. In order to do that, you may have a look at the content of the `gcp.py` file.
+
+You will later load your best performing model to submit redictions to kaggle.
 
 
 # Reminder on Hyperparameter tuning
 To perform hyperparameters search, you have the choice between three `search` mechanisms:
-- [GridSearch](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)  
+- [GridSearch](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
 👉 Run all pipeline for each parameter combination
 ➕ Exaustive
 ➖ Very slow on large datasets
-- [RandomSearch](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)  
+- [RandomSearch](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)
 👉 Run pipeline for a random subset of parameter combinations
 ➕ Faster than Gridsearch for large dataset
 ➖ Not exhaustive, might not find optimal parameter combination
-- [Hyperopt](http://hyperopt.github.io/hyperopt/)  
+- [Hyperopt](http://hyperopt.github.io/hyperopt/)
 👉 Bayesian optimization technique that uses information from past trials to inform the next set of hyperparameters to explore
 ➕ Faster than Gridsearch
 ➕ Exhaustive and going through all parameter space
