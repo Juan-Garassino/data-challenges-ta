@@ -4,7 +4,7 @@ Now you will submit your first submission to kaggle.
 For that as you probably have different pipeline blocs, we will all retrain the same given pipeline inside `TaxiFareModel`, which is the correction from last exercice.
 
 # Train on small sample
-Let us train our pipeline on 100 000 line.
+Let us train our pipeline on 100 000 lines.
 For that please check that following parameters are set inside `trainer.py`:
 ```python
 params = dict(nrows=100000, # number of samples
