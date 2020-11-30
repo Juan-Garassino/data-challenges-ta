@@ -74,7 +74,7 @@ You just tried different models, and you now see that some estimators may be mor
 ### 💡 Suggested method to track influence of Feature Engineering:
 You will use the benefits of Pipelines integrated into our custom class.
 We will start with one additional feature: `distance_to_center`:
-- Get back to data-challenges/07-Data-Engineering/02-ML-Iteration/01-Kaggle-Taxi-Fare first notebook with complete feature engineering
+- Get back to `data-challenges/07-Data-Engineering/02-ML-Iteration/01-Kaggle-Taxi-Fare` notebook with complete feature engineering
 - Implement Custom Transformer inside `encoders.py` called `DistanceToCenter`, that adds `distance_to_center`
 💡 Use notions from Pipeline's custom transformers here
 - adapt `set_pipeline()` method inside our main `Trainer()` class so that it integrates your new bloc
@@ -83,4 +83,3 @@ We will start with one additional feature: `distance_to_center`:
 
 Once you've added the new feature, add as many features as you want and analyse impact on performances
 Bonus - Use [PolynomialFeatures](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html) transfomer to generate new features from distance.
-
