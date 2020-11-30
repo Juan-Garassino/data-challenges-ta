@@ -28,18 +28,16 @@ Before carrying on make sure you understood:
 
 We are going to modify the `trainer.py` in order to push the training parameters and metrics to **MLflow**.
 
-Please add the following method to your trained:
+Please add the following method to your trainer (and fill its content):
 
 ``` python
     def save_model(self):
         """Save the model into a .joblib format"""
-        joblib.dump(self.pipeline, 'model.joblib')
-        print(colored("model.joblib saved locally", "green"))
 
     # mlflow methods
 ```
 
-Do not forget to call the `save_model` method in your `ifmain` block of code (`if __name__ == "__main__":`)
+Do not forget to add and import for the `joblib` package and to call the `save_model` method in your `ifmain` block of code (`if __name__ == "__main__":`)
 
 👉 We will call the `save_model()` method in order to push data to MLflow, keep it in mind for later
 👉 Once you'll be happy about your final model, you will submit your your best model's predictions to kaggle
