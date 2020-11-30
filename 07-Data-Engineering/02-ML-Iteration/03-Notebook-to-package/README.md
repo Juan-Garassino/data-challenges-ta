@@ -10,7 +10,6 @@ We have created for you the following structure:
 
 ```bash
 ├── TaxiFareModel
-│   ├── __init__.py   # to make it a python package
 │   ├── data.py       # functions to get and clean data
 │   ├── encoders.py   # your custom encoders and transformers for our Pipeline
 │   ├── trainer.py    # utility functions
@@ -41,73 +40,75 @@ packgenlite TaxiFareModel
 </summary>
 
 ```bash
-cp -r ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/02-ML-Iteration/03-Notebook-to-package/TaxiFareModel ~/code/<user.github_nickname>/TaxiFareModel/
+cp -r ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/02-ML-Iteration/03-Notebook-to-package/*.py ~/code/<user.github_nickname>/TaxiFareModel/TaxiFareModel
 ```
 
 </details>
 
-- Add a `.gitignore` file to your project with this folders to be ignored:
-
-```txt
-__pycache__/
-*.egg-info/
-.ipynb_checkpoints
-```
-
-- Add a `requirements.txt` file with the list of the python package you need to run your pipeline
-
-```txt
-numpy
-pandas
-scikit-learn
-```
-
-- Add a `setup.py` file with the following configuration to be able to install your package locally
-
-```python
-from setuptools import find_packages
-from setuptools import setup
-
-REQUIRED_PACKAGES = [
-    'pandas==1.1.3',
-    'scikit-learn==0.23.2'
-]
-
-setup(
-    name='TaxiFareModel',
-    version='1.0',
-    install_requires=REQUIRED_PACKAGES,
-    packages=find_packages(),
-    include_package_data=True,
-    description='Taxi Fare Prediction Pipeline'
-)
-```
-
 - Make sure your package has the following structure
 ```bash
 .
+├── MANIFEST.in
+├── Makefile
+├── README.md
 ├── TaxiFareModel
 │   ├── __init__.py
+│   ├── data
 │   ├── data.py
 │   ├── encoders.py
 │   ├── trainer.py
 │   └── utils.py
+├── notebooks
+├── raw_data
 ├── requirements.txt
 ├── .gitignore
-└── setup.py
-```
-
-- Keep tracks of your changes with `git`
-
-```bash
-git init
-git add TaxiFareModel/ .gitignore requirements.txt setup.py
-git commit -m 'start TaxiFareModel package'
+├── scripts
+│   └── TaxiFareModel-run
+├── setup.py
+└── tests
+    └── __init__.py
 ```
 
 👍 Your package is ready to be implemented!
 
 ### Implement your package 🛠
+
+#### Download the datasets locally
+
+- Download the datasets `train.csv` and `test.csv` from [Kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/data) if you didn't do it yet
+- Move them under the `raw_data` folder
+- Download 2 subsets of the full `train.csv` dataset:
+  - [train_1k.csv](https://wagon-public-datasets.s3.amazonaws.com/taxi-fare-ny/train_1k.csv) with 1_000 rows
+  - [train_10k.csv](https://wagon-public-datasets.s3.amazonaws.com/taxi-fare-ny/train_10k.csv) with 10_000 rows
+- Move them under the `raw_data` folder
+- Make sure your package has the following architecture:
+
+```bash
+.
+├── MANIFEST.in
+├── Makefile
+├── README.md
+├── TaxiFareModel
+│   ├── __init__.py
+│   ├── data
+│   ├── data.py
+│   ├── encoders.py
+│   ├── trainer.py
+│   └── utils.py
+├── notebooks
+├── raw_data
+│   ├── test.csv
+│   ├── train.csv
+│   ├── train_10k.csv
+│   └── train_1k.csv
+├── requirements.txt
+├── .gitignore
+├── scripts
+│   └── TaxiFareModel-run
+├── setup.py
+└── tests
+    └── __init__.py
+```
 
 #### `data.py`
 
