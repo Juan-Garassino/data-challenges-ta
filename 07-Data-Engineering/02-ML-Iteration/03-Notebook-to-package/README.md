@@ -40,7 +40,7 @@ packgenlite TaxiFareModel
 </summary>
 
 ```bash
-cp -r ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/02-ML-Iteration/03-Notebook-to-package/TaxiFareModel ~/code/<user.github_nickname>/TaxiFareModel
+cp -r ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/02-ML-Iteration/03-Notebook-to-package/*.py ~/code/<user.github_nickname>/TaxiFareModel/TaxiFareModel
 ```
 
 </details>
