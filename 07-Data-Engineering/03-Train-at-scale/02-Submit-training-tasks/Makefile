@@ -35,7 +35,7 @@ RUNTIME_VERSION=1.15
 
 ##### Package params  - - - - - - - - - - - - - - - - - - -
 
-PACKAGE_NAME=TaxiFareModel
+PACKAGE_NAME=SimpleTaxiFare
 FILENAME=trainer
 
 ##### Job - - - - - - - - - - - - - - - - - - - - - - - - -
