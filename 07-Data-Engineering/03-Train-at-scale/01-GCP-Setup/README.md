@@ -7,7 +7,7 @@ Beyond training models, you will see how you can make your models available to t
 
 # GCP Setup
 
-## Setup Project
+## Project setup
 - Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one.
 - In the Cloud Console, on the project selector page, select or create a Cloud project. You can name it `Wagon Bootcamp` for example
 - Notice the `ID` automatically created for the project. If you used the suggestion for the project name, it should look like `wagon-bootcamp-123456`. This `PROJECT_ID` will be refered to later and used all over the code in order to identify the GCP project your code will be interacting with. You will be able to access it anytime in the project list (click to zoom):
@@ -21,12 +21,36 @@ Beyond training models, you will see how you can make your models available to t
 
 We need to install a new cli called gcloud. Once you are authenticated, this tool will allow you to perform any operation on the GCP platform from the command line.
 
-- On Mac :
+### MacOSX
+
 ```bash
 brew cask install google-cloud-sdk
 ```
-- On Windows follow link bellow
-[Install and initialize the Cloud SDK](https://cloud.google.com/sdk/docs/)
+
+Then copy these lines in your `~/.aliases`:
+```
+export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+```
+**Restart** your terminal.
+
+### Ubuntu/WSL2
+
+```bash
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get install google-cloud-sdk-app-engine-python
+```
+👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
+
+### Windows
+[Install and initialize the Cloud SDK](https://cloud.google.com/sdk/docs/install#windows)
+
+
+## Configure Cloud sdk
 - Authenticate the gcloud tool with the google account you used for GCP. This will open a browser tab for authentication to your google account
 ```bash
 gcloud auth login
@@ -43,10 +67,9 @@ gcloud config set project PROJECT_ID
 ```bash
 gcloud config list
 ```
-- The init command may also be used if you want to be guided through these steps
-```bash
-gcloud init
-```
+
+ℹ️ Alternatively, you can use the `gcloud init` command if you want to be guided through these steps.
+
 
 ## Create a service account key 🔑
 Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
@@ -63,11 +86,11 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
 
 📣 **This step is particularly important** 📣
 
-It is the daily challenge of every data engineer: storing 🔑 to acces his 🌩️ products.
+It is the daily challenge of every data engineer: storing 🔑 to access our 🌩️ products.
 Make sure you understand what you do there and overall why you do it:
 - Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
 - Create a new Service Account key :
-  - Give whatever name you want to that account
+  - Give a name to that account
   - Set Role as `project > owner`
 
 - Download the `JSON` file, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
@@ -210,7 +233,7 @@ upload_data:
 
 <details>
 <summary>💡 Hint: how to find your local path to <code>train_1k.csv</code>?</summary>
-From your terminal, go to the `raw_data` folder then print the local path with `pwd`.
+From your terminal, go to the <code>raw_data</code> folder then print the local path with <code>pwd</code>.
 </details>
 
 
