@@ -186,9 +186,9 @@ There are 2 ways to create a bucket:
 PROJECT_ID=XXX  # Replace with your Project's ID
 
 # bucket name
-BUCKET_NAME=XXX # Replace with your Project's name
+BUCKET_NAME=XXX # Use your Project's name as it should be unique
 
-REGION=europe-west1
+REGION=europe-west1 # Choose your region https://cloud.google.com/storage/docs/locations#available_locations
 
 set_project:
   -@gcloud config set project ${PROJECT_ID}
@@ -230,12 +230,12 @@ BUCKET_FILE_NAME=$(shell basename ${LOCAL_PATH})
 
 upload_data:
   # -@gsutil cp train_1k.csv gs://wagon-ml-my-bucket-name/data/train_1k.csv
-  -@gsutil cp ${LOCAL_PATH} gs://${BUCKET_NAME}/${BUCKET_FOLDER}/${UPLOADED_FILE_NAME}
+  -@gsutil cp ${LOCAL_PATH} gs://${BUCKET_NAME}/${BUCKET_FOLDER}/${BUCKET_FILE_NAME}
 ```
 
 <details>
-<summary>💡 Hint: how to find your local path to <code>train_1k.csv</code>?</summary>
-From your terminal, go to the <code>raw_data</code> folder then print the local path with <code>pwd</code>.
+  <summary>💡 Hint: how to find your local path to <code>train_1k.csv</code>?</summary>
+  From your terminal, go to the <code>raw_data</code> folder then print the local path with <code>pwd</code>.
 </details>
 
 

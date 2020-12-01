@@ -8,6 +8,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 PATH_TO_LOCAL_MODEL = 'model.joblib'
 
+
 def get_test_data():
     """method to get the training data (or a portion of it) from google cloud bucket
     To predict we can either obtain predictions from train data or from test data"""
