@@ -234,7 +234,9 @@ upload_data:
 ```
 
 <details>
-  <summary>💡 Hint: how to find your local path to <code>train_1k.csv</code>?</summary>
+<summary>
+  💡 Hint: how to find your local path to <code>train_1k.csv</code>?
+</summary>
   From your terminal, go to the <code>raw_data</code> folder then print the local path with <code>pwd</code>.
 </details>
 
