@@ -12,7 +12,7 @@ Beyond training models, you will see how you can make your models available to t
 - In the Cloud Console, on the project selector page, select or create a Cloud project. You can name it `Wagon Bootcamp` for example
 - Notice the `ID` automatically created for the project. If you used the suggestion for the project name, it should look like `wagon-bootcamp-123456`. This `PROJECT_ID` will be refered to later and used all over the code in order to identify the GCP project your code will be interacting with. You will be able to access it anytime in the project list (click to zoom):
 
-<img src="gcp-show-project-id.png" width="150" alt="finding your PROJECT_ID in GCP">
+<img src="https://github.com/lewagon/data-challenges/raw/master/07-Data-Engineering/04-Train-at-scale/01-GCP-Setup/gcp-show-project-id.png" width="150" alt="finding your PROJECT_ID in GCP">
 
 - Make sure that billing is enabled for your Google Cloud project. Don't worry, as a first time user, you have a **$300 credit** to use for Google Cloud resources, which will be more than enough for this project.
 - [Enable the AI Platform Training & Prediction and Compute Engine APIs.](https://console.cloud.google.com/flows/enableapi?apiid=ml.googleapis.com,compute_component&_ga=2.269215094.662509797.1580849510-2071889129.1567861089&_gac=1.154971594.1580849512.CjwKCAiAyeTxBRBvEiwAuM8dnbZ6uMwizbZW44J2mBCX6ncEjwjwpgF8S8QsvhYAXLkJ8awDnIRTNRoCJ_0QAvD_BwE) This step may take a few minutes.
