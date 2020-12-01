@@ -28,11 +28,13 @@ brew cask install google-cloud-sdk
 ```
 
 Then copy these lines in your `~/.aliases`:
+
 ```bash
 export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 ```
+
 **Restart** your terminal.
 
 ### Ubuntu/WSL2
@@ -51,6 +53,7 @@ sudo apt-get install google-cloud-sdk-app-engine-python
 
 
 ## Configure Cloud sdk
+
 - Authenticate the gcloud tool with the google account you used for GCP. This will open a browser tab for authentication to your google account
 ```bash
 gcloud auth login

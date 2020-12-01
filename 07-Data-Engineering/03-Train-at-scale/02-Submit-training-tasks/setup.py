@@ -5,11 +5,10 @@ with open('requirements.txt') as f:
     content = f.readlines()
 requirements = [x.strip() for x in content if 'git+' not in x]
 
-setup(
-    name='TaxiFareModel',
-    version='1.0',
-    install_requires=requirements,
-    packages=find_packages(),
-    include_package_data=True,
-    description='Taxi Fare Prediction Pipeline'
-)
+setup(name='SimpleTaxiFare',
+      version="1.0",
+      description="Project Description",
+      packages=find_packages(),
+      # include_package_data: to install data from MANIFEST.in
+      include_package_data=True,
+      install_requires=requirements)

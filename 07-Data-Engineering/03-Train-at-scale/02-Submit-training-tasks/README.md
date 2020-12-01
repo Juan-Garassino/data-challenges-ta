@@ -20,17 +20,17 @@ In our case we want our model to run on GCP servers.
 ## Run python files from command line
 To run `trainer.py` file below:
 ```bash
-├── TaxiFareModel
+├── SimpleTaxiFare
 │   ├── __init__.py
 │   └── trainer.py
 ```
 There are several ways:
 ```bash
-python TaxiFareModel/trainer.py
+python SimpleTaxiFare/trainer.py
 ```
 Or
 ```bash
-python -m TaxiFareModel.trainer
+python -m SimpleTaxiFare.trainer
 ```
 
 # Package structure
@@ -41,10 +41,10 @@ We will start by creating the following structure:
 ```bash
 ├── Makefile          # store all necessary bash commands here
 ├── README.md
-├── TaxiFareModel     # our package that will be deployed to GCP server
+├── SimpleTaxiFare     # our package that will be deployed to GCP server
 │   ├── __init__.py
 │   └── trainer.py
-├── requirements.txt  # dependencies to install so that the TaxiFareModel package runs
+├── requirements.txt  # dependencies to install so that the SimpleTaxiFare package runs
 └── setup.py          # mandatory file to install our package
 ```
 
@@ -112,7 +112,7 @@ In Sublime Text, open the `Makefile` and set the two first lines variables:
 - `PROJECT_ID`
 - `BUCKET_NAME` (where GCP will store training material)
 
-Then open the `TaxiFareModel/trainer.py` and set the two global variables:
+Then open the `SimpleTaxiFare/trainer.py` and set the two global variables:
 
 - `BUCKET_NAME` (where the training data is stored)
 - `PATH_INSIDE_BUCKET` (should be `data/UPLOADED_FILE_NAME.csv`, `data/train_1k.csv` if you did not change the makefile)
@@ -209,7 +209,7 @@ PYTHON_VERSION=3.7
 FRAMEWORK=scikit-learn
 RUNTIME_VERSION=1.15
 
-PACKAGE_NAME=TaxiFareModel
+PACKAGE_NAME=SimpleTaxiFare
 FILENAME=trainer
 
 JOB_NAME=taxi_fare_training_pipeline_$(shell date +'%Y%m%d_%H%M%S')
