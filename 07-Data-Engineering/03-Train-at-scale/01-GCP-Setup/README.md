@@ -100,7 +100,7 @@ Make sure you understand what you do there and overall why you do it:
 
 You will define a new env variable called `GOOGLE_APPLICATION_CREDENTIALS`, referring to the path where you stored your secret key.
 Every time you'll want to interact with GCP products, either via cli interface or with any python official gcp package, you program will look for `GOOGLE_APPLICATION_CREDENTIALS` env variable to find the secret key path on your computer.
-Last thing, make sur the path you indicate is the **absolute path**, ie `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json` and not `~/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
+Last thing, make sure that the path you indicate is the **absolute path**, ie `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json` and not `~/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
 - Add the following line:
   - to your `~/.aliases` for macOSX/linux/WSL2
   - to your `.bash_profile` for Windows
