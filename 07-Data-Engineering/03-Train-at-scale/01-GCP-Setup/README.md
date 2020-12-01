@@ -94,6 +94,7 @@ Make sure you understand what you do there and overall why you do it:
   - Set Role as `project > owner`
 
 - Download the `JSON` file, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
+- Avoid using spaces in the name of the file, it will be easier to use it
 
 ⚠️ **MOST IMPORTANT STEP** ⚠️
 
