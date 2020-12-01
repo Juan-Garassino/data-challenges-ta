@@ -241,7 +241,7 @@ upload_data:
 </details>
 
 
-- Use predefined bash commands from `Makefile` to upload your file to
+- Finally use the predefined bash command from `Makefile` to upload your file to
 
 ```bash
 make upload_data
