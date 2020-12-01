@@ -27,6 +27,11 @@ brew cask install google-cloud-sdk
 ```
 - On Windows follow link bellow
 [Install and initialize the Cloud SDK](https://cloud.google.com/sdk/docs/)
+
+- On Linux follow link bellow
+[Install and initialize the Cloud SDK](https://cloud.google.com/sdk/docs/downloads-apt-get)
+
+
 - Authenticate the gcloud tool with the google account you used for GCP. This will open a browser tab for authentication to your google account
 ```bash
 gcloud auth login
