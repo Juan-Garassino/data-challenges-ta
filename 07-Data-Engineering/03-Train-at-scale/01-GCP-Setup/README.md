@@ -7,12 +7,12 @@ Beyond training models, you will see how you can make your models available to t
 
 # GCP Setup
 
-## Setup Project
+## Project setup
 - Go to [Google Cloud](https://console.cloud.google.com/) and create an account if you do not already have one.
-- In the Cloud Console, on the project selector page, select or create a Cloud project. You can name it `Wagon Bootcamp` for example
+- In the Cloud Console, on the project list, select or create a Cloud project. You can name it `Wagon Bootcamp` for example
 - Notice the `ID` automatically created for the project. If you used the suggestion for the project name, it should look like `wagon-bootcamp-123456`. This `PROJECT_ID` will be refered to later and used all over the code in order to identify the GCP project your code will be interacting with. You will be able to access it anytime in the project list (click to zoom):
 
-<img src="gcp-show-project-id.png" width="150" alt="finding your PROJECT_ID in GCP">
+<img src="https://raw.githubusercontent.com/lewagon/data-challenges/master/07-Data-Engineering/04-Train-at-scale/01-GCP-Setup/gcp-show-project-id.png?token=ACMEB76B3JR6QR5JLY37XL27Z5TTC" width="150" alt="finding your PROJECT_ID in GCP">
 
 - Make sure that billing is enabled for your Google Cloud project. Don't worry, as a first time user, you have a **$300 credit** to use for Google Cloud resources, which will be more than enough for this project.
 - [Enable the AI Platform Training & Prediction and Compute Engine APIs.](https://console.cloud.google.com/flows/enableapi?apiid=ml.googleapis.com,compute_component&_ga=2.269215094.662509797.1580849510-2071889129.1567861089&_gac=1.154971594.1580849512.CjwKCAiAyeTxBRBvEiwAuM8dnbZ6uMwizbZW44J2mBCX6ncEjwjwpgF8S8QsvhYAXLkJ8awDnIRTNRoCJ_0QAvD_BwE) This step may take a few minutes.
@@ -21,16 +21,38 @@ Beyond training models, you will see how you can make your models available to t
 
 We need to install a new cli called gcloud. Once you are authenticated, this tool will allow you to perform any operation on the GCP platform from the command line.
 
-- On Mac :
+### MacOSX
+
 ```bash
 brew cask install google-cloud-sdk
 ```
-- On Windows follow link bellow
-[Install and initialize the Cloud SDK](https://cloud.google.com/sdk/docs/)
 
-- On Linux follow link bellow
-[Install and initialize the Cloud SDK](https://cloud.google.com/sdk/docs/downloads-apt-get)
+Then copy these lines in your `~/.aliases`:
 
+```bash
+export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+```
+
+**Restart** your terminal.
+
+### Ubuntu/WSL2
+
+```bash
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo apt-get install apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get install google-cloud-sdk-app-engine-python
+```
+👉 [Install documentation](https://cloud.google.com/sdk/docs/install#deb)
+
+### Windows
+[Install and initialize the Cloud SDK](https://cloud.google.com/sdk/docs/install#windows)
+
+
+## Configure Cloud sdk
 
 - Authenticate the gcloud tool with the google account you used for GCP. This will open a browser tab for authentication to your google account
 ```bash
@@ -48,10 +70,9 @@ gcloud config set project PROJECT_ID
 ```bash
 gcloud config list
 ```
-- The init command may also be used if you want to be guided through these steps
-```bash
-gcloud init
-```
+
+ℹ️ Alternatively, you can use the `gcloud init` command if you want to be guided through these steps.
+
 
 ## Create a service account key 🔑
 Now that you have created a `GCP account` and a `project` (identified by its `PROJECT_ID`), we are going to configure the actions (API calls) that you want to allow your code to perform.
@@ -68,27 +89,30 @@ Since the [service account](https://cloud.google.com/iam/docs/service-accounts) 
 
 📣 **This step is particularly important** 📣
 
-It is the daily challenge of every data engineer: storing 🔑 to acces his 🌩️ products.
+It is the daily challenge of every data engineer: storing 🔑 to access our 🌩️ products.
 Make sure you understand what you do there and overall why you do it:
 - Go to [Service Account key page](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
 - Create a new Service Account key :
-  - Give whatever name you want to that account
+  - Give a name to that account
   - Set Role as `project > owner`
 
-- Download json, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
+- Download the `JSON` file, and store it somewhere you'll remember, for example `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
+- Avoid using spaces in the name of the file, it will be easier to use it
 
-⚠️ MOST IMPORTANT STEP ⚠️
+⚠️ **MOST IMPORTANT STEP** ⚠️
 
 You will define a new env variable called `GOOGLE_APPLICATION_CREDENTIALS`, referring to the path where you stored your secret key.
-Every time you'll want to interact with GCP products, either via cli interface or with any python official gcp package, you program will look for `GOOGLE_APPLICATION_CREDENTIALS` env variable to find the secret key path on your computer.
-Last thing, make sur the path you indicate is the **absolute path**, ie `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json` and not `~/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
-- Add following line:
+Every time you'll want to interact with GCP products, either via cli interface or with any python official gcp package, you program will look for the `GOOGLE_APPLICATION_CREDENTIALS` env variable to find the secret key path on your computer.
+Last thing, make sure that the path you indicate is the **absolute path**, ie `/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json` and not `~/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json`
+- Add the following line:
+  - to your `~/.aliases` for macOSX/linux/WSL2
+  - to your `.bash_profile` for Windows
+
 ```
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/YOUR_USER_NAME/Documents/gcp_keys/YOUR_FILENAME_FOR_SECRET_KEY.json
 ```
-   - to your `~/.aliases` for mac & linux
-   - to your `.bash_profile` for windows
-- Open a new terminal window and run:
+
+- **Restart** your terminal and run:
 ```bash
 echo $GOOGLE_APPLICATION_CREDENTIALS
 ```
@@ -102,7 +126,7 @@ You should now be able to see the created service account and its role from the 
 ```bash
 gcloud iam service-accounts list
 ```
-- Retrieve the service account email address (it was built from your project id and the service account name you entered and should look something like SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com)
+- Retrieve the service account email address (it was built from your project id and the service account name you entered and should look something like `SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com`)
 - List the roles of the service account from the cli (replace PROJECT_ID and SERVICE_ACCOUNT_EMAIL)
 ```bash
 gcloud projects get-iam-policy PROJECT_ID \
@@ -114,6 +138,8 @@ gcloud projects get-iam-policy PROJECT_ID \
 
 Now your setup is complete : you used a `google account` to access the GCP platform, created a `project`, and a service account json key file which allows your code to use GCP APIs and is safely stored on your machine.
 
+🚀 Congrats!
+
 ### Troubleshooting
 
 `AccessDeniedException: 403 The project to be billed is associated with an absent billing account.`
@@ -121,50 +147,109 @@ Now your setup is complete : you used a `google account` to access the GCP platf
 - Make sure that billing is enabled for your Google Cloud Platform project.
 https://cloud.google.com/billing/docs/how-to/modify-project
 
+
 # Upload file to Google Cloud Storage
 
 Now that you have a working setup, we are going to start using the products provided by the GCP platform. GCP provides tens of products, but we will be interested mainly by 2 products : `Storage`, and `AI Platform`.
 
 In order to navigate quickly in GCP, you should scroll through the list of products in the left pane and maybe pin the most used ones (using the pin icon): `AI Platform`, `Storage`.
 
+## Storage
+
 `Storage` provides the capability of hosting your files online in containers called `buckets`. We will use it in order to store our train and test files, and our trained models.
 
 You can consider that the bucket is like a disk or flash drive that would be accessible anywhere in the world, and is identified by its `BUCKET_NAME`. Inside the bucket, you can organize your data in directories (folders) and subdirectories as you would any disk or flash drive.
 
+## AI Platform
+
 `AI Platform` provides the capability to train your models online and/or to use trained models in order to perform predictions online.
+
+## Bucket setup
 
 For now, lets play with the `Storage` `buckets` in order to make sure that everything works.
 
 You will need a bucket to store data, code and trained models.
 
-**IMPORTANT**: Bucket names must be **globally unique**, please respect convention `wagon-ml-[YOUR_LAST_NAME]-XX`
+⚠️ **IMPORTANT**: Bucket names must be **globally unique**, please respect convention `wagon-ml-[YOUR_LAST_NAME]-XX`
 
 As the `PROJECT_ID` is used in your code in order to identify your project, the `BUCKET_NAME` will be used in your code to identify this online container where you will store your data and your models.
 
 You can list the buckets of your project in [Navigation menu / Storage / Browser](https://console.cloud.google.com/storage/browser).
 
-There are 2 ways to create bucket and upload data:
-- From UI
-    - Go to [Storage](https:A//console.cloud.google.com/storage) and create a bucket from there
-        - Select `Location type`: `Region` since we will not need to access our bucket from all over the world
-        - Bucket should be created in the nearest region (`europe-west1` for France)
-        - Keep other options default
-    - Go inside your bucket and upload your training data from you computer
-- Programmatically (**recommended**):
-    - Open `Makefile` and complete following env variable :
+💡 You should use the `train_1k.csv` training file in order to allow you to test the upload and the model training quickly. But eventually you are going to want to upload the full dataset in order to create an better model.
+
+There are 2 ways to create a bucket:
+
+### The hacker's way (**recommended**)
+
+- Open `Makefile` and copy the following lines
+
+```make
+# project id
+PROJECT_ID=XXX  # Replace with your Project's ID
+
+# bucket name
+BUCKET_NAME=XXX # Use your Project's name as it should be unique
+
+REGION=europe-west1 # Choose your region https://cloud.google.com/storage/docs/locations#available_locations
+
+set_project:
+  -@gcloud config set project ${PROJECT_ID}
+
+create_bucket:
+  -@gsutil mb -l ${REGION} -p ${PROJECT_ID} gs://${BUCKET_NAME}
+```
+
+- Use the predefined bash commands from `Makefile` to create your bucket
+
 ```bash
-LOCAL_PATH=~/data/train.csv             # Put your local path to the training data
-PROJECT_ID=wagon-bootcamp-111222333     # Project ID and not Project name
-BUCKET_NAME=wagon-ml-bizot-11           # Respect naming defined above
-```
-
-Use predefined bash commands from Makefile.
-We provided a small `train_1k.csv` training file in order to allow you to test the upload and the model training quickly. But eventually you are going to want to upload the full dataset in order to create an better model.
-
-```
 make set_project
 make create_bucket
+```
+
+👉 Check on [Storage](https://console.cloud.google.com/storage) that your bucket has been created.
+
+### The UI way (just to know)
+
+- Go to [Storage](https:A//console.cloud.google.com/storage) and create a bucket from there
+- Select `Location type`: `Region` since we will not need to access our bucket from all over the world
+- Bucket should be created in the nearest region (`europe-west1` for France)
+- Keep other options default
+
+## Upload your dataset
+
+- Add the following lines to your `Makefile`
+
+```make
+# path of the file to upload to gcp (the path of the file should be absolute or should match the directory where the make command is run)
+LOCAL_PATH="XXX" # Replace with your local path to the `train_1k.csv` and make sure to put it between quotes
+
+# bucket directory in which to store the uploaded file (we choose to name this data as a convention)
+BUCKET_FOLDER=data
+
+# name for the uploaded file inside the bucket folder (here we choose to keep the name of the uploaded file)
+# BUCKET_FILE_NAME=another_file_name_if_I_so_desire.csv
+BUCKET_FILE_NAME=$(shell basename ${LOCAL_PATH})
+
+upload_data:
+  # -@gsutil cp train_1k.csv gs://wagon-ml-my-bucket-name/data/train_1k.csv
+  -@gsutil cp ${LOCAL_PATH} gs://${BUCKET_NAME}/${BUCKET_FOLDER}/${BUCKET_FILE_NAME}
+```
+
+<details>
+<summary>
+  💡 Hint: how to find your local path to <code>train_1k.csv</code>?
+</summary>
+  From your terminal, go to the <code>raw_data</code> folder then print the local path with <code>pwd</code>.
+</details>
+
+
+- Finally use the predefined bash command from `Makefile` to upload your file to
+
+```bash
 make upload_data
 ```
 
 👉 Check on [Storage](https://console.cloud.google.com/storage) that your file was correctly uploaded. You should see a `train_1k.csv` file in the `data` folder of your bucket. Look at the content of the `Makefile`. Can you see how the command used in order to upload the file is built ?
+
+🚀 Congrats!
