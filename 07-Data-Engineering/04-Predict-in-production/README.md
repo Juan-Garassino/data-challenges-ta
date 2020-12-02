@@ -1,14 +1,4 @@
 
-## Build your API
-
-Now that your have a performant model trained in the cloud, we will expose it to the world.
-Today, we will create an API for your model and put it in the cloud.
-
-### FastAPI
-
-First, let's create an API exposing our model. Remember having consumed an API during the Python module using the `requests` package?
-You are now going to create your own API allowing other developers to ask your model for predictions.
-
 ### Docker
 
 Once we have an API, we will use Docker in order to create an image that can be pushed to production.

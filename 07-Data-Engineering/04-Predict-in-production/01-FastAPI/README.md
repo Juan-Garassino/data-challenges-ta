@@ -1,15 +1,81 @@
 
-## Let's create our first API exposing our model
+Now that we have a performant model trained in the cloud, we will expose it to the world 🌍
 
-Yesterday, we trained our TaxiFare model in the cloud using the **AI Platform**.
+Today, we will create a **Prediction API** for our model, run it on our machine in order to make sure that everything works correctly. Then we will put it in the cloud so that everyone can play with our model!
 
-We saved one or more versions of our model in `model.joblib` files.
+In order to do so, today we will:
+- Challenge 1 : create a **Prediction API** using `FastAPI`
+- Challenge 2 : create a **Docker image** containing the environment required in order to run the code of our API + the code of our API
+- Challenge 3 : push this image to **Google Cloud Run** so that it is instantiated as a **Docker container** that will run our code and allow developers all over the world to use it
 
-Let's use our best performing model in order to make predictions.
+### Recap from Train at Scale
 
-⚠️ Do not forget that we cannot load our model without the code that was used in order to train it! ⚠️
+- We trained our TaxiFare model in the cloud using the power of the **AI Platform**
+- We saved one or more versions of our trained model in `model.joblib` files in **Google Cloud Storage**
+
+We want to use our best performing model in order to make predictions 🚀
+
+👌 If you prefer to do so, you may download the solution of the challenge `07-Data-Engineering/03-Train-at-scale/03-Train-taxiFare-on-gcp` 👌
+
+👌 In this case, you will quickly retrain a model on your machine. The code of the solution trains on very few rows and will allow you to proceed with the exercices of today 👌
+
+## A few considerations
+
+### About the version of your trained model + code
+
+⚠️ Do not forget that we cannot load a `model.joblib` file without the code that was used in order to train it! After all, we need to be using the exact same `pipeline` ⚠️
+
+👉 If the `model.joblib` that you want to use today for your **Prediction API** corresponds to the latest version of you code, no worries 🎉
+
+👉 (or if you choose to retrain your code locally using the solution from Train at Scale, no worries either 🎉)
+
+The solution otherwise is to use for the prediction the version of your code/pipeline that was used for the training. If you need to do so, call a TA
+
+### About the version of your trained model + packages
+
+⚠️ Also, we need to make sure that the version of the packages (`numpy`, `pandas`, `scikit-learn`, and so on) used in order to train the model are going to be the same as the ones used in order to load the `model.joblib` file ⚠️
+
+👉 This is probably not going to be a concern if you trained your model recently since the versions probably did not evolve that fast
+
+👉 You may encounter this issue in the future if you try to load a `model.joblib` file for your **Prediction API** a few months from now. The solution is to pin the versions of the packages in your `requirements.txt`. Remember the **AI Platform RUNTIME** ? The [version of the runtime](https://cloud.google.com/ai-platform/training/docs/runtime-version-list) that you used for the training allows you to know which versions of the packages to use.
+
+## Let's create our first Prediction API exposing our model
+
+Do you remember having consumed an API during the Python module using the `requests` package?
+
+Today we are going to create your own API allowing other developers to ask our model for predictions.
 
 ### First step: let's create an API endpoint and test it
+
+👉 Let's copy the provided boilerplate inside of our project (copy the `api` directory inside of your project right next to the `TaxiFareModel` directory, **not** inside of it)
+
+👉 Let's also copy the notebooks directory at the same location, the notebook will be one way of testing your API
+
+👉 Let's ⚠️ **append** ⚠️ the content of the `Makefile` to the Makefile of your project
+
+Your project should look like this (use the `tree` command):
+
+```
+.
+├── TaxiFareModel
+│   ├── __init__.py
+│   ├── data.py
+│   ├── encoders.py
+│   ├── gcp.py
+│   ├── params.py
+│   ├── trainer.py
+│   └── utils.py
+├── api
+│   ├── __init__.py
+│   └── fast.py
+├── notebooks
+│   └── API usage.ipynb
+├── predict.py
+├── Makefile
+├── MANIFEST.in
+├── requirements.txt
+└── setup.py
+```
 
 In `api/fast.py`, let's create a root endpoint that will welcome the developers using our API.
 
