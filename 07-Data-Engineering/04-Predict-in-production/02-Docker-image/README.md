@@ -124,23 +124,6 @@ sudo service docker start
 
 Make sure the Docker application is running (you should see a whale in your menu bar).
 
-### Once you are done with Docker...
-
-Remember to stop the Docker daemon in order to free ressources on your machine once you are done using it...
-
-MacOS:
-- Stop the `Docker.app` with **Quit Docker Desktop** in the menu bar
-
-Linux/WSL2:
-- stop the Docker service
-
-``` bash
-sudo service docker stop
-```
-
-Windows
-- Stop the Docker application
-
 ## Make sure the docker image works on our machine
 
 Now let's build the image with a docker **build** command! ⏰
@@ -153,7 +136,7 @@ docker images
 
 Let's run it with a docker **run** command 👌
 
-💡 *Remember, since we configured the image with a `$PORT` environment variable, we need to provide it now. We also need to specify the mapping between the port inside of the image and the port at which we will contact the image.
+💡 *Remember*, since we configured the image with a `$PORT` environment variable, we need to provide it now. We also need to specify the mapping between the port inside of the image and the port at which we will contact the image.
 
 Once we have a running *Docker container*, let's look at the status of the image.
 
@@ -187,3 +170,20 @@ You may stop (or kill) the image...
 docker stop 152e5b79177b  # ⚠️ use the correct CONTAINER ID
 docker kill 152e5b79177b  # ☢️ only if the image refuses to stop (did someone create an ∞ loop?)
 ```
+
+## Once you are done with Docker...
+
+Remember to stop the Docker daemon in order to free ressources on your machine once you are done using it...
+
+MacOS:
+- Stop the `Docker.app` with **Quit Docker Desktop** in the menu bar
+
+Linux/WSL2:
+- stop the Docker service
+
+``` bash
+sudo service docker stop
+```
+
+Windows
+- Stop the Docker application
