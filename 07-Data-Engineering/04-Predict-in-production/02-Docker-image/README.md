@@ -98,7 +98,7 @@ Let's add a `CMD` instruction in order to tell Docker to run our **Prediction AP
 
 If we fail to provide any of these parameters, our container will run but the **uvicorn** server will be unable to receive incoming HTTP requests.
 
-*Hint*: since we will be running **uvicorn** inside of our container, do not forget to add it to the `requirements.txt`, as well as **fastapi**...
+⚠️  Since we will be running **uvicorn** inside of our container, do not forget to add it to the `requirements.txt`, as well as **fastapi**!
 
 ## Make sure the docker daemon is running on your machine
 
