@@ -3,6 +3,18 @@ Is the computing power of a single Cloud Run server not enough to server your cu
 
 Let's scale massively using a cluster of hosts serving your API.
 
+Using massive amounts of processing power comes at a cost 💸
+
+⚠️ If you are playing with this exercice, make sure to **DELETE** the cluster as soon as you are done ⚠️
+
+Also, keep an eye on the [billing in the GCP console](https://console.cloud.google.com/billing).
+
+More on [Google Kubernetes Engine pricing](https://cloud.google.com/kubernetes-engine/pricing).
+
+You may use [this calculator](https://cloud.google.com/products/calculator) in order to evaluate the monthly cost of running a cluster.
+
+⚠️ Again, keep in mind to monitor the pricing, and delete the cluster once you are done ⚠️
+
 ## Push our prediction API image to Google Kubernetes Engine
 
 Let's scale our image to a cluster of hosts using Kubernetes Engine 🤖🤖🤖
