@@ -26,7 +26,7 @@ We want to use our best performing model in order to make predictions 🚀
 
 👉 If the `model.joblib` that you want to use today for your **Prediction API** corresponds to the latest version of you code, no worries 🎉
 
-👉 (or if you choose to retrain your code locally using the solution from yesterday, no worries either 🎉)
+👉 (or if you choose to retrain your code locally using the solution from Train at Scale, no worries either 🎉)
 
 The solution otherwise is to use for the prediction the version of your code/pipeline that was used for the training. If you need to do so, call a TA
 
