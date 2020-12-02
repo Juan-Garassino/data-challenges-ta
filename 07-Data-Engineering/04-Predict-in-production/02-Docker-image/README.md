@@ -153,7 +153,7 @@ docker images
 
 Let's run it with a docker **run** command 👌
 
-*Hint*: remember, since we configured the image with a $PORT environment variable, we need to provide it now. We also need to specify the mapping between the port inside of the image and the port at which we will contact the image.
+💡 *Remember, since we configured the image with a `$PORT` environment variable, we need to provide it now. We also need to specify the mapping between the port inside of the image and the port at which we will contact the image.
 
 Once we have a running *Docker container*, let's look at the status of the image.
 
