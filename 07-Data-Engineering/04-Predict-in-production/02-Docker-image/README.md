@@ -120,8 +120,9 @@ Start the Docker service:
 sudo service docker start
 ```
 
-Windows:
-- Make sure the Docker application is running
+### Windows
+
+Make sure the Docker application is running (you should see a whale in your menu bar).
 
 ### Once you are done with Docker...
 
