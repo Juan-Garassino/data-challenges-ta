@@ -36,7 +36,7 @@ The solution otherwise is to use for the prediction the version of your code/pip
 
 👉 This is probably not going to be a concern if you trained your model recently since the versions probably did not evolve that fast
 
-👉 You may encounter this issue in the future if you try to load a `model.joblib` file for your `Prediction API` a few months from now. The solution is to pin the versions of the packages in your `requirements.txt`. Remember the `AI Platform RUNTIME` ? The [version of the runtime](https://cloud.google.com/ai-platform/training/docs/runtime-version-list) that you used for the training allows you to know which versions of the packages to use
+👉 You may encounter this issue in the future if you try to load a `model.joblib` file for your **Prediction API** a few months from now. The solution is to pin the versions of the packages in your `requirements.txt`. Remember the **AI Platform RUNTIME** ? The [version of the runtime](https://cloud.google.com/ai-platform/training/docs/runtime-version-list) that you used for the training allows you to know which versions of the packages to use.
 
 ## Let's create our first Prediction API exposing our model
 
