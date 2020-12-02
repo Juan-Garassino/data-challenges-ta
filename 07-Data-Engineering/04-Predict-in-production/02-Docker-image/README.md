@@ -80,7 +80,7 @@ We need to tell docker to install the dependencies of our code when the image is
 
 Let's use a `RUN` instruction in order to ask Docker to install the python packages required by our package.
 
-Looks like we are almost finished: our `Dockerfile` now enables use to build an image:
+Looks like we are almost finished. Our `Dockerfile` now enables us to build an image:
 - based on a linux distribution
 - running python code
 - where our code is copied
