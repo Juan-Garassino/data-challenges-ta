@@ -4,7 +4,7 @@ Now that we have a performant model trained in the cloud, we will expose it to t
 Today, we will create a **Prediction API** for our model, run it on our machine in order to make sure that everything works correctly. Then we will put it in the cloud so that everyone can play with our model!
 
 In order to do so, today we will:
-- Challenge 1 : create a `Prediction API` using `FastAPI`
+- Challenge 1 : create a **Prediction API** using `FastAPI`
 - Challenge 2 : create a **Docker image** containing the environment required in order to run the code of our API + the code of our API
 - Challenge 3 : push this image to **Google Cloud Run** so that it is instanciated as a `Docker container` that will run our code and allow developers all over the world to use it
 
