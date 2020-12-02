@@ -1,8 +1,4 @@
 
-### Docker
-
-Once we have an API, we will use Docker in order to create an image that can be pushed to production.
-
 ### Cloud Run
 
 Now that we have a running API image, we are going to use the Google Cloud Run service in order to host it.

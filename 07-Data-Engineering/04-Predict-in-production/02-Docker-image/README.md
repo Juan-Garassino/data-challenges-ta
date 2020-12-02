@@ -1,11 +1,46 @@
 
+We now have a working `Prediction API`, but it is not much use if it can only be queried from our local machine.
+
+We want to make it available to the world. In order to do that, the first step is to create a `Docker image` that will contain both the environement required in order to allow our code to run + the code of our API. Off course, remember that we still need the code of our pipeline along with the code of the API in order to be able to load our `model.joblib` file
+
+In the next exercice, we will see how to put the Docker image in production so that it can be accessed from any machine on the internet 🌍
+
+For now, let's focus on creating a **Docker image** allowing us to run the code of our Prediction API on our machine.
+
+You can see the Docker image as some sort of runnable virtual environment containing all the packages for the app + our code.
+
 ## Build a docker image for our API
 
-We now have a working prediction API. Let's create a container image for our prediction API and use it locally.
-
-We will later use the image in order to deploy our API in a container in **Google Cloud Run**.
+Let's create a Docker image for our prediction API and use it locally.
 
 Let's start by creating the `Dockerfile` that will contain the instructions telling Docker how to build the image.
+
+In order to do so, copy the provided `Dockerfile` in your project (or create an empty one).
+
+Your project should look like this:
+
+```
+.
+├── TaxiFareModel
+│   ├── __init__.py
+│   ├── data.py
+│   ├── encoders.py
+│   ├── gcp.py
+│   ├── params.py
+│   ├── trainer.py
+│   └── utils.py
+├── api
+│   ├── __init__.py
+│   └── fast.py
+├── notebooks
+│   └── API\ usage.ipynb
+├── Dockerfile
+├── predict.py
+├── Makefile
+├── MANIFEST.in
+├── requirements.txt
+└── setup.py
+```
 
 ### FROM directive
 
