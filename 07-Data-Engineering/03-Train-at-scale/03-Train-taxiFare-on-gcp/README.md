@@ -13,9 +13,9 @@ Here we go back with the pipeline from day3 including:
 
 Here we provide you with the correction from yesterday, but feel free to use your own code from yesterday as well.
 
-Modify the `get_data()` function and add a `save_model()` method inside `trainer.py` in order to:  
-👉 Get training data from Storage (still working on 1k sample for faster runs here)   
-👉 Upload model to Storage just like in the last exercice    
+Modify the `get_data()` function and add a `save_model()` method inside `trainer.py` in order to:
+👉 Get training data from Storage (still working on 1k sample for faster runs here)
+👉 Upload model to Storage just like in the last exercice
 
 💡 Check that all your variables (`BUCKET_NAME` etc...) are correctly defined insice `params.py`
 
@@ -31,8 +31,8 @@ Here you will run `make run_locally` on your local machine:
 - Check that your `model.joblib` was correctly saved on GCP storage
 
 Once everything is working ok, please make sure that:
-- the requirements in `setup.py` match your requirements on your virtual environement  
-💡 **This step is very important, most of your errors in the next section will be linked to mismatch between requirements on your machine and requirements you specified in setup.py**
+- the requirements in `requirements.txt` match your requirements on your virtual environement
+💡 **This step is very important, most of your errors in the next section will be linked to mismatch between requirements on your machine and requirements you specified in `requirements.txt`**
 
 ## Train your model on GCP
 
@@ -42,13 +42,13 @@ Same as before here:
 - Submit a first training task on a few samples to check that your workflow runs without errors on GCP servers
 - Submit a real training task on more samples to benefit from GCP doing all the work for you ;)
 
-💡**NB: Check that all the dependencies are inside the setup.py file**
+💡**NB: Check that all the dependencies are inside the `requirements.txt` file**
 
 ## Use your model for predictions
 
-Now, have a look at `predict.py` and specifically check how we:  
-👉 load pipeline model from storage  
-👉 apply predictions on test sample  
+Now, have a look at `predict.py` and specifically check how we:
+👉 load pipeline model from storage
+👉 apply predictions on test sample
 
 💡**NB: It is pretty much the same code as yesterday, the only difference is that we get our `model.joblib` from the cloud and not from our laptop**
 
