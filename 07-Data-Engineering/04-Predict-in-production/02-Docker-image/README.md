@@ -42,23 +42,31 @@ Your project should look like this:
 └── setup.py
 ```
 
-### FROM directive
+Now, let's fill the content of the `Dockerfile` in order to create a recipe that will allow us to **build** our **Docker image** 👌
 
-First, let's select the first layer on top of which we will build our prediction API image.
+The most common instructions that we will meet in a `Dockerfile` are the following:
+- `FROM`: select a base image for our image (the environment in which we will run our code), this is usually the first instruction
+- `COPY`: copy files and directories inside of our image (our package and the associated files for example)
+- `RUN`: execute a command **inside** of the image being built (for example, install the package dependencies)
+- `CMD`: execute the **main** command that will be executed when we run our **Docker image**. There can be only one `CMD` instruction inside of a `Dockerfile`. It is usually the last instruction
+
+### FROM instruction
+
+First, let's select the first layer on top of which we will build our **Prediction API** image.
 
 Search for a base image in [Docker Hub](https://hub.docker.com/) which would contain a suitable version of python.
 
 👉 [List of Docker Hub available python images](https://hub.docker.com/_/python)
 
-Use the base image in order to create the `Dockerfile`.
+Use the name of the base image in order to create the `FROM` instruction which will be the first instruction of our `Dockerfile`.
 
 We have built a `Dockerfile` able to create an image based on a Linux distribution and that is able to run python code.
 
-### COPY directives
+### COPY instructions
 
-We want to add our code to the image, so that the image can run the code.
+Second, we want to add our code to the image, so that the image can run our package.
 
-Let's add instructions to tell docker to copy in the image:
+Let's add `COPY` instructions in order to tell docker to copy in the image:
 - the trained model
 - the code of the project which is required in order to load the model
 - the code of our API
@@ -66,11 +74,11 @@ Let's add instructions to tell docker to copy in the image:
 
 We are now able to build an image able to run our code, but what about the dependencies of our code? 🤔
 
-### RUN directive
+### RUN instruction
 
 We need to tell docker to install the dependencies of our code when the image is built.
 
-Let's use a RUN directive in order to ask docker to install the python packages required by our image.
+Let's use a `RUN` instruction in order to ask Docker to install the python packages required by our package.
 
 Looks like we are almost finished: our `Dockerfile` now enables use to build an image:
 - based on a linux distribution
@@ -78,15 +86,17 @@ Looks like we are almost finished: our `Dockerfile` now enables use to build an 
 - where our code is copied
 - and the dependencies of our code are installed
 
-### CMD directive
+### CMD instruction
 
-We now need to tell docker what the image should do when it is started. Otherwise we will only have started an image with our code and its dependencies, and that actually does nothing.
+We now need to tell Docker what the image should do when it is instantiated inside of a **Docker container** and started. Otherwise we will only have started a container with our code and its dependencies, and that actually does nothing.
 
-*Hint*: we need to provide the following **host** and **port** parameters to the **uvicorn** server run command.
+Let's add a `CMD` instruction running our **Prediction API** at the bottom of the `Dockerfile`
+
+*Hint*: we need to provide the following **host** and **port** parameters to the **uvicorn** server run command (the command that runs our **Prediction API**).
 The **host** parameter will tell **uvicorn** to listen to all network connections.
-The **port** parameter will tell **uvicorn** to listen to HTTP requests on the $PORT configured by the cloud service running our docker image.
+The **port** parameter will tell **uvicorn** to listen to HTTP requests on the `PORT` environment variable configured by the cloud service running our Docker image.
 
-If we fail to provide any of these parameters, our image will run but the **uvicorn** server will be unable to receive incoming http requests.
+If we fail to provide any of these parameters, our image will run but the **uvicorn** server will be unable to receive incoming HTTP requests.
 
 ## Make sure the docker image works on our machine
 
@@ -100,11 +110,9 @@ docker images
 
 Let's run it with a docker **run** command 👌
 
-Remember since we configured the image with a $PORT environment variable, we need to provide it now.
+*Hint*: remember, since we configured the image with a $PORT environment variable, we need to provide it now. We also need to specify the mapping between the port inside of the image and the port at which we will contact the image.
 
-We also need to specify the mapping between the port inside of the image and the port at which we will contact the image.
-
-Let's look at the status of the image.
+Once we have a running *Docker container*, let's look at the status of the image.
 
 ``` bash
 docker ps
