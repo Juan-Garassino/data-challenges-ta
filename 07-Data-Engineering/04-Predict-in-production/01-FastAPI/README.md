@@ -8,9 +8,10 @@ In order to do so, today we will:
 - Challenge 2 : create a **Docker image** containing the environment required in order to run the code of our API + the code of our API
 - Challenge 3 : push this image to **Google Cloud Run** so that it is instantiated as a **Docker container** that will run our code and allow developers all over the world to use it
 
-Yesterday, we trained our TaxiFare model in the cloud using the power of the **AI Platform**.
+### Recap from Train at Scale
 
-We saved one or more versions of our trained model in `model.joblib` files in `Google Cloud Storage`.
+- We trained our TaxiFare model in the cloud using the power of the **AI Platform**
+- We saved one or more versions of our trained model in `model.joblib` files in **Google Cloud Storage**
 
 We want to use our best performing model in order to make predictions 🚀
 
