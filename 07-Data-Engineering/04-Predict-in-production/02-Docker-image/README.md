@@ -106,8 +106,9 @@ Now that we have created a `Dockerfile`, we are going to use **Docker** in order
 
 In order to run the Docker commands, you need to make sure that your **Docker daemon** is running on your machine. The Docker daemon is the program that will allow us to run the Docker commands in order to build a Docker image and instantiate it into a runnable Docker container on our machine.
 
-MacOS:
-- Make sure that the `Docker.app` is running (you should see a whale in your menu bar)
+### MacOSX
+
+Make sure that the `Docker.app` is running (you should see a whale in your menu bar).
 
 <img src="https://raw.githubusercontent.com/lewagon/data-challenges/data-engv2/07-Data-Engineering/04-Predict-in-production/02-Docker-image/docker_daemon.png?token=ACMEB76B3JR6QR5JLY37XL27Z5TTC" width="150" alt="finding your PROJECT_ID in GCP">
 
