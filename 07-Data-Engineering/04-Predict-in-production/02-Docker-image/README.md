@@ -98,6 +98,44 @@ The **port** parameter will tell **uvicorn** to listen to HTTP requests on the `
 
 If we fail to provide any of these parameters, our image will run but the **uvicorn** server will be unable to receive incoming HTTP requests.
 
+## Make sure the docker daemon is running on your machine
+
+Now that we have created a `Dockerfile`, we are going to use **Docker** in order to build an image.
+
+In order to run the Docker commands, you need to make sure that your **Docker daemon** is running on your machine. The Docker daemon is the program that will allow us to run the Docker commands in order to build and run Docker images on our machine.
+
+MacOS:
+- Make sure that the `Docker.app` is running (you should see a whale in your menu bar)
+
+<img src="https://raw.githubusercontent.com/lewagon/data-challenges/data-engv2/07-Data-Engineering/04-Predict-in-production/02-Docker-image/docker_daemon.png?token=ACMEB76B3JR6QR5JLY37XL27Z5TTC" width="150" alt="finding your PROJECT_ID in GCP">
+
+Linux/WSL2:
+- start the Docker service
+
+``` bash
+sudo service docker start
+```
+
+Windows:
+- Make sure the Docker application is running
+
+### Once you are done with Docker...
+
+Remember to stop the Docker daemon in order to free ressources on your machine once you are done using it...
+
+MacOS:
+- Stop the `Docker.app` with **Quit Docker Desktop** in the menu bar
+
+Linux/WSL2:
+- stop the Docker service
+
+``` bash
+sudo service docker stop
+```
+
+Windows
+- Stop the Docker application
+
 ## Make sure the docker image works on our machine
 
 Now let's build the image with a docker **build** command! ⏰
