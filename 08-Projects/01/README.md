@@ -3,18 +3,21 @@
 ## Setup a new `virtualenv` (opt.)
 
 <details>
-  <summary markdown='span'><strong>MacOSX</strong></summary>
+  <summary>
+    <strong>MacOSX</strong>
+  </summary>
 
 ```bash
 pyenv virtualenv project_name
 pyenv activate project_name
-pip install --upgrade pip
 ```
 
 </details>
 
 <details>
-  <summary markdown='span'><strong>Windows</strong></summary>
+  <summary>
+    <strong>Windows</strong>
+  </summary>
 
 ```bash
 cd ~/.venvs
@@ -27,6 +30,7 @@ source ~/.venvs/project_name/Scripts/activate
 ### Install minimal packages
 
 ```bash
+pip install --upgrade pip
 pip install -r https://gist.githubusercontent.com/krokrob/53ab953bbec16c96b9938fcaebf2b199/raw/9035bbf12922840905ef1fbbabc459dc565b79a3/minimal_requirements.txt
 pip list
 ```
@@ -34,7 +38,9 @@ pip list
 ## Setup the project
 
 <details>
-  <summary markdown='span'><strong>I am the project leader</strong></summary>
+  <summary>
+    <strong>I am the project leader</strong>
+  </summary>
 Let's create a new project:
 
 ```bash
@@ -70,7 +76,9 @@ Finally, add your teammates as collaborators on GitHub.
 </details>
 
 <details>
-  <summary markdown='span'><strong>I am a teammate</strong></summary>
+  <summary>
+    <strong>I am a teammate</strong>
+  </summary>
 Let's clone the project:
 
 ```bash
