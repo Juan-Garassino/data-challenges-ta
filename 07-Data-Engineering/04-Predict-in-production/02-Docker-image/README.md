@@ -1,7 +1,7 @@
 
-We now have a working `Prediction API`, but it is not much use if it can only be queried from our local machine.
+We now have a working **Prediction API**, but it is not much use if it can only be queried from our local machine.
 
-We want to make it available to the world. In order to do that, the first step is to create a `Docker image` that will contain both the environement required in order to allow our code to run + the code of our API. Off course, remember that we still need the code of our pipeline along with the code of the API in order to be able to load our `model.joblib` file
+We want to make it available to the world. In order to do that, the first step is to create a **Docker image** that will contain both the environement required in order to allow our code to run + the code of our API. Off course, remember that we still need the code of our pipeline along with the code of the API in order to be able to load our `model.joblib` file
 
 In the next exercice, we will see how to put the Docker image in production so that it can be accessed from any machine on the internet 🌍
 
@@ -82,15 +82,15 @@ Looks like we are almost finished: our `Dockerfile` now enables use to build an 
 
 We now need to tell docker what the image should do when it is started. Otherwise we will only have started an image with our code and its dependencies, and that actually does nothing.
 
-*Hint*: we need to provide the following `host` and `port` parameters to the **uvicorn** server run command.
-The `host` parameter will tell `uvicorn` to listen to all network connections.
-The `port` parameter will tell `uvicorn` to listen to HTTP requests on the $PORT configured by the cloud service running our docker image.
+*Hint*: we need to provide the following **host** and **port** parameters to the **uvicorn** server run command.
+The **host** parameter will tell **uvicorn** to listen to all network connections.
+The **port** parameter will tell **uvicorn** to listen to HTTP requests on the $PORT configured by the cloud service running our docker image.
 
 If we fail to provide any of these parameters, our image will run but the **uvicorn** server will be unable to receive incoming http requests.
 
 ## Make sure the docker image works on our machine
 
-Now let's build the image with a docker `build` command! ⏰
+Now let's build the image with a docker **build** command! ⏰
 
 Once built, the image should be visible in the list of images:
 
@@ -98,7 +98,7 @@ Once built, the image should be visible in the list of images:
 docker images
 ```
 
-Let's run it with a docker `run` command 👌
+Let's run it with a docker **run** command 👌
 
 Remember since we configured the image with a $PORT environment variable, we need to provide it now.
 
