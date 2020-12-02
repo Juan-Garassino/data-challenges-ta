@@ -112,8 +112,9 @@ Make sure that the `Docker.app` is running (you should see a whale in your menu 
 
 <img src="https://raw.githubusercontent.com/lewagon/data-challenges/data-engv2/07-Data-Engineering/04-Predict-in-production/02-Docker-image/docker_daemon.png?token=ACMEB76B3JR6QR5JLY37XL27Z5TTC" width="150" alt="finding your PROJECT_ID in GCP">
 
-Linux/WSL2:
-- start the Docker service
+### Linux/WSL2
+
+Start the Docker service:
 
 ``` bash
 sudo service docker start
