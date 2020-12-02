@@ -1,4 +1,13 @@
 
+In the previous exercice, we have built a **Prediction API** Docker image that we are able to run on our local machine.
+
+There are 2 remaining steps in order to enable worldwide developers to play with it:
+- Push the **Docker image** to **Google Container Registry**
+- Deploy the image on **Google Cloud Run** so that it gets instantiated into a **Docker container**
+
+The role of **Container Registry** will be to act as storage for our Docker image.
+The role of **Cloud Run** will be to run a Docker container instantiated from our image.
+
 ## Push our prediction API image to Google Container Registry
 
 **Google Container Registry** is a service storing Docker images on the cloud with the purpose of allowing **Cloud Run** or **Kubernetes Engine** to serve them.
@@ -70,6 +79,10 @@ docker push eu.gcr.io/$PROJECT_ID/$DOCKER_IMAGE_NAME
 The image should be visible in the GCP console [here](https://console.cloud.google.com/gcr/).
 
 ## Deploy the Container Registry image to Google Cloud Run
+
+We have pushed the Docker image for our Prediction API to **Google Container Registry**. The image is now available for deployment by Google services such as **Cloud Run** and **Kubernetes Engine** (for massive scaling).
+
+We are going to deploy our image to production using **Google Cloud Run**. Cloud Run will be more than enough for our first hundreds of users. Cloud Run will instantiate the image into a container and run the `CMD` instruction inside of the `Dockerfile` of the image. This last step will start the `uvicorn` server serving our **Prediction API** to the world 🌍
 
 Let's run one last command 🤞
 
