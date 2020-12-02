@@ -7,11 +7,11 @@ You've trained and evaluated your first Pipeline on your laptop, now you'll do e
 
 ## Complete TaxiFareModel/trainer.py to be trainable and deployable to GCP
 
-Here we go back with the pipeline from day3 including:
+Here we go back with the pipeline including:
 - Custom encoders
 - Mlfow tracking on remote server
 
-Here we provide you with the correction from yesterday, but feel free to use your own code from yesterday as well.
+You can start from the solution of `07-Data-Engineering/02-ML-Iteration/04-MLFlow-quickstart`, but feel free to use your own package as well.
 
 Modify the `get_data()` function and add a `save_model()` method inside `trainer.py` in order to:
 👉 Get training data from Storage (still working on 1k sample for faster runs here)
