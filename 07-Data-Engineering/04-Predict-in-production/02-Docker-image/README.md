@@ -1,7 +1,7 @@
 
 We now have a working **Prediction API**, but it is not much use if it can only be queried from our local machine.
 
-We want to make it available to the world. In order to do that, the first step is to create a **Docker image** that will contain both the environement required in order to allow our code to run + the code of our API. Off course, remember that we still need the code of our pipeline along with the code of the API in order to be able to load our `model.joblib` file
+We want to make it available to the world. In order to do that, the first step is to create a **Docker image** that will contain both the environement required in order to allow our code to run + the code of our API. Of course, remember that we still need the code of our pipeline along with the code of the API in order to be able to load our `model.joblib` file.
 
 In the next exercice, we will see how to put the Docker image in production so that it can be accessed from any machine on the internet 🌍
 
