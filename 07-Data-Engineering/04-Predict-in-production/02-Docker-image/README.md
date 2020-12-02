@@ -92,9 +92,9 @@ We now need to tell Docker what the image should do when it is instantiated insi
 
 Let's add a `CMD` instruction in order to tell Docker to run our **Prediction API** at the bottom of the `Dockerfile`. Our Prediction API will be served by **uvicorn**.
 
-*Hint*: we need to provide the following **host** and **port** parameters to the **uvicorn** run command.
-The **host** parameter will tell **uvicorn** to listen to all network connections.
-The **port** parameter will tell **uvicorn** to listen to HTTP requests on the `PORT` environment variable configured by the cloud service running our Docker container.
+💡 We need to provide the following **host** and **port** parameters to the **uvicorn** run command:
+- The **host** parameter will tell **uvicorn** to listen to all network connections
+- The **port** parameter will tell **uvicorn** to listen to HTTP requests on the `PORT` environment variable configured by the cloud service running our Docker container
 
 If we fail to provide any of these parameters, our container will run but the **uvicorn** server will be unable to receive incoming HTTP requests.
 
