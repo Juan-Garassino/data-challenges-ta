@@ -98,6 +98,8 @@ The **port** parameter will tell **uvicorn** to listen to HTTP requests on the `
 
 If we fail to provide any of these parameters, our image will run but the **uvicorn** server will be unable to receive incoming HTTP requests.
 
+*Hint*: since we will be running **uvicorn** inside of our container, do not forget to add it to the `requirements.txt`...
+
 ## Make sure the docker daemon is running on your machine
 
 Now that we have created a `Dockerfile`, we are going to use **Docker** in order to build an image.
