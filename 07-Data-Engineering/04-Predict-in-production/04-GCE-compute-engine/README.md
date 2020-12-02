@@ -5,7 +5,7 @@ Do you have a internet connection with a limited bandwitdh or does your computer
 
 The goal here is do demonstrate the usage of a **Google Compute Engine** instance.
 
-Google Compute Engine allows to create **Virtual Machines** (VM) in the cloud. You can think of a virtual machine as your laptop in the cloud. The machine remains **ON** as long as you do not turn it **OFF**, even if it is doing no actual work, just like your machine ☕️
+Google Compute Engine allows us to create **Virtual Machines** (VM) in the cloud. You can think of a virtual machine as your laptop in the cloud. The machine remains **ON** as long as you do not turn it **OFF**, even if it is doing no actual work, just like your machine ☕️.
 
 Why would you want to use a virtual machine (VM) ?
 - The VM in the cloud has access to a **top notch internet** connection, while you might not. You may want to have it perform network intensive tasks, such as building **Docker** images and pushing them to **Google Container Registry** for example...
