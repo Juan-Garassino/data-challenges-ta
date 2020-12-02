@@ -152,7 +152,7 @@ Here we will just want to find a way to ask GCP to:
 
 👉 Close our computer, grab a coffee and come back when the training is finished
 
-## Specify your requirements to GCP inside setup.py
+## Specify your requirements to GCP inside `requirements.txt`
 
 Make sure you have installed the dependencies from requirements.txt
 
@@ -166,7 +166,7 @@ Check version of python libraries we have installed in the virtualenv:
 pip freeze | grep -E "pandas|scikit|google-cloud-storage|gcsfs"
 ```
 
-Make sure they match with the `REQUIRED_PACKAGES` list in `setup.py`.
+Make sure they match with the package list in `requirements.txt`.
 
 ## Submit Training to GCP
 The GCP cli `gcloud` installed before allows us to communicate with GCP. It provides commands allowing to use all its APIs.
