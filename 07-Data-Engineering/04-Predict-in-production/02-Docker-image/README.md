@@ -90,21 +90,21 @@ Looks like we are almost finished: our `Dockerfile` now enables use to build an 
 
 We now need to tell Docker what the image should do when it is instantiated inside of a **Docker container** and started. Otherwise we will only have started a container with our code and its dependencies, and that actually does nothing.
 
-Let's add a `CMD` instruction running our **Prediction API** at the bottom of the `Dockerfile`
+Let's add a `CMD` instruction in order to tell Docker to run our **Prediction API** at the bottom of the `Dockerfile`. Our Prediction API will be served by **uvicorn**.
 
-*Hint*: we need to provide the following **host** and **port** parameters to the **uvicorn** server run command (the command that runs our **Prediction API**).
+*Hint*: we need to provide the following **host** and **port** parameters to the **uvicorn** run command.
 The **host** parameter will tell **uvicorn** to listen to all network connections.
-The **port** parameter will tell **uvicorn** to listen to HTTP requests on the `PORT` environment variable configured by the cloud service running our Docker image.
+The **port** parameter will tell **uvicorn** to listen to HTTP requests on the `PORT` environment variable configured by the cloud service running our Docker container.
 
-If we fail to provide any of these parameters, our image will run but the **uvicorn** server will be unable to receive incoming HTTP requests.
+If we fail to provide any of these parameters, our container will run but the **uvicorn** server will be unable to receive incoming HTTP requests.
 
-*Hint*: since we will be running **uvicorn** inside of our container, do not forget to add it to the `requirements.txt`...
+*Hint*: since we will be running **uvicorn** inside of our container, do not forget to add it to the `requirements.txt`, as well as **fastapi**...
 
 ## Make sure the docker daemon is running on your machine
 
 Now that we have created a `Dockerfile`, we are going to use **Docker** in order to build an image.
 
-In order to run the Docker commands, you need to make sure that your **Docker daemon** is running on your machine. The Docker daemon is the program that will allow us to run the Docker commands in order to build and run Docker images on our machine.
+In order to run the Docker commands, you need to make sure that your **Docker daemon** is running on your machine. The Docker daemon is the program that will allow us to run the Docker commands in order to build a Docker image and instantiate it into a runnable Docker container on our machine.
 
 MacOS:
 - Make sure that the `Docker.app` is running (you should see a whale in your menu bar)
