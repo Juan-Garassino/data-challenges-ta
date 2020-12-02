@@ -1,4 +1,22 @@
 
+This exercice is optional.
+
+Do you have a internet connection with a limited bandwitdh or does your computer suffer in any way when building Docker images? Let's use Google Compute Engine in order to have a server in the cloud do the hard work for us.
+
+The goal here is do demonstrate the usage of a **Google Compute Engine** instance.
+
+Google Compute Engine allows to create **Virtual Machines** (VM) in the cloud. You can think of a virtual machine as your laptop in the cloud. The machine remains **ON** as long as you do not turn it **OFF**, even if it is doing no actual work, just like your machine ☕️
+
+Why would you want to use a virtual machine (VM) ?
+- The VM in the cloud has access to a **top notch internet** connection, while you might not. You may want to have it perform network intensive tasks, such as building **Docker** images and pushing them to **Google Container Registry** for example...
+- You will be able to play with machines up to **160 VCPU and 3.75TB of memory** 😱
+
+In order to play with a VM, first we need to configure it, select an operating system, install the python stack, and a developer environment. You can think of this step as building a dedicated Docker image that will only get instantiated into a single Docker container. This is an analogy, the **VM** do not use Docker at all.
+
+But wait... Configuring a machine with a developer environment... We already did that! 💡 That is the **Le Wagon data setup**! 👌
+
+In this exercice, we will configure a VM instace, run the Le Wagon data setup on it. Then we will see how to drive it 🚀
+
 ## Create a Compute Engine instance
 
 We are going to create a virtual machine based on a [Debian](https://en.wikipedia.org/wiki/Debian) (Linux) operating system.

@@ -3,6 +3,8 @@
 
 All GCP services are paying, and remember that you entered your credit card in GCP on setup day.
 
+Let's create an expense alert and keep an eye on your budget 💸
+
 Creating a budget alert will allow you to be notified when your expense thresholds are reached.
 
 It will allow you to fine tune your usage of the Google Cloud Platform.

@@ -1,4 +1,8 @@
 
+Is the computing power of a single Cloud Run server not enough to server your customer base?
+
+Let's scale massively using a cluster of hosts serving your API.
+
 ## Push our prediction API image to Google Kubernetes Engine
 
 Let's scale our image to a cluster of hosts using Kubernetes Engine 🤖🤖🤖
