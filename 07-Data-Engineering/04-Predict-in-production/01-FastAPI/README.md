@@ -4,17 +4,18 @@ Now that we have a performant model trained in the cloud, we will expose it to t
 Today, we will create a **Prediction API** for our model, run it on our machine in order to make sure that everything works correctly. Then we will put it in the cloud so that everyone can play with our model!
 
 In order to do so, today we will:
-- Challenge 1 : create a `Prediction API` using `FastAPI`
-- Challenge 2 : create a `Docker image` containing the environment required in order to run the code of our API + the code of our API
-- Challenge 3 : push this image to **Google Cloud Run** so that it is instanciated as a `Docker container` that will run our code and allow developers all over the world to use it
+- Challenge 1 : create a **Prediction API** using `FastAPI`
+- Challenge 2 : create a **Docker image** containing the environment required in order to run the code of our API + the code of our API
+- Challenge 3 : push this image to **Google Cloud Run** so that it is instantiated as a **Docker container** that will run our code and allow developers all over the world to use it
 
-Yesterday, we trained our TaxiFare model in the cloud using the power of the **AI Platform**.
+### Recap from Train at Scale
 
-We saved one or more versions of our trained model in `model.joblib` files in `Google Cloud Storage`.
+- We trained our TaxiFare model in the cloud using the power of the **AI Platform**
+- We saved one or more versions of our trained model in `model.joblib` files in **Google Cloud Storage**
 
 We want to use our best performing model in order to make predictions 🚀
 
-👌 If you prefer to do so, you may download the solution for the challenge of yesterday in `data-challenges/07-Data-Engineering/03-Train-at-scale/03-Train-taxiFare-on-gcp` 👌
+👌 If you prefer to do so, you may download the solution of the challenge `07-Data-Engineering/03-Train-at-scale/03-Train-taxiFare-on-gcp` 👌
 
 👌 In this case, you will quickly retrain a model on your machine. The code of the solution trains on very few rows and will allow you to proceed with the exercices of today 👌
 
@@ -26,7 +27,7 @@ We want to use our best performing model in order to make predictions 🚀
 
 👉 If the `model.joblib` that you want to use today for your **Prediction API** corresponds to the latest version of you code, no worries 🎉
 
-👉 (or if you choose to retrain your code locally using the solution from yesterday, no worries either 🎉)
+👉 (or if you choose to retrain your code locally using the solution from Train at Scale, no worries either 🎉)
 
 The solution otherwise is to use for the prediction the version of your code/pipeline that was used for the training. If you need to do so, call a TA
 
@@ -36,7 +37,7 @@ The solution otherwise is to use for the prediction the version of your code/pip
 
 👉 This is probably not going to be a concern if you trained your model recently since the versions probably did not evolve that fast
 
-👉 You may encounter this issue in the future if you try to load a `model.joblib` file for your `Prediction API` a few months from now. The solution is to pin the versions of the packages in your `requirements.txt`. Remember the `AI Platform RUNTIME` ? The [version of the runtime](https://cloud.google.com/ai-platform/training/docs/runtime-version-list) that you used for the training allows you to know which versions of the packages to use
+👉 You may encounter this issue in the future if you try to load a `model.joblib` file for your **Prediction API** a few months from now. The solution is to pin the versions of the packages in your `requirements.txt`. Remember the **AI Platform RUNTIME** ? The [version of the runtime](https://cloud.google.com/ai-platform/training/docs/runtime-version-list) that you used for the training allows you to know which versions of the packages to use.
 
 ## Let's create our first Prediction API exposing our model
 
