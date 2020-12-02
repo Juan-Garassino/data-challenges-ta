@@ -11,6 +11,14 @@ Why would you want to use a virtual machine (VM) ?
 - The VM in the cloud has access to a **top notch internet** connection, while you might not. You may want to have it perform network intensive tasks, such as building **Docker** images and pushing them to **Google Container Registry** for example...
 - You will be able to play with machines up to **160 VCPU and 3.75TB of memory** 😱
 
+However, using monstrous amounts of processing power comes at a cost 💸
+
+⚠️ If you are playing with this exercice, make sure to **STOP** the virtual machine as soon as you are done ⚠️
+
+Also, keep an eye on the [billing in the GCP console](https://console.cloud.google.com/billing).
+
+If you choose the default virtual machine size, the cost should be very light... But anyways, remember to stop the virtual machine once you are done working on it.
+
 In order to play with a VM, first we need to configure it, select an operating system, install the python stack, and a developer environment. You can think of this step as building a dedicated Docker image that will only get instantiated into a single Docker container. This is an analogy, the **VM** do not use Docker at all.
 
 But wait... Configuring a machine with a developer environment... We already did that! 💡 That is the **Le Wagon data setup**! 👌
