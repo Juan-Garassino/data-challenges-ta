@@ -28,9 +28,9 @@ Splitting the code between training/prediction and website has several benefits:
 - Splitting the complexity will allow other team of developers (for example web developers) to work with us without requiring any Data Science related knowledge
 - It follows to popular web development pattern of separating the **Front-End** code (the website) from the **Back-End** code (the service), both communicating through an **API**
 
-In this exercice, we are going clone a repository containing an existing TaxiFare website and modify it in order to plug it to our **Prediction API**.
+In this exercise, we are going to clone a repository containing an existing Taxi Fare website and modify it in order to plug it to our **Prediction API**.
 
-This will give we an overview of what can be done in order to expose an API.
+This will give us an overview of what can be done in order to expose an API.
 
 This website will be contained inside its own project.
 
