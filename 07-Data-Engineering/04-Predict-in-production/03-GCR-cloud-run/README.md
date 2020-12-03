@@ -137,5 +137,5 @@ gcloud run deploy \
     --image eu.gcr.io/$PROJECT_ID/$DOCKER_IMAGE_NAME \
     --platform managed \
     --region europe-west1 \
-    --GOOGLE_APPLICATION_CREDENTIALS="/credentials.json"
+    --set-env-vars "GOOGLE_APPLICATION_CREDENTIALS=/credentials.json"
 ```
