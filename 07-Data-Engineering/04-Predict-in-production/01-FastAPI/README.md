@@ -102,7 +102,7 @@ app.add_middleware(
 )
 ```
 
-👉 If we do not use the `add_middleware` method, then our API will only work when called from **Back-End** code (or similar), but not when called from the **javascript** code of a web page. Open this link in order to learn [more about CORS](https://fastapi.tiangolo.com/tutorial/cors/)...
+👉 If we do not use the `add_middleware` method, then our API will only work when called from **Back-End** code (or similar), but not when called from the **JavaScript** code of a web page. Open this link in order to learn [more about CORS](https://fastapi.tiangolo.com/tutorial/cors/)...
 
 The endpoint will simply return the following json content when a developer hits the root of our API : http://localhost:8000/
 

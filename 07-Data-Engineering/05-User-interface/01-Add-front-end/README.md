@@ -76,6 +76,6 @@ Let's:
 
 *Hint*: alternatively, you may use this Le Wagon **Prediction API** if you you do not have one in production:
 
-https://taxi-fare-api-jbgixi3psq-ew.a.run.app/
+http://taxifare.lewagon.ai/
 
-https://taxi-fare-api-jbgixi3psq-ew.a.run.app/predict_fare/?key=2012-10-06%2012:10:20.0000001&pickup_datetime=2012-10-06%2012:10:20%20UTC&pickup_longitude=40.7614327&pickup_latitude=-73.9798156&dropoff_longitude=40.6513111&dropoff_latitude=-73.8803331&passenger_count=2
+http://taxifare.lewagon.ai/predict_fare/?key=2012-10-06%2012:10:20.0000001&pickup_datetime=2012-10-06%2012:10:20%20UTC&pickup_longitude=40.7614327&pickup_latitude=-73.9798156&dropoff_longitude=40.6513111&dropoff_latitude=-73.8803331&passenger_count=2
