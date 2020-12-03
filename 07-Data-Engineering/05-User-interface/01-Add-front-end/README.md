@@ -74,6 +74,8 @@ Let's:
 
 👉 Deploy our Front-End on **Github Pages**.
 
-*Hint*: alternatively, you may use this **Prediction API** if you you do not have one in production:
+*Hint*: alternatively, you may use this Le Wagon **Prediction API** if you you do not have one in production:
 
-https://taxifaremodelapi.herokuapp.com/predict_fare?key=2012-10-06%2012:10:20.0000001&pickup_datetime=2012-10-06%2012:10:20%20UTC&pickup_longitude=40.7614327&pickup_latitude=-73.9798156&dropoff_longitude=40.6513111&dropoff_latitude=-73.8803331&passenger_count=2
+https://taxi-fare-api-jbgixi3psq-ew.a.run.app/
+
+https://taxi-fare-api-jbgixi3psq-ew.a.run.app/predict_fare/?key=2012-10-06%2012:10:20.0000001&pickup_datetime=2012-10-06%2012:10:20%20UTC&pickup_longitude=40.7614327&pickup_latitude=-73.9798156&dropoff_longitude=40.6513111&dropoff_latitude=-73.8803331&passenger_count=2
