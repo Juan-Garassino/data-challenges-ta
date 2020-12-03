@@ -83,9 +83,9 @@ In order to do that, we will use **FastAPI**.
 
 ⚠️ Usually, our API is going to be called from python code, inside of a notebook or a package, or from any language ran in a **Back-End**. That means that the code is not located inside of a web page. In this case, no issues 👌
 
-We want our API to be quite open and to allow developpers to plug it in the code that is going to run inside of a browser: the `javascript` code running in the browser when a web page is displayed.
+We want our API to be quite open and to allow developpers to plug it in the code that is going to run inside of a browser: the **javascript** code running in the browser when a web page is displayed.
 
-In order to allow that, we need to add some specific `CORS` boilerplate to our `FastAPI` code:
+In order to allow that, we need to add some specific **CORS** boilerplate to our **FastAPI** code:
 
 ``` python
 from fastapi import FastAPI
@@ -102,7 +102,7 @@ app.add_middleware(
 )
 ```
 
-👉 If we do not use the `add_middleware` method, then our API will only work when called from **Back-End** code (or similar), but not when called from the `javascript` code of a web page. Open this link in order to learn [more about CORS](https://fastapi.tiangolo.com/tutorial/cors/)...
+👉 If we do not use the `add_middleware` method, then our API will only work when called from **Back-End** code (or similar), but not when called from the **javascript** code of a web page. Open this link in order to learn [more about CORS](https://fastapi.tiangolo.com/tutorial/cors/)...
 
 The endpoint will simply return the following json content when a developer hits the root of our API : http://localhost:8000/
 
