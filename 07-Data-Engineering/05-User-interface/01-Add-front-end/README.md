@@ -32,7 +32,7 @@ In this exercise, we are going to clone a repository containing an existing Taxi
 
 This will give us an overview of what can be done in order to expose an API.
 
-This website will be contained inside its own project.
+We will create a new project directory for the code of our website. This directory will be located inside of our local GitHub directory where we store all of our GitHub repositories: `~/code/<user.github_nickname>`.
 
 In the next exercice, we will code our own website from scratch with Streamlit 🎉 And this second website will also have a project of its own...
 

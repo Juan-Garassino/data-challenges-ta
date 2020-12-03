@@ -3,7 +3,9 @@
 
 Let's create a new project for our website! 🔥
 
-Create a new project `TaxiFareWebsite` in your working directory:
+Create a new project directory named `TaxiFareWebsite` for the code of the website.
+
+Again, this directory will be located inside of our local GitHub directory where we store all of our GitHub repositories: `~/code/<user.github_nickname>`.
 
 ```bash
 cd ~/code/<user.github_nickname>
