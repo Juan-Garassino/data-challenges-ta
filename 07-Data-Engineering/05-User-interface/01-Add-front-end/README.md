@@ -3,7 +3,7 @@ In the previous challenges, we created a project containing the code allowing us
 - **Train our model** at scale
 - Deploy our **Prediction API** on **Google Cloud Run**
 
-We now have a live API allowing developers all over the world to predict the fare amount for a taxi ride in New-York 🎉
+We now have a live API allowing developers all over the world 🌍 to predict the fare amount for a taxi ride in New-York 🎉
 
 👉 Optionally, we may start from the correction of the `07-Data-Engineering/04-Predict-in-production/03-GCR-cloud-run` exercice 👌
 
