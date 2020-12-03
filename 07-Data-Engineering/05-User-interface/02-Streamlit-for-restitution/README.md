@@ -28,8 +28,6 @@ Go to the GitHub repo:
 gh repo view --web
 ```
 
-Change the visibility to private (in the settings of the repository)...
-
 You are now all set!
 
 # Create a streamlit website
