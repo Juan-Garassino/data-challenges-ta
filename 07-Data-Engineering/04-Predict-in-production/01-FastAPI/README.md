@@ -83,7 +83,7 @@ In order to do that, we will use **FastAPI**.
 
 ⚠️ Usually, our API is going to be called from python code, inside of a notebook or a package, or from any language ran in a **Back-End**. That means that the code is not located inside of a web page. In this case, no issues 👌
 
-We want our API to be quite open and to allow developpers to plug it in the code that is going to run inside of a browser: the **javascript** code running in the browser when a web page is displayed.
+We want our API to be quite open and to allow developers to plug it in the code that is going to run inside of a browser: the **JavaScript** code running in the browser when a web page is displayed.
 
 In order to allow that, we need to add some specific **CORS** boilerplate to our **FastAPI** code:
 
