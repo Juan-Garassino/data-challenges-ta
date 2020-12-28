@@ -2,15 +2,7 @@
 
 def detailed_movies(db):
     """return the list of movies with their genre and director."""
-    request = '''
-        YOUR SQL REQUEST HERE
-    '''
-    # execute your SQL request
-    results = db.execute(request)
-    # cursor.fetchall() fetches all the rows of a query result.
-    # It returns all the rows as a list of tuples
-    results = results.fetchall()
-    return results
+    pass
 
 
 def stats_on(db, genre_name):
