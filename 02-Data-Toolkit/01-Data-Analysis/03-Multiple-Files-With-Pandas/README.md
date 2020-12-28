@@ -82,6 +82,18 @@ There are four possible merge, the previous section covered the _inner_ merge. L
 
 Create a new cell and build the `left_merged_df` variable. What do you see? What about `Finland`? `Canada`?
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+left_merged_df = a_df.merge(b_df, on='Country', how='left')
+left_merged_df
+```
+
+We can see in the `left_merged_df` that **all the rows from `a_df`** have been preservered, whether or not the country was present in the `b_df`. That's why the HDI for `Finland` is [`NaN`](https://docs.scipy.org/doc/numpy/user/misc.html). The country `Canada` which is **not** in the `a_df` gets ignored.
+
+</details>
+
 ### Right Merge
 
 You surely get where we are going now. We've just did the _left_ merge, so now let's have a look at the **right** merge!
@@ -89,6 +101,18 @@ You surely get where we are going now. We've just did the _left_ merge, so now l
 ![](https://res.cloudinary.com/wagon/image/upload/v1562058696/right_lm5ivj.png)
 
 Same idea, create a new cell and build the `right_merged_df` variable. What do you see? What about `Finland`? `Canada`?
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+right_merged_df = a_df.merge(b_df, on='Country', how='right')
+right_merged_df
+```
+
+This time, as it's a **right** merge, all the `b_df` rows are kept, regardless of the data found in `b_df`. That's why we can find a column for `Canada` with the HDI specified, but no population and no Capital!
+
+</details>
 
 ### Outer Merge
 
@@ -184,20 +208,136 @@ Note, that the files are located in the _same folder_ as the notebook you are wo
 
 Go ahead and write the code to load `dictionary.csv` into the DataFrame `countries_df`:
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+countries_df = pd.read_csv('dictionary.csv')
+countries_df.head()
+```
+
+</details>
+
 
 Now load the CSV of **Summer** Games in a `summer_df` dataframe. On which column should we merge `countries_df` and `summer_df`? Do they have the same name? If not, use the [`pandas.DataFrame.rename()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html) function.
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+summer_df = pd.read_csv('summer.csv')
+summer_df.rename(columns={"Country": "Code"}, inplace=True)
+summer_df.head()
+```
+
+</details>
+
 Do the same for **Winter** Games in a `winter_df` dataframe.
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+winter_df = pd.read_csv('winter.csv')
+winter_df.rename(columns={"Country": "Code"}, inplace=True)
+winter_df.head()
+```
+
+</details>
 
 ### Merging the data
 
 Time to perform a merge of `countries_df` and `summer_df` on the one hand (into a new DataFrame `summer_countries_df`). As we'll want to merge all games into one DataFrame at the end, **add a `Season`** column to the `summer_countries_df`.
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+summer_countries_df = summer_df.merge(countries_df, on="Code")
+summer_countries_df["Season"] = "Summer"
+summer_countries_df.head()
+```
+
+</details>
+
+Repeat the same approach to create a `winter_countries_df`.
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+winter_countries_df = winter_df.merge(countries_df, on="Code")
+winter_countries_df["Season"] = "Winter"
+winter_countries_df.head()
+```
+
+</details>
+
 Concatenate `summer_countries_df` and `winter_countries_df` (they have the same columns!) into an `all_df` DataFrame.
+
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+all_df = pd.concat([summer_countries_df, winter_countries_df], sort=False)
+all_df.head()
+```
+
+</details>
 
 ### Top 10 Countries since 1984
 
-Use boolean indexing, grouping & sorting to print a list of the Top 10 countries who won the most medals _since 1984_. Then plot it. Go step by step!
+Use boolean indexing, grouping & sorting to create a new dataframe consisting of the Top 10 countries who won the most medals _since 1984_. Save it in the `top_10_df` variable. Then plot it. Go step by step!
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+all_count_df = all_df[all_df["Year"] >= 1984] \
+    .groupby(["Country"]) \
+    .count()[["Medal"]] \
+    .sort_values(by="Medal", ascending=False)
+top_10_df = all_count_df.head(10)
+```
+
+To plot the result with a barchart you can do:
+
+```python
+all_count_df.head(10).plot(kind="bar")
+```
+
+</details>
+
+
+### Test your code
+
+Add a new **markdown** cell:
+
+```markdown
+### Check your code
+```
+
+and then the code to persist your variables:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('olympic_games',
+    summer_countries_shape=summer_countries_df.shape,
+    all_countries_shape=all_df.shape,
+    top_country_1=top_10_df.iloc[0]['Medal'],
+    top_country_10=top_10_df.iloc[9]['Medal'],
+)
+result.write()
+```
+
+You can now check the correctness of your code with:
+
+```python
+print(result.check())
+```
+
 
 ### Optional - Top 10 Countries (by Season) since 1984
 
@@ -206,3 +346,32 @@ Let's reuse `all_df` to group but this time we don't just want to count the tota
 :bulb: **Hint 1** The [`pandas.DataFrame.groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) can group over a **`list`** of columns.
 
 :bulb: **Hint 2** You need to use the [`pandas.DataFrame.unstack()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.unstack.html) function
+
+
+<details><summary markdown='span'>View solution
+</summary>
+
+Let's build the Top 10 with two columns: Winter & Summer
+
+```python
+season_count_df = all_df.groupby(["Country", "Season"])["Medal"].count().unstack()
+season_count_df.fillna(0, inplace=True)
+season_count_df["Summer"] = season_count_df["Summer"].astype(int)
+season_count_df["Winter"] = season_count_df["Winter"].astype(int)
+season_count_df.head(10)
+```
+
+As we need to sort the season_count_df based on the **Total** number of medals, we need to add a third column to `season_count_df` like this:
+
+```python
+season_count_df["Total"] = all_count_df
+season_count_df.head(10)
+```
+
+And now we are ready to plot!
+
+```python
+season_count_df.sort_values(by="Total", ascending=False)[["Summer", "Winter"]].head(10).plot(kind="bar")
+```
+
+</details>

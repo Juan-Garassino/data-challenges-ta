@@ -76,10 +76,21 @@ With this last one, we can see that the column `Month` is loaded as an `object` 
 
 Open and read the documentation on [`pd.to_datetime()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html). Insert a new code cell and try to **update** the `Month` column to a proper `datetime`.
 
+:warning: :warning: :warning: Please don't jump straight ahead to the solution! Take some time to read the documentation and experiment in your Jupyter notebook!
 
-<details><summary markdown='span'>🆘 Hint</summary>
+<details><summary markdown='span'>View solution
+</summary>
 
-Check out [`pd.to_datetime()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html)
+```python
+gas_df['Month'] = pd.to_datetime(gas_df['Month'], format='%Y-%m-%d')
+gas_df.head(3)
+```
+
+```python
+gas_df.dtypes[0:2] # To check if this worked!
+```
+
+The format is here to guide Pandas when reading the column. Depending on the input you get, you might have something like `%d-%m-%Y` or even `%m/%d/%Y`. You job as a developer is to identify the pattern by looking at the raw data from the CSV.
 
 </details>
 
@@ -93,6 +104,14 @@ gas_df['Month'].dt.year.head()
 gas_df['Month'].dt.month.tail()
 ```
 
+In order to pass the tests we've written for this challenge, store the type of `Month` column in the `month_type` variable as below:
+
+```python
+month_type = gas_df['Month'].dtype
+```
+
+It will be checked further in the Notebook.
+
 ## Grouping rows
 
 As we are starting a new block of exploration, insert a **Markdown** cell and append the following code:
@@ -105,11 +124,33 @@ As we are starting a new block of exploration, insert a **Markdown** cell and ap
 
 Now that we have prepared the dataframe, we can try to answer a first Business-related question:
 
-> How much gas has been produced yearly globally and in every state of the US?
+> How much gas has been produced yearly in entire US and in every individual state of the US?
 
 To answer this question, we need to **aggregate** the rows based on the year of the `Month` column. Go ahead, insert a new code cell and code this aggregation using [`DataFrame.groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) and [`DataFrame.sum()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html).
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+yearly_gas_df = gas_df.groupby(gas_df['Month'].dt.year).sum()
+yearly_gas_df
+```
+
+</details>
+
 Once we have this aggregated dataframe, time to **plot** the total production in the `U.S.` thanks to the [`DataFrame.filter()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html) and the [`DataFrame.plot()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html) functions.
+
+<details><summary markdown='span'>View solution
+</summary>
+
+We can quickly plot the `U.S.` column (total production) of this aggregated dataframe with the following line:
+
+```python
+plot = yearly_gas_df.filter(items=['U.S.']).plot(kind="bar")
+plot.set_xlabel("Year")
+```
+
+</details>
 
 ## Discarding rows with Boolean Indexing
 
@@ -123,6 +164,19 @@ np.logical_and(yearly_gas_df.index >= 2009, yearly_gas_df.index <= 2017)
 
 How can you use this [`np.ndarray`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html) and [**boolean indexing**](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#boolean-indexing) to keep only the full years in `yearly_gas_df`? Can you plot it?
 
+Store the new filtered dataframe in `filtered_yearly_gas_df` variable to pass the tests.
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+full_years = np.logical_and(yearly_gas_df.index >= 2009, yearly_gas_df.index <= 2017)
+full_yearly_gas_df = yearly_gas_df[full_years]
+plot = full_yearly_gas_df.filter(items=['U.S.']).plot(kind="bar")
+plot.set_xlabel("Year")
+```
+
+</details>
 
 ## Plotting several columns
 
@@ -142,6 +196,48 @@ full_yearly_gas_df.columns[1:].sort_values()
 
 :question: Can you insert a new cell and write the code to plot linecharts of the gas production of four states of your choice? You can start from the `full_yearly_gas_df` dataframe.
 
+<details><summary markdown='span'>View solution
+</summary>
+
+If we pick Colorado, Louisiana, Ohio and Utah, this is how we can do it:
+
+```python
+plot = full_yearly_gas_df.filter(items=['Colorado', 'Louisiana', 'Ohio', 'Utah']).plot()
+plot.set_xlabel("Year")
+```
+
+</details>
+
+### Test your code
+Before going to the next step check if you performed the above steps correctly.
+
+Add a new **markdown** cell:
+
+```markdown
+### Check your code
+```
+
+and another one which will persist your variables for the testing tool `nbresult`:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('gas',
+    month_type=month_type,
+    yearly_gas = filtered_yearly_gas_df.shape
+)
+result.write()
+```
+
+You can now check your code with:
+
+```python
+print(result.check())
+```
+
+If you got 100% commit the change and continue with the next section.
+
+
 ## Loading a second CSV
 
 The Kaggle dataset we are using does not only have information about the gas production, there is also some about the **crude oil** one. Create a new section in your Notebook with the following Markdown cell:
@@ -157,14 +253,89 @@ Create a new dataframe for the oil:
 - Load it with the [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) function
 - Parse the `Month` column into a `datetime` object
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+file = "data/U.S._crude_oil_production.csv"
+oil_df = pd.read_csv(file)
+oil_df['Month'] = pd.to_datetime(oil_df['Month'], format='%Y-%m-%d')
+oil_df.head()
+```
+
+</details>
+
 Then create two dataframes `yearly_gas` and `yearly_oil` by grouping by year, summing and filtering the **total US** production for both commodities. [Rename the columns](https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas) to `Gas` and `Crude oil`.
+
+
+<details><summary markdown='span'>View solution
+</summary>
+
+You need to create 2 cells:
+
+```python
+yearly_gas = gas_df.groupby(gas_df['Month'].dt.year).sum().filter(items=['U.S.'])
+yearly_gas.columns = [ 'Gas' ]
+yearly_gas.head(3)
+```
+
+```python
+yearly_oil = oil_df.groupby(oil_df['Month'].dt.year).sum().filter(items=['U.S. Crude Oil '])
+yearly_oil.columns = [ 'Crude Oil' ]
+yearly_oil.head(3)
+```
+
+</details>
 
 Now that you have those two dataframes, create one by concatenating both. Store this new dataframe into a `yearly_merged` variable. You should use the [`pd.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html), and don't forget to set the `axis` parameter!
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+yearly_merged = pd.concat([yearly_oil, yearly_gas], axis='columns')
+yearly_merged
+```
+</details>
+
 Finally, plot the `yearly_merged` dataframe and try to set the legend to include the units advertised in the original [Kaggle dataset](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018).
 
-That's it, congratulations on completing your first Data Analysis through a Jupyter Notebook :clap: :rocket:
+<details><summary markdown='span'>View solution
+</summary>
 
-## Pushing your code to GitHub
+```python
+plot = yearly_merged.plot(kind="bar")
+plot.set_xlabel("Year")
+plot.legend(['Gas (Millions of Cubic feet)', 'Crude Oil (Thousands of barrels)'])
+```
 
-There is no `make` for this challenge, still don't forget to go back to the terminal and `add` / `commit` / `push` your changes!
+</details>
+
+### Test your code
+
+Add a new **markdown** cell:
+
+```markdown
+### Check your code
+```
+
+and then the code to persist your variables:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('merged_dataframes',
+    merged_df_shape=merged_df.shape,
+    yearly_oil_2008 = merged_df.iloc[0]["Crude Oil"],                     
+)
+result.write()
+```
+
+You can now check the correctness of your code with:
+
+```python
+print(result.check())
+```
+
+That's it, congratulations on completing your first Data Analysis through a Jupyter Notebook :clap:
+Don't forget to `git add`, `git commit` and `push` your code :wink:
