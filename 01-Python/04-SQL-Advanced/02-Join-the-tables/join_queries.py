@@ -1,14 +1,14 @@
 # pylint:disable=C0111,C0103
 
 def detailed_orders(db):
-    '''return the list of all orders (order_id, customer.contact_name,
+    '''return a list of all orders (order_id, customer.contact_name,
     employee.firstname) ordered by order_id'''
     pass
 
 
 def spent_per_customer(db):
     '''return the total amount spent per customer ordered by ascending total
-    amount (keep only 2 numbers after the ',')
+    amount (to 2 decimal places)
     Exemple :
         Jean   |   100
         Marc   |   110
@@ -19,13 +19,13 @@ def spent_per_customer(db):
 
 
 def best_employee(db):
-    '''return the first and last name of the best employee (the one who sell
-    the most in terms of amount of money'''
+    '''return the first and last name of the best employee (the one
+    who sells the most in terms of amount of money'''
     pass
 
 
 def orders_per_customer(db):
-    '''return a list of tuple where each tupe contains the contactName of the
-    customer and the number of orders he made (contactName, number_of_orders).
-    Order the list by ascending number of orders'''
+    '''TO DO: return a list of tuples where each tupe contains the contactName
+    of the customer and the number of orders they made (contactName,
+    number_of_orders). Order the list by ascending number of orders'''
     pass

@@ -5,14 +5,18 @@ import datetime
 
 from weather import search_city
 
+
 def daily_forecast(woeid, year, month, day):
     pass
 
+
 def monthly_forecast(woeid, year, month):
-    pass # TODO: return a `list` of forecast for the whole month
+    pass # TODO: return a `list` of forecasts for the whole month
+
 
 def write_csv(woeid, year, month, city, forecasts):
     pass # TODO: dump all the forecasts to a CSV file in the `data` folder
+
 
 def main():
     if len(sys.argv) > 2:
@@ -26,6 +30,7 @@ def main():
     else:
         print("Usage: python history.py CITY YEAR MONTH")
         sys.exit(1)
+
 
 if __name__ == '__main__':
     main()

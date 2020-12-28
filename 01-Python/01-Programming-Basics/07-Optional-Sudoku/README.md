@@ -6,9 +6,9 @@ Congratulations for reaching this exercise! We are going to implement a Sudoku V
 
 A sudoku is valid if and only if:
 
-- A row must contain all numbers from `1` to `9`
-- A column must contain all numbers from `1` to `9`
-- Each of the nine 3x3 little squares must contain numbers from `1` to `9`
+- A row contains all numbers from `1` to `9`
+- A column contains all numbers from `1` to `9`
+- Each of the nine 3x3 little squares contains numbers from `1` to `9`
 
 ## Data Model
 
@@ -36,11 +36,11 @@ With that structure in mind, you can access a cell at row `i` and column `j` wit
 grid[i][j]
 ```
 
-💡 Remember that python list indexes start at **`0`**, so `i` and `j` values are between `0` and `8`.
+💡 Remember that python list indices start at **`0`**, so `i` and `j` values are between `0` and `8`.
 
 ## Exercise
 
-Open the `sudoku.py` file and implement the `sudoku_validator()` method. To check if your code is working. You can run the tests with:
+Open the `sudoku.py` file and implement the `sudoku_validator()` method. To check if your code is working, run the tests with:
 
 ```bash
 make

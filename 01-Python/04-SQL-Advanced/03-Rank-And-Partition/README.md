@@ -1,22 +1,22 @@
 ## Background & Objectives
 
-In this section, we will cover the SQL `PARTITION BY` clause and its difference with `GROUP BY` in a `SELECT` statement.
+In this section, we will cover the SQL `PARTITION BY` clause and how it differs to `GROUP BY` in a `SELECT` statement.
 
 ## Specs
 
-### Bucketing The Movie Duration
+### Bucketing Movie Duration
 
 First. What is a bucket?
 
 To **'bin'** (or **'bucket'**) the range of values — that is, divide the entire range of values into a series of intervals, and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent, and are often (but not required to be) of equal size" - https://en.wikipedia.org/wiki/Histogram
 
-👉 Implement `movie_duration_buckets()` to get the buckets of the movie duration of our database!
+👉 Implement `movie_duration_buckets()` to get the buckets of the movie durations of our database!
 
-A bucket contain a **count** of all the movies with a duration in the **range** of the bucket.
+A bucket contains a **count** of all the movies with a duration in the **range** of that bucket.
 
 For example, the bucket **30** will contain the count of all the movies with a duration between **0 min** and **30 min**.
 
-Or an other way to see it is:
+Or, in terms of an SQL query:
 - The value for bucket **30** should be equal to `SELECT COUNT(*) FROM movies WHERE minutes < 30;`
 
 Hint 💡 :
@@ -36,15 +36,15 @@ In the previous example, we used `GROUP BY` with the Minutes column to bucket ou
 
 👉 Implement the function `longest_movies_by_director()` to rank the movies of each director by duration.
 
-Each rows returned by the query should look like:
+Each row returned by the query should look like:
 
-`('Movie Title', 'Director Name', movie_duration (ex: 120), rank (ex:2))`
+`('Movie Title', 'Director Name', movie_duration (eg: 120), rank (eg: 2))`
 
 The **longest movie** by a director should have the **rank 1** and the **shortest** should have the **last rank**.
 
-The results should then be sort by director's name.
+The results should then be sorted by the director's name.
 
-Note that the function takes a **second argument**, **first_letter** which should be used in you query to select only the director names starting with the letter provided.
+Note that the function takes a **second argument**, **first_letter**, which should be used in your query to select only the director names starting with the letter provided.
 
 We expect a result like:
 
@@ -60,11 +60,11 @@ longest_movies_by_director(db, "X")
     ]
 ```
 
-### Top-3 longest movies
+### Top 3 longest movies
 
-👉 Implement the function `top_3_longest()` to find the top-3 longest movies by director. 👌
+👉 Implement the function `top_3_longest()` to find the top 3 longest movies by director. 👌
 
-Here you will **build on** the request you created in the last exercise in order to **select** only the **first 3 longest movies by director**.
+Here you will **build on** the request you created in the last exercise in order to **select** only the **top 3 longest movies by director**.
 
 We expect a result like:
 

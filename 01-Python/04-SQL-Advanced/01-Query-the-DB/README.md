@@ -19,7 +19,7 @@ There are three methods to implement:
 def the_method(db):
     results = db.execute("YOUR SQL QUERY")
     results = results.fetchall()
-    # results in a list (rows) of list (columns)
+    # results in a list (rows) of lists (columns)
     print(results)  # Inspect what you get back! Don't guess!
 
     # Then you'll need to return something.

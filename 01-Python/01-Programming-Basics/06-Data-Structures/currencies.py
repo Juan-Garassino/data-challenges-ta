@@ -1,7 +1,12 @@
 # pylint: disable=missing-docstring
 
-RATES = {} # TODO: add some currency rates
+# TODO: add some currency rates
+RATES = {}
 
-# `amount` is a `tuple` like (100, EUR). `currency` is a `string`
+
 def convert(amount, currency):
-    pass # TODO
+    """returns the converted amount in the given currency
+    amount is a tuple like (100, EUR)
+    currency` is a string
+    """
+    pass
