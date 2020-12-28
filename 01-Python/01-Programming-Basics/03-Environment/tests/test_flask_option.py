@@ -4,6 +4,7 @@ import unittest
 import os
 from flask_option import start
 
+
 class TestFlaskOption(unittest.TestCase):
     def test_start_with_flask_env_development(self):
         os.environ['FLASK_ENV'] = 'development'

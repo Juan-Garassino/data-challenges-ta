@@ -2,9 +2,12 @@
 
 import sys
 
+
 def full_name(first_name, last_name):
+    """returns the full name"""
     name = f"{first_name.capitalize()}{last_name.capitalize()}"
     return name
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:

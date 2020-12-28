@@ -1,4 +1,4 @@
-Another way of modifying the behavior of a Python script (other than command line arguments) is to use the **environment variables**.
+Another way of modifying the behaviour of a Python script (other than command line arguments) is to use **environment variables**.
 
 ## Exercise
 
