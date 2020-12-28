@@ -16,7 +16,7 @@ George,Harrisson,456
 Ringo,Starr,789
 ```
 
-The goal now is to load that data in a Python script, to use it. We are going to use the [`csv`](https://docs.python.org/3/library/csv.html) built-in module.
+The goal now is to load that data into a Python script, to use it. We are going to use the [`csv`](https://docs.python.org/3/library/csv.html) built-in module.
 
 Open the `phone_book.py` file and copy/paste the following code:
 
@@ -49,8 +49,8 @@ Saunier: 123
 
 ## Optional
 
-Now try refactoring the code using the [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader) class. You should no longer need the `line_count` variable. Also, what is the type of `row` now? Is it still the same as before? As usual, discuss about the code with your buddy and check your understanding with `type()`.
+Now try refactoring the code using the [`csv.DictReader`](https://docs.python.org/3/library/csv.html#csv.DictReader) class. You should no longer need the `line_count` variable. Also, what is the type of `row` now? Is it still the same as before? As usual, discuss the code with your buddy and check your understanding with `type()`.
 
-After each question is solved please `add`/`commit`/`push` your code in this current challenge.
+After each question is solved please `add`/`commit`/`push` your code.
 
 Have fun!
