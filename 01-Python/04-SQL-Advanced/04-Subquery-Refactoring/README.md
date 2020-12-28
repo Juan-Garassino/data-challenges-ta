@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-In the section we will discover subquery-refactoring! Indeed we may need to nest previous SQL queries coded into a new one to reduce repetition and simplify complex SQL statements. This is performed by the `WITH`. 👌
+In this section, we will discover subquery-refactoring! Here we will need to nest previous SQL queries within a new one to reduce repetition and simplify complex SQL statements. This is performed by `WITH`. 👌
 
 ## Specs
 
@@ -15,11 +15,11 @@ In the section we will discover subquery-refactoring! Indeed we may need to nest
 
 ### Who are the best buyers?
 
-Now let's find the customers who spent more than the average, that is their average amount spent per order is greater than the general average amount spent per order.
+Now let's find the customers who spent more than the average - that is, their average amount spent per order is greater than the general average amount spent per order.
 
 Can you see that the main part has already been done in the 2 previous questions? Let's use our previous queries thanks to the `WITH` clause.
 
-👉 Implement the function `display_best_buyers` to get all the ID's and the average amount of these best buyers!
+👉 Implement the function `display_best_buyers` to get all the IDs and the average amount of these best buyers!
 
 You should get this:
 
