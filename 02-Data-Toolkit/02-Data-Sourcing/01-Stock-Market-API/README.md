@@ -33,7 +33,7 @@ Here's how it works:
 Now let's find in the IEXCloud API the **URL** for the last 3 months of Apple stock prices.
 
 When you find the URL copy and paste it in a new tab and look at the data you get from the API.
-It should be a JSON looking like that:
+It should be a JSON looking like this:
 <details><summary markdown='span'>Show example
 </summary>
 
@@ -133,7 +133,7 @@ But before doing that, we need to do 2 things:
 
 ### Converting the date to a datetime object
 
-To do that you can use `Pandas.to_datetime()`
+To do this, you can use `Pandas.to_datetime()`
 
 - **pd.to_datetime** documentation: [http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime)
 - **Format** documentation: [http://strftime.org/](http://strftime.org/)
@@ -145,7 +145,7 @@ To do that you can use `Pandas.to_datetime()`
 
 ### Set the date column as the index
 
-To do that you can use the DataFrame method **set_index**
+To do this you can use the DataFrame method **set_index**
 
 - documentation: [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html)
 
@@ -171,7 +171,7 @@ Now we can make a plot with the values in the **`open`, `close`, `high`, and `lo
 <code>apple_stock_df[['open', 'close', 'high', 'low']].plot()</code>
 </details>
 
-As we can see, our plot is really hard to read. We can improve its readability with the **figsize** argument of the `plot()` method.
+As we can see, our plot is really hard to read. We can improve its readability with the `figsize` argument of the `plot()` method.
 - documentation: [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html)
 
 <details><summary markdown='span'>Solution
@@ -190,7 +190,7 @@ Let's find out what kind of data we can get from this API 🕵️‍♂️
 1. Amazon stock prices since last year?
 2. Facebook market cap?
 3. Apple research and development spendings quarterly?
-4. Last news about Tesla?
+4. Most recent news about Tesla?
 5. Performance of the 'Energy' sector?
 
 <details><summary markdown='span'>All Solutions
@@ -208,11 +208,8 @@ Let's find out what kind of data we can get from this API 🕵️‍♂️
 
 :bulb: Don't forget to **push your code to GitHub**
 
-# (Optional) Plotting _multiple_ line charts
+## (Optional) Plotting  _multiple_  line charts
 
 We'd like to **compare** the evolution of the GAFA stocks (Google, Apple, Facebook, Amazon) by plotting them on the _same_ chart.
 Reuse the code from above to build a dataframe with one column per stock and keeping the dates as the index.
-Maybe you can use some normalization technique at `t = 0` to compare better the relative performance of each stock!
-
-:warning: **DON'T LOOP OVER THE API CALL, GET THE DATA ONCE AND THEN STOP** :warning:
-Or you will block the API for your buddies, thank you 🙏
+Maybe you can use some normalization technique at `t = 0` to better compare the relative performance of each stock!
