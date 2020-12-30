@@ -11,9 +11,9 @@ Where the index `i` in `weather` corresponds to the index `i` in `play`. For exa
 
 Our goal is to understand the probability of playing a match or not.
 
-More precisely compute the probability **P(play|weather)** to be able to anticipate if a new match will be allowed to take place on the next day given a new weather condition.
+More precisely, we want to compute the probability **P(play|weather)** in order to anticipate if a new match will be allowed to take place on the next day given a new weather condition.
 
-By doing so, we will also demonstrate the **Bayes Theorem** by counting ourselves each of these 4 probabilities:
+By doing so, we will also demonstrate the **Bayes Theorem** by calculating each of these 4 probabilities ourselves:
 
 <img src='https://github.com/lewagon/data-images/blob/master/math/bayes-theorem.png?raw=true'>
 
@@ -38,8 +38,8 @@ To see things clearly, start by constructing **manually** the frequency table (u
 
 
 ### 1. Calculate the prior probability P(play)
-The idea is to compute the probability with a python logic, in case you have a much longer dataset!
-Implement the function, `prior_probability(play, play_data)`. This should return the probability that the play happened.
+The idea is to compute the probability with python logic, in case you have a much longer dataset!
+Implement the function, `prior_probability(play, play_data)`. This should return the probability that the match happened.
 for example :
 ```python
 play = "Yes"
@@ -50,7 +50,7 @@ prior_probability(event, list_events)
 
 ### 2. Likelihood P(weather|play)
 
-Well done, now we will implement a function to calculate the likelihood of observing a given weather, knowing whether or not the match has been played. Basically, that means that we want to calculate the probability of an event (ex: weather = 'Sunny') being `True` given that the other event (ex: play=Yes) was `True`
+Well done, now we will implement a function to calculate the likelihood of observing a given weather, knowing whether or not the match was played. Basically, that means that we want to calculate the probability of an event (ex: weather = 'Sunny') being `True` given that the other event (ex: play=Yes) was `True`
 
 Implement the function `likelihood(weather, play, weather_data, play_data)`. This function should return the probability that `event_condition` takes a given value, knowing `event_occur` value.
 
@@ -68,13 +68,13 @@ Congratulations, it's almost finished.
 
 ❓ Using Bayes Theorem and the two function coded before, implement the function `posterior_probability(play, weather, weather_data, play_data)` which gives you P(play|weather)
 
-❓ Compare the result you found with a direct counting of P(play|weather) using the likelihood function with arguments reversed:
+❓ Compare the result you found with a direct counting of P(play|weather) using the likelihood function with the arguments reversed:
 `likelihood(play, weather, play_data, weather_data)`
 
 ### 4. Step back and understand
 
 Thanks to what you've learned in this challenge, could you answer these questions :
-- Players will play if weather is sunny. Is this statement correct?
+- Matches will always be played if the weather is sunny. Is this statement correct?
 - If you know for sure that it will be raining during the next game, Do you think the game will be cancelled?
 
 

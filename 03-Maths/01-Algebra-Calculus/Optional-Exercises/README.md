@@ -1,7 +1,7 @@
 ## Optional Exercises
 Congratulations! You have learned the basic mathematics tools we will use during the upcoming weeks.
 
-If you are done with all the previous challenges, you can try these challenges on Codewars:
+If you are done with all the previous challenges, you can try these katas on Codewars:
 - [Calculate the trace of a square matrix](https://www.codewars.com/kata/matrix-trace/train/python)
 - [Write a function that accepts a square matrix (N x N 2D array) and returns the determinant of the matrix.](https://www.codewars.com/kata/matrix-determinant/train/python)
 

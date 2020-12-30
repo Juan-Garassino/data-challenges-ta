@@ -1,4 +1,4 @@
-:warning: Do not use `pandas` for this challenge
+:warning: Do not use `Pandas` for this challenge
 
 ## Your first estimator
 

@@ -1,7 +1,3 @@
 ## Central Limit Theorem
 
-As usual:
-
-```bash
-jupyter notebook reboot.ipynb
-```
+Let's correct the CLT challenge together!
