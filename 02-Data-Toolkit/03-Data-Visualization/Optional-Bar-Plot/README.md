@@ -21,7 +21,7 @@ You will use a dataset about the **evolution** of **first name** popularity in t
 ### First steps
 
 Create a notebook named `exercise01.ipynb` in the **same folder** as this **README**.
-**Import** the necessesary **libraries**.
+**Import** the necessary **libraries**.
 
 ```python
 import numpy as np
@@ -40,7 +40,7 @@ Create a simple bar plot of the **frequency** of each **name** overall.
 ### Grouped bar plot
 
 Now let's re-create this plot from the article using **seaborn**.
-Make sure you are using a similar **color pallette**, the same **years** and **names**.
+Make sure you are using a similar **color palette**, the same **years** and **names**.
 
 <img src="https://www.data-to-viz.com/graph/barplot_files/figure-html/unnamed-chunk-2-1.png" width="760">
 

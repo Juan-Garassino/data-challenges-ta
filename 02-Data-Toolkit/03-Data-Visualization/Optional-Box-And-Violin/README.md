@@ -17,7 +17,7 @@ You will work with the **tips** dataset.
 ### First steps
 
 Create a notebook named `exercise02.ipynb` in the **same folder** as this **README**.
-Now you can **import** the necessesary **libraries**.
+Now you can **import** the necessary **libraries**.
 
 ```python
 import numpy as np
@@ -32,7 +32,7 @@ Then **import** the **dataset** from the CSV you just downloaded.
 ### Grouped box plot
 
 Start by recreating this plot from the article.
-Make sure your plot use the **tip percentage %** on the **Y axis**.
+Make sure your plot uses the **tip percentage %** on the **Y axis**.
 Your plot should present individual data points using **swarmplot**.
 
 It's ok if your plot has different **aesthetics**, this will also be true for the **next exercises of the day**.

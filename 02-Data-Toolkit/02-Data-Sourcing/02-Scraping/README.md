@@ -1,6 +1,6 @@
-In this exercise, we will put in practice the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website with Python.
+In this second exercise, we will put in practice the Scraping techniques covered in this morning's lecture. The goal will be to automatically extract information from a website with Python.
 
-The website we are scrapping is [books.toscrape.com](http://books.toscrape.com/). It's a website which has been created exactly for that purpose! To learn how to scrape.
+The website we are scraping is [books.toscrape.com](http://books.toscrape.com/). It's a website which has been created exactly for our purpose -  to learn how to scrape!
 
 The goal will be to automatically retrieve information about sold books, like their name, price, rating, etc. The trick is that the website is **paginated**. Can you see how? Do you foresee it being a difficulty?
 
@@ -49,7 +49,7 @@ url = "http://books.toscrape.com/"
 # This is where we do an HTTP request to get the HTML from the website
 response = requests.get(url)
 
-# And this is where we feed that HTML to the Parser
+# And this is where we feed that HTML to the parser
 soup = BeautifulSoup(response.content, "html.parser")
 ```
 
@@ -106,7 +106,7 @@ books_html[0]
 
 Great! We now have a smaller piece of HTML to deal with. We can **chain** the [`.find()`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find) on this HTML fragment to **extract** 3 pieces of information from it.
 
-Let's start with the book *title*. Try to retrieve this information on `books_html[0]` and store it in a `book_title` variable.
+Let's start with the book *title*. Try to retrieve this information from `books_html[0]` and store it in a `book_title` variable.
 
 <details><summary markdown='span'>View solution
 </summary>
@@ -172,14 +172,14 @@ cities = [ 'paris', 'london', 'brussels' ]
 if 'berlin' in cities:
     print("Berlin is available")
 else:
-    print("Sorry, berlin is not available")
+    print("Sorry, Berlin is not available")
 ```
 
-:question: Define a method `parse_rating` which takes a list of classes (from the `<p />`) and return the rating from `1` to `5`:
+:question: Define a method `parse_rating` which takes a list of classes (from the `<p />`) and returns the rating from `1` to `5`:
 
 ```python
 def parse_rating(rating_classes):
-    # TODO: Look at `rating_classes` and return the right rating
+    # TODO: Look at `rating_classes` and return the correct rating
     # e.g. of an argument for `rating_classes`: [ 'star-rating', 'Three' ]
     # "One" => 1
     # "Two" => 2
@@ -232,7 +232,7 @@ We are going to store the information collected about the books in a **Python `d
 - `Price` => `[51.77, 53.74, ...]`
 - `Rating` => `[3, 1, ...]`
 
-We store the information that way because we aim to give that to Pandas, and, conveniently enough, giving the data in that format to pandas allow us to create a Dataframe from it very easily.
+We store the information this way because we aim to give it to Pandas, and, conveniently enough, giving the data in this format to Pandas allow us to create a Dataframe from it very easily.
 
 Insert a new cell and initialize this dictionary
 
@@ -251,7 +251,7 @@ In a new cell, we write the `for` loop and copy paste the code
 for book in books_html:
     title = book.find("h3").find("a").attrs["title"]
     price = float(book.find("p", class_="price_color").text[1:])
-    rating = parse_rating(book.find("p", class_="star-rating").attrs["class"])
+    rating = parse_rating(book.find("p", class_="star-rating"))
     books_dict["Title"].append(title)
     books_dict["Price"].append(price)
     books_dict["Rating"].append(rating)
@@ -287,7 +287,7 @@ Looks great! Let's generate a small plot to celebrate. The plot will show how ma
 books_df.groupby("Rating").count()["Title"].plot(kind="bar")
 ```
 
-Quite a lot of books with a very poor rating (1). Is it only the first page? What about the **other** pages? Time to look at page 2 and above!
+Quite a lot of books have a very poor rating (1). Is it only the first page? What about the **other** pages? Time to look at page 2 and beyond!
 
 ## Going through _all_ the pages of the catalogue
 
@@ -334,7 +334,7 @@ for page in range(1, MAX_PAGE + 1):
     for book in soup.find_all("article", class_="product_pod"):
         title = book.find("h3").find("a").attrs["title"]
         price = float(book.find("p", class_="price_color").text[1:])
-        rating = parse_rating(book.find("p", class_="star-rating").attrs["class"])
+        rating = parse_rating(book.find("p", class_="star-rating").attr["class"])
         all_books_dict["Title"].append(title)
         all_books_dict["Price"].append(price)
         all_books_dict["Rating"].append(rating)
@@ -350,7 +350,7 @@ All good? Check that you actually parsed `MAX_PAGE` * 20 books with:
 len(all_books_dict["Title"])
 ```
 
-Time to load that `all_books_dict` into a Pandas `DataFrame`:
+Time to load the `all_books_dict` into a Pandas `DataFrame`:
 
 ```python
 all_books_df = pd.DataFrame.from_dict(all_books_dict)
@@ -371,7 +371,7 @@ all_books_df.groupby("Rating").count()["Title"].plot(kind="bar")
 
 ## Saving the data for later
 
-Right now, all the scraped data is living **in memory** of the Notebook, and will be lost as soon as will `Ctrl` + `C` it. It would be a shame, so a good practise is to actually save the results of a successful scraping session into a file.
+Right now, all the scraped data is living **in memory** of the Notebook, and will be lost as soon as we `Ctrl` + `C` it. It would be a shame, so a good practice is to actually save the results of a successful scraping session into a file.
 
 For that we will use one of the [**writers**](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html) Pandas provide. We can write a `DataFrame` to disk like this:
 
@@ -389,6 +389,6 @@ pip install xlsxwriter
 all_books_df.to_excel('books.xlsx', sheet_name='Books')
 ```
 
-A good practise is to create a **Data Pipeline** where one process will scrape and dump the Data to CSV, and another one will read back the data from the CSV file and go on to analyze it through a Pandas Dataframe!
+A good practice is to create a **Data Pipeline** where one process will scrape and dump the Data to CSV, and another one will read back the data from the CSV file and go on to analyze it through a Pandas Dataframe!
 
 :bulb: Don't forget to **push your code to GitHub**

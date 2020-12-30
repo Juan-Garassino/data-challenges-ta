@@ -7,21 +7,21 @@ Let's explore the **Titanic disaster** data set.
 
 Here are some interesting points to explore:
 
-0. Let’s get familiar with the dataset (import, head, describe, read column name description…)
-1. Let’s remove the cabin from the dataset because we don’t have enough data about the cabin number (Cleaning a dataset)
-2. Find-out if first class ticket increased you chances of survival.
-   Here it’s a simple comparaison between the rate of survival of the passenger by ticket type
-3. Find-out if children and women were saved
+1. Let’s get familiar with the dataset (import, head, describe, read column name description…)
+2. Let’s remove the cabin from the dataset because we don’t have enough data about the cabin number (cleaning a dataset)
+3. Find out if a first class ticket increased your chances of survival.
+   Here it’s a simple comparison between the rate of survival of the passenger by ticket type
+4. Find out if more children and women were saved.
    Here compare the survival rate of [‘Men’, ‘Children’, ‘Women’])
 
 **Optional**
 
-4. Find-out if it was harder for bigger familly to survive?
-   Here you create a new column in your dataframe for the familly size of the passenger
-5. Passenger with distingused title may be preferred during the evacuation ?
-   With some string manipulation create a new column for each user with their title
+5. Find out if it was harder for bigger families to survive?
+   Here you create a new column in your dataframe for the family size of the passenger
+6. Were passengers with distinguished titles preferred during the evacuation?
+   With some string manipulation, create a new column for each user with their title
 
-Dataset is available in the same folder at `titanic.csv`
+The dataset is available in the same folder at `titanic.csv`
 
 <table>
 <tbody>

@@ -1,7 +1,7 @@
 # Optional - Relation diagram
 ### Introduction
 
-Congratulation for reaching the optionals 🎉, we will now experiment with more **exotic plots**!
+Congratulations for reaching the optionals 🎉, we will now experiment with more **exotic plots**!
 Same principle in this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/story/AdjacencyMatrix.html).
 
 To go further and learn more best practices you can read this **article**.
@@ -17,7 +17,7 @@ You will work with the **world migration** dataset.
 ### First steps
 
 Create a notebook named `exercise08.ipynb` in the **same folder** as this **README**.
-Now you can **import** the necessesary **libraries**.
+Now you can **import** the necessary **libraries**.
 
 ```python
 import numpy as np
@@ -40,3 +40,5 @@ Recreate this interactive plot with [Plotly's Sankey diagram](https://plot.ly/py
 Try to reacreate an heatmap either in [Seaborn](http://seaborn.pydata.org/generated/seaborn.heatmap.html) or with [Plotly](https://plot.ly/python/heatmaps/).
 
 <img src="https://i.ibb.co/tQrTP05/Screen-Shot-2019-10-16-at-11-29-20.png" width="560">
+
+

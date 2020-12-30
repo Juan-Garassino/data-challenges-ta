@@ -1,6 +1,6 @@
-In this exercise we are going to use **Regular Expressions** in order to extract data from a plain text file.
+In this exercise we are going to use **Regular Expressions** in order to extract data from a plain text file.<br>
 
-The text file path is `data/receipts.txt`.
+The text file path is `03-Text-Extraction-with-Regex/data/receipts.txt`. <br> You can download it [here](https://gist.githubusercontent.com/ssaunier/5da499eb08817d8b7f56d397870df33d/raw/receipts.txt) ( save: `cmd + s` on mac, `ctrl + s` on windows )
 
 The receipts in this file are from a **restaurant**. Each receipt gives us how many plates were served and how much money the restaurant made that day.
 
@@ -8,7 +8,7 @@ If we open the file we can see how the receipts are stored:
 <br>
 <img src="https://res.cloudinary.com/wagon/image/upload/v1562063870/Receipts_snapshot_dddner.png" alt="Receipts_snapshot.png" height="400" style="box-shadow: 0 0 25px -15px #88b">
 
-Before we start working with the receipts let's talk about **Regular Expressions**. We will need them to extract the **dates**, **total amount** and **quantity** fields from the *receipts.txt*.
+Before we start working with the receipts, let's talk about **Regular Expressions**. We will need them to extract the **dates**, **total amount** and **quantity** fields from the *receipts.txt*.
 
 ## Part 1: Working with Regex
 
@@ -75,8 +75,8 @@ re.findall(pattern, text_to_search)
 ```
 </details>
 
-### Words with regex
-With regex, you can also search for words like this:
+### Words with Regex
+With Regex, you can also search for words like this:
 
 ```python
 # TEST THIS IN YOUR NOTEBOOK
@@ -162,7 +162,7 @@ The most common quantifiers are:
 
 ---
 
-### Exercices
+### Exercises
 Now let's try to match the **"Quantity"** line in a receipt.<br>
 Go to this page and find the right pattern: [regex101.com](https://regex101.com/r/DRY159/1)
 
@@ -239,7 +239,7 @@ r"Total Amount +(\d+\.\d{2}) €"
 
 ---
 
-🎉Awesome! You now know everything you need to know to get the **dates**, **total amount** and **quantity** values from the receipts.
+🎉Awesome! You now know everything you need to know to get the **dates**, **Total Amount** and **quantity** values from the receipts.
 
 ## Part 2: From a text file to a DataFrame
 
@@ -249,13 +249,13 @@ What we want to do:
  2. Create a **list** with the receipts
  3. Prepare a **dictionary** where we will save our data
  4. **Iterate** over each receipt
-    - *Find the data* we want with a regex
+    - *Find the data* we want with a Regex
     - *Add the data* to our dictionary
  5. Create a **dataframe** from this dictionary
 
 ### 1. Read the receipt text file
 
-To read a file with python you have to use `open()` like this:
+To read a file with Python you have to use `open()` like this:
 
 ```python
 filepath = "data/receipts.txt"
@@ -269,7 +269,7 @@ And you can print the beginning of the file with:
 print(receipts_str[:500])
 ```
 
-Do that in your notebook and make sure you can see some receipt.
+Do that in your notebook and make sure you can see some of the receipt.
 
 ### 2. Create a list with the receipts
 
@@ -290,7 +290,7 @@ len(receipts_list)
 
 ### 3. Prepare a dictionary where we will save our data
 
-Before we start **iterating** over array we need a dictionary to save the data we found.
+Before we start **iterating** over the array we need a dictionary to save the data we found.
 The format we want for this is:
 
 ```python
@@ -330,7 +330,7 @@ for receipt in receipts_list:
 
 ### 4.1. Find the data we want with some Regex
 
-Now it's time to use our Regex knowledge to get the **dates**, the **total amount** and the **quantity** values from the current receipt.
+Now it's time to use our Regex knowledge to get the **dates**, the **Total Amount** and the **quantity** values from the current receipt.
 
 <details><summary markdown='span'>Date Solution
 </summary>
@@ -389,7 +389,7 @@ If you add this line to your loop you should see all the data you found.
 
 ### 4.2. Add these values to our dictionary
 
-We can now `append()` each value to the right list of the dictionary.
+We can now `append()` each value to the right list in the dictionary.
 
 
 <details><summary markdown='span'>Solution
@@ -409,7 +409,7 @@ for receipt in receipts_list:
 ```
 </details>
 
-Before going to the next step make sure your dictionary looks somehow like this:
+Before going to the next step make sure your dictionary looks something like this:
 
 ```python
 # The way its printed might be a bit different on your computer
@@ -441,9 +441,9 @@ receipts_df.head()
 👌**Nice !** Now we can start analyzing our DataFrame.
 
 ## PART 3: Data visualization
-### 1. Replace date string by datetime object
+### 1. Replace date string with a datetime object
 
-Before we start plotting our data in any way we should convert our date **from string to DateTime** object.
+Before we start plotting our data in any way we should convert our date **from a string to a DateTime** object.
 With DateTime we will be able to **sort** our data.
 
 To do the conversion you can use `Pandas.to_datetime()`
@@ -485,7 +485,7 @@ receipts_df = receipts_df.set_index('date')
 ### 4. Convert strings to floats
 
 At this point, if we do a `receipts_df.info()` we see that we still have strings in our columns **quantity** and **total_amount**.
-<br>In order to generate some plots we need to convert "quantity" and "total_amount" to float.
+<br>In order to generate some plots we need to convert "quantity" and "total_amount" to floats.
 
 To do the conversion you can use `pandas.to_numeric()`
 
