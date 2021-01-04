@@ -1,5 +1,5 @@
 ## Metric Design ⚙️
 
-In this exercice we are going get a first glimpse on Olist's business health
+In this exercice we are going get a first glimpse into Olist's business health.
 
-Open `metric_design.ipynb` and follow instructions.
+Open `metric_design.ipynb` and follow the instructions.
