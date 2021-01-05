@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-The goal of this first challenge is to become familiar with database design, a crucial skill to make your backend maintainable, flexible and efficient.
+The goal of this first challenge is to become familiar with database design, a crucial skill to explore a database.
 
 ## Specs
 
@@ -20,13 +20,13 @@ Here are the requirements of our system:
 - A given `order` can have the same `product` multiple times so we need to record the `quantity` for a given `product` per `order`.
 
 <details><summary markdown='span'>💡 Hint</summary>
-  You need to introduce a join table <code>product_orders</code>.
+  You need to introduce a join table <code>order_items</code>.
 
 </details>
 
 #### Design the schema
 
-Design a database schema for an ecommerce app that meets the requirements.
+Design a database schema for an e-commerce app that meets the requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
 To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code in `ecommerce.xml`. You can then `make` to check your solution.
 

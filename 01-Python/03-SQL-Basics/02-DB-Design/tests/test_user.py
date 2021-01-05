@@ -85,14 +85,14 @@ class Users(unittest.TestCase):
         t = []
         for table in tables:
             t.append(table['name'])
-        self.assertEqual('product_orders' in t, True)
+        self.assertEqual('order_items' in t, True)
 
     # 5' product_orders should have the correct fields
     def test_product_orders_should_have_the_correct_fields(self):
         with open('ecommerce.xml', 'r') as file:
             data = file.read().replace('\n', '')
         soup = BeautifulSoup(data, 'xml')
-        table = soup.find_all('table', attrs={"name": "product_orders"})
+        table = soup.find_all('table', attrs={"name": "order_items"})
         fields = [row.get('name') for row in table[0].find_all('row')]
         correct_fields = ['product_id', 'order_id', 'quantity', 'id']
         fields.sort()
