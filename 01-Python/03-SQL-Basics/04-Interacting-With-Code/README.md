@@ -25,7 +25,7 @@ Open DBeaver, connect to the `data/movies.sqlite` database and use a SQL Editor 
 
 Once your satisfied with the results, copy-paste your queries in the dedicated function in the `queries.py` file.
 
-**IMPORTANT**: Each function takes a `db` argument, which is a cursor connected to the database, on which you can call the `execute` method. This `db` is **built by the test and passed along to the function**. No need to create one yourself to satisfy `make`. Your function will look like this:
+**IMPORTANT**: Each function takes a `db` argument, which is a cursor connected to the database, on which you can call the `execute` function. This `db` is **built by the test and passed along to the function**. No need to create one yourself to satisfy `make`. Your function will look like this:
 
 ```python
 def your_function(db):

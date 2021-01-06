@@ -1,20 +1,20 @@
 # pylint: disable-all
 import unittest
-from sql_queries import top_five_artists
+from queries import top_five_directors_for
 import sqlite3
 
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
 
 
-class TestTop5(unittest.TestCase):
+class TestTopFiveDirectorsFor(unittest.TestCase):
     def test_return_list(self):
-        results = top_five_artists(db, "Action,Adventure,Comedy")
+        results = top_five_directors_for(db, "Action,Adventure,Comedy")
         expected = []
         self.assertEqual(type(results), type(expected))
 
     def test_return_right_results1(self):
-        results = top_five_artists(db, "Action,Adventure,Comedy")
+        results = top_five_directors_for(db, "Action,Adventure,Comedy")
         expected = [
             ('Robert Rodriguez', 5),
             ('Jonathan Frakes', 4),
@@ -25,11 +25,11 @@ class TestTop5(unittest.TestCase):
         self.assertEqual(results, expected)
 
     def test_return_5_results(self):
-        results = top_five_artists(db, "Action,Adventure,Comedy")
+        results = top_five_directors_for(db, "Action,Adventure,Comedy")
         self.assertEqual(len(results), 5)
 
     def test_return_right_results2(self):
-        results = top_five_artists(db, "Drama,Mystery")
+        results = top_five_directors_for(db, "Drama,Mystery")
         expected = [
             ('Aaron Schneider', 1),
             ('Alain Resnais', 1),

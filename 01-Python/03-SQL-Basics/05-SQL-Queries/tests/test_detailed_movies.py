@@ -1,13 +1,12 @@
 # pylint: disable-all
 import unittest
-from sql_queries import detailed_movies
+from queries import detailed_movies
 import sqlite3
 
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
 
-
-class TestQueryOrders(unittest.TestCase):
+class TestDetailedMovies(unittest.TestCase):
     def test_is_list(self):
         results = detailed_movies(db)
         expected = []

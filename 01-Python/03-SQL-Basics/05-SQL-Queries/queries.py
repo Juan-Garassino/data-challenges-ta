@@ -1,7 +1,7 @@
 # pylint: disable=C0103, missing-docstring
 
 def detailed_movies(db):
-    """return the list of movies with their genre and director."""
+    # return the list of movies with their genres and director name
     query = """
         SELECT movies.title, movies.genres, directors.name
         FROM movies
@@ -9,16 +9,34 @@ def detailed_movies(db):
     """
     return db.execute(query).fetchall()
 
+def top_five_youngest_newly_directors(db):
+    # return the top 5 youngest directors when they direct their first movie
+    query = """
+        SELECT
+            directors.name,
+            movies.start_year - directors.birth_year age
+        FROM directors
+        JOIN movies ON directors.id = movies.director_id
+        WHERE age IS NOT NULL
+        ORDER BY age
+        LIMIT 5
+    """
+    return db.execute(query).fetchall()
+
+def late_released_movies(db):
+    # return the list of all movies released after their director death
+    query = """
+        SELECT movies.title
+        FROM directors
+        JOIN movies ON directors.id = movies.director_id
+        WHERE (movies.start_year - directors.death_year) > 0
+        ORDER BY movies.title
+    """
+    results = db.execute(query).fetchall()
+    return [movie[0] for movie in results]
 
 def stats_on(db, genre_name):
-    """For the given genre of movie, return the number of movies and the average
-     movie length in minutes (as a stats hash)."""
-    # NOTE : It should return a dict :
-    #     {
-    #         "genre": stat[0],
-    #         "number_of_movies": stat[1],
-    #         "avg_length": stat[2]
-    #     }"""
+    # return a dict of stats for a given genre
     query = """
         SELECT
             COUNT(*),
@@ -34,8 +52,8 @@ def stats_on(db, genre_name):
     }
 
 
-def top_five_artists(db, genre_name):
-    """return list of top 5 directors with the most movies for a given genre."""
+def top_five_directors_for(db, genre_name):
+    # return the top 5 of the directors with the most movies for a given genre
     query = """
         SELECT
             directors.name,
@@ -49,44 +67,14 @@ def top_five_artists(db, genre_name):
     """
     return db.execute(query, (genre_name,)).fetchall()
 
-who was the youngest director when directing his first movie?
-
-SELECT
-    directors.name,
-    movies.start_year - directors.birth_year age
-FROM directors
-JOIN movies ON directors.id = movies.director_id
-WHERE age IS NOT NULL
-ORDER BY age
-LIMIT 10
-
-Adam Paloian    8
-Alfonso Ribeiro 19
-Kenn Navarro    20
-Xavier Dolan    20
-Albert Hughes   21
-Xavier Dolan    21
-Sam Raimi   22
-John Singleton  23
-Albert Hughes   23
-Josef Fares 23
-
-The first answers seem strange. Why?
-
-which are the movies that were never watched by their director in a theatre?
-
-SELECT
-    movies.title
-FROM directors
-JOIN movies ON directors.id = movies.director_id
-WHERE (movies.start_year - directors.death_year) > 0
-
-Fantasia 2000
-Game of Death
-The Many Adventures of Winnie the Pooh
-The Rescuers
-Cars
-Waitress
-
-What are the 10 best movies of all time?
-
+def movie_duration_buckets(db):
+    # return the movie counts grouped by bucket of 30 min duration
+    query = """
+        SELECT
+            (minutes / 30 + 1)*30 time_range,
+            COUNT(*)
+        FROM movies
+        WHERE minutes IS NOT NULL
+        GROUP BY time_range
+    """
+    return db.execute(query).fetchall()
