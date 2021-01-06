@@ -1,24 +1,32 @@
 ## Background & Objectives
 
-Now it's time for something more complex. We'll be using `JOIN` queries to read data from multiple tables. To acquire instant Jedi skills in `JOIN` queries, [read this](http://stackoverflow.com/questions/17946221/sql-join-and-different-types-of-joins) - the picture is really helpful.
+The goal of this challenge is to query fetch information from multiple tables using `JOIN`.
+
+To acquire instant Jedi skills in `JOIN` queries, [read this](http://stackoverflow.com/questions/17946221/sql-join-and-different-types-of-joins) - the picture is really helpful.
 
 ## Specs
 
-Complete the code in `sql_queries.py`. Each method takes a `db` argument, which is a Cursor Object
-on which you can call the `execute` method. Exactly like in the previous exercise.
+Complete the code in `queries.py`. Each function takes a `db` argument, which is a cursor connected to the database, on which you can call the `execute` function. Exactly like in the previous exercise.
 
-### Detailed Tracks
+### Detailed movies
 
-- Implement `detailed_movies` to get all the movie titles with the corresponding director name and genre name.
-- Your output should be a list of tuples. **Hint:** you will have to use one `JOIN` sql statement.
+- Implement `detailed_movies` to get all the movie titles with the corresponding genre and director name.
+- This function should return a list of tuples like (`title`, `genre`, `name`).
 
-This method should return a list of movies. Each element of this list should be a tuple: first element being the movie title, second element the movie genre and third element the movie director name.
+### Top 5 youngest newly directors
+
+- Implement `top_five_youngest_newly_directors` to get the top 5 youngest directors when directing their first movie.
+- This function should return a list of tuples like (`name`, `age_when_first_time_director`).
+
+### Late released movies
+
+- Implement `never_watched_movies` to get the list of all movies which were released after their director passed away.
+- This function should return a list of movie `titles`.
 
 ### Statistics
 
-For each genre of movie, find the stats, i.e. the number of movies and the average movie length (in minutes).
-
-The method should return a dictionary of statistics:
+- Implement `stats_on` to get the statistics on a given genre, i.e. the number of movies and the average movie length (in minutes).
+- This function should return a dictionary of statistics like:
 
 ```python
 results = stats_on(db, "Action,Adventure,Comedy")
@@ -32,7 +40,9 @@ print(results)
 
 ### Top 5
 
-Find the top 5 directors that made the most movies in a given genre. This method should return a list of tuples with the director name and the number of movies of the given genre for each director.
+- Implement `top_five_directors_for` to get the top 5 directors that made the most movies for a given genre.
+- This function should return a list of tuples like (`name`, `number_of_movies`).
+- In case of a tie, directors should be sorted in alphabetical order.
 
 ```python
 results = top_five_artists(db, "Action,Adventure,Comedy")
@@ -45,3 +55,19 @@ print(type(results[0]))
     ('Jackie Chan', 3)
 ]
 ```
+
+### Movie duration buckets
+
+To **'bin'** (or **'bucket'**) the range of values means to divide the entire range of values into a series of intervals, and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent, and are often (but not required to be) of equal width. Data binning is used for example for histograms(https://en.wikipedia.org/wiki/Histogram).
+
+- Implement `movie_duration_buckets` to get the buckets of the movies according to duration.
+- The widh of each bucket should be **30 min**
+- For example, the bucket **30** will contain the count of all the movies with a duration between **0 min** and **30 min**.
+- Or, in terms of an SQL query, the value for bucket **30** should be equal to `SELECT COUNT(*) FROM movies WHERE minutes < 30`
+- This method should return a list of tuples like (`max_duration`, `movie_count`):
+
+```python
+movie_duration_buckets(db)
+=> [(30, 292), (60, 764), (90, 1362), [...],(690, 2), (900, 1), (1020, 1)]
+```
+

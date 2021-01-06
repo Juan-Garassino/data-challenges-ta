@@ -1,13 +1,13 @@
 # pylint: disable-all
 import unittest
-from sql_queries import stats_on
+from queries import stats_on
 import sqlite3
 
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
 
 
-class TestStat(unittest.TestCase):
+class TestStatsOn(unittest.TestCase):
     def test_is_dict(self):
         results = stats_on(db, "Action,Adventure,Comedy")
         expected = {}

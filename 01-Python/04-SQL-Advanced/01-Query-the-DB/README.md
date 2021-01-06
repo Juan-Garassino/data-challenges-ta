@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-Now it is time to make advanced SQL requests to an `ecommerce` database!
+Now it is time to make advanced SQL requests to an e-commerce database!
 
 ## Specs
 

@@ -1,29 +1,24 @@
 # pylint: disable=missing-docstring, C0103
 
-
 def directors_count(db):
-    # TO-DO: use 'db' to execute an SQL query against the database.
-    # Return directors count in database.
+    # Return the number of directors contained in the database
     pass
 
-
-def sorted_directors(db):
-    # TO-DO: return a list of directors' names sorted alphabetically
+def directors_list(db):
+    # Return the list of all the directors sorted in alphabetical order
     pass
 
 
 def love_movies(db):
-    """TO-DO: return a list of movies with 'love' in the name, sorted
-    alphabetically"""
+    # return the list of all movies which contain the word "love" in their title, sorted in alphabetical order
     pass
 
 
-def directors_with_name(db, name):
-    # TO-DO: count the number of directors with this name
+def directors_named_like_count(db, name):
+    # return the number of directors which contain a given word in their name
     pass
 
 
-def long_movies(db, min_length):
-    """TO-DO: return a list of movie names
-    verifying: minutes > min_length, sorted by length (ascending)"""
+def movies_longer_than(db, min_length):
+    # return this list of all movies which are longer than a given duration, sorted in the alphabetical order
     pass
