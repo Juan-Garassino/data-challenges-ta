@@ -4,34 +4,28 @@ The goal of this first challenge is to become familiar with database design, a c
 
 ## Specs
 
-#### E-commerce database design
+#### Movie database design
 
-There are many ways to build an e-commerce database, but let's start by building a basic system with `customers`, `products` and `orders`.
+There are many ways to build a movie database, but let's start by building a basic system with `users`, `movies` and `views`.
 
 Here are the requirements of our system:
 
-- A `customer` has a `first_name`, `last_name`, an `email` and a `city`.
-- A `product` has a `name` and a `unit_price`.
-- An `order` is defined by a `date_of_order`.
-- An `order` is created by only one `customer`.
-- A `customer` can make many `orders`.
-- An `order` can have many `products`.
-- A `product` can be in many `orders`.
-- A given `order` can have the same `product` multiple times so we need to record the `quantity` for a given `product` per `order`.
+- A `user` has a `first_name`, `last_name`, an `age` and an `email`.
+- A `movie` has a `title`, a `release_year` and a `rating`.
+- A `user` can `view` many `movies`.
+- A `movie` can be `viewed` by many `users`.
+- A `view` is defined by a `date`.
 
-<details><summary markdown='span'>💡 Hint</summary>
-  You need to introduce a join table <code>order_items</code>.
-
-</details>
+Which columns are primary keys? Which are foreign keys? What is the relationship between tables? How do we call the `views` table?
 
 #### Design the schema
 
-Design a database schema for an e-commerce app that meets the requirements.
+Design a database schema for a movie database that meets the requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
-To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code in `ecommerce.xml`. You can then `make` to check your solution.
+To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code in `movies.xml`. You can then `make` to check your solution.
 
 ## Key learning points
 
-- Do you know what a schema is?
-- What's the relationship between tables?
-- Could you draw the database schema behind facebook? airbnb? Take a sheet of paper and have a go!
+- Become comfortable with using the [SQL Designer](http://db.lewagon.com) tool to build a multi-table database schema.
+- Understand the difference between primary key and foreign key.
+- Understand the difference between [`1:N` and `N:N` relationships](https://en.wikipedia.org/wiki/Cardinality_(data_modeling))
