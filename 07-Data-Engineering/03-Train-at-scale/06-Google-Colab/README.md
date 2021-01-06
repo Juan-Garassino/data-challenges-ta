@@ -6,4 +6,4 @@ Google Colab provides about 10 hours of CPU & GPU uptime, after which the onelin
 
 👉 Open the following github [repository](https://github.com/lewagon/taxi-fare-deep) and follow instructions to try it out yourself.
 
-🏁 (Optional): When you are done, read these [10 tups for a better colab experience](https://towardsdatascience.com/10-tips-for-a-better-google-colab-experience-33f8fe721b82) to make the best out of Google Collab. It may prove usefull during your project weeks.
+🏁 (Optional): When you are done, read these [10 tips for a better colab experience](https://towardsdatascience.com/10-tips-for-a-better-google-colab-experience-33f8fe721b82) to make the best out of Google Collab. It may prove usefull during your project weeks.
