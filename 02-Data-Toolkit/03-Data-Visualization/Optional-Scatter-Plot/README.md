@@ -3,7 +3,7 @@
 
 Same principle in this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/caveat/overplotting.html).
 
-To go further and learn more best practices you can read theses **4 articles**.
+To go further and learn more best practices you can read these **4 articles**.
 
 [Scatter plots](https://www.data-to-viz.com/graph/scatter.html),
 [2D density](https://www.data-to-viz.com/graph/density2d.html)
@@ -18,7 +18,7 @@ You will work with the dataset `data/blobs.csv`, located in this exercise folder
 ### First steps
 
 Create a notebook named `exercise06.ipynb` in the **same folder** as this **README**.
-Now you can **import** the necessesary **libraries**.
+Now you can **import** the necessary **libraries**.
 
 ```python
 import numpy as np
@@ -32,19 +32,19 @@ Then **import** the **dataset** from the CSV you just downloaded.
 
 ### Size and transparency
 
-Increase the **lisibility** of your scatter plot with **smaller dot** and a **lower opacity**.
+Increase the **visibility** of your scatter plot with **smaller dots** and a **lower opacity**.
 Create a plot with **both** techniques used at the same time.
 
 <img src="https://i.ibb.co/VVby1Pb/visualize-1255x420.png" width="760">
 
-### Groupes
+### Groups
 
 Recreate this plot and use the `hue` option in seaborn scatter plot to **group by category**.
 <img src="https://i.ibb.co/sJ1BZBj/Screen-Shot-2019-10-15-at-20-34-12.png" width="360">
 
 ### Faceting and group highlight
 
-Create a **grid** of scatter plot, each group **highlighted**.
+Create a **grid** of scatter plots, with each group **highlighted**.
 <img src="https://i.ibb.co/0Vyr6Nc/Screen-Shot-2019-10-15-at-20-34-17.png" width="760">
 
 ### Optional - 3D Plot

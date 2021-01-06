@@ -1,6 +1,6 @@
 Python scripts can read arguments passed in the command line. This may come in handy when you want to add options to your script.
 
-## Some words about `sys.argv`
+## A note about `sys.argv`
 
 Consider the following code:
 
@@ -35,9 +35,9 @@ python calc.py 3 - 9
 # => -6
 ```
 
-⚠️ Note the backslash before the `*` above. This is because the `*` is a special character and we have to escape it. 
+⚠️ Note the backslash before the `*` above. This is because the `*` is a special character and we have to 'escape' it.
 
-Open the `calc.py` file and implement this behavior! You will find that a `main` function is automatically executed thanks to [this idiom](https://docs.python.org/3/library/__main__.html).
+Open the `calc.py` file and implement this behavior! You will find that a `main` function is automatically executed thanks to [this feature](https://docs.python.org/3/library/__main__.html).
 
 💡 **Hint**: Don't hesitate to `print()` a lot, to better understand how the program behaves.
 

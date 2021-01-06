@@ -124,7 +124,7 @@ As we are starting a new block of exploration, insert a **Markdown** cell and ap
 
 Now that we have prepared the dataframe, we can try to answer a first Business-related question:
 
-> How much gas has been produced yearly in entire US and in every individual state of the US?
+> How much gas has been produced yearly by each US state, and by the US as a whole?
 
 To answer this question, we need to **aggregate** the rows based on the year of the `Month` column. Go ahead, insert a new code cell and code this aggregation using [`DataFrame.groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) and [`DataFrame.sum()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sum.html).
 
@@ -154,7 +154,7 @@ plot.set_xlabel("Year")
 
 ## Discarding rows with Boolean Indexing
 
-In the previous section, we've seen that the production data are not complete for the year 2008 and 2018 (we only have half of the year). We'd like to continue working with full years, meaning we need to discard the first and last rows of `yearly_gas_df` based on the year.
+In the previous section, we've seen that the production data is not complete for the year 2008 and 2018 (we only have half of the year). We'd like to continue working with full years, meaning we need to discard the first and last rows of `yearly_gas_df` based on the year.
 
 We are going to look at the **index** of the DataFrame, and build a boolean condition using [`np.logical_and`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_and.html):
 
@@ -199,7 +199,7 @@ full_yearly_gas_df.columns[1:].sort_values()
 <details><summary markdown='span'>View solution
 </summary>
 
-If we pick Colorado, Louisiana, Ohio and Utah, this is how we can do it:
+If we wanted to pick Colorado, Louisiana, Ohio and Utah, this is how we could do it:
 
 ```python
 plot = full_yearly_gas_df.filter(items=['Colorado', 'Louisiana', 'Ohio', 'Utah']).plot()
@@ -240,7 +240,7 @@ If you got 100% commit the change and continue with the next section.
 
 ## Loading a second CSV
 
-The Kaggle dataset we are using does not only have information about the gas production, there is also some about the **crude oil** one. Create a new section in your Notebook with the following Markdown cell:
+The Kaggle dataset we are using does not only have information about the gas production, there is also some info about **crude oil**. Create a new section in your Notebook with the following Markdown cell:
 
 ```markdown
 ---
@@ -287,7 +287,7 @@ yearly_oil.head(3)
 
 </details>
 
-Now that you have those two dataframes, create one by concatenating both. Store this new dataframe into a `yearly_merged` variable. You should use the [`pd.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html), and don't forget to set the `axis` parameter!
+Now that you have those two dataframes, create one by concatenating both. Store this new dataframe into a `yearly_merged` variable. You should use the [`pd.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html) function, and don't forget to set the `axis` parameter!
 
 <details><summary markdown='span'>View solution
 </summary>
@@ -297,6 +297,7 @@ yearly_merged = pd.concat([yearly_oil, yearly_gas], axis='columns')
 yearly_merged
 ```
 </details>
+
 
 Finally, plot the `yearly_merged` dataframe and try to set the legend to include the units advertised in the original [Kaggle dataset](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018).
 

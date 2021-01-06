@@ -2,8 +2,11 @@
 
 import os
 
+
 def start():
-    pass # TODO: return the right message
+    """returns the right message"""
+    pass
+
 
 if __name__ == "__main__":
     print(start())

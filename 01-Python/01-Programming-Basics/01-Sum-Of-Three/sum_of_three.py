@@ -2,6 +2,6 @@
 
 def sum3(first_number, second_number, third_number):
     """
-    Takes three number and return the addition of those numbers
+    Takes three numbers and returns the sum of those numbers
     """
-    pass # TODO: implement this function
+    pass

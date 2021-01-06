@@ -6,7 +6,7 @@ Some websites don't work the way HTTP & HTML were intended to work. They use a t
 
 This means that if you use the traditional technique where you look into the HTML (`curl`-style), you won't find anything! You need the JavaScript to be fully rendered, and to do so you need a browser, like Chrome.
 
-To drive Chrome from code, you need a pilot. We will use [**Selenium**](https://www.seleniumhq.org/). Thank to it, you can navigate to a page, scroll down, click on a link, fill a few inputs, click on a button, etc. Anything a human can do with a browser can be done with Selenium.
+To drive Chrome from code, you need a pilot. We will use [**Selenium**](https://www.seleniumhq.org/). With Selenium, you can navigate to a page, scroll down, click on a link, fill a few inputs, click on a button, etc. Anything a human can do with a browser can also be done with Selenium.
 
 ⚠️ There is no `make` on this challenge.
 
@@ -18,18 +18,18 @@ Imagine you want to get some information about a recipe. The URL structure is ea
 https://recipes.lewagon.com/recipes/251/advanced
 ```
 
-Go to [that URL](https://recipes.lewagon.com/recipes/advanced?search[query]=carrot&page=1), disable JavaScript in your browser, and reload. To disable JS quickly you can install those extensions:
+Go to [that URL](https://recipes.lewagon.com/recipes/advanced?search[query]=carrot&page=1), disable JavaScript in your browser, and reload. To disable JS quickly you can install these extensions:
 
 - [Disable JavaScript](https://addons.mozilla.org/en-US/firefox/addon/disable-javascript/) for Firefox 🦊
 - [Disable JavaScript](https://chrome.google.com/webstore/detail/disable-javascript/jfpdlihdedhlmhlbgooailmfhahieoem) for Chrome 🎈
 
-See how the page loads indefinitely? We can't scrape with just `requests` + `BeautifulSoup` from the server-side generated HTML, we need Selenium and a browser!
+See how the page loads indefinitely? We can't scrape with just `requests` + `BeautifulSoup` from the server-side generated HTML. We need Selenium and a browser!
 
 ## Setup
 
 For this challenge, we will use Selenium + Chrome. If you want to try another browser (Firefox), you can do that as well but the instructions will need to be adapted.
 
-Open Google Chrome on your computer (if you don't have it, install it), then go to "About Google Chrome". You should see the version you are on (Maybe 78? More?).
+Open Google Chrome on your computer (if you don't have it, install it), then go to "About Google Chrome". You should see the version you are on.
 
 Based on that version, install the right [`chromedriver-binary`](https://pypi.org/project/chromedriver-binary/77.0.3865.40.0/#history) and [`selenium`](https://pypi.org/project/selenium/) modules:
 
@@ -56,13 +56,13 @@ Open your terminal and run:
 python test_advanced_scraping.py
 ```
 
-🚀 It should open a Chrome Window, navigate to the page and stay like that! If you uncomment the last line `driver.quit()` then you will see that Chrome will close automatically. You need to do that otherwise you'll have plenty of Chrome Windows opened after a while!
+🚀 It should open a Chrome window, navigate to the page and stay like that! If you uncomment the last line `driver.quit()` then you will see that Chrome will close automatically. You need to do that otherwise you'll have plenty of Chrome windows open after a while!
 
 ## Searching chocolate based recipes 😋
 
-We will now simulate a user interaction with the page. Something one can do is click on the search bar and type a location. Go ahead and try it: type `chocolate`. Now click on the magnifying glass button to launch the search.
+We will now simulate a user interaction with the page. Something a user can do is click on the search bar and type a location. Go ahead and try it: type `chocolate`. Now click on the magnifying glass button to launch the search.
 
-This is what we want to emulate! We will use the [`find_element_by_id`](https://selenium-python.readthedocs.io/locating-elements.html#locating-by-id) method to locate the input in which we want to type.
+This is what we want to simulate! We will use the [`find_element_by_id`](https://selenium-python.readthedocs.io/locating-elements.html#locating-by-id) method to locate the input which we want to search.
 
 ```python
 from selenium.webdriver.common.keys import Keys
@@ -75,7 +75,7 @@ With that piece of code you should see your Chrome browser opening on the specif
 
 ## Submitting the form
 
-Next step will be to submit the form in order to get the chocolate based recipes back. To do that we can add the following line to our code
+Next step will be to submit the form in order to get the chocolate based recipes back. To do that, we can add the following line to our code:
 
 ```python
 search_input.submit()
@@ -83,9 +83,9 @@ search_input.submit()
 
 Just like that you should see the updated list of recipes.
 
-## Retrieving the urls of each recipe
+## Retrieving the URLs of each recipe
 
-As you can see, the list of updated recipes is also fetched using Javascript, and we have to wait a little bit in order to see the results. This means we need to wait for the recipes to appear before being able to gather the recipes' urls.
+As you can see, the list of updated recipes is also fetched using Javascript and we have to wait a little bit in order to see the results. This means we need to wait for the recipes to appear before being able to gather the recipes' URLs.
 
 To do that we will use [**explicit wait**](https://selenium-python.readthedocs.io/waits.html):
 
@@ -99,9 +99,9 @@ wait = WebDriverWait(driver, 15)
 wait.until(ec.visibility_of_element_located((By.XPATH, "//div[@id='recipes']")))
 ```
 
-The weird string in the method call uses an [XPath](https://en.wikipedia.org/wiki/XPath) search in the DOM. It locates the `<div/>` with an `id` which has the value `recipes`. After exploration of the website's DOM, we found that this `<div/>` is the element that contains all the recipes fetched by the search.
+The weird string in the method uses an [XPath](https://en.wikipedia.org/wiki/XPath) search in the DOM. It locates the `<div/>` with an `id` which has the value `recipes`. After exploration of the website's DOM, we found that this `<div/>` is the element that contains all the recipes fetched by the search.
 
-Now that we waited for the filtered out recipes to appear, it's time to collect the url of each recipe to be able to scrape each one of them.
+Now that we waited for the filtered recipes to appear, it's time to collect the URL of each recipe to be able to scrape each one of them.
 
 ```python
 recipe_urls = []
@@ -114,21 +114,21 @@ for card in cards:
 print(recipe_urls)
 ```
 
-Run the code from the terminal. You should get back 12 urls (i.e. all the recipes on the first page).
+Run the code from the terminal. You should get back 12 URLs (i.e. all the recipes on the first page).
 
 ## Scraping each recipe
 
-Now that we have a list of urls, we can now navigate to each page, wait for the result to appear and give it to BeautifulSoup to gather the data we need!
+Now that we have a list of URLs, we can now navigate to each page, wait for the result to appear and give it to BeautifulSoup to gather the data we need!
 
 For each recipe, the following code will gather:
 
-- The name of the recipe
-- The cooktime of the recipe
+- the name of the recipe
+- the cooking time of the recipe
 - the difficulty of the recipe
 - the price range of the recipe
 - the description of the recipe
 
-We start with an empty list `recipes` that we will populate with a `dict` storing the desired information about each recipe:
+We start with an empty list, `recipes`, that we will populate with a `dict`, storing the desired information about each recipe:
 
 
 ```python
@@ -174,7 +174,7 @@ driver.quit()
 
 ## Going Headless
 
-Launching a web scraping script with Selenium opens a Google Chrome window which goes in the way and prevent you from doing something else (you might have seen that interacting with the page using the mouse or keyboard while the script is running breaks it). There's a solution for that: [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome). The idea is to use Chrome without its user interace. This is how you can do it:
+Launching a web scraping script with Selenium opens a Google Chrome window which gets in the way and prevents you from doing anything else (you might have seen this, interacting with the page using the mouse or keyboard while the script its running breaks it). There's a solution for that: [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome). The idea is to use Chrome without its user interace. This is how you can do it:
 
 Replace this line:
 

@@ -3,7 +3,7 @@
 
 In this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/story/ThreeNum.html).
 
-To learn more **best practices** around bubble plot read these **3 short articles**.
+To learn more **best practices** around bubble plots, read these **3 short articles**.
 
 [Radius or Area](https://www.data-to-viz.com/caveat/radius_or_area.html),
 [Area lisibility](https://www.data-to-viz.com/caveat/area_hard.html),
@@ -13,12 +13,10 @@ To learn more **best practices** around bubble plot read these **3 short article
 
 You will work with the **GDP per capita** dataset.
 
-[Download here](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv)
-
 ### First steps
 
-Create a notebook named `scatter_plot.ipynb` in the **same folder** as this **README**.
-Now you can **import** the necessesary **libraries**.
+Open a notebook named `scatter_plot.ipynb` in the **same folder** as this **README**.
+Now you can **import** the necessary **libraries**.
 
 ```python
 import numpy as np

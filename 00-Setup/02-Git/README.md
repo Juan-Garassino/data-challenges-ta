@@ -1,4 +1,4 @@
-Let's recap the `git` commands you need to remember to work on the challenges during the bootcamp.
+Let's recap the `git` commands you need to remember in order to work on the challenges during the bootcamp.
 
 ## Status
 
@@ -27,7 +27,7 @@ Let's create a Python file:
 touch today.py
 ```
 
-Open this file in your text editor. You will need to declare and implement a function called `my_name_is`, which doesn't take any parameter and returns a constant of type `str`: The value of this constant will be your GitHub nickname.
+Open this file in your text editor. You will need to declare and implement a function called `my_name_is`, which doesn't take any parameter and returns a constant of type `str`. The value of this constant will be your GitHub nickname.
 
 Run `make` until one test passes (no need for the second one to be successful, we'll take care of it in a second).
 
@@ -36,7 +36,7 @@ tests/test_git.py::TestGit::test_hi_my_name_is PASSED
 tests/test_git.py::TestGit::test_my_buddy_is   FAILED
 ```
 
-Good, you made some progress. It's time to pause and save your progression. Just like a checkpoint! 
+Good, you made some progress. It's time to pause and save your progression. Just like a checkpoint!
 
 ```bash
 git add today.py
@@ -44,11 +44,11 @@ git commit -m "Implement my_name_is function"
 git push origin master
 ```
 
-Kitt should pick up the change and show you a 50% progress. Good job!
+Kitt should pick up the change and show 50% progress. Good job!
 
 ## Second commit
 
-Let's start solving the second test. To do so, you need to declare and implement a function called `my_buddy_is`, which doesn't take any parameter and returns a constant `str`: The value of the constant will be your buddy's GitHub nickname (or yours if you don't have a buddy today).
+Let's start solving the second test. To do so, you need to declare and implement a function called `my_buddy_is`, which doesn't take any parameter and returns a constant `str`. The value of the constant will be your buddy's GitHub nickname (or yours if you don't have a buddy today :().
 
 You can use this useful command to check what has changed in the file:
 

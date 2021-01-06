@@ -3,6 +3,7 @@
 Module Text
 '''
 
+
 def question_bar_plot():
     # Question:
     # With a bar plot you should ALWAYS...
@@ -14,6 +15,7 @@ def question_bar_plot():
 
     my_answers = []
     return my_answers
+
 
 def question_line_plot():
     # Question:
@@ -27,9 +29,10 @@ def question_line_plot():
     my_answers = []
     return my_answers
 
+
 def question_bar_plot_columns():
     # Question:
-    # In general, bar plot with 10+ columns are simpler to read...
+    # In general, bar plots with 10+ columns are simpler to read...
 
     possible_answers = [
         "With columns name on the y axis",
@@ -38,6 +41,7 @@ def question_bar_plot_columns():
     ]
     my_answers = []
     return my_answers
+
 
 def question_color_uses():
     # Question:
@@ -51,6 +55,7 @@ def question_color_uses():
     my_answers = []
     return my_answers
 
+
 def question_color_palette():
     # Question:
     # I should never use...
@@ -63,9 +68,10 @@ def question_color_palette():
     my_answers = []
     return my_answers
 
+
 def question_color_blind_palette():
     # Question:
-    # For color blind people, I should choose these color palette...
+    # For color blind people, I should choose these color palettes...
 
     possible_answers = [
         "Blue and yellow",
@@ -75,6 +81,7 @@ def question_color_blind_palette():
     ]
     my_answers = []
     return my_answers
+
 
 def question_diverging_color_palette():
     # Question:

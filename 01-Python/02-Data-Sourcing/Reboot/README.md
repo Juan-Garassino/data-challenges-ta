@@ -1,4 +1,4 @@
-Once positionned in the proper folder (see steps above), launch the following command in your Terminal:
+Once positioned in the proper folder (see steps above), launch the following command in your Terminal:
 
 ```bash
 jupyter notebook reboot.ipynb

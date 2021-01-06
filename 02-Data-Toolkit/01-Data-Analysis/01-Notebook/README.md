@@ -4,7 +4,7 @@ After following the steps above to position yourself in the proper folder, run t
 jupyter notebook
 ```
 
-After a few seconds, your default browser should open a new tab and display the Jupyter interface, listing the files in your current folder. If it does not, look at the terminal, it should say something along those lines:
+After a few seconds, your default browser should open a new tab and display the Jupyter interface, listing the files in your current folder. If it does not, look at the terminal, it should say something along these lines:
 
 ```
 The Jupyter Notebook is running at:

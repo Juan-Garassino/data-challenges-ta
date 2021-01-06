@@ -1,6 +1,6 @@
 ## Objective
 
-Let's start the day with a **Warm-Up** challenge with a quick `SELECT` statement.
+Let's start the day with a **Warm-Up** challenge and a quick `SELECT` statement.
 
 ## Database Discovery
 
@@ -9,11 +9,11 @@ Open the `db/school.sqlite` with DBeaver and have a look at the schema.
 - How many tables do you have?
 - For each table, what are the columns?
 
-Once you are comfortable with the schema, let's write a SQL Query
+Once you are comfortable with the schema, let's write an SQL Query
 
 ## Students from a City
 
-In DBeaver, open the SQL Editor and write a SQL query to select all students coming from `'Paris'`.
+In DBeaver, open the SQL Editor and write an SQL query to select all students from `'Paris'`.
 
 Once you are happy with your query, open the `school.py` file and put that SQL query into the Python file. We want this query to be **dynamic** (i.e. work with any city, given as a parameter to the `students_from_city` function), so don't forget to update it.
 
@@ -31,6 +31,6 @@ import ipdb; ipdb.set_trace()
 
 That way you can inspect the local variables at the breaking point and check your assumption about the code (what variables hold what? what are the types?). Getting good as debugging code is a critical skill to develop throughout the bootcamp!
 
-In the end, check your challenge with `make`. Be careful not to commit any `import pdb; pdb.set_trace()` as you would stuck the tests (locally and on Kitt!)
+In the end, check your challenge with `make`. Be careful not to commit any `import pdb; pdb.set_trace()` as you would mess up the tests (locally and on Kitt!)
 
 Have fun!

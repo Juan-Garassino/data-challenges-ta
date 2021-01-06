@@ -7,7 +7,7 @@ from olist.order import Order
 class Product:
 
     def __init__(self):
-        # Import only data once
+        # Import data only once
         olist = Olist()
         self.data = olist.get_data()
         self.matching_table = olist.get_matching_table()
@@ -23,7 +23,7 @@ class Product:
 
         products = self.data['products']
 
-        # (optional) convert name to english
+        # (optional) convert name to English
         en_category = self.data['product_category_name_translation']
         df = products.merge(en_category, on='product_category_name')
         df.drop(['product_category_name'], axis=1, inplace=True)
@@ -65,7 +65,7 @@ class Product:
         matching_table = self.matching_table
         orders_reviews = self.order.get_review_score()
 
-        # Since same products can appear multiple times in the same
+        # Since the same products can appear multiple times in the same
         # order, create a product <> order matching table
 
         matching_table = matching_table[['order_id',

@@ -1,9 +1,11 @@
-# pylint: disable=missing-module-docstring,missing-function-docstring
-
+# pylint: disable=missing-module-docstring,missing-function-docstring,eval-used
 import sys
 
+
 def main():
-    pass # TODO: implement the calculator
+    """Implement the calculator"""
+    pass
+
 
 if __name__ == "__main__":
     print(main())

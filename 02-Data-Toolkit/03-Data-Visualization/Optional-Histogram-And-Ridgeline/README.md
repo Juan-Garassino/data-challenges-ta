@@ -3,7 +3,7 @@
 
 Same principle in this exercise, we are going to **recreate** plots from this [article](https://www.data-to-viz.com/story/OneNumOneCatSeveralObs.html).
 
-To learn more **best practices** around bubble plot read these **short articles**.
+To learn more **best practices** around bubble plots read these **short articles**.
 
 [Density](https://www.data-to-viz.com/graph/density.html)
 [Histogram](https://www.data-to-viz.com/graph/histogram.html)
@@ -22,7 +22,7 @@ You will work with the **CIA probability dataset**.
 ### First steps
 
 Create a notebook named `exercise05.ipynb` in the **same folder** as this **README**.
-Now you can **import** the necessesary **libraries**.
+Now you can **import** the necessary **libraries**.
 
 ```python
 import numpy as np

@@ -1,14 +1,14 @@
-Nice job with the **sudoku validator**! Now we are going to implement a **Sudoku Solver**. The goal is simple: given a Sudoku **9x9 grid**, with few numbers in the grid, find the missing numbers to create a valid grid!
+Nice job with the **sudoku validator**! Now we are going to implement a **Sudoku Solver**. The goal is simple: given a Sudoku **9x9 grid**, with a few numbers in the grid, find the missing numbers to create a valid grid!
 
 ![](https://i.ibb.co/nDj9RFk/largeprintsudoku.jpg)
 
 ## Function
 
-The function `sudoku_solver(grid)` take a sudoku grid as an argument and return a grid filled with the right digits.
+The function `sudoku_solver(grid)` takes a sudoku grid as an argument and returns a grid filled with the right digits.
 
 ## Data Model
 
-A Sudoku grid given as **input** will be represented by a Python list of lists:
+A Sudoku grid given as an **input** will be represented by a Python list of lists:
 
 ```python
 grid = [
@@ -48,10 +48,10 @@ grid_solution = [
 
 ## Exercise
 
-Open the `sudoku_solver.py` file and implement the `sudoku_solver()` function. To check if your code is working, you can run the tests with:
+Open the `sudoku_solver.py` file and implement the `sudoku_solver()` function. To check if your code is working, run the tests with:
 
 ```bash
-make
+./check.sh
 ```
 
 Here is an interesting wikipedia article on this subject:<br>
@@ -59,8 +59,8 @@ Here is an interesting wikipedia article on this subject:<br>
 
 ## Done?
 
-We will have a livecode with the whole class very soon. You can practice your Python skill on Codewars (sign in with GitHub!) with the following Kata:
+We will have a live code session with the whole class shortly. In the meantime, you can practice your Python skills on Codewars (sign in with GitHub!):
 
-- [Snake and Ladders](https://www.codewars.com/kata/snakes-and-ladders-1/train/python)
+- [Snakes and Ladders](https://www.codewars.com/kata/snakes-and-ladders-1/train/python)
 - [Decode the morse code](https://www.codewars.com/kata/decode-the-morse-code/train/python)
 - [Escape the mines!](https://www.codewars.com/kata/escape-the-mines/train/python)
