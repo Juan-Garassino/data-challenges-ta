@@ -1,6 +1,6 @@
 A quicker way to leverage cloud computing capabilities is to make use of **cloud-based notebooks-as-a-service**, which are often free for prototyping use.
 
-This challenge show you how to train a deep-learning version of TaxiFare model using [Google Colab](https://colab.research.google.com/) GPUs!
+This challenge shows you how to train a deep-learning version of TaxiFare model using [Google Colab](https://colab.research.google.com/) GPUs!
 
 Google Colab provides about 10 hours of CPU & GPU uptime, after which the oneline notebook kernel shuts down and you'll need to manually restarting it. That is usually sufficient for _prototyping_ even the largest Deep Learning challenge you may encounter.
 
