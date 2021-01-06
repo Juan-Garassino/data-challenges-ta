@@ -273,30 +273,6 @@ winter_countries_df.head()
 
 </details>
 
-<details><summary markdown='span'>View solution
-</summary>
-
-```python
-summer_countries_df = summer_df.merge(countries_df, on="Code")
-summer_countries_df["Season"] = "Summer"
-summer_countries_df.head()
-```
-
-</details>
-
-Repeat the same approach to create a `winter_countries_df`.
-
-<details><summary markdown='span'>View solution
-</summary>
-
-```python
-winter_countries_df = winter_df.merge(countries_df, on="Code")
-winter_countries_df["Season"] = "Winter"
-winter_countries_df.head()
-```
-
-</details>
-
 Concatenate `summer_countries_df` and `winter_countries_df` (they have the same columns!) into an `all_df` DataFrame.
 
 
@@ -328,7 +304,7 @@ top_10_df = all_count_df.head(10)
 To plot the result with a barchart you can do:
 
 ```python
-all_count_df.head(10).plot(kind="bar")
+top_10_df.plot(kind="bar")
 ```
 
 </details>
@@ -362,25 +338,6 @@ You can now check the correctness of your code with:
 print(result.check())
 ```
 
-
-<details><summary markdown='span'>View solution
-</summary>
-
-```python
-all_count_df = all_df[all_df["Year"] >= 1984] \
-    .groupby(["Country"]) \
-    .count()[["Medal"]] \
-    .sort_values(by="Medal", ascending=False)
-all_count_df.head(10)
-```
-
-To plot the result with a barchart you can do:
-
-```python
-all_count_df.head(10).plot(kind="bar")
-```
-
-</details>
 
 ### Optional - Top 10 Countries (by Season) since 1984
 

@@ -13,7 +13,7 @@ In the Notebook exercises of today and the following days, you will go back & fo
 There should be a default code cell in your notebook, change its type to **Markdown** and copy-paste the following in it:
 
 ```markdown
-## US Oil and Gas Production
+# U.S. oil and gas Production analysis
 
 Analysing the [Kaggle Dataset](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018) with information about Oil and Gas production in the US from June 2008 to June 2018.
 ```
@@ -164,7 +164,7 @@ np.logical_and(yearly_gas_df.index >= 2009, yearly_gas_df.index <= 2017)
 
 How can you use this [`np.ndarray`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html) and [**boolean indexing**](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#boolean-indexing) to keep only the full years in `yearly_gas_df`? Can you plot it?
 
-Store the new filtered dataframe in `filtered_yearly_gas_df` variable to pass the tests.
+Store the new filtered dataframe in `filtered_yearly_gas_df` variable in order to pass the tests.
 
 <details><summary markdown='span'>View solution
 </summary>
@@ -298,7 +298,6 @@ yearly_merged
 ```
 </details>
 
-
 Finally, plot the `yearly_merged` dataframe and try to set the legend to include the units advertised in the original [Kaggle dataset](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018).
 
 <details><summary markdown='span'>View solution
@@ -327,7 +326,7 @@ from nbresult import ChallengeResult
 
 result = ChallengeResult('merged_dataframes',
     merged_df_shape=merged_df.shape,
-    yearly_oil_2008 = merged_df.iloc[0]["Crude Oil"],                     
+    yearly_oil_2008 = merged_df.iloc[0]["Crude Oil"],
 )
 result.write()
 ```
@@ -339,4 +338,3 @@ print(result.check())
 ```
 
 That's it, congratulations on completing your first Data Analysis through a Jupyter Notebook :clap:
-Don't forget to `git add`, `git commit` and `push` your code :wink:
