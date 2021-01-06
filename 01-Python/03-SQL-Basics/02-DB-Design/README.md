@@ -1,10 +1,10 @@
 ## Background & Objectives
 
-The goal of this first challenge is to become familiar with database design, a crucial skill to explore a database.
+The goal of this challenge is to become familiar with database design, a crucial skill to explore a database.
 
 ## Specs
 
-#### Movie database design
+### Movie database design
 
 There are many ways to build a movie database, but let's start by building a basic system with `users`, `movies` and `views`.
 
@@ -18,9 +18,9 @@ Here are the requirements of our system:
 
 Which columns are primary keys? Which are foreign keys? What is the relationship between tables? How do we call the `views` table?
 
-#### Design the schema
+### Design the schema
 
-Design a database schema for a movie database that meets the requirements.
+Design the database schema for a movie database that meets these requirements.
 For this, you must use the [SQL Designer](http://db.lewagon.com).
 To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code in `movies.xml`. You can then `make` to check your solution.
 

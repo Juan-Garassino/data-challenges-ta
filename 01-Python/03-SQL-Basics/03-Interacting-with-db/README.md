@@ -1,20 +1,25 @@
 ## Background & Objectives
 
-`Sqlite` is a simple database that relies on a standalone file.
-You can read more about it on [en.wikipedia.org/wiki/SQLite](http://en.wikipedia.org/wiki/SQLite).
+The goal of this challenge is to explore a given [SQLite](http://en.wikipedia.org/wiki/SQLite) database to understand its schema.
 
-## Tooling
+## Tool
 
-Use **DBeaver** to read the SQLite database, explore the schema and even **run SQL queries**.
-
-- [DBeaver](https://dbeaver.io/)
+Download and install [DBeaver](https://dbeaver.io/), a free and open source powerful tool to connect to any database, explore the schema and even **run SQL queries**.
 
 ## Specs
 
-The goal of this exercise is to explore the Movies database, and understand its schema. Answer the following questions:
+### Database schema
 
-- What is the database schema? (i.e what are the tables, and the relationships between tables)
-- Use SQL Design tool to draw the schema of this database.
-- How many rows does each table contain? What are the column names for each table?
+Open DBeaver and connect to the `data/movies.sqlite` database. Then explore the different tables to answer the following questions:
 
-Use [db.lewagon.com](http://db.lewagon.com/) to draw the Movies schema. Save it in XML format to `movies.xml` and check it with `make`.
+- What are the tables and the relationships between tables?
+- What are the columns and their types?
+
+Use [db.lewagon.com](http://db.lewagon.com/) to draw this movies database schema.
+To check your solution, click on "Save / Load", then "Save XML", copy/paste the generated XML code in `movies.xml`. You can then `make` to check your solution.
+
+### Run SQL queries
+
+Open a new SQL editor and run SQL queries to anwer to following question:
+
+How many rows does each table contain?
