@@ -1,62 +1,79 @@
 ## Background & Objectives
 
-Now it is time to use Python to interact with the `movies` database. For that we will use a library that comes with Python, called **sqlite3**.
+The goal of this challenge is to query the database **from our Python code**.
 
-The goal of this challenge is to talk to the database **from our Python code**.
+## Tool
 
-## Specs
+For that we will use a library that comes with Python, called **sqlite3**.
 
-👉 **IMPORTANT**: Each method takes a `db` argument, which is a connection to the database, on which you can call the `execute` method. This `db` is **built by the test and passed along to the function**. No need to create one yourself to satisfy `make`. Your method will look like this:
-
-```python
-def the_method(db):
-    results = db.execute("YOUR SQL QUERY")
-    results = results.fetchall()
-    # results in a list (rows) of list (columns)
-    print(results)  # Inspect what you get back! Don't guess!
-
-    # Then you'll need to return something.
-    return ?
-```
-
-👉 To try your code in **IPython** or in the `queries.py` file, you will need to build `db` yourself.
+To connect to the `movies.sqlite` database from **IPython** or from a Python file, use the following instructions:
 
 ```python
 import sqlite3
 
 conn = sqlite3.connect('data/movies.sqlite')
 db = conn.cursor()
-rows = db.execute("SELECT * FROM movies LIMIT 3")
-rows.fetchall()
-# => [('A Trip to the Moon', 13), ('The Great Train Robbery', 11), ('The Birth of a Nation', 195)]
+db.execute("YOUR SQL QUERY")
+rows = db.fetchall()
+print(rows)
+# => list (rows) of tuples (columns)
 ```
 
-Open the file `queries.py` to answer the following questions. Don't forget you can look inside the database by running `sqlite3 data/movies.sqlite` in the Terminal or use DBeaver.
+## Specs
 
-There are five methods to implement:
+Open DBeaver, connect to the `data/movies.sqlite` database and use a SQL Editor to build and test the SQL queries which answer the following questions.
 
-- How many rows does the `directors` table contain?
-- Return the list of all the directors and sort them by name (alphabetically). **Hint:** use the `ORDER BY` SQL filter.
-- Find all the movie titles that contain "love" **anywhere** in their name, sorted alphabetically. **Hint:** use the `WHERE` and `LIKE` SQL keywords. (bonus question: How could you make sure it's a romance movie?)
-- Count how many directors have a given word in their name. **Hint:** make sure you protect your SQL query from **SQL injection** with [parameter substitution](https://docs.python.org/3.7/library/sqlite3.html)
-- Return all the movies that are longer than a given duration and sort them. **Hint:** you can use the comparison operator `>` in SQL.
+Once your satisfied with the results, copy-paste your queries in the dedicated function in the `queries.py` file.
+
+**IMPORTANT**: Each function takes a `db` argument, which is a cursor connected to the database, on which you can call the `execute` method. This `db` is **built by the test and passed along to the function**. No need to create one yourself to satisfy `make`. Your function will look like this:
+
+```python
+def your_function(db):
+    query = ""
+    db.execute(query)
+    results = db.fetchall()
+    # results in a list (rows) of tuples (columns)
+    print(results)  # Inspect what you get back! Don't guess!
+    # Then you'll need to return something.
+    return ?
+```
+
+### Number of directors
+
+How many directors are in this database?
+
+### List of directors
+
+What is the list of all the directors sorted in alphabetical order?
+
+### List of movies about "love"
+
+What are the movies which contain the word "love" in their title, sorted in alphabetical order?
+
+### Number of directors named like...
+
+How many directors contain a word, given by a user, in their name?
+
+### List of movies longer than...
+
+What are the movies which are longer than a duration, given by a user, sorted in the alphabetical order?
 
 ## Tips
 
-SQL queries tend to get pretty long, especially when you start using `WHERE` or `JOIN`. In Python,
-you can use the [triple-quote](https://docs.python.org/3.2/tutorial/introduction.html#strings) syntax to write **multi-line** strings:
+👉 When you take input from a user to build a SQL query, make sure you protect your SQL query from **SQL injection** with [parameter substitution](https://docs.python.org/3.7/library/sqlite3.html).
+
+👉 SQL queries tend to get pretty long pretty quickly. In Python, you can use the [triple-quote](https://docs.python.org/3.2/tutorial/introduction.html#strings) syntax to write **multi-line** strings:
 
 ```python
-# Find the first 3 artists with the letter `Z` in their name.
-query = '''
-    SELECT * FROM movies
+query = """
+    SELECT
+      title,
+      minutes
+    FROM movies
     WHERE title LIKE "%Z%"
     ORDER BY title
     LIMIT 3
-'''
+"""
 rows = db.execute(query)
+# [...]
 ```
-
-## Tools
-
-- [DBeaver](https://dbeaver.io/)

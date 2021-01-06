@@ -1,6 +1,6 @@
 ## Background & Objectives
 
-The goal of this challenge is to explore a given [SQLite](http://en.wikipedia.org/wiki/SQLite) database to understand its schema.
+The goal of this challenge is to explore a [SQLite](http://en.wikipedia.org/wiki/SQLite) database to understand its schema.
 
 ## Tool
 
@@ -20,6 +20,6 @@ To check your solution, click on "Save / Load", then "Save XML", copy/paste the 
 
 ### Run SQL queries
 
-Open a new SQL editor and run SQL queries to anwer to following question:
+Open a new SQL editor and run some SQL queries to anwer to following question:
 
 How many rows does each table contain?
