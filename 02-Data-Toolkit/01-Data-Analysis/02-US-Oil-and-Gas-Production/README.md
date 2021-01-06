@@ -104,6 +104,14 @@ gas_df['Month'].dt.year.head()
 gas_df['Month'].dt.month.tail()
 ```
 
+In order to pass the tests we've written for this challenge, store the type of `Month` column in the `month_type` variable as below:
+
+```python
+month_type = gas_df['Month'].dtype
+```
+
+It will be checked further in the Notebook.
+
 ## Grouping rows
 
 As we are starting a new block of exploration, insert a **Markdown** cell and append the following code:
@@ -156,6 +164,8 @@ np.logical_and(yearly_gas_df.index >= 2009, yearly_gas_df.index <= 2017)
 
 How can you use this [`np.ndarray`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html) and [**boolean indexing**](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#boolean-indexing) to keep only the full years in `yearly_gas_df`? Can you plot it?
 
+Store the new filtered dataframe in `filtered_yearly_gas_df` variable to pass the tests.
+
 <details><summary markdown='span'>View solution
 </summary>
 
@@ -197,6 +207,36 @@ plot.set_xlabel("Year")
 ```
 
 </details>
+
+### Test your code
+Before going to the next step check if you performed the above steps correctly.
+
+Add a new **markdown** cell:
+
+```markdown
+### Check your code
+```
+
+and another one which will persist your variables for the testing tool `nbresult`:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('gas',
+    month_type=month_type,
+    yearly_gas = filtered_yearly_gas_df.shape
+)
+result.write()
+```
+
+You can now check your code with:
+
+```python
+print(result.check())
+```
+
+If you got 100% commit the change and continue with the next section.
+
 
 ## Loading a second CSV
 
@@ -258,6 +298,7 @@ yearly_merged
 ```
 </details>
 
+
 Finally, plot the `yearly_merged` dataframe and try to set the legend to include the units advertised in the original [Kaggle dataset](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018).
 
 <details><summary markdown='span'>View solution
@@ -271,8 +312,31 @@ plot.legend(['Gas (Millions of Cubic feet)', 'Crude Oil (Thousands of barrels)']
 
 </details>
 
-That's it, congratulations on completing your first Data Analysis through a Jupyter Notebook :clap: :rocket:
+### Test your code
 
-## Pushing your code to GitHub
+Add a new **markdown** cell:
 
-There is no `make` for this challenge, still don't forget to go back to the terminal and `add` / `commit` / `push` your changes!
+```markdown
+### Check your code
+```
+
+and then the code to persist your variables:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('merged_dataframes',
+    merged_df_shape=merged_df.shape,
+    yearly_oil_2008 = merged_df.iloc[0]["Crude Oil"],                     
+)
+result.write()
+```
+
+You can now check the correctness of your code with:
+
+```python
+print(result.check())
+```
+
+That's it, congratulations on completing your first Data Analysis through a Jupyter Notebook :clap:
+Don't forget to `git add`, `git commit` and `push` your code :wink:

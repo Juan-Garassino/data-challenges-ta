@@ -273,6 +273,30 @@ winter_countries_df.head()
 
 </details>
 
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+summer_countries_df = summer_df.merge(countries_df, on="Code")
+summer_countries_df["Season"] = "Summer"
+summer_countries_df.head()
+```
+
+</details>
+
+Repeat the same approach to create a `winter_countries_df`.
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+winter_countries_df = winter_df.merge(countries_df, on="Code")
+winter_countries_df["Season"] = "Winter"
+winter_countries_df.head()
+```
+
+</details>
+
 Concatenate `summer_countries_df` and `winter_countries_df` (they have the same columns!) into an `all_df` DataFrame.
 
 
@@ -288,7 +312,56 @@ all_df.head()
 
 ### Top 10 Countries since 1984
 
-Use boolean indexing, grouping & sorting to print a list of the Top 10 countries who won the most medals _since 1984_. Then plot it. Go step by step!
+Use boolean indexing, grouping & sorting to create a new dataframe consisting of the Top 10 countries who won the most medals _since 1984_. Save it in the `top_10_df` variable. Then plot it. Go step by step!
+
+<details><summary markdown='span'>View solution
+</summary>
+
+```python
+all_count_df = all_df[all_df["Year"] >= 1984] \
+    .groupby(["Country"]) \
+    .count()[["Medal"]] \
+    .sort_values(by="Medal", ascending=False)
+top_10_df = all_count_df.head(10)
+```
+
+To plot the result with a barchart you can do:
+
+```python
+all_count_df.head(10).plot(kind="bar")
+```
+
+</details>
+
+
+### Test your code
+
+Add a new **markdown** cell:
+
+```markdown
+### Check your code
+```
+
+and then the code to persist your variables:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('olympic_games',
+    summer_countries_shape=summer_countries_df.shape,
+    all_countries_shape=all_df.shape,
+    top_country_1=top_10_df.iloc[0]['Medal'],
+    top_country_10=top_10_df.iloc[9]['Medal'],
+)
+result.write()
+```
+
+You can now check the correctness of your code with:
+
+```python
+print(result.check())
+```
+
 
 <details><summary markdown='span'>View solution
 </summary>
