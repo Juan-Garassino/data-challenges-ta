@@ -16,7 +16,7 @@ This method should return a list of movies. Each element of this list should be 
 
 ### Statistics
 
-For each genre of movie, find the stats, i.e. the number of movies and the average movie length (in minutes).
+Given a genre of movies, find the associated stats, i.e. the number of movies and the average movie length (in minutes).
 
 The method should return a dictionary of statistics:
 
@@ -33,6 +33,8 @@ print(results)
 ### Top 5
 
 Find the top 5 directors that made the most movies in a given genre. This method should return a list of tuples with the director name and the number of movies of the given genre for each director.
+
+In case of a tie, directors should be sorted in alphabetical order.
 
 ```python
 results = top_five_artists(db, "Action,Adventure,Comedy")
