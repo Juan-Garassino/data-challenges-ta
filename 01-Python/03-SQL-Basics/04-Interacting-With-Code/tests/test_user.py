@@ -22,13 +22,17 @@ class QueriesMethods(unittest.TestCase):
         directors = results['directors']
         response = directors_list(db)
         self.assertIs(type(response), list)
-        self.assertEqual(response, directors)
+        self.assertEqual(len(response), len(directors))
+        self.assertEqual(response[0], directors[0])
+        self.assertEqual(response[-1], directors[-1])
 
     def test_love_movies(self):
         love_movies_list = results['love_movies']
         response = love_movies(db)
         self.assertIs(type(response), list)
-        self.assertEqual(response, love_movies_list)
+        self.assertEqual(len(response), len(love_movies_list))
+        self.assertEqual(response[0], love_movies_list[0])
+        self.assertEqual(response[-1], love_movies_list[-1])
 
     def test_directors_named_like_count(self):
         directors_count = directors_named_like_count(db, "kubric")
@@ -43,7 +47,9 @@ class QueriesMethods(unittest.TestCase):
         self.assertEqual(directors_count, 0)
 
     def test_movies_longer_than(self):
-        long_movies_list = results['long_movies']
+        long_movies = results['long_movies']
         response = movies_longer_than(db, 300)
         self.assertIs(type(response), list)
-        self.assertEqual(response, long_movies_list)
+        self.assertEqual(len(response), len(long_movies))
+        self.assertEqual(response[0], long_movies[0])
+        self.assertEqual(response[-1], long_movies[-1])
