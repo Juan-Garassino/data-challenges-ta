@@ -3,7 +3,7 @@ import unittest
 from queries import get_average_purchase
 import sqlite3
 
-conn = sqlite3.connect('data/ecommerce.db')
+conn = sqlite3.connect('data/ecommerce.sqlite')
 db = conn.cursor()
 
 class TestAveragePerCustomer(unittest.TestCase):

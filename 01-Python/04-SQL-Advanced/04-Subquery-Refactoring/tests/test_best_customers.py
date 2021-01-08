@@ -3,7 +3,7 @@ import unittest
 from queries import best_customers
 import sqlite3
 
-conn = sqlite3.connect('data/ecommerce.db')
+conn = sqlite3.connect('data/ecommerce.sqlite')
 db = conn.cursor()
 
 class TestBestCustomers(unittest.TestCase):

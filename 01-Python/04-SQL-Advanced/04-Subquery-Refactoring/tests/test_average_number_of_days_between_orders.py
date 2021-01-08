@@ -3,7 +3,7 @@ import unittest
 from queries import average_number_of_days_between_orders
 import sqlite3
 
-conn = sqlite3.connect('data/ecommerce.db')
+conn = sqlite3.connect('data/ecommerce.sqlite')
 db = conn.cursor()
 
 class TestAverageNumberOfDaysBetweenOrders(unittest.TestCase):
