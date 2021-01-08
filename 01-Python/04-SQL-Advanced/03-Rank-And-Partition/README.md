@@ -1,81 +1,27 @@
 ## Background & Objectives
 
-In this section, we will cover the SQL `PARTITION BY` clause and how it differs to `GROUP BY` in a `SELECT` statement.
+The goal of this challenge is to use [Window Functions](https://mode.com/sql-tutorial/sql-window-functions/) like `RANK` or `SUM` with the `OVER` keyword.
+
+`OVER` clause can be used with:
+- `PARTITION BY` to select the scoped rows
+- `ORDER BY` to define the order of the rows in which the window function should be applied
 
 ## Specs
 
-### Bucketing Movie Duration
+### Order rank per customer
 
-First. What is a bucket?
+- Implement `order_rank_per_customer` to rank the orders of each customer according to the order date.
+- For each customer, the orders should be ranked in the chronological order.
+- This function should return a list of tuples like (`OrderID`, `CustomerID`, `OrderDate`, `OrderRank`).
 
-To **'bin'** (or **'bucket'**) the range of values — that is, divide the entire range of values into a series of intervals, and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent, and are often (but not required to be) of equal size" - https://en.wikipedia.org/wiki/Histogram
+### Order cumulative amount per customer
 
-👉 Implement `movie_duration_buckets()` to get the buckets of the movie durations of our database!
+- Implement `order_cumulative_amount_per_customer` to compute the cumulative amount of the orders of each customer according to the order date.
+- For each customer, the orders should be ranked in the chronological order.
+- This function should return a list of tuples like (`OrderID`, `CustomerID`, `OrderDate`, `OrderCumulativeAmount`).
 
-A bucket contains a **count** of all the movies with a duration in the **range** of that bucket.
+## Key learning points
 
-For example, the bucket **30** will contain the count of all the movies with a duration between **0 min** and **30 min**.
-
-Or, in terms of an SQL query:
-- The value for bucket **30** should be equal to `SELECT COUNT(*) FROM movies WHERE minutes < 30;`
-
-Hint 💡 :
-
-```python
-movie_duration_buckets(db)
-=> [(30, 292), (60, 764), (90, 1362), [...],(690, 2), (900, 1), (1020, 1)]
-```
-
-### Partition By Directors
-
-The SQL `PARTITION BY` clause can be used with the:
-- OVER clause: to specify the column on which we need to perform an aggregation
-- RANK clause: to have a row number of each row.
-
-In the previous example, we used `GROUP BY` with the Minutes column to bucket our data. Let's switch to a similar scenario with the SQL `PARTITION BY`.
-
-👉 Implement the function `longest_movies_by_director()` to rank the movies of each director by duration.
-
-Each row returned by the query should look like:
-
-`('Movie Title', 'Director Name', movie_duration (eg: 120), rank (eg: 2))`
-
-The **longest movie** by a director should have the **rank 1** and the **shortest** should have the **last rank**.
-
-The results should then be sorted by the director's name.
-
-Note that the function takes a **second argument**, **first_letter**, which should be used in your query to select only the director names starting with the letter provided.
-
-We expect a result like:
-
-```python
-longest_movies_by_director(db, "X")
-=> [
-      ('Of Gods and Men', 'Xavier Beauvois', 122, 1),
-      ('Laurence Anyways', 'Xavier Dolan', 168, 1),
-      ('Mommy', 'Xavier Dolan', 139, 2),
-      ('Tom at the Farm', 'Xavier Dolan', 102, 3),
-      [...]
-      ('Hitman', 'Xavier Gens', 100, 3)
-    ]
-```
-
-### Top 3 longest movies
-
-👉 Implement the function `top_3_longest()` to find the top 3 longest movies by director. 👌
-
-Here you will **build on** the request you created in the last exercise in order to **select** only the **top 3 longest movies by director**.
-
-We expect a result like:
-
-```python
-longest_movies_by_director(db, "X")
-=> [
-      ('Of Gods and Men', 'Xavier Beauvois', 122, 1),
-      ('Laurence Anyways', 'Xavier Dolan', 168, 1),
-      ('Mommy', 'Xavier Dolan', 139, 2),
-      ('Tom at the Farm', 'Xavier Dolan', 102, 3),
-        [...]
-    ]
-```
-
+- Window functions allow you to compute data from different rows **without aggregating the rows**.
+- If you want to aggregate the rows, use `GROUP BY`.
+- If you don't use, `OVER` with `PARTITION BY` and `ORDER BY` instead.

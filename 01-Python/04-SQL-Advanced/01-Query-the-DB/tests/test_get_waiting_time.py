@@ -1,9 +1,9 @@
 # pylint: disable-all
 import unittest
-from query_db import get_waiting_time
+from queries import get_waiting_time
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.sqlite')
+conn = sqlite3.connect('data/ecommerce.sqlite')
 db = conn.cursor()
 
 

@@ -5,7 +5,6 @@ def detailed_orders(db):
     employee.firstname) ordered by order_id'''
     pass
 
-
 def spent_per_customer(db):
     '''return the total amount spent per customer ordered by ascending total
     amount (to 2 decimal places)
@@ -17,12 +16,10 @@ def spent_per_customer(db):
     '''
     pass
 
-
 def best_employee(db):
     '''return the first and last name of the best employee (the one
     who sells the most in terms of amount of money'''
     pass
-
 
 def orders_per_customer(db):
     '''TO DO: return a list of tuples where each tupe contains the contactName
