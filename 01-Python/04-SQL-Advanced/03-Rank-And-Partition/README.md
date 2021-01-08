@@ -20,6 +20,8 @@ The goal of this challenge is to use [Window Functions](https://mode.com/sql-tut
 - For each customer, the orders should be ranked in the chronological order.
 - This function should return a list of tuples like (`OrderID`, `CustomerID`, `OrderDate`, `OrderCumulativeAmount`).
 
+**Hint** There are two sums to compute here: the total amount for a given order and the cumulative amount of orders. Which one is a window function?
+
 ## Key learning points
 
 - Window functions allow you to compute data from different rows **without aggregating the rows**.
