@@ -7,6 +7,6 @@ RATES = {}
 def convert(amount, currency):
     """returns the converted amount in the given currency
     amount is a tuple like (100, "EUR")
-    currency` is a string
+    currency is a string
     """
     pass
