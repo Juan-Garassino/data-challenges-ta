@@ -23,5 +23,3 @@ We expect the function to return a value like: `[('FirstName', 'LastName', 6000 
 
 ### Who doesn't buy anything?
 Implement `orders_per_customer` to get the amount of Orders made by each Customer. As you can guess with the title, you should also display customers with no order?
-
-**Hint**: LEFT JOIN could be useful. And in this case, the table order is important...

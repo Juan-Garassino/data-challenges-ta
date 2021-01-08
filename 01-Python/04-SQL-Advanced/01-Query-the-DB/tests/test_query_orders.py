@@ -1,9 +1,9 @@
 # pylint: disable-all
 import unittest
-from query_db import query_orders
+from queries import query_orders
 import sqlite3
 
-conn = sqlite3.connect('db/ecommerce.sqlite')
+conn = sqlite3.connect('data/ecommerce.sqlite')
 db = conn.cursor()
 
 
