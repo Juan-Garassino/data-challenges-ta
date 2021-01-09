@@ -8,11 +8,11 @@ db = conn.cursor()
 
 class TestTopOrderedProductPerCustomer(unittest.TestCase):
     expected = [
-        (4, 6, 2350.4),
+        (4, 6, 5876),
+        (2, 5, 2791.6),
         (1, 6, 1909.7),
-        (2, 5, 1395.8),
-        (5, 6, 1175.2),
-        (3, 3, 350.0)
+        (3, 3, 1200),
+        (5, 6, 1175.2)
     ]
 
     def test_result_type(self):
