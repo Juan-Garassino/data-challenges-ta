@@ -354,7 +354,7 @@ Let's reuse `all_df` to group but this time we don't just want to count the tota
 Let's build the Top 10 with two columns: Winter & Summer
 
 ```python
-season_count_df = all_df.groupby(["Country", "Season"])["Medal"].count().unstack()
+season_count_df = all_df[all_df["Year"] >= 1984].groupby(["Country", "Season"])["Medal"].count().unstack()
 season_count_df.fillna(0, inplace=True)
 season_count_df["Summer"] = season_count_df["Summer"].astype(int)
 season_count_df["Winter"] = season_count_df["Winter"].astype(int)
