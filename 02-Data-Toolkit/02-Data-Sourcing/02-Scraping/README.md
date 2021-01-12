@@ -287,6 +287,26 @@ Looks great! Let's generate a small plot to celebrate. The plot will show how ma
 books_df.groupby("Rating").count()["Title"].plot(kind="bar")
 ```
 
+### Test your code!
+
+Add and run the following cell to test your code:
+
+```python
+rom nbresult import ChallengeResult
+
+result = ChallengeResult('books',
+    books_dict=books_dict,
+    columns=books_df.columns,
+    title=str(books_df.loc[0,'Title']),
+    price=books_df.loc[0,'Price'],
+    rating=books_df.loc[0,'Rating']
+)
+result.write()
+print(result.check())
+```
+
+Then you can `commit` and `push` your code :rocket:
+
 Quite a lot of books have a very poor rating (1). Is it only the first page? What about the **other** pages? Time to look at page 2 and beyond!
 
 ## Going through _all_ the pages of the catalogue

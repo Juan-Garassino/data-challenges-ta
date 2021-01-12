@@ -64,14 +64,15 @@ re.findall(pattern, text_to_search)
 "I moved to Paris 75011, it's closer to my workplace."
 ```
 
+**ℹ️ Store the Regex inside a `zip_code_pattern` variable.**
+
 <details><summary markdown='span'>View solution
 </summary>
 
-
 ```python
-pattern = r"\d{5}"
+zip_code_pattern = r"\d{5}"
 text_to_search = "I moved to Paris 75011, it's closer to my workplace."
-re.findall(pattern, text_to_search)
+re.findall(zip_code_pattern, text_to_search)
 ```
 </details>
 
@@ -121,18 +122,21 @@ You should find two matches.
 "Receipt Number 103402 ||| 15-02-2017"
 ```
 
+**ℹ️ Store the Regex inside a `date_pattern` variable.**
+
 You can play around with the Regex on this website: [regex101.com](https://regex101.com/r/eudk0M/1)
 
 <details><summary markdown='span'>Solution
 </summary>
 
 ```python
-pattern = r"\d{2}-\d{2}-\d{4}"
+date_pattern = r"\d{2}-\d{2}-\d{4}"
 text_to_search = "Receipt Number 103402 ||| 15-02-2017"
-re.findall(pattern, text_to_search)
+re.findall(date_pattern, text_to_search)
 ```
 
 </details>
+
 
 ### Tokens and Quantifiers
 
@@ -166,6 +170,8 @@ The most common quantifiers are:
 Now let's try to match the **"Quantity"** line in a receipt.<br>
 Go to this page and find the right pattern: [regex101.com](https://regex101.com/r/DRY159/1)
 
+**ℹ️ Store the Regex inside a `quantity_pattern` variable.**
+
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -177,6 +183,8 @@ r"Quantity +\d+"
 
 Next, find the pattern that matches the full **"Total Amount"** line.<br>
 Go to this page and find the right pattern: [regex101.com](https://regex101.com/r/DRY159/1)
+
+**ℹ️ Store the Regex inside a `amount_pattern` variable.**
 
 <details><summary markdown='span'>Solution
 </summary>
@@ -217,6 +225,8 @@ You should only get the value of the group.
 **Your turn!**<br>
 Find the right grouping to get only the **"Quantity"** value: [regex101.com](https://regex101.com/r/DRY159/1)
 
+**ℹ️ Store the Regex inside a `quantity_group_pattern` variable.**
+
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -228,6 +238,8 @@ r"Quantity +(\d+)"
 
 Find the right grouping to get only the **"Total Amount"** value: [regex101.com](https://regex101.com/r/DRY159/1)
 
+**ℹ️ Store the Regex inside a `amount_group_pattern` variable.**
+
 <details><summary markdown='span'>Solution
 </summary>
 
@@ -236,6 +248,25 @@ r"Total Amount +(\d+\.\d{2}) €"
 ```
 
 </details>
+
+### Test your code!
+
+Add and run the following cell to test your code:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('patterns',
+    zipcode_re=zip_code_pattern,
+    date_re=date_pattern,
+    quantity_re=quantity_pattern,
+    amount_re=amount_pattern,
+    quantity_grp_re=quantity_group_pattern,
+    amount__grp_re=amount_group_pattern
+)
+result.write()
+print(result.check())
+```
 
 ---
 
@@ -276,6 +307,8 @@ Do that in your notebook and make sure you can see some of the receipt.
 To create a list of all the receipts we need to find the **delimiter** between the receipts.<br>
 So look at what you previously printed and choose a delimiter.<br>
 You can now use `split()` on your string to get the list of all the receipts, the list should contain **100 items**.
+
+**ℹ️ Store the Regex inside a `receipts_list` variable.**
 <br>
 <details><summary markdown='span'>Solution
 </summary>
@@ -288,7 +321,7 @@ len(receipts_list)
 </details>
 
 
-### 3. Prepare a dictionary where we will save our data
+### 3. Prepare a dictionary `receipts_dict` where we will save our data
 
 Before we start **iterating** over the array we need a dictionary to save the data we found.
 The format we want for this is:
@@ -421,7 +454,7 @@ receipts_dict
    }
 ```
 
-### 5. Create a dataframe from this dictionary
+### 5. Create a dataframe `receipts_df` from this dictionary
 
 Finally, you can just convert this dictionary to a **DataFrame** with pandas.<br>
 You can look at this documentation if you don't remember the syntax: [pandas.pydata.org](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.from_dict.html)
@@ -434,6 +467,25 @@ receipts_df = pd.DataFrame.from_dict(receipts_dict)
 receipts_df.head()
 ```
 </details>
+
+### Test your code!
+
+Add and run the cell below to test your code:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('receipts',
+    raw=receipts_list,
+    receipts=receipts_dict,
+    df_size=receipts_df.shape,
+    receipt=receipts_df.iloc[-1, :]
+)
+result.write()
+print(result.check())
+```
+
+You can `commit` and `push` your code :rocket:
 
 
 ------
