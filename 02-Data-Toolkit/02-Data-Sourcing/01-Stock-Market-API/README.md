@@ -118,7 +118,7 @@ url = "YOUR_API_URL"
 api_data = requests.get(url).json()
 ```
 
-You can now **create a dataframe** from this data.
+You can now **create a dataframe** `apple_stock_df` from this data.
 
 <br>
 <details><summary markdown='span'>Solution
@@ -178,6 +178,24 @@ As we can see, our plot is really hard to read. We can improve its readability w
 </summary>
 <code>apple_stock_df[['open', 'close', 'high', 'low']].plot(figsize=(12,4))</code>
 </details>
+
+### Test your code!
+
+Add and run the following cell to your notebook:
+
+```python
+from nbresult import ChallengeResult
+
+result = ChallengeResult('apple',
+    index_name=apple_df.index.name,
+    index_type=apple_df.index.dtype,
+    columns=apple_df.columns
+)
+result.write()
+print(result.check())
+```
+
+You can `commit` and `push` your code :rocket:
 
 ---
 
