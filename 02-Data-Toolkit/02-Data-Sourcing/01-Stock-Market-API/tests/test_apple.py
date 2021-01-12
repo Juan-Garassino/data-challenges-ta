@@ -17,6 +17,6 @@ class TestApple(ChallengeResultTestCase):
                 'key', 'subkey', 'updated', 'changeOverTime',
                 'marketChangeOverTime', 'uOpen', 'uClose', 'uHigh', 'uLow',
                 'uVolume', 'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume',
-                'label', 'change', 'changePercent', 'company_code'
+                'label', 'change', 'changePercent'
             ]
         )
