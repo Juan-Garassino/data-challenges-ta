@@ -16,3 +16,6 @@ __pycache__
 *.egg-info
 *.csv
 mlruns
+
+# IDE #
+*.vscode
