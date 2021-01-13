@@ -1,5 +1,4 @@
 import unittest
-import sys
 
 class TestGetData(unittest.TestCase):
   def test_olist_is_imported(self):
