@@ -3,7 +3,9 @@
 
 Understand how tests work and implement your first test.
 
-Install the code coverage package with `pip install coverage`.
+Install the [code coverage](https://en.wikipedia.org/wiki/Code_coverage) package with `pip install coverage`.
+
+💡 __The `coverage` package will be used by the `make` command when we `make test` in order to assess the amount of code covered by the tests. How does that work ? The `coverage` command installed by the package will verify whenever we run the tests how much of the code of the package gets executed. This gives us an indication of the risk of our program being buggy (0%: not great, 100% coverage: highly tested)__
 
 ## Run tests
 

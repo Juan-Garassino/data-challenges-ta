@@ -45,7 +45,7 @@ jobs:
         make install test clean
 ```
 
-With this yaml file (see yaml as a config file just like a json file in python):
+With this YAML file (see YAML as a config file just like a JSON file in python):
  👉 every time you push a modification to master, the CI pipeline above will execute the following steps
 - Get a docker image with ubuntu installed
 - Install python 3

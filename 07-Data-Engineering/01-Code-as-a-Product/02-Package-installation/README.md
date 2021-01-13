@@ -24,14 +24,18 @@ You will want to install the dependencies of the package and its script.
 To install the package, as seen in lecture, simply run:
 
 ```bash
-pip install .
+pip install -e .
 ```
+
+💡 __Remember that the `-e` flag tells `pip` to create a symbolic link between the installation directory in the virtual env and the actual code of the package. Therefore the latest version of the code of your package will always be the one loaded on your machine.__
+
+💡 __Off course whenever you load your package in ipython or a notebook, do not forget to `%load_ext autoreload` and `%autoreload 2` as well. This way the python interpreter will not cache the code or your package and the latest version of the code will be loaded whenever import is ran.__
 
 💡 __Thanks to the `setup.py` file, `pip` knows to install the dependencies of the package listed in the `requirements.txt` file__
 
 ## Project as a package
 
-Your mlproject is now a package, just like pandas or sklearn.
+Your mlproject is now a package, just like `pandas` or `sklearn`.
 
 Go anywhere you want in your machine and run inside either an `ipython` or a `python` interpreter, or user a notebook, and run:
 
