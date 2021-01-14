@@ -1,4 +1,5 @@
 import unittest
+import os
 
 class TestGetData(unittest.TestCase):
   def test_olist_is_imported(self):
@@ -23,7 +24,8 @@ class TestGetData(unittest.TestCase):
               'olist_products_dataset.csv',
               'olist_geolocation_dataset.csv'
             ]
-    _, _, actual = next(walk('../../data/csv'))
+    csv_path = os.path.abspath(os.getcwd()).split('01-Project-Setup')[0] + "data" + os.sep + 'csv'
+    _, _, actual = next(walk(csv_path))
     self.assertTrue(not bool(set(wanted) ^ set(actual) & set(wanted)), "Your missing some CSVs") # test if actual is a subset of wanted
 
   def test_get_data(self):
