@@ -1,16 +1,12 @@
-import unittest
+from nbresult import ChallengeResultTestCase
 import os
 
-class TestGetData(unittest.TestCase):
-  def test_olist_is_imported(self):
-    result = False
-    message = ''
-    try:
-      from olist.data import Olist
-      result = True
-    except:
-      message = "Can't seem to import Olist module"
-    self.assertTrue(result, message)
+class TestGetData(ChallengeResultTestCase):
+  def test_len(self):
+    self.assertEqual(self.result.keys_len, 9)
+
+  def test_columns(self):
+    self.assertEqual(self.result.columns, ['seller_city', 'seller_id', 'seller_state', 'seller_zip_code_prefix'])
 
   def test_csv_exists(self):
     from os import walk
@@ -27,11 +23,3 @@ class TestGetData(unittest.TestCase):
     csv_path = os.path.abspath(os.getcwd()).split('01-Project-Setup')[0] + "data" + os.sep + 'csv'
     _, _, actual = next(walk(csv_path))
     self.assertTrue(not bool(set(wanted) ^ set(actual) & set(wanted)), "Your missing some CSVs") # test if actual is a subset of wanted
-
-  def test_get_data(self):
-    from olist.data import Olist
-    data = Olist().get_data()
-    self.assertTrue(data, "your get_data method doesn't seenm to work properly")
-    self.assertEqual(len(data), 9)
-    self.assertEqual(sorted(list(data['sellers'].columns)), ['seller_city', 'seller_id', 'seller_state', 'seller_zip_code_prefix'])
-
