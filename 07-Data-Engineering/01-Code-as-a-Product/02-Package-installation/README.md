@@ -100,7 +100,7 @@ python -i mlproject/distance.py
 
 If you see `>>>` in your terminal after running this commmand, it is completely normal. the `-i` stands for interactive mode. This means that you can explore the variables you created in your python script. To exit the interactive mode either type `exit()` or `CTRL-D`.
 
-💡 __You can also use `%run mlproject/distance.py` inside of a notebook or ipython interpreter (do not forget to `import mlproject`, you must be located in `mlproject/`)__
+💡 __You can also use `%run mlproject/distance.py` inside of a notebook or ipython interpreter (do not forget to `import mlproject`, you must be located in the main `mlproject/`)__
 
 Your new tree should look like this:
 

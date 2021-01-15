@@ -40,7 +40,7 @@ from yourpackage.lib import try_me
 ```
 
 Create a project with the `packgenlite` command:
- Create it outside of the `data-challenges` folder (`cd ~/code/<user.github_nickname>`)
+- Create it outside of the `data-challenges` folder (`cd ~/code/<user.github_nickname>`)
 - Name it as you please (avoid using dashes `-` or dots `.` in the name of your package, since this is against [package naming conventions](https://docs.python-guide.org/writing/structure/#modules) and makes importing your package harder)
 - Add a `try_me()` function to `lib.py` file
 - Insert any code you want in that function, try to be creative
