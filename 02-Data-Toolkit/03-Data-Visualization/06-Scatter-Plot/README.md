@@ -26,7 +26,7 @@ import matplotlib
 import seaborn as sns
 ```
 
-Then **import** the **dataset** from the CSV you just downloaded.
+Then **import** the **dataset** from the `4_ThreeNum.csv` in your challenge folder as `gdp_df`.
 
 ### Part 1
 
