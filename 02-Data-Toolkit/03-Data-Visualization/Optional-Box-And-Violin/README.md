@@ -12,11 +12,10 @@ To learn more **best practices** around Box or Violin plot read these **2 short 
 
 You will work with the **tips** dataset.
 
-[Download here](https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/10_OneNumSevCatSubgroupsSevObs.csv)
 
 ### First steps
 
-Create a notebook named `exercise02.ipynb` in the **same folder** as this **README**.
+Open the notebook named `bar-plot.ipynb` in the **same folder** as this **README**.
 Now you can **import** the necessary **libraries**.
 
 ```python
@@ -27,7 +26,7 @@ import matplotlib
 import seaborn as sns
 ```
 
-Then **import** the **dataset** from the CSV you just downloaded.
+Then **import** the **dataset** from the CSV.
 
 ### Grouped box plot
 
