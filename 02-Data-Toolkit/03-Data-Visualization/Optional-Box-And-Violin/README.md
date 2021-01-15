@@ -15,7 +15,9 @@ You will work with the **tips** dataset.
 
 ### First steps
 
-Open the notebook named `bar-plot.ipynb` in the **same folder** as this **README**.
+
+Open the notebook named `box-and-violin.ipynb` in the **same folder** as this **README**.
+
 Now you can **import** the necessary **libraries**.
 
 ```python
@@ -26,7 +28,8 @@ import matplotlib
 import seaborn as sns
 ```
 
-Then **import** the **dataset** from the CSV.
+Then **import** the **dataset** from `10_OneNumSevCatSubgroupsSevObs.csv` in your challenge folder.
+
 
 ### Grouped box plot
 
