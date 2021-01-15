@@ -10,6 +10,6 @@ def students_from_city(db, city):
 #   $ python school.py
 #
 # import sqlite3
-# conn = sqlite3.connect('db/school.sqlite')
+# conn = sqlite3.connect('data/school.sqlite')
 # db = conn.cursor()
 # print(students_from_city(db, 'Paris'))
