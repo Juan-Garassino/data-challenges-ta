@@ -1,40 +1,49 @@
 ## Objective
 
-Install your first package called `mlproject`
+Create your first package called `mlproject`
 
 ## Your first package
 
-Now navigate outside of your `data-challenges` directory and create a new `mlproject`:
+Navigate outside of your `data-challenges` directory and create a new `mlproject`:
+
 ```bash
 cd ~/code/<user.github_nickname>
-wagon-make-package mlproject
+packgenlite mlproject
 ```
 
 The ultimate goals of our `mlproject` are:
 - install it as a package
 - install scripts
 
-Get inside `mlproject`  
-👉 Inspect script under `scripts/mlproject-run`  
-👉 Inspect code you want to package as a module under `mlproject/`  
+Get inside of `mlproject`
+👉 Inspect the script in `scripts/mlproject-run`
+👉 Inspect the code you want to package as a module in the directory `mlproject/`
 
-You'll want to install these dependencies and the script.
+You will want to install the dependencies of the package and its script.
 
-To install your package, as seen in lecture, simply run:
+To install the package, as seen in lecture, simply run:
+
 ```bash
-pip install .
+pip install -e .
 ```
-💡 __Here pip understands what he has to do thanks to his buddy and MVP `setup.py` file__  
-💡 __Thanks to his MVP, he knew he had to install dependencies from `requirements.txt`__
+
+💡 __Remember that the `-e` flag tells `pip` to create a symbolic link between the installation directory in the virtual env and the actual code of the package. Therefore the latest version of the code of your package will always be the one loaded on your machine.__
+
+💡 __Off course whenever you load your package in ipython or a notebook, do not forget to `%load_ext autoreload` and `%autoreload 2` as well. This way the python interpreter will not cache the code or your package and the latest version of the code will be loaded whenever import is ran.__
+
+💡 __Thanks to the `setup.py` file, `pip` knows to install the dependencies of the package listed in the `requirements.txt` file__
 
 ## Project as a package
-Your mlproject is now a package, just like pandas or sklearn
 
-Go anywhere you want and run inside either `ipython` or a `python` interpreter or a notebook:
+Your mlproject is now a package, just like `pandas` or `sklearn`.
+
+Go anywhere you want in your machine and run inside either an `ipython` or a `python` interpreter, or user a notebook, and run:
 
 ```python
-from mlproject.lib import clean_data
+import mlproject
 ```
+
+Granted, for the moment the package does not contain much... But the import works.
 
 ## Project as scripts
 
@@ -43,8 +52,11 @@ You also have installed a script, test it in your terminal:
 mlproject-run
 ```
 
-## Your first module now
-Create a new python file called `mlproject/distance.py` inside which you'll add the following function
+Granted, for the moment the script does not do much... But it runs.
+
+## Add a first module inside of the package
+
+Create a new python file called `mlproject/distance.py` inside of which you will add the following function:
 
 ```python
 from math import radians, cos, sin, asin, sqrt
@@ -66,7 +78,8 @@ def haversine(lon1, lat1, lon2, lat2):
     return c * r
 ```
 
-To check if your function works, a good practice is to add `if __name__ == "__main__"` at the end of `distance.py` and compute your first distance:
+To check if your function works, a good practice is to add `if __name__ == "__main__"` at the end of `distance.py` and to compute a distance:
+
 ```python
 if __name__ == "__main__":
     # Le Wagon location
@@ -76,70 +89,84 @@ if __name__ == "__main__":
     distance = haversine(lon1, lat1, lon2, lat2)
     print(distance)
 ```
-🤔[Here's a link](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) to understand what the condition above does if it's not clear
+
+🤔 [Here's a link](https://www.geeksforgeeks.org/what-does-the-if-__name__-__main__-do/) to understand what the condition above does if it is not clear...
 
 Then run :
+
 ```bash
 python -i mlproject/distance.py
 ```
-If you see `>>>` in your terminal after running this commmand, it's completely normal. the `-i` stands for interactive mode. This means that you can explore the variables you created in your python script. To exit the interactive mode either type `exit()` or `CTRL-D`.
 
-💡 __You could also run `%run mlproject/distance.py` inside a notebook or ipython interpreter (do not forget to `import mlproject.lib`, you must be located in `mlproject/`)__
+If you see `>>>` in your terminal after running this commmand, it is completely normal. the `-i` stands for interactive mode. This means that you can explore the variables you created in your python script. To exit the interactive mode either type `exit()` or `CTRL-D`.
 
-Your new tree should look like:
+💡 __You can also use `%run mlproject/distance.py` inside of a notebook or ipython interpreter (do not forget to `import mlproject`, you must be located in the main `mlproject/`)__
+
+Your new tree should look like this:
+
 ```bash
+.
 ├── MANIFEST.in
 ├── Makefile
 ├── README.md
 ├── mlproject
 │   ├── __init__.py
 │   ├── data
-│   │   └── data.csv.gz
-│   ├── distance.py
-│   └── lib.py
+│   └── distance.py
+├── notebooks
+├── raw_data
 ├── requirements.txt
 ├── scripts
 │   └── mlproject-run
 ├── setup.py
 └── tests
-    ├── __init__.py
-    └── lib_test.py
+    └── __init__.py
 ```
 
-Install package and start using your new function from anywhere you want (you need to be located inside the `mlproject` directory):
+Install the package (you need to be located inside of the `mlproject` directory), then start using your new function anywhere you want:
+
 ```bash
 make install
 ```
+
 In any notebook:
+
 ```python
 from mlproject.distance import haversine
 ```
+
 👆You should now be able to use your `haversine` function in the notebook.
 
-## Your own script now
-The objective here is to implement a new script under `scripts/` called mlproject-computedist taking as parameters 4 (long1, lat1, long2, lat2) and returning the haversine distance.
+## Fill the script of the package
 
-Install termcolor to allow your script to output colored text `pip install termcolor`.
+The objective here is to implement a new script under `scripts/` called mlproject-computedist taking 4 parameters (long1, lat1, long2, lat2) and returning the corresponding haversine distance.
 
-You can inspect code from `computedist.py` (or `script.py`) file located in
+Install `termcolor` to allow your script to output colored text with `pip install termcolor`.
+
+In order to understand how to pass arguments to a script, you can inspect the code of the `computedist.py` (or `script.py`) file located in:
+
 ```bash
 ~/code/<user.github_nickname>/data-challenges/07-Data-Engineering/01-Code-as-a-Product/02-Package-installation
+
 ```
-to understand how to give arguments to a script.
 
 Run :
+
 ```bash
 python computedist.py --coords 48.865 2.380 48.235 2.393
 ```
-or 
+
+or
+
 ```bash
 python script.py --coords 48.865 2.380 48.235 2.393
 ```
 
-Basically you'll want to run the exact same command but without `python` and anywhere on your laptop.
-For that simply:
-- Create `scripts/mlproject-computedist` file with the exact same code as in `computedist.py`  
-👉 __no `.py` at the end of scripts__  
+Basically you will want to run the exact same command but without `python` and anywhere on your laptop.
+
+In order to do that, simply:
+- Create a `scripts/mlproject-computedist` file with the exact same code as `computedist.py`
+👉 __the name of a script file does not end by `.py`__
 - Add the following lines at the beginning of the file. The first line specifies that the file is a python script. The second line specifies that the file is encoded using UTF-8 characters.
 ``` python
 #!/usr/bin/env python
@@ -149,25 +176,27 @@ For that simply:
 
 Your new tree should look like:
 ```bash
+.
 ├── MANIFEST.in
 ├── Makefile
 ├── README.md
 ├── mlproject
 │   ├── __init__.py
 │   ├── data
-│   │   └── data.csv.gz
-│   ├── distance.py
-│   └── lib.py
+│   └── distance.py
+├── notebooks
+├── raw_data
 ├── requirements.txt
 ├── scripts
 │   ├── mlproject-computedist
 │   └── mlproject-run
 ├── setup.py
 └── tests
-    ├── __init__.py
-    └── lib_test.py
+    └── __init__.py
 ```
-And your `setup.py` slightly modified:
+
+Update your `setup.py` so that the script gets installed along with the package:
+
 ```python
 from setuptools import find_packages
 from setuptools import setup
@@ -187,15 +216,20 @@ setup(name='mlproject',
       zip_safe=False)
 ```
 
-Finally install package and scripts:
+Finally you can install the package and its scripts:
+
 ```python
 make install
 ```
-And test your script
+
+You can now run your script anywhere on your machine:
+
 ```bash
 mlproject-computedist --help
 ```
+
 ```bash
 mlproject-computedist --coords 48.865070 2.380009 48.235070 2.393409
 ```
+
 To go further on parsing arguments, check [that link](https://www.sicara.ai/blog/2018-12-18-perfect-command-line-interfaces-python)

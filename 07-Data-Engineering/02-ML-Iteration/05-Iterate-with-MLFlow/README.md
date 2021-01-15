@@ -50,7 +50,7 @@ From now on, you will have have your own `experiment` defined inside `trainer.py
 experiment = "taxifare_YOURNAME"
 ```
 
-## 1. Try different models
+## 1. Try different models <a name=part2></a>
 - Think about the different estimators that you know that can be used to solve prediction problems
 - Implement a short script that will loop through all estimators, train the model and evaluate it on a validation set.
 👉 Here you might need to tweek `TaxiFareModel` package
@@ -59,7 +59,7 @@ experiment = "taxifare_YOURNAME"
 
 And last advice, while building your pipeline, run it on small datasample, and preferably locally
 
-## 2. Features engineering and selection
+## 2. Features engineering and selection <a name=part3></a>
 **Now it is time to be creative!**
 
 You just tried different models, and you now see that some estimators may be more powerful than others. Another area where you can experiment is about `features engineering`.

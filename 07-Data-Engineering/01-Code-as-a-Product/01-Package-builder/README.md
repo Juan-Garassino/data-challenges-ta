@@ -1,53 +1,56 @@
 ## Install Package builder with pip
 
-Before doing anything here, please make sure _**you are inside a python3 virtual environment**_
+Before doing anything here, please make sure _**you are inside of a python3 virtual environment**_
+
 ```bash
-pip install wagon-tools
+pip install git+https://github.com/krokrob/packgenlite
 ```
 
-As seen in this morning's lecture, quite a lot of things happened. You have installed:
-- `wagon_tools` package and its modules:
+As seen in this morning's lecture, quite a lot of things have happened. You have installed:
+- the `packgenlite` package and its modules:
 ```python
-from wagon_tools.lib import get_data 
+from packgenlite.lib import get_data
 get_data()
 ```
-- `wagon-make-package` script  
+- the `packgenlite` script
 
 This script will be your package builder.
 
-# Use package builder
+# Use the package builder
 
-Now let's suppose you start a new ML project, you want to package your code somewhere.  
+Now let's suppose that you start a new ML project, you want to package your code somewhere.
 
-You now have access to a cool script that you can run from anywhere on your laptop
+You now have access to a cool script that you can run from anywhere on your laptop...
 
 Go to `/tmp` to test the script, and build your first package:
 
 ```bash
-cd /tmp && wagon-make-package first_project
+cd /tmp && packgenlite first_project
 ```
-Get inside you newliy created paskage
+
+Get inside you newly created paskage
+
 ```bash
 cd first_project
 ```
 
-Here is the project structure where you'll want to use to package your code.  
-Check how your package is structured by running `tree` inside your terminal
+Here is the structure of the project that was generated.
+Check how your package is structured by running `tree` in the terminal:
+
 ```bash
-$ tree
+.
 ├── MANIFEST.in
 ├── Makefile
 ├── README.md
 ├── first_project
 │   ├── __init__.py
-│   ├── data
-│   │   └── data.csv.gz
-│   └── lib.py
+│   └── data
+├── notebooks
+├── raw_data
 ├── requirements.txt
 ├── scripts
 │   └── first_project-run
 ├── setup.py
 └── tests
-    ├── __init__.py
-    └── lib_test.py
+    └── __init__.py
 ```
