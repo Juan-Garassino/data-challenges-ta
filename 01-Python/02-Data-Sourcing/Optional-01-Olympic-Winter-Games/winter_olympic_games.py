@@ -12,7 +12,7 @@ def most_decorated_athlete_ever():
 
 
 def country_with_most_gold_medals(min_year, max_year):
-    """Returns which country won the most gold medals between `min_year` ans `max_year`"""
+    """Returns which country won the most gold medals between `min_year` and `max_year`"""
     pass
 
 
