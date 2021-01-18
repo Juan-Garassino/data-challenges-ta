@@ -251,7 +251,7 @@ In a new cell, we write the `for` loop and copy paste the code
 for book in books_html:
     title = book.find("h3").find("a").attrs["title"]
     price = float(book.find("p", class_="price_color").text[1:])
-    rating = parse_rating(book.find("p", class_="star-rating"))
+    rating = parse_rating(book.find("p", class_="star-rating").attrs['class'])
     books_dict["Title"].append(title)
     books_dict["Price"].append(price)
     books_dict["Rating"].append(rating)
