@@ -191,7 +191,7 @@ Let's have a look at the yearly production of some specific states
 Then let's have a look at the available states, looking at all the columns _except_ the first one:
 
 ```python
-full_yearly_gas_df.columns[1:].sort_values()
+filtered_yearly_gas_df.columns[1:].sort_values()
 ```
 
 :question: Can you insert a new cell and write the code to plot linecharts of the gas production of four states of your choice? You can start from the `full_yearly_gas_df` dataframe.
@@ -224,7 +224,7 @@ from nbresult import ChallengeResult
 
 result = ChallengeResult('gas',
     month_type=month_type,
-    yearly_gas = filtered_yearly_gas_df.shape
+    yearly_gas=filtered_yearly_gas_df.shape
 )
 result.write()
 ```
@@ -326,7 +326,7 @@ from nbresult import ChallengeResult
 
 result = ChallengeResult('merged_dataframes',
     merged_df_shape=merged_df.shape,
-    yearly_oil_2008 = merged_df.iloc[0]["Crude Oil"],
+    yearly_oil_2008=merged_df.iloc[0]["Crude Oil"],
 )
 result.write()
 ```
