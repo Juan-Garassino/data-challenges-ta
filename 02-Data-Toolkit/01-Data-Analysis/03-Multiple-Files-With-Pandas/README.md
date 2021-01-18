@@ -17,7 +17,7 @@ Everything is explained in the [Merge, join and concatenate](https://pandas.pyda
 
 Before we load actual CSVs and try to merge/join/concatenate them, we are going to work with Dataframes created from dictionaries. This will limit the amount of data we manipulate and will make the concepts easier to understand.
 
-**Create a new notebook** in this exercise folder and start with the usual following `import` as the first cell:
+Open the `Exercise.ipynb` notebook in this exercise folder and start with the usual following `import` as the first cell:
 
 ```python
 import numpy as np
