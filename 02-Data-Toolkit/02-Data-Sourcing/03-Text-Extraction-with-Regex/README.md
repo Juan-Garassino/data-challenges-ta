@@ -262,7 +262,7 @@ result = ChallengeResult('patterns',
     quantity_re=quantity_pattern,
     amount_re=amount_pattern,
     quantity_grp_re=quantity_group_pattern,
-    amount__grp_re=amount_group_pattern
+    amount_grp_re=amount_group_pattern
 )
 result.write()
 print(result.check())
@@ -308,7 +308,7 @@ To create a list of all the receipts we need to find the **delimiter** between t
 So look at what you previously printed and choose a delimiter.<br>
 You can now use `split()` on your string to get the list of all the receipts, the list should contain **100 items**.
 
-**ℹ️ Store the Regex inside a `receipts_list` variable.**
+**ℹ️ Store the individual receipts inside a `receipts_list` variable.**
 <br>
 <details><summary markdown='span'>Solution
 </summary>
@@ -330,7 +330,7 @@ The format we want for this is:
 receipts_dict = {
     "date": [],
     "quantity": [],
-    "total_amount": []
+    "amount": []
 }
 ```
 
@@ -341,7 +341,7 @@ receipts_dict
 => {
     "date": ['22-10-2017','23-10-2017','26-10-2017',...],
     "quantity": [123, 232, 134, ...],
-    "total_amount": [1234.53, 1563.30, 2345.00, ...]
+    "amount": [1234.53, 1563.30, 2345.00, ...]
    }
 ```
 
@@ -383,8 +383,8 @@ for receipt in receipts_list:
 for receipt in receipts_list:
     date_pattern = r"\d{2}-\d{2}-\d{4}"
     date = re.findall(date_pattern, receipt)[0]
-    total_amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
-    total_amount = re.findall(total_amount, receipt)[0]
+    amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
+    amount = re.findall(amount_pattern, receipt)[0]
 ```
 
 </details>
@@ -396,8 +396,8 @@ for receipt in receipts_list:
 for receipt in receipts_list:
     date_pattern = r"\d{2}-\d{2}-\d{4}"
     date = re.findall(date_pattern, receipt)[0]
-    total_amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
-    total_amount = re.findall(total_amount_pattern, receipt)[0]
+    amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
+    amount = re.findall(amount_pattern, receipt)[0]
     quantity_pattern = r"Quantity +(\d+)"
     quantity = re.findall(quantity_pattern, receipt)[0]
 ```
@@ -407,16 +407,16 @@ for receipt in receipts_list:
 If you add this line to your loop you should see all the data you found.
 
 ```python
-    print(f"date: {date}, total_amount: {total_amount}, quantity: {quantity}")
+    print(f"date: {date}, amount: {amount}, quantity: {quantity}")
 ```
 
 ```
 =>
-    date: 02-01-2017, total_amount: 3097.00, quantity: 3097.00
-    date: 05-01-2017, total_amount: 935.00, quantity: 935.00
-    date: 23-01-2017, total_amount: 2808.00, quantity: 2808.00
-    date: 31-01-2017, total_amount: 4368.00, quantity: 4368.00
-    date: 06-02-2017, total_amount: 1988.50, quantity: 1988.50
+    date: 02-01-2017, amount: 3097.00, quantity: 3097.00
+    date: 05-01-2017, amount: 935.00, quantity: 935.00
+    date: 23-01-2017, amount: 2808.00, quantity: 2808.00
+    date: 31-01-2017, amount: 4368.00, quantity: 4368.00
+    date: 06-02-2017, amount: 1988.50, quantity: 1988.50
         ...
 ```
 
@@ -432,12 +432,12 @@ We can now `append()` each value to the right list in the dictionary.
 for receipt in receipts_list:
     date_pattern = r"\d{2}-\d{2}-\d{4}"
     date = re.findall(date_pattern, receipt)[0]
-    total_amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
-    total_amount = re.findall(total_amount_pattern, receipt)[0]
-    quantity_pattern = r"Total Amount +(\d+\.\d{2}) €"
+    amount_pattern = r"Total Amount +(\d+\.\d{2}) €"
+    amount = re.findall(amount_pattern, receipt)[0]
+    quantity_pattern = r"Quantity +(\d+)"
     quantity = re.findall(quantity_pattern, receipt)[0]
     receipts_dict["date"].append(date)
-    receipts_dict["total_amount"].append(total_amount)
+    receipts_dict["amount"].append(amount)
     receipts_dict["quantity"].append(quantity)
 ```
 </details>
@@ -450,7 +450,7 @@ receipts_dict
 => {
     "date": ['22-10-2017','23-10-2017','26-10-2017',...],
     "quantity": [123, 232, 134, ...],
-    "total_amount": [1234.53, 1563.30, 2345.00, ...]
+    "amount": [1234.53, 1563.30, 2345.00, ...]
    }
 ```
 
@@ -536,8 +536,8 @@ receipts_df = receipts_df.set_index('date')
 
 ### 4. Convert strings to floats
 
-At this point, if we do a `receipts_df.info()` we see that we still have strings in our columns **quantity** and **total_amount**.
-<br>In order to generate some plots we need to convert "quantity" and "total_amount" to floats.
+At this point, if we do a `receipts_df.info()` we see that we still have strings in our columns **quantity** and **amount**.
+<br>In order to generate some plots we need to convert "quantity" and "amount" to floats.
 
 To do the conversion you can use `pandas.to_numeric()`
 
@@ -549,20 +549,20 @@ To do the conversion you can use `pandas.to_numeric()`
 
 ```python
 receipts_df["quantity"] = pd.to_numeric(receipts_df["quantity"])
-receipts_df["total_amount"] = pd.to_numeric(receipts_df["total_amount"])
+receipts_df["amount"] = pd.to_numeric(receipts_df["amount"])
 ```
 </details>
 
-### 3. Plot the total_amount column
+### 3. Plot the amount column
 
 Ok, now we can start **exploring** and **plotting** our data.
-Let's see the evolution of the **`total_amount`**!
+Let's see the evolution of the **`amount`**!
 
 <details><summary markdown='span'>Solution
 </summary>
 
 ```python
-receipts_df['total_amount'].plot(figsize=(14,5))
+receipts_df['amount'].plot(figsize=(14,5))
 ```
 </details>
 
