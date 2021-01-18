@@ -189,7 +189,7 @@ from nbresult import ChallengeResult
 result = ChallengeResult('apple',
     index_name=apple_df.index.name,
     index_type=apple_df.index.dtype,
-    columns=sorted(apple_df.columns)
+    columns=apple_df.columns
 )
 result.write()
 print(result.check())
