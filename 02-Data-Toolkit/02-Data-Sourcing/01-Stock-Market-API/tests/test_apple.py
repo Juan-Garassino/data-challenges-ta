@@ -12,11 +12,11 @@ class TestApple(ChallengeResultTestCase):
     def test_apple_df_columns(self):
         self.assertEqual(
             list(self.result.columns),
-            [
+            sorted([
                 'close', 'high', 'low', 'open', 'symbol', 'volume', 'id',
                 'key', 'subkey', 'updated', 'changeOverTime',
                 'marketChangeOverTime', 'uOpen', 'uClose', 'uHigh', 'uLow',
                 'uVolume', 'fOpen', 'fClose', 'fHigh', 'fLow', 'fVolume',
                 'label', 'change', 'changePercent'
-            ]
+            ])
         )
