@@ -290,7 +290,7 @@ To read a file with Python you have to use `open()` like this:
 
 ```python
 filepath = "data/receipts.txt"
-with open(filepath) as f:
+with open(filepath, encoding="utf-8") as f:
     receipts_str = f.read()
 ```
 
