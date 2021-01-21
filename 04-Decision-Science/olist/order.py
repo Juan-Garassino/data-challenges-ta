@@ -18,7 +18,7 @@ class Order:
     def get_wait_time(self, is_delivered=True):
         """
         02-01 > Returns a DataFrame with:
-        [order_id, wait_time, expected_wait_time ,delay_vs_expected]
+        [order_id, wait_time, expected_wait_time, delay_vs_expected, order_status]
         and filtering out non-delivered orders unless specified
         """
         # Hint: Within this instance method, you have access to the instance of the class Order in the variable self, as well as all its attributes
@@ -55,7 +55,8 @@ class Order:
         # Optional
         # Hint: you can use the haversine_distance logic coded in olist/utils.py
 
-    def get_training_data(self, is_delivered=True):
+    def get_training_data(self, is_delivered=True,
+                          with_distance_seller_customer=False):
         """
         02-01 > Returns a clean DataFrame (without NaN), with the following columns:
         [order_id, wait_time, delay_vs_expected,
