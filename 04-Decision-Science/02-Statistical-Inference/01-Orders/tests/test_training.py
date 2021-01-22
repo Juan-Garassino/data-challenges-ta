@@ -20,4 +20,4 @@ class TestTraining(ChallengeResultTestCase):
                 'wait_time']
     self.assertEqual(self.result.columns, columns)
 
-  
+
