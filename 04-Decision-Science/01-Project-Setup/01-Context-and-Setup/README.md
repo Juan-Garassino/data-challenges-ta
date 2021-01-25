@@ -74,27 +74,25 @@ Add `olist` path to your `PYTHONPATH`.
 
 This will allow you to easily import modules defined in `olist` in your notebooks throughout the week.
 
-**For macOS, Linux and Windows WSL2:**
-
 Open your terminal and navigate to your home directory by running:
 
 ```bash
 cd
 ```
 
-Now you'll need to open your `.zshrc` file. As you might have noticed the file starts with a dot which means it's a hidden file. To be able to see this file in your terminal you'll need to run the command below:
+Now you'll need to open your `.zshrc` file. As you might have noticed the file starts with a dot which means it's a hidden file. To be able to see this file in your terminal you'll need to run the command below, the flag `-a` will allow you to see hidden files:
 
 ```bash
 ls -a
 ```
 
-The flag `-a` will allow you to see hidden files. You can open the file using either `vim` or sublime text or any other text editor
+Next lets open the file using your text editor, choose from the options below:
 
 ```bash
-# with vim
-vim .zshrc
+# Windows - Visual Studio Users
+code .zshrc
 
-# sublime text
+# Mac - Sublime Text Users
 st .zshrc
 ```
 
@@ -107,29 +105,6 @@ cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && echo "ex
 
 ⚠️ Restart all your terminal windows to take into account this change.
 
-**For Windows without WSL2:**
-
-Open a Git Bash terminal and run:
-```bash
-cd ~/code/<user.github_nickname>/data-challenges/04-Decision-Science && explorer.exe .
-```
-This will open the folder in Windows file explorer.
-Click in the folder tree bar:
-<img src="https://raw.githubusercontent.com/lewagon/data-images/master/decision-science/pythonpath.jpg" width="500"/>
-
-This will highlight the path to that folder, copy it.
-
-Click on `Control Panel → System and Security → System > Advanced system settings → Environment Variables`
-
-Under System variables, click on **New**
-    Variable name: `PYTHONPATH`
-    Variable value: the path you copied above
-
-It should look like this:
-<img src="https://raw.githubusercontent.com/lewagon/data-images/master/decision-science/pythonpath_var.jpg" width="500"/>
-
-Click on **OK**
-Restart your Git Bash terminal.
 
 ### 🔥 Check your setup
 
