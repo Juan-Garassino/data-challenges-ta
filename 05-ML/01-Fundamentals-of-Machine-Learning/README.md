@@ -1,13 +1,12 @@
 # Machine Learning Fundamentals
 
-In the following challenges, you will train and score 3 Machine Learning models:
+In today's challenges, you will:
 
-- Linear Regression
-- Logistic Regression (binary and multiclass!)
-- K-Nearest-Neighbours
+- Familiarize yourself with Scikit-Learn and its modelling workflow
+- Model a regression task with the Linear Regression algorithm
+- Model a classification task with the Logistic Regression algorithm
+- Use K-Fold cross-validation to evaluate model performance
+- Plot the Learning Curves of models to diagnose Bias, Variance, and necessary training size
+- Use your models to make predictions!
 
-Throughout the exercises, you will be implementing the Holdout Method to ensure the scores reflect the models' capacity to generalize on new data.
-
-You will also use Learning Curves to diagnose model performance, and make predictions on new data!
-
-Your turn 🚀
+Have fun 🚀

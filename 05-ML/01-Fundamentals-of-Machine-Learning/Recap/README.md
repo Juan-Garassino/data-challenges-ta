@@ -1,8 +1,11 @@
 # Recap
 
-In this Recap, you are going to use a K-Nearest-Neighbors model to find data observations that are similar to one another, or complete opposites.
+In this Recap, we will go over two multi-classification modelling strategies:
 
-You will then get a first glimpse at the effects of data scaling on Machine learning modelling.
+- One vs One
+- One vs Rest
+
+We will demonstrate their differences, advantages, and disadvantages.
 
 To start the recap, open `Recap.ipynb` in `jupyter notebook`.
 
