@@ -17,7 +17,7 @@ class TestSeller(ChallengeResultTestCase):
                'seller_id',
                'seller_state',
                'share_of_five_stars',
-               'share_one_stars',
+               'share_of_one_stars',
                'wait_time']
     self.assertEqual(self.result.columns, columns)
 
@@ -58,8 +58,8 @@ class TestSeller(ChallengeResultTestCase):
     self.assertEqual(self.result.avg_delay_carrier, 0.58)
 
   def test_quantity(self):
-    self.assertEqual(self.result.avg_quantity, 38)
-    self.assertEqual(self.result.max_quantity, 2039)
+    self.assertEqual(self.result.avg_quantity, 37)
+    self.assertEqual(self.result.max_quantity, 2033)
     self.assertEqual(self.result.min_quantity, 1)
 
   def test_average_sales(self):
