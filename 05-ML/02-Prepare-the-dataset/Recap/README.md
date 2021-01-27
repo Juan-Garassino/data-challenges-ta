@@ -1,15 +1,10 @@
-In this Recap, you will:
+# Recap
 
-- Learn simple tricks to facilitate preprocessing
-- Balance out a dataset with the SMOTE algorithm
-- Be exposed to data leakage
-- Train a classification model and predictions
+On a the `cars` dataset, we will:
 
-Be sure to install the following packages before opening the notebook:
-
-```bash
-pip install -U yellowbrick imblearn
-```
+- Preprocess the features
+- Evaluate and train a model
+- Predict the price of a new car
 
 To start the recap, open `Recap.ipynb` in `jupyter notebook`.
 
