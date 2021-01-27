@@ -5,22 +5,24 @@ class TestSeller(ChallengeResultTestCase):
     def test_shape(self):
         self.assertEqual(self.result.shape, (2970, 14))
 
+
     def test_columns(self):
-        columns = ['date_first_sale',
-                   'date_last_sale',
-                   'delay_to_carrier',
-                   'n_orders',
-                   'quantity',
-                   'quantity_per_order',
-                   'review_score',
-                   'sales',
-                   'seller_city',
-                   'seller_id',
-                   'seller_state',
-                   'share_of_five_stars',
-                   'share_one_stars',
-                   'wait_time']
-        self.assertEqual(self.result.columns, columns)
+      columns = ['date_first_sale',
+                 'date_last_sale',
+                 'delay_to_carrier',
+                 'n_orders',
+                 'quantity',
+                 'quantity_per_order',
+                 'review_score',
+                 'sales',
+                 'seller_city',
+                 'seller_id',
+                 'seller_state',
+                 'share_of_five_stars',
+                 'share_of_one_stars',
+                 'wait_time']
+      self.assertEqual(self.result.columns, columns)
+
 
     def test_average_review_score(self):
         self.assertEqual(self.result.avg_review_score, 4)
@@ -58,10 +60,12 @@ class TestSeller(ChallengeResultTestCase):
     def test_average_delay_carrier(self):
         self.assertEqual(self.result.avg_delay_carrier, 0.4)
 
+
     def test_quantity(self):
-        self.assertEqual(self.result.avg_quantity, 38)
-        self.assertEqual(self.result.max_quantity, 2039)
-        self.assertEqual(self.result.min_quantity, 1)
+      self.assertEqual(self.result.avg_quantity, 37)
+      self.assertEqual(self.result.max_quantity, 2033)
+      self.assertEqual(self.result.min_quantity, 1)
+
 
     def test_average_sales(self):
         self.assertEqual(self.result.avg_sales, 4566)
