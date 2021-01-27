@@ -46,13 +46,20 @@ class Product:
         'product_id', 'n_orders', 'quantity'
         """
 
+    def get_sales(self):
+        """
+        Returns a DataFrame with:
+        'seller_id', 'sales'
+        """
+
     def get_training_data(self):
         """
         Returns a DataFrame with:
-        product_id, category, height, width, length,
-        weight, price, freight_value, product_name_length,
-        product_description_length, n_orders, quantity, wait_time,
-        share_of_five_stars, share_of_one_stars, review_score
+        product_id, product_category_name, product_name_length,
+        product_description_length, product_photos_qty, product_weight_g,
+        product_length_cm, product_height_cm, product_width_cm, price,
+        wait_time, share_of_five_stars, share_of_one_stars, review_score,
+        n_orders, quantity, sales
         """
 
     def get_product_cat(self, agg="median"):

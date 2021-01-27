@@ -27,7 +27,9 @@ class Product:
         en_category = self.data['product_category_name_translation']
         df = products.merge(en_category, on='product_category_name')
         df.drop(['product_category_name'], axis=1, inplace=True)
-        df.rename(columns={'product_category_name_english': 'category'},
+        df.rename(columns={'product_category_name_english': 'category',
+                  'product_name_lenght': 'product_name_length',
+                  'product_description_lenght': 'product_description_length'},
                   inplace=True)
 
 
@@ -88,14 +90,14 @@ class Product:
         Returns a DataFrame with:
         'product_id', 'n_orders', 'quantity'
         """
-        matching_table = self.matching_table
+        order_items = self.data['order_items']
 
         n_orders =\
-            matching_table.groupby('product_id')['order_id'].nunique().reset_index()
+            order_items.groupby('product_id')['order_id'].nunique().reset_index()
         n_orders.columns = ['product_id', 'n_orders']
 
         quantity = \
-            matching_table.groupby('product_id',
+            order_items.groupby('product_id',
                                    as_index=False).agg({'order_id': 'count'})
         quantity.columns = ['product_id', 'quantity']
 
