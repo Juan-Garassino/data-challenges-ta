@@ -30,7 +30,7 @@ What we want to do here is called **offline scraping**. While developing the scr
 Let's download the search results for the keyword `carrot`:
 
 ```bash
-curl "https://recipes.lewagon.com/?search[query]=carrot" > pages/carrot.html
+curl -g "https://recipes.lewagon.com/?search[query]=carrot" > pages/carrot.html
 ```
 
 Now, run the Python script once again:
@@ -61,7 +61,7 @@ head -n 3 recipes/chocolate.csv
 In order to get to this final result, there are a few functions to implement in `recipe.py`
 
 - `parse(html)`: this is the most important function. It needs to locate every recipe on the page, and dive into the `<div />` of a given recipe to locate its name, difficulty level and preparation time. After exploring the DOM, it will return a `list` of `dict` containing 3 keys (`name`, `difficulty`, `prep_time`).
-- `write_csv(ingredient, recipes)`: this method takes two parameters. The first one is a `str`, the second one a `list` of `dict`. It will create a CSV file `{ingredient}.csv` and store the recipes from the list `recipes` (the code for that function should be 90% the same as the code from the previous challenge, `02-API`). You can already launch `python recipe.py cucumber` to test that the CSV is being created.
+- `write_csv(ingredient, recipes)`: this method takes two parameters. The first one is a `str`, the second one a `list` of `dict`. It will create a CSV file `{ingredient}.csv` and store the recipes from the list in the `recipes` directory.
 - `scrape_from_internet(ingredient, start)`: this method will work on the website and search for the given `ingredient`. Ignore the `start` parameter to begin with. It should return the HTML from the page (to be fed to the `parse` method).
 - `main()` Update the method so that `scrape_from_internet` is called instead of `scrape_from_file`. Run a few tests like `python recipe.py chocolate` or `python recipe.py strawberry`. After each run, check the `recipes` folder and open the created CSV file. Does it look OK to you?
 - `main()` with **pagination**: you now need to update the `main` and the `scrape_from_internet` functions so that the program does not stop at the first page of search results but downloads 30 recipes!

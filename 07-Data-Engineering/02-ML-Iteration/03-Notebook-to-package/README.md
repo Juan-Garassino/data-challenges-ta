@@ -23,7 +23,7 @@ You are going to create a package from your pipeline. To achieve this, we provid
 - Install `packgenlite` package from Github
 
 ```bash
-pip install git+https://github.com/krokrob/packgenlite.git
+pip install git+https://github.com/krokrob/packgenlite
 ```
 
 - Create a new project `TaxiFareModel` in your working directory

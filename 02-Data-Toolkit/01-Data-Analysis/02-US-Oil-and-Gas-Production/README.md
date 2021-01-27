@@ -171,8 +171,8 @@ Store the new filtered dataframe in `filtered_yearly_gas_df` variable in order t
 
 ```python
 full_years = np.logical_and(yearly_gas_df.index >= 2009, yearly_gas_df.index <= 2017)
-full_yearly_gas_df = yearly_gas_df[full_years]
-plot = full_yearly_gas_df.filter(items=['U.S.']).plot(kind="bar")
+filtered_yearly_gas_df = yearly_gas_df[full_years]
+plot = filtered_yearly_gas_df.filter(items=['U.S.']).plot(kind="bar")
 plot.set_xlabel("Year")
 ```
 
@@ -191,7 +191,7 @@ Let's have a look at the yearly production of some specific states
 Then let's have a look at the available states, looking at all the columns _except_ the first one:
 
 ```python
-full_yearly_gas_df.columns[1:].sort_values()
+filtered_yearly_gas_df.columns[1:].sort_values()
 ```
 
 :question: Can you insert a new cell and write the code to plot linecharts of the gas production of four states of your choice? You can start from the `full_yearly_gas_df` dataframe.
@@ -224,7 +224,7 @@ from nbresult import ChallengeResult
 
 result = ChallengeResult('gas',
     month_type=month_type,
-    yearly_gas = filtered_yearly_gas_df.shape
+    yearly_gas=filtered_yearly_gas_df.shape
 )
 result.write()
 ```
@@ -265,7 +265,7 @@ oil_df.head()
 
 </details>
 
-Then create two dataframes `yearly_gas` and `yearly_oil` by grouping by year, summing and filtering the **total US** production for both commodities. [Rename the columns](https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas) to `Gas` and `Crude oil`.
+Then create two dataframes `yearly_gas` and `yearly_oil` by grouping by year, summing and filtering the **total US** production for both commodities. [Rename the columns](https://stackoverflow.com/questions/11346283/renaming-columns-in-pandas) to `Gas` and `Crude Oil`.
 
 
 <details><summary markdown='span'>View solution
@@ -287,24 +287,24 @@ yearly_oil.head(3)
 
 </details>
 
-Now that you have those two dataframes, create one by concatenating both. Store this new dataframe into a `yearly_merged` variable. You should use the [`pd.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html) function, and don't forget to set the `axis` parameter!
+Now that you have those two dataframes, create one by concatenating both. Store this new dataframe into a `merged_df` variable. You should use the [`pd.concat()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html) function, and don't forget to set the `axis` parameter!
 
 <details><summary markdown='span'>View solution
 </summary>
 
 ```python
-yearly_merged = pd.concat([yearly_oil, yearly_gas], axis='columns')
-yearly_merged
+merged_df = pd.concat([yearly_oil, yearly_gas], axis='columns')
+merged_df
 ```
 </details>
 
-Finally, plot the `yearly_merged` dataframe and try to set the legend to include the units advertised in the original [Kaggle dataset](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018).
+Finally, plot the `merged_df` dataframe and try to set the legend to include the units advertised in the original [Kaggle dataset](https://www.kaggle.com/djzurawski/us-oil-and-gas-production-june-2008-to-june-2018).
 
 <details><summary markdown='span'>View solution
 </summary>
 
 ```python
-plot = yearly_merged.plot(kind="bar")
+plot = merged_df.plot(kind="bar")
 plot.set_xlabel("Year")
 plot.legend(['Gas (Millions of Cubic feet)', 'Crude Oil (Thousands of barrels)'])
 ```
@@ -326,7 +326,7 @@ from nbresult import ChallengeResult
 
 result = ChallengeResult('merged_dataframes',
     merged_df_shape=merged_df.shape,
-    yearly_oil_2008 = merged_df.iloc[0]["Crude Oil"],
+    yearly_oil_2008=merged_df.iloc[0]["Crude Oil"],
 )
 result.write()
 ```

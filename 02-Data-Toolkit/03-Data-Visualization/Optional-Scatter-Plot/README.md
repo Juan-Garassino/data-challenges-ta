@@ -17,7 +17,7 @@ You will work with the dataset `data/blobs.csv`, located in this exercise folder
 
 ### First steps
 
-Create a notebook named `exercise06.ipynb` in the **same folder** as this **README**.
+Open the notebook named `scatter-plot-optional.ipynb` in the **same folder** as this **README**.
 Now you can **import** the necessary **libraries**.
 
 ```python
@@ -28,7 +28,7 @@ import matplotlib
 import seaborn as sns
 ```
 
-Then **import** the **dataset** from the CSV you just downloaded.
+Then **import** the **dataset** from `data/blobs.csv`.
 
 ### Size and transparency
 

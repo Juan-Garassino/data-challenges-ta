@@ -118,12 +118,12 @@ url = "YOUR_API_URL"
 api_data = requests.get(url).json()
 ```
 
-You can now **create a dataframe** `apple_stock_df` from this data.
+You can now **create a dataframe** `apple_df` from this data.
 
 <br>
 <details><summary markdown='span'>Solution
 </summary>
-<code>apple_stock_df = pd.DataFrame(api_data)</code>
+<code>apple_df = pd.DataFrame(api_data)</code>
 </details>
 
 With this dataframe we can **plot** the evolution of the stock price.
@@ -140,7 +140,7 @@ To do this, you can use `Pandas.to_datetime()`
 
 <details><summary markdown='span'>Solution
 </summary>
-<code>apple_stock_df['date'] = pd.to_datetime(apple_stock_df['date'], format="%Y-%m-%d")</code>
+<code>apple_df['date'] = pd.to_datetime(apple_df['date'], format="%Y-%m-%d")</code>
 </details>
 
 ### Set the date column as the index
@@ -152,7 +152,7 @@ To do this you can use the DataFrame method **set_index**
 
 <details><summary markdown='span'>Solution
 </summary>
-<code>apple_stock_df = apple_stock_df.set_index('date')</code>
+<code>apple_df = apple_df.set_index('date')</code>
 </details>
 
 ### Now we can plot 🎉
@@ -161,14 +161,14 @@ First let's plot with only the values in the **`close`** column
 
 <details><summary markdown='span'>Solution
 </summary>
-<code>apple_stock_df['close'].plot()</code>
+<code>apple_df['close'].plot()</code>
 </details>
 
 Now we can make a plot with the values in the **`open`, `close`, `high`, and `low`** columns
 
 <details><summary markdown='span'>Solution
 </summary>
-<code>apple_stock_df[['open', 'close', 'high', 'low']].plot()</code>
+<code>apple_df[['open', 'close', 'high', 'low']].plot()</code>
 </details>
 
 As we can see, our plot is really hard to read. We can improve its readability with the `figsize` argument of the `plot()` method.
@@ -176,7 +176,7 @@ As we can see, our plot is really hard to read. We can improve its readability w
 
 <details><summary markdown='span'>Solution
 </summary>
-<code>apple_stock_df[['open', 'close', 'high', 'low']].plot(figsize=(12,4))</code>
+<code>apple_df[['open', 'close', 'high', 'low']].plot(figsize=(12,4))</code>
 </details>
 
 ### Test your code!

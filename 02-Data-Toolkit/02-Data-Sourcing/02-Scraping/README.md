@@ -251,7 +251,7 @@ In a new cell, we write the `for` loop and copy paste the code
 for book in books_html:
     title = book.find("h3").find("a").attrs["title"]
     price = float(book.find("p", class_="price_color").text[1:])
-    rating = parse_rating(book.find("p", class_="star-rating"))
+    rating = parse_rating(book.find("p", class_="star-rating").attrs['class'])
     books_dict["Title"].append(title)
     books_dict["Price"].append(price)
     books_dict["Rating"].append(rating)
@@ -292,7 +292,7 @@ books_df.groupby("Rating").count()["Title"].plot(kind="bar")
 Add and run the following cell to test your code:
 
 ```python
-rom nbresult import ChallengeResult
+from nbresult import ChallengeResult
 
 result = ChallengeResult('books',
     books_dict=books_dict,
@@ -354,7 +354,7 @@ for page in range(1, MAX_PAGE + 1):
     for book in soup.find_all("article", class_="product_pod"):
         title = book.find("h3").find("a").attrs["title"]
         price = float(book.find("p", class_="price_color").text[1:])
-        rating = parse_rating(book.find("p", class_="star-rating").attr["class"])
+        rating = parse_rating(book.find("p", class_="star-rating").attrs["class"])
         all_books_dict["Title"].append(title)
         all_books_dict["Price"].append(price)
         all_books_dict["Rating"].append(rating)

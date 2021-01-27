@@ -21,12 +21,12 @@ Now you can **import** the necessary **libraries**.
 ```python
 import numpy as np
 import pandas as pd
-import matplotlib
+import matplotlib.pyplot as plt
 %matplotlib inline
 import seaborn as sns
 ```
 
-Then **import** the **dataset** from the CSV you just downloaded.
+Then **import** the **dataset** from the `4_ThreeNum.csv` in your challenge folder as `gdp_df`.
 
 ### Part 1
 

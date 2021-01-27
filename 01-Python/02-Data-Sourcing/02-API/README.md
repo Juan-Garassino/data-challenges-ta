@@ -44,7 +44,7 @@ Open a new browser tab, and copy/paste the following URL:
 https://www.metaweather.com/api/location/search/?query=london
 ```
 
-What do you see? If you are on Chrome, you should install the [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) extension for a neater look. In the end, JSON is just text that needs to be **parsed**, that's what the extension will do
+What do you see? If you are on Chrome, you should install the [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) extension for a neater look. In the end, JSON is just text that needs to be **parsed**, that's what the extension will do.
 
 ### Optional - Using Postman
 
