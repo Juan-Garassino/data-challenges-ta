@@ -1,12 +1,9 @@
-The objectives of the Recap is to:
+# Recap
 
-- Expose the limitations of Logistic Regression models when dealing with imbalanced datasets
-- Introduce Cost-Sensitive learning and its associated parameter
-- Introduce the Classification report evaluation tool
+In this Recap, you are going to use a K-Nearest-Neighbors model to find data observations that are similar to one another, or complete opposites.
 
-To start the exercise, open `Recap.ipynb` in `jupyter notebook` and follow the instructions.
+You will then get a first glimpse at the effects of data scaling on Machine learning modelling.
 
-Your turn 🚀
+To start the recap, open `Recap.ipynb` in `jupyter notebook`.
 
-
-
+🚀 Your turn!
